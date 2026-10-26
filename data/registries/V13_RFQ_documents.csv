@@ -1,0 +1,16 @@
+Case;Party;Document needed;Minimum content;Output format;Current status;Gate;Caveat
+P1;FESCO / SASCO / КМП;Firm all-in quote CY–CY;20/40, COC/SOC, cargo, kg, dates, VAT, equipment, return;pdf/cоmmercial offer;NONE;HOLD;Зависит от контейнера
+P1;Грузовладелец/получатель;Контракт / подтверждение потребности;OD адреса, SKU, tons, 12mo season, minimum commitment;signed contract / PO;NONE;HOLD;Не путать 250kt group
+P1;Перевозчик автоплеча;Первая/последняя миля;дата, тоннаж, плечо, простой, обратный пробег;commercial quote;NONE;HOLD;Last mile
+P1;Морской перевозчик;Historical shipment logs;B/L booking ETD actual ETA actual POD 6–12mo;redacted B/L;NONE;HOLD;Расписание не факт
+P2;КМП / FESCO reefer;Firm cold-chain quote;reef 40, min/max t, plug-in, time temp, reefer availability;signed quote;NONE;HOLD;315k CY-CY only
+P2;Получатель;Задания на хранение;temperature, tolerance, reject rules, receiver, regulatory;scope of service;NONE;HOLD;Срок полки
+P2;Оператор склада;Энергетика и холод;kWh demand, plug, generator, monitoring, SLA;tech spec+offer;NONE;HOLD;Cost P90
+P3;FESCO FCDL / freight forwarder;China origin → VVO;Shanghai port gate, export, B/L, 40ft gross/net;quote 2026;NONE;HOLD;Tariff file index only
+P3;FESCO FML / feeder;VVO transfer → Magadan;ship-to-ship storage, transshipment, weekly cutoff;single-window quote;NONE;HOLD;Не считать 3+4=door
+P3;Клиент / таможенный брокер;Происхождение/ТНВЭД;HS, customs declaration, duties, permits;clearance memo;NONE;HOLD;Россия / Китай / США separately
+ALL;ПАО ММТП;XLS «доступная мощность Oct-26»;разделы по категориям, свободные причалы и storage, gate slots;source xls contents;PUBLISHED NOT READ;HOLD;Нельзя заменить оборотом 2025
+ALL;ПАО ММТП;Перевалка дополнительные услуги;contract STS/STS, schedules, free days, tariffs;port contract;NONE;HOLD;no double count
+ALL;ООО «Морской логистический центр»;Смета / DCF / состав активов;BOQ, risk provision, IRR/NPV model, contracts, 37.7bn vs 15.5bn;business plan / model;NONE;HOLD;Публичная карточка не audit
+ALL;Железные дороги Якутии;Транспортный проект и грузы;OD by shipper, actual waybills, potential discount, rail permits;origin-destination list;NONE;HOLD;No operating rail to Magadan
+ALL;Санкционный юрист;Screening US route;counterparty/bank/insurer/HS/origin, import controls;legal opinion;NONE;HOLD;Без юридического bypass

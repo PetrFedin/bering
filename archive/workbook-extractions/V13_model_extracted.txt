@@ -1,0 +1,5 @@
+# Searchable document/workbook extraction
+
+Original source ID: file_00000000fcc881f4b292fc40a4d23e61. Search copy only; not a byte-for-byte binary; see manifest for format limitations.
+
+No readable content was found in this file for the requested mode.

@@ -1,0 +1,16 @@
+rfq_id;pilot;party;request;required_fields;public_contact;status;source
+R01;P1;SASCO;Firm quotation CY–CY;"40ft COC/SOC; вес; cargo code; включённые ПРР; НДС; free days; detention; дата погрузки";office@sasco.ru;НЕ ОТПРАВЛЕНО;https://www.sasco.ru/service/linear/vladivostok-magadan/
+R02;P1,P2;КМП;Firm quote dry/reefer;"40ft dry + reefer; НДС; включённые работы; заморозка тарифов; availability; actual ETA/ETD";vl@kasco.su;НЕ ОТПРАВЛЕНО;https://www.kasco.su/schedule_vvo-mag/
+R03;P1,P2,P3;FESCO FML;Firm offer + capacity;"dry / reefer; cutoff; free time; CY–CY; acceptance; оборудование; SLA";fml@fesco.com;НЕ ОТПРАВЛЕНО;https://www.fesco.ru/ru/clients/container/line/fml/
+R04;ALL;ПАО ММТП;Свободная коммерческая мощность;"XLS Oct 2026; слоты причалов; gate; контейнерная площадка; реф подключение; хранение";office@magadanport.ru;НЕ ОТПРАВЛЕНО;https://www.magadanport.ru/o-porte/kontakty/
+R05;P1;Автоперевозчик Владивостока;Pickup firm quote;адрес, расстояние, вес брутто, часовые окна, пустой возврат, простой;;НЕ ОТПРАВЛЕНО;
+R06;P1,P2;Автоперевозчик Магадана;Last-mile firm quote;адрес получателя, вес, слот выдачи, складирование, простой;;НЕ ОТПРАВЛЕНО;
+R07;P1;Коммерческий грузовладелец;Proof of demand + 24m baseline;покупатель, SKU, объём по месяцам, старый маршрут, новый min take-or-pay;;НЕ ОТПРАВЛЕНО;
+R08;P1;Перевозчик / грузовладелец;12–24 мес обезличенных накладных;"booking; B/L; грузы; actual gate in/out; POD; дата invoice; invoice total";;НЕ ОТПРАВЛЕНО;
+R09;P2;Холодный склад Владивостока;Cold-chain contract;температура, plug-in, кВт·ч, SLA, backup, страхование и лимиты;;НЕ ОТПРАВЛЕНО;
+R10;P2;Холодный склад Магадана;Cold-chain capacity + fee;"P50/P90 dwell; часы, хранение, температурные логи, энергия, мощности";;НЕ ОТПРАВЛЕНО;
+R11;P2;Покупатель рефгруза;Обязательный объём + потери;SKU, срок годности, график поставок, штрафы, rejected lots;;НЕ ОТПРАВЛЕНО;
+R12;P3;FESCO FCDL / экспедитор Китай;China–VVO firm quote;порт КНР, экспорт, COC/SOC, актуальное расписание, включённые charges;;НЕ ОТПРАВЛЕНО;https://www.fesco.ru/ru/clients/schedule/
+R13;P3;Таможенный брокер;Customs and sanctions memorandum;код ТН ВЭД, происхождение, страна отправления, таможенная стоимость, разрешения;;НЕ ОТПРАВЛЕНО;
+R14;P3;Китайский отправитель / покупатель РФ;Signed demand / legal shipment;инвойс, PO, Incoterms, конечный адрес, транзит, порожний контейнер;;НЕ ОТПРАВЛЕНО;
+R15;ALL;ООО «Морской логистический центр»;Reconciled approved scope;"30k vs150k TEU; 150k vs>40k gen cargo; BOQ; Capex; dates; corporate boundaries";;НЕ ОТПРАВЛЕНО;https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e
