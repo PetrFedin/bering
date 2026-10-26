@@ -1,0 +1,621 @@
+# Archived extracted text: archive/workbook-extractions/V12_model_extracted.txt
+
+Original document ID: file_000000002a688211a869b3c106976f44. This is a searchable conversion, not byte-identical DOCX/XLSX. Formulas and formatting are not guaranteed retained.
+
+<PARSED TEXT FOR SHEET: 1 / 32 TABS
+TAB NAME: 00_Readme>
+index,BERING CORRIDOR V11  |  КОММЕРЧЕСКАЯ ГРУЗОВАЯ БАЗА,Unnamed: 1,Unnamed: 2,Unnamed: 3
+0,Срез 25.10.2026. Самостоятельное продолжение V10. НЕТ подтверждённых обязательных тонн для новой железной дороги либо Берингового тоннеля.,,,
+1,,,,
+2,Раздел,Что внутри,Правило достоверности,Решение
+3,01_Источники,"39 источников с URL, датой и пределом вывода",Оригинал документа важнее вторичной цитаты,Переоценить при получении новых данных
+4,02_Карточки,"30 карточек существующих цепочек, компаний и проверяемых рынков",Компания-перевозчик ≠ грузовладелец ≠ покупатель,Проверить первичные OD документы
+5,03_Количества,"Реестр единиц: metric tonnes, US short tons, wet tonnes, TEU, ounces","НЕ складывать массу, TEU, мощность, прогноз и внутреннее сырьё",Подтвердить вид величины
+6,04_Услуги_сроки,"Matson, FESCO, Alaska Railroad, отсутствующие плечи","Расписание ≠ SLA, порт→порт ≠ склад→склад",Согласовать одинаковый OD
+7,05_Порты_тарифы,Реальные публичные компоненты перевалки/надбавок,Не полные door-to-door ставки,Получить письменные котировки
+8,06_Цена_маршрута,Пустые поля котировок + примерные тесты (гипотезы),Число не использовать как рыночный тариф,Заполнить quote IDs
+9,07_Сценарии_времени,Прозрачные формулы финансовой экономии по дням,Время не является доходом SPV,Сравнить реальные услуги
+10,08_Контракты_гейты,7 обязательных признаков инвестиционного OD,Обязательства по морю != договор будущего rail,Проверить all gates
+11,09_Двойной_счет,Группы вложенных и пересекающихся объёмов,Не складывать групповую статистику,Запросить manifest/waybill
+12,10_Узлы_активы,"Magadan, Vladivostok, Tongjiang, Pevek, Nome/Anchorage",Порт в наличии != железная дорога,Своя экономика P0/P1
+13,11_Реестр_запросов,Готовый data room / carrier RFQ / freight LOI,Ничего никуда не отправлено,Получить документы
+14,12_Право_риски,"Экспортный контроль, происхождение, санкции",Не является юридическим разрешением,Обязательное заключение юристов
+15,13_Стадии_решений,P0→P4 с раздельными gates,Северные проекты живут независимо от тоннеля,Не финансировать мегапроект из портового оборота
+16,14_QA,"Формулы, контроль единиц, договоров, модельная готовность",QA не подтверждает экономическую реальность,Закрыть evidence gaps
+17,15_Статьи,Последовательность публикаций V11/V12,Не превращать hypothesis в news,Редакционный план
+<PARSED TEXT FOR SHEET: 2 / 32 TABS
+TAB NAME: 01_Источники>
+index,SOURCE REGISTER V11,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+0,"Первичные документы, публикации перевозчиков и нормативные источники. Указаны год и область применимости.",,,,,,
+1,,,,,,,
+2,ID,Издатель,Дата,Что устанавливает,Категория,Публичный URL,Ограничение
+3,S01,Ассоциация морских торговых портов,2026,"ПАО ММТП: 1 834,7 тыс. т в 2025",ФАКТ / оборот оператора,https://www.morport.com/rus/news/associaciya-morskih-torgovyh-portov-pozdravlyaet-s-yubileem-generalnogo-direktora-pao,Не уникальные новые тонны; включает клиентские грузы
+4,S02,ПАО Магаданский морской торговый порт,просмотр 25.10.2026,Публичная таблица услуг по перевалке и хранению,ТАРИФ / часть стоимости,https://www.magadanport.ru/klientam/tarify/,Без даты вступления в силу на веб-таблице; не full door-to-door
+5,S03,FESCO,просмотр 25.10.2026,"FML Владивосток/Восточный — Магадан, раз в неделю; 4/6 дней",СЕРВИС / опубликован,https://www.fesco.ru/ru/clients/container/line/fml/,Срок порта до порта; договорные тарифы в PDF/запросе
+6,S04,Железные дороги Якутии,2026,"Сусуманзолото, Полиметалл, Павлик, FESCO: общий поток >250 тыс. т/год",АГРЕГАТ / потребности,https://rw-y.ru/press/news/klyuchevye-promyshlennye-kompanii-magadana-obsudili-logistiku-s-zheleznymi-dorogami-yakutii-v-svete-/,Нет индивидуального деления; показатель всей группы
+7,S05,Полюс,просмотр 25.10.2026,"Наталка: мощность переработки 12,4 млн т руды/год",МОЩНОСТЬ / внутри ГОКа,https://polyus.com/ru/operations/operating_mines/natalka1/,"Руда перерабатывается внутри, не внешний ж/д груз"
+8,S06,Полюс,2026,"Наталка: в 2025 произведено 567,4 тыс. унций золота",ПРОИЗВОДСТВО / не фрахт,https://polyus.com/ru/,Золото транспортируется не как 12 млн тонн руды
+9,S07,FESCO,2025-11-24,"FADL 2025: 31,3 тыс. т, >2 тыс. TEU и 1,3 тыс. т генеральных, 6 рейсов",ФАКТ / линия,https://www.fesco.ru/ru/press-center/news/fesco-na-19-uvelichila-otpravku-gruzov-servisom-fadl-mezhdu-vladivostokom-i-chukotkoy-v-2025-godu/,Два направления; не вся Чукотка
+10,S08,FESCO,2026-06-11,"Первый рейс FADL 2026: 334 TEU, из них 167 продовольствие, 80 стройматериалы; 35 машин",РЕЙС / товарные группы,https://www.fesco.ru/ru/press-center/news/fesco-otkryla-perevozki-na-chukotku-po-programme-severnogo-zavoza-2026/,"Разные единицы, нельзя конвертировать без накладных"
+11,S09,FESCO,2026-10-23,"Последний рейс Чукотка 2026: 422 TEU, включая 96 рефрижераторных; 271 т генгрузов",РЕЙС / опубликован,https://www.fesco.ru/ru/press-center/news/fesco-otpravila-zaklyuchitelnyy-reys-iz-vladivostoka-na-chukotku-v-navigatsiyu-2026-goda/,"Объём рейса, не весь год; заявленные ETA"
+12,S10,Росатом / Атом Медиа,2025-11-20,"ЕМО Чукотка 2025: 159,22 тыс. т, 152,44 тыс. т нефтепродуктов, 6,77 тыс. т остальное",ФАКТ / пилот ЕМО,https://atommedia.online/press-releases/rosatom-dosrochno-obespechil-severnyy-zavoz-na-chukotku/,"Сумма компонентов 159,21 при округлении, 159,22 в заголовке"
+13,S11,АО Росатом Арктика / Атом Медиа,2026-05-29,3-летние договоры АО Росатом Арктика — АО Чукотснаб на нефтеналивные грузы,ДОГОВОР / существующий морской,https://atommedia.online/press-releases/rosatom-arktika-podpisal-tryekhletniy-dogovor-s-klyuchevym-postavshchikom-severnogo-zavoza-chukotki/,"~264 тыс. т: общий объём обязательств ЕМО 2026, не объем этого контракта"
+14,S12,АО Росатом Арктика / Атом Медиа,2026-07,"План поставки на Чукотку 2026: 224,9 тыс. т по новой публикации",ПЛАН / обновление,https://atommedia.online/press-releases/edinyy-morskoy-operator-severnogo-zavoza-otpravil-na-chukotku-tanker-s-dizelnym-toplivom/,Отличается от майских ~264 тыс. т; выяснить причину
+15,S13,Росморречфлот (через Морскую коллегию),2026-01-15,"Певек 2025: 674 тыс. т за 199 дней навигации, 132 судна",ФАКТ / порт,https://marine.org.ru/events/sudostroenie/18878/,Не добавлять к ЕМО и FESCO без накладных
+16,S14,КРДВ,2026,"Баимский ГОК: >1,1 трлн ₽ проект, >400 км дорога, терминал Чаун ~2 млн т/год",ПРОЕКТ / мощности,https://erdc.ru/news/yuriy-trutnev-provel-soveshchanie-o-khode-realizatsii-proekta-baimskogo-goka/,"2 млн т проектная способность, не коммерческий контракт"
+17,S15,Оператор ИФР-1,просмотр 25.10.2026,"Ж/д мост Тунцзян — Нижнеленинское: стартовая мощность 10,5 млн т/год",МОЩНОСТЬ / существующая,https://ifr-one.ru/,Не равна фактическим контейнерам из КНР
+18,S16,ТАСС со ссылкой на Минвостокразвития,2026-06-04,"Мост Тунцзян — Нижнеленинское: 6,4 млн т за 2025",ФАКТ / агрегат,https://fomag.ru/news-streem/bolee-6-mln-t-gruzov-mezhdu-rf-i-knr-perevezli-po-mostu-nizhneleninskoe-tuntszyan-v-2025-g/,Общий экспорт/импорт; не China→USA
+19,S17,Синьхуа (интервью оператора),2025-12-13,Описаны уголь ~70% и руда ~30% в экспортном направлении,СТРУКТУРА / оценка,https://russian.people.com.cn/n3/2025/1213/c31521-20401964.html,Не применять 70/30 к общему двустороннему объёму
+20,S18,FESCO / каталог линий,просмотр 25.10.2026,FCDL-5 Шанхай — Владивосток; FCDL-3 Нинбо — Владивосток,СЕРВИС / публикация,https://www.fesco.ru/ru/clients/container/include/line-cargo.php,Не подтверждает Magadan/USA конечное OD
+21,S19,FESCO / 2025 годовой отчёт,2026 публикация,"ВМТП: 806 тыс. TEU, генеральные грузы 4 169 тыс. т в 2025",ФАКТ / порт,https://ar2025.fesco.ru/strategic-report/operations-overview,Разные категории — пересечение с другими показателями
+22,S20,FESCO / пресс-служба,2026-01-20,"ВМТП: 214 тыс. т алюминия, 111 тыс. т чугуна в 2025",ФАКТ / товарная категория,https://www.fesco.ru/ru/press-center/news/vmtp-sokhranil-liderstvo-po-konteynerooborotu-v-rossii-po-itogam-2025-goda/,"Не подтверждает отправителя, покупателя и направление"
+23,S21,Port of Alaska / Anchorage,просмотр 25.10.2026,"2025 обработано 5,5 млн американских тонн топлива и грузов",ФАКТ / порт,https://www.portofalaska.com/,"Американские short tons, не российские метрические тонны"
+24,S22,Правительство Аляски,2026,"Alaska Railroad ~3,9 млн американских т грузов в 2025",ФАКТ / общая сеть,https://gov.alaska.gov/transportation-infrastructure/,"Действующая местная сеть, не до Нома/Канады"
+25,S23,Alaska Railroad,просмотр 25.10.2026,2026 ожидание >1 млн американских т щебня; типовой состав 8600 short tons,ПРОГНОЗ / местные,https://www.alaskarailroad.com/corporate/community/gravel-trains,"Ожидание 2026, не факт отгрузки"
+26,S24,Usibelli Coal Mine,просмотр 25.10.2026,"Healy→Fairbanks coal via Alaska Railroad, клиенты Fort Wainwright/Eielson",ПОСТАВЩИК+НАЗВАННЫЙ КЛИЕНТ,https://www.usibelli.com/service-two,Ставки и объёмы по каждому клиенту не раскрыты
+27,S25,"Teck / SEC, Annual Information Form 2025",2026,"Red Dog цинк/свинец: морские экспорты, часть Trail, остальное Азия/Австралия/Европа",ФАКТ / OD-обзор,https://www.sec.gov/Archives/edgar/data/886986/000088698626000004/teck-20251231xexx991aif.htm,Покупатели зарубежной части не раскрыты
+28,S26,"Teck / SEC, 2025 MD&A",2026,"Red Dog 1,2 млн wet metric t concentrate на 22 судах 2025",ФАКТ / масса wet,https://www.sec.gov/Archives/edgar/data/886986/000088698626000004/teck-20251231xexx993mda.htm,"2025 contained-zinc 462,7 kt != wet tonnes"
+29,S27,Matson,просмотр 25.10.2026,"GES Shanghai→Chicago 14 дней, Ningbo→Chicago 16 дней, гарантия",ПУБЛ. УСЛУГА / SLA,https://www.matson.com/china/ges.html,Не котировка цены и не срок для всех грузов
+30,S28,Alaska Railroad,просмотр 25.10.2026,"Seattle→Whittier marine + rail, расписание и внутренние грузовые поезда",РАСПИСАНИЕ / сервис,https://www.alaskarailroad.com/freight/shipping-schedule,Не rail Canada→Alaska по земле
+31,S29,Alaska Railroad,2026-10,"Топливная надбавка 43,5% либо $1,11/mile по типу тарифа",ТАРИФ / надбавка,https://www.alaskarailroad.com/freight/customer-tools,Нельзя складывать процент и доллары; базовый тариф отдельно
+32,S30,КРДВ,2026-09,"Магадан 1670 км, Найба 1300 км, целевые 2 млн т/год, от 1,13 трлн руб по концепции",ПЛАН / концепция,https://erdc.ru/news/podvedeny-itogi-vostochnogo-ekonomicheskogo-foruma-2026_/,"Указаны две ветки и оценочная грузовая база, не заказ на тоннель"
+33,S31,OFAC Treasury FAQ 1049,2022 актуальная,Условия запрета новых инвестиций US persons в проекты РФ,ПРАВО / инвестиции,https://ofac.treasury.gov/faqs/1049,Не юридическое заключение под конкретную сделку
+34,S32,OFAC Treasury FAQ 1051,2022 актуальная,Обычная торговля ≠ автоматически запрещённые новые инвестиции; иные запреты действуют,ПРАВО / торговля,https://ofac.treasury.gov/faqs/1051,"Проверять предмет, товар, контрагентов, банки и сервисы"
+35,S33,BIS Commerce,просмотр 25.10.2026,Export controls Russia/Belarus and reexport restrictions,ПРАВО / экспорт,https://www.bis.gov/licensing/country-guidance/russia-belarus,Особенно для техники и товаров двойного назначения
+36,S34,Global Affairs Canada,обновлено 2026-09,"Russia sanctions includes import, export, financing, entities",ПРАВО / CA,https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/russia-russie.aspx?lang=eng,Экспертное заключение по конкретной цепочке
+37,S35,US Customs and Border Protection,2025 ruling,Нормы происхождения и substantial transformation для маркировки/пошлин,ПРАВО / происхождение,https://rulings.cbp.gov/ruling/N351393,Транзит/перегрузка не создают российское происхождение
+38,S36,Alaska Railroad,просмотр 25.10.2026,Фрахт внутри Аляски и железнодорожно-морской интерлайн через Seattle,СЕРВИС / альтернативы,https://www.alaskarailroad.com/freight,Нельзя интерпретировать как сухопутную линию Alaska–Canada
+39,S37,АО Росатом Арктика / Атом Медиа,2026-07,"План 2026: 224,9 тыс. т; ранее майский релиз ~264 тыс. т обязательств",КОНФЛИКТ ВРЕМЕННЫХ СРЕЗОВ,https://atommedia.online/press-releases/edinyy-morskoy-operator-severnogo-zavoza-otpravil-na-chukotku-tanker-s-dizelnym-toplivom/,Планы разного времени; не выборочно суммировать
+40,S38,КРДВ,2026,План новой магистрали Нижний Бестях — Магадан; подготовка груза,ПРЕДТЭО / не готовый rail,https://erdc.ru/news/podvedeny-itogi-vostochnogo-ekonomicheskogo-foruma-2026_/,Не подтверждена эксплуатация rail к Магадану
+41,S39,FESCO: официальный архив тарифов,обновлено 22.10.2026,"Документы FML 21.05.2026, FADL 19.05.2026, FCDL 22.10.2026",ССЫЛКИ НА PDF / СОДЕРЖАНИЕ НЕ ПРОВЕРЕНО,https://www.fesco.ru/ru/clients/schedule/tariffs/,"Каталог не дает автоматически all-in цену для конкретного OD, документы надо извлечь и проверить"
+<PARSED TEXT FOR SHEET: 3 / 32 TABS
+TAB NAME: 02_Карточки>
+index,30 COMMERCIAL EVIDENCE CARDS,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24,Unnamed: 25,Unnamed: 26,Unnamed: 27
+0,"Поля U:AA = факт по конкретному OD и НОВОЙ линии, не наличие старого морского договора. AB рассчитывает допуск, все неподтверждённые 0.",,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,ID,Кластер,Названная компания,Роль в цепочке,Покупатель/грузополучатель,Откуда,Куда,Груз,Величина (исходная),Единица,Период,Тип свидетельства,Группа исключения дублей,Существующий маршрут,Вариант V11,Сезонность,Договор текущий vs новый,Фаза,Источники,Пробел доказательства,Грузовладелец известен 0/1,Получатель известен 0/1,Факт OD в т/год 0/1,Сопост. door quote 0/1,Rail quote 0/1,Legal cleared 0/1,Rail firm 0/1,Инвестиционно допустим 0/1
+3,C01,Magadan,FESCO,carrier; cargo owners unknown,Magadan clients undisclosed,Vladivostok/Vostochny,Magadan,general containers,,,2026 service,B-service,FML-service,FML sea 4 days from Vladivostok; 1 per week,via N.Bestyakh–Magadan future rail,year-round published,no rail contract,P0,"S03,S02",named cargo owner; full door quote; rail CAPEX and schedule,0,0,0,0,0,0,0,0
+4,C02,Magadan,FESCO / Dalreftrans,reefer service operator,Magadan cold-chain clients undisclosed,Vladivostok,Magadan,refrigerated cargo,,,2026 service,B-service,FML-service,FML reefer; -25 to +25 C,"future reefer rail, terminal+cold chain",year-round published,no rail contract,P0,S03,cold-chain volumes; perishability; warehouse ownership; quotes,0,0,0,0,0,0,0,0
+5,C03,Magadan,PAO Magadan Sea Trading Port,terminal operator,Magadan/import clients undisclosed,maritime inbound,Magadan,mixed cargo handled,1834700,metric tonnes,2025,A-aggregate,MMTP2025,current sea port,Magadan intermodal hub excluding new rail,year-round,terminal contracts not rail,P0,"S01,S02",split by cargo/shipper+consignee; dedicated capacities,0,0,0,0,0,0,0,0
+6,C04,Magadan,AO Susumanzoloto,named industrial cargo client,own facilities; exact consignee undisclosed,"outside region, unspecified",Susuman region,"fuel, spares, machinery",,,2026 company group,B-industrial,JDY-group250,current multi-modal; shared group >250kt/year,future rail via Magadan,all year needs unknown,no firm rail agreement,P1,S04,company-specific tonne ledger and counterparty; minimum volumes,1,0,0,0,0,0,0,0
+7,C05,Magadan,AO ZRK Pavlik,named industrial cargo client,Pavlik mine receiving depots,"outside region, unspecified",Pavlik (Magadan region),"mining reagents, plant equipment",,,2026 company group,B-industrial,JDY-group250,"current road/sea logistics, specific unknown",future Magadan rail then truck,all year needs unknown,no firm rail agreement,P1,S04,"actual inbound BOM and waybills, first-mile suppliers",1,0,0,0,0,0,0,0
+8,C06,Magadan,AO Polymetal,named industrial cargo client,regional site buyers not identified,"outside region, unspecified",Magadan region,mining supplies and equipment,,,2026 company group,B-industrial,JDY-group250,"current multi-modal, volumes group >250kt",future rail through Magadan,unknown,no firm rail agreement,P1,S04,asset/site-specific owner and transport contract,1,0,0,0,0,0,0,0
+9,C07,Magadan,AO Polyus Magadan,gold mine operator,"Natalka mine, owned by same group","outside region, unspecified",Natalka mine,industrial spares and heavy machinery,,,2025 asset baseline,B-asset,Natalka-inbound,current sea/road supply; 12.4Mtpa ore processing is internal,future rail Magadan with last-mile truck,year-round industrial,no firm rail agreement,P1,"S05,S06",actual external inputs vs onsite processed ore,1,0,0,0,0,0,0,0
+10,C08,Chukotka,FESCO,shipping line operator,Chukotka clients undisclosed,Vladivostok,Anadyr/Egvekinot and return,all FADL container/general,31300,metric tonnes,2025 navigation,A-line aggregate,FADL2025,"sea 6 voyages, June-Nov",new rail to Chukotka prospective,June-Nov marine,existing sea service only,P2,S07,"disaggregate sender/consignee, inbound/outbound",0,0,0,0,0,0,0,0
+11,C09,Chukotka,FESCO,shipping line operator,Chukotka food buyers undisclosed,Vladivostok,Anadyr/Egvekinot,food containers first voyage,167,TEU,June 2026,A-voyage subgroup,FADL2026-V1,seasonal FADL sea,possible future rail + last mile,June-Nov,existing sea carriage,P2,S08,bill of lading & destination per container; tonnes and chain-of-custody,0,0,0,0,0,0,0,0
+12,C10,Chukotka,FESCO,shipping line operator,Chukotka construction buyers undisclosed,Vladivostok,Anadyr/Egvekinot,construction materials first voyage,80,TEU,June 2026,A-voyage subgroup,FADL2026-V1,seasonal FADL sea,future rail Chukotka,June-Nov,existing sea carriage,P2,S08,"weight and HS6; end buyer, OD by village",0,0,0,0,0,0,0,0
+13,C11,China-USA benchmark,Matson,ocean plus domestic intermodal operator; shipper undisclosed,US importer / consignee undisclosed,Shanghai,Chicago,eligible full container load,,,current published GES,B-service benchmark,MATSON-GES,GES 14 days to Chicago for eligible FCL; not full door to door,hypothetical via China–Magadan–Bering–Alaska/Canada,year-round marine,existing service guarantee; no Bering rail contract,P4,S27,named Chinese exporter; named US importer; dated all-in quote and legal approval,0,0,0,0,0,0,0,0
+14,C12,China-USA benchmark,Matson,ocean plus domestic intermodal operator; shipper undisclosed,US importer / consignee undisclosed,Ningbo,Chicago,eligible full container load,,,current published GES,B-service benchmark,MATSON-GES,GES 16 days to Chicago for eligible FCL; not full door to door,hypothetical via China–Magadan–Bering–Alaska/Canada,year-round marine,existing service guarantee; no Bering rail contract,P4,S27,named Chinese exporter; named US importer; dated all-in quote and legal approval,0,0,0,0,0,0,0,0
+15,C13,Chukotka,Rosatom EMO,marine logistics operator,regional supply organizations not individually named,various ports,Chukotka settlements,petroleum + containers,159220,metric tonnes,2025 pilot,A-aggregate,EMO2025,"7 vessels seasonal; 152.44kt fuel, 6.77kt others",road/port upgrades; new rail alternative much later,navigation window,executed sea supply pilot,P0,S10,"origin port each invoice, receiver and overlapping ships with other reports",0,0,0,0,0,0,0,0
+16,C14,Chukotka,AO Rosatom Arktika,contracted marine operator,AO Chukotsnab (named contracting party),loading ports undisclosed,Chukotka,petroleum marine shipping,,,May 2026,A-contract-existing,EMO2026-contracted,three-year signed sea contracts,rail fuel competition after safety/permits,seasonal marine,signed 3-year SEA (not rail),P0,"S11,S37","actual contracted tonnage per contract, price, end-delivery, 264 vs224.9",0,1,0,0,0,0,0,0
+17,C15,Chukotka,Pevek Marine Port,port system operator,enterprises around Pevek undisclosed,maritime origins not individually known,Pevek,mixed cargo throughput,674000,metric tonnes,2025 navigation,A-aggregate,PEVEK2025,sea 132 calls 199-day navigation,"potential future rail, currently no rail",199 days 2025,"port service, not new rail",P0,S13,"manifest-level origins, separate fuel/concentrate/building products",0,0,0,0,0,0,0,0
+18,C16,Chukotka,OOO GDK Baimskaya,mine/project owner,Peschanka construction site,equipment suppliers not disclosed,Peschanka,construction machinery incl large dump trucks,,,2026 construction,C-project supply,BAIM-work,road+port construction; >50 trucks ordered per source,new rail speculative; road >400km under project,construction project,procurement contracts ≠ rail contract,P0,S14,"shipment by part ID, vendor, actual delivered quantity vs ordered",1,0,0,0,0,0,0,0
+19,C17,Chukotka,OOO GDK Baimskaya,future production owner,future copper buyers undisclosed,Peschanka,planned Chaun port,copper concentrate (planned),,,future design,C-capacity,BAIM-term,Chaun terminal rated around 2Mtpa DESIGN,rail alternatives require independent comparison,marine ice limits unknown,no firm rail/offtake available publicly,P2,S14,"actual concentrate forecast, buyer, take-or-pay, concentration ratio",1,0,0,0,0,0,0,0
+20,C18,China border,IFR-1 bridge operator,"infrastructure carrier, not owner",undisclosed Russian/Chinese traders,Tongjiang/Nizhneleninskoye,opposite border,all traded cargo,6400000,metric tonnes,2025,A-aggregate,AMUR2025,"existing rail, 10.5Mtpa design",rail China→Magadan only after extension,year-round,existing crossing not through-tunnel,P1,"S15,S16","manifest direction, commodity HS, new OD buyer USA not established",0,0,0,0,0,0,0,0
+21,C19,China border,coal exporters undisclosed,commodity owners not named,Chinese coal importers undisclosed,Russian Far East,Tongjiang,coal,,,2025 structure,A-trade category,AMUR2025,export coal dominant bridge mix,future rerouting to Magadan economically doubtful,year-round,existing export commercial,P1,"S17,S18",actual coal shipment per mine and receiver; price and Incoterms,0,0,0,0,0,0,0,0
+22,C20,China border,ore exporters undisclosed,commodity owners not named,Chinese ore buyers undisclosed,Russian Far East,Tongjiang,iron ore,,,2025 structure,A-trade category,AMUR2025,export iron ore part bridge mix,future Magadan not confirmed,year-round,existing export commercial,P1,S17,"mine-to-mill OD, tender numbers and rates",0,0,0,0,0,0,0,0
+23,C21,China border,Chinese importers / retailers unknown,commodity owners not identified,Russian buyers unspecified,Tongjiang,Far East Russia,cars and auto parts,,,2025 commodity examples,B-trade kind,AMUR2025,rail border imports; direction partially supported,future via Magadan distribution only on separate shipments,year-round,no new rail contract,P1,S15,individual importer and tonnes/TEU; Chinese rail quote,0,0,0,0,0,0,0,0
+24,C22,China sea,FESCO,container sea operator,Russian buyers undisclosed,Shanghai,Vladivostok,containers through FCDL-5,,,2026 schedule catalog,B-service,FCDL5,direct maritime route available,transload Magadan FML / alternate rail,year-round,existing sea service only,P0,S18,"sailing ETD, quote, actual end customer in Magadan",0,0,0,0,0,0,0,0
+25,C23,China sea,FESCO,container sea operator,Russian buyers undisclosed,Ningbo,Vladivostok,containers through FCDL-3,,,2026 schedule catalog,B-service,FCDL3,direct maritime route available,transload Magadan FML / alternate rail,year-round,existing sea service only,P0,S18,overlapping service capacity and actual OD shipment,0,0,0,0,0,0,0,0
+26,C24,Vladivostok,FESCO / VMTP,port terminal operator,terminal clients undisclosed,global maritime origins,Vladivostok,handled containers,806000,TEU,2025,A-aggregate,VMTP2025,operational deep-sea/rail intermodal port,Vladivostok→Magadan feeder hub,year-round,port throughput no new route contract,P0,S19,"shipment origin/destination, avoid reuse as new freight",0,0,0,0,0,0,0,0
+27,C25,Vladivostok,FESCO / VMTP,port terminal operator,export clients undisclosed,industrial senders undisclosed,Vladivostok,aluminium handled,214000,metric tonnes,2025,A-subcategory,VMTP2025,existing port handling metal,unlikely to justify northward detour without a buyer,year-round,"existing metal flow, no new rail",P0,S20,"actual producers, vessel dest, off-take and end buyer",0,0,0,0,0,0,0,0
+28,C26,Alaska,Port of Alaska / Municipality Anchorage,port operator,Alaska mainland consignees unknown,ocean and tankers,Anchorage,all fuel and general freight,5500000,US short tons,2025,A-aggregate,ANCH2025,"existing large port, rail/road interfaces",possible Alaska spine after access rail built,year-round,existing port business only,P0,S21,"metric/short conversion, port actual commodity splits and owners",0,0,0,0,0,0,0,0
+29,C27,Alaska,Alaska Railroad,rail carrier,Anchorage construction clients undisclosed,Mat-Su gravel pits,Anchorage,gravel,1000000,US short tons,2026 forecast,C-forecast,ARRC-2026-gravel,"regional rail gravel, expected >1m tons",not a cross-border cargo,Apr-Oct,"current business, not tunnel candidate",P0,S23,"actual annual 2026 after year close; owner, infrastructure spend",0,0,0,0,0,0,0,0
+30,C28,Alaska,Usibelli Coal Mine,named coal producer,Fort Wainwright / Eielson AFB named,Healy,Fairbanks area,thermal coal,,,2026 current service,B-named shipper and clients,USIBELLI,Alaska Railroad Healy to Fairbanks,no commercial reason Bering without another buyer,year-round,"current buyer service, not tunnel contract",P0,S24,"volumes per power plant and price, years of contracts",1,1,0,0,0,0,0,0
+31,C29,Alaska,Teck Red Dog,named zinc/lead producer,"Trail Operations (Teck-owned, named)","Red Dog, Alaska",Trail BC via sea + land,zinc and lead concentrate,,,2025 actual destination,A-named OD subset,RED-DOG-2025,summer ocean to Trail; part of 1.2m wet tonnes total,hypothetical railway would need Nome/Canada connectivity,July-Oct sea (~100 days),"existing long term zinc contracts, no tunnel",P4,"S25,S26","exact weight Trail, mode invoice, whole chain customs",1,1,0,0,0,0,0,0
+32,C30,Pacific USA,Teck Red Dog,named zinc/lead producer,Asia/Australia/Europe buyers undisclosed,"Red Dog, Alaska",foreign smelters by ocean,zinc/lead concentrate (all destinations total),1200000,wet metric tonnes,2025,A-aggregate,RED-DOG-2025,22 ships July-Oct; about 1.2Mt wet for ALL destinations,future rail not proven competitive with ship-to-Asia,July-Oct sea,existing zinc sales contracts; none Bering,P4,"S25,S26",buyers/port destinations and contract transport legs; avoid adding to C29,1,0,0,0,0,0,0,0
+<PARSED TEXT FOR SHEET: 4 / 32 TABS
+TAB NAME: 03_Количества>
+index,QUANTITY OBSERVATION REGISTER,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+0,"Проверка названия метрики, периода, единицы и пересечений. НЕ суммировать этот лист для получения «рынка тоннеля».",,,,,,,,
+1,,,,,,,,,
+2,ID,Показатель,Величина,Единица,Период,Уровень наблюдения,Source,Дедуп-группа,Ограничение
+3,Q01,MMTP 2025 port throughput,1834700,metric tonnes,2025,whole port,S01,MMTP2025,REAL / cannot be summed with FML
+4,Q02,FESCO FADL 2025 six voyages (both directions),31300,metric tonnes,2025 navigation,line,S07,FADL2025,REAL / may overlap port/region totals
+5,Q03,FESCO 2026 1st voyage food,167,TEU,Jun 2026,one voyage subgroup,S08,FADL2026-V1,NOT tonnes; belongs to 334 TEU voyage
+6,Q04,FESCO 2026 1st voyage construction materials,80,TEU,Jun 2026,one voyage subgroup,S08,FADL2026-V1,NOT tonnes; 80/334 not annual flow
+7,Q05,FESCO 2026 1st voyage automobiles/special machines,35,units,Jun 2026,one voyage subgroup,S08,FADL2026-V1,"NOT TEU, NOT tonnes"
+8,Q06,FESCO 2026 last voyage reefers,96,TEU,Oct 2026,one voyage subgroup,S09,FADL2026-V5,NOT annual contracted flow
+9,Q07,Rosatom EMO Chukotka delivered 2025,159220,metric tonnes,2025,EMO pilot,S10,EMO2025,Headline 159.22kt vs components total 159.21kt rounding
+10,Q08,Rosatom EMO 2025 petroleum,152440,metric tonnes,2025,subcategory,S10,EMO2025,Part of 159.22kt total; do not add
+11,Q09,Rosatom EMO 2025 container and other,6770,metric tonnes,2025,subcategory,S10,EMO2025,Part of 159.22kt total; not FESCO FADL automatically
+12,Q10,Rosatom EMO May 2026 commitments (not contract volume),264000,metric tonnes,May 2026,annual commitment estimate,S11,EMO2026,Rounded approx; not exact contract Rosatom-Chukotsnab
+13,Q11,Rosatom EMO later planned 2026 supply,224900,metric tonnes,July 2026,updated plan,S12,EMO2026,Differs from May 264kt in timing/scope; reconcile
+14,Q12,Pevek port navigation 2025,674000,metric tonnes,2025 navigation,whole port,S13,PEVEK2025,"May contain EMO+other shipping, cannot add"
+15,Q13,Chaun future terminal design,2000000,metric tonnes / year,project stage,DESIGN CAPACITY,S14,BAIM-term,Not shipped volume; not contract
+16,Q14,Tongjiang bridge 2025 total,6400000,metric tonnes,2025,two-way bridge,S16,AMUR2025,Not China→USA and not planned Magadan
+17,Q15,Tongjiang bridge initial capacity,10500000,metric tonnes / year,published capacity,capacity,S15,AMUR-capacity,Different from observed Q14
+18,Q16,Vladivostok VMTP 2025 container handling,806000,TEU,2025,terminal container handling,S19,VMTP2025,"NOT metric tonnes, includes China & other lanes"
+19,Q17,Vladivostok VMTP 2025 aluminium,214000,metric tonnes,2025,cargo category within terminal,S20,VMTP2025,"Not new cargo, can overlap grouped throughput"
+20,Q18,Port of Alaska total 2025,5500000,US short tons,2025,port fuel & freight,S21,ANCH2025,multiply by 0.90718474 for metric tonnes if needed
+21,Q19,Alaska Railroad cargo 2025,3900000,US short tons,2025,rail approx,S22,ARRC2025,"approx 3.9m, not linked by rail to Canada"
+22,Q20,Alaska Railroad gravel expectation 2026,1000000,US short tons,2026 projection,forecast lower bound,S23,ARRC2026,"expected >1m, not actual or tunnel cargo"
+23,Q21,Red Dog 2025 total wet concentrate,1200000,wet metric tonnes,2025,22 ships all destinations,S26,RED-DOG-2025,"wet weight != contained zinc, includes Trail"
+24,Q22,Natalka processing capacity,12400000,metric tonnes ore per year,asset,internal milling,S05,NATALKA-internal,INTERNAL ORE; not logistics market
+25,Q23,Natalka gold output 2025,567400,troy ounces,2025,produced gold,S06,NATALKA-GOLD,Do not compare to bulk cargo without conversion and destination
+26,Q24,Magadan corporate group logistics,250000,metric tonnes/year,2026 meeting,GROUP greater-than lower bound,S04,JDY-group250,>250k not sum across each industrial company
+27,Q25,Matson Shanghai–Chicago GES service,14,days,current published,service schedule,S27,MATSON-CHICAGO,"Customer-specific eligible FCL, price unpublished"
+28,Q26,FESCO FML Vladivostok–Magadan,4,days,current published,service sea leg,S03,FML-service,"Port-to-port only, weekly departure"
+<PARSED TEXT FOR SHEET: 5 / 32 TABS
+TAB NAME: 04_Услуги_сроки>
+index,PUBLIC SERVICE / SCHEDULE COMPARATORS,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+0,Доступные регулярные сервисы; непостроенные сегменты помечены явно. Длина суток не равна гарантированной доставке.,,,,,,,,,
+1,,,,,,,,,,
+2,ID,OD,Оператор,Вид,Реальность,Опубл. дней,Единица,Частота,Source,Важно
+3,R01,Vladivostok→Magadan,FESCO FML,sea,existing,4,days,1 departure/week,S03,port to port; may differ by departure
+4,R02,Vostochny→Magadan,FESCO FML,sea,existing,6,days,1 departure/week,S03,port to port; may differ by departure
+5,R03,Vladivostok→Anadyr/Egvekinot,FESCO FADL,seasonal sea,existing,,days,2025 six voyages; 2026 five announced,"S07,S08","Ice window June-Nov, actual arrival varies"
+6,R04,Shanghai→Chicago,Matson GES,ocean+US inland,existing,14,days,guarantee for eligible FCL,S27,Published service not all shipment levels
+7,R05,Ningbo→Chicago,Matson GES,ocean+US inland,existing,16,days,guarantee for eligible FCL,S27,Published service not all shipment levels
+8,R06,Seattle→Whittier,Alaska Railroad Marine,marine + rail,existing,7,days approx from timetable,weekly publication,S28,Example 23 Sep->30 Sep 2026; not fixed SLA
+9,R07,Anchorage→Fairbanks,Alaska Railroad,rail,existing,1,day schedule,daily dep except Sat,S28,Table shows dep one day before arrival; service specifics
+10,R08,N.Bestyakh→Magadan,proposed new railroad,rail,NOT BUILT,,days,not applicable,S30,"1670km conceptual, no train time or tariffs"
+11,R09,Magadan→Chukotka→Bering Strait→Nome,proposed new link+tunnel,rail,NOT BUILT,,days,not applicable,S30,"No approved route, geology, permission"
+12,R10,Nome→Fairbanks→Canada→Chicago,proposed new Alaska/Canada rail,rail,NOT BUILT,,days,not applicable,"S22,S28",no continuous inland rail today
+<PARSED TEXT FOR SHEET: 6 / 32 TABS
+TAB NAME: 05_Порты_тарифы>
+index,PUBLISHED PRICE COMPONENTS,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7
+0,"Публичные ставки перевалки/складирования Магадана и отдельно топливные надбавки Alaska Railroad. НЕ all-in freight, не есть полноценный контракт.",,,,,,,
+1,,,,,,,,
+2,ID,Оператор/тип,Предмет,Число,Ед. и валюта,Вид сбора,Source,Ограничение
+3,T01,MMTP cabotage,20ft loaded container,4695.2,RUB/container,direct handling,S02,No freight; actual 2026 webpage price with undated effectiveness
+4,T02,MMTP cabotage,40ft loaded container,6063.9,RUB/container,direct handling,S02,Do not divide by TEU without actual container type and payload
+5,T03,MMTP export/import,20ft loaded container,5216.8,RUB/container,direct handling,S02,"Not a rail tariff, not same service as T01"
+6,T04,MMTP export/import,40ft loaded container,6737.6,RUB/container,direct handling,S02,Incoterm and service grouping vary
+7,T05,MMTP cabotage,coal bulk,284.8,RUB/metric tonne,direct handling,S02,"Not transport of coal via port, only handling"
+8,T06,MMTP cabotage,building materials / minerals,413.1,RUB/metric tonne,direct handling,S02,"No delivery charges, no FX"
+9,T07,MMTP cabotage,loaded 20ft container storage,119.1,RUB/container-day,storage,S02,Billable actual days and exemptions must be checked
+10,T08,MMTP cabotage,loaded 40ft container storage,237.8,RUB/container-day,storage,S02,Billable actual days and exemptions must be checked
+11,T09,Alaska Railroad Oct 2026,mileage-based fuel surcharge,1.11,USD/mile (rate type dependent),surcharge,S29,Document says $/mile; verify tariff application for specific car and leg
+12,T10,Alaska Railroad Oct 2026,percentage-based fuel surcharge,43.5,% of eligible base rate,surcharge,S29,"Alternative tariff mechanism, not additive to T09"
+<PARSED TEXT FOR SHEET: 7 / 32 TABS
+TAB NAME: 06_Цена_маршрута>
+index,DOOR-TO-DOOR TARIFF CEILING / SYNTHETIC STRESS TEST,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13
+0,"ВСЕ USD/t, кроме опубликованных сравнителей дней. Не выдавать HYPOTHESIS за freight quote; отрицательный предел означает отсутствие запаса на новый инфраструктурный сбор.",,,,,,,,,,,,,
+1,,,,,,,,,,,,,,
+2,ID,OD,V USD/t,r в долях,"Альт., дни","Новый, дни",Альт. USD/t,Новый USD/t без сбора,Стыки USD/t,Δриска USD/t,Предельный сбор signed USD/t,Допустимый max(0) USD/t,Статус/пробел,Source
+3,E01,Шанхай → Чикаго (Matson 14d comparator),8000,0.12,14,22,180,320,45,0,-206.041095890411,0,"HYPOTHESIS: all USD/t assumed, 14d published only",S27
+4,E02,Владивосток → Магадан (FML 4d comparator),4000,0.12,4,6,125,150,30,0,-57.6301369863014,0,HYPOTHESIS: all USD/t assumed; price NOT published,S03
+5,E03,Якутия → Магадан (all hypothetical),3000,0.12,18,12,350,260,40,0,55.9178082191781,55.9178082191781,HYPOTHESIS: route days and freight not quoted,S30
+6,E04,Red Dog → Trail (all hypothetical),2200,0.12,30,20,120,180,60,0,-112.767123287671,0,HYPOTHESIS: competitor rate not disclosed,S25
+7,E05,China→USA by potential rail (all hypothetical),7000,0.12,18,25,180,450,70,0,-356.109589041096,0,HYPOTHESIS: 18d sea differs from published Matson 14d comparator,S27
+8,E06,Чукотка региональный снабженческий груз,2500,0.12,50,30,600,490,150,0,-23.5616438356164,0,HYPOTHESIS: modal choice and day counts unknown,S10
+<PARSED TEXT FOR SHEET: 8 / 32 TABS
+TAB NAME: 07_Сценарии_времени>
+index,VALUE OF TIME: INVENTORY FINANCING,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4
+0,"Only financing of cargo during transit; excludes inventory safety stock, spoilage, damage, customs and routing risk.",,,,
+1,,,,,
+2,Cargo value USD/t,Saved days,Annual funding rate,Potential saving USD/t,Scope
+3,1000,1,0.12,0.328767123287671,"MODEL ASSUMPTION, not published tariff"
+4,1000,3,0.12,0.986301369863014,"MODEL ASSUMPTION, not published tariff"
+5,1000,7,0.12,2.3013698630137,"MODEL ASSUMPTION, not published tariff"
+6,1000,14,0.12,4.6027397260274,"MODEL ASSUMPTION, not published tariff"
+7,1000,30,0.12,9.86301369863014,"MODEL ASSUMPTION, not published tariff"
+8,5000,1,0.12,1.64383561643836,"MODEL ASSUMPTION, not published tariff"
+9,5000,3,0.12,4.93150684931507,"MODEL ASSUMPTION, not published tariff"
+10,5000,7,0.12,11.5068493150685,"MODEL ASSUMPTION, not published tariff"
+11,5000,14,0.12,23.013698630137,"MODEL ASSUMPTION, not published tariff"
+12,5000,30,0.12,49.3150684931507,"MODEL ASSUMPTION, not published tariff"
+13,10000,1,0.12,3.28767123287671,"MODEL ASSUMPTION, not published tariff"
+14,10000,3,0.12,9.86301369863014,"MODEL ASSUMPTION, not published tariff"
+15,10000,7,0.12,23.013698630137,"MODEL ASSUMPTION, not published tariff"
+16,10000,14,0.12,46.027397260274,"MODEL ASSUMPTION, not published tariff"
+17,10000,30,0.12,98.6301369863014,"MODEL ASSUMPTION, not published tariff"
+18,20000,1,0.12,6.57534246575342,"MODEL ASSUMPTION, not published tariff"
+19,20000,3,0.12,19.7260273972603,"MODEL ASSUMPTION, not published tariff"
+20,20000,7,0.12,46.027397260274,"MODEL ASSUMPTION, not published tariff"
+21,20000,14,0.12,92.0547945205479,"MODEL ASSUMPTION, not published tariff"
+22,20000,30,0.12,197.260273972603,"MODEL ASSUMPTION, not published tariff"
+23,50000,1,0.12,16.4383561643836,"MODEL ASSUMPTION, not published tariff"
+24,50000,3,0.12,49.3150684931507,"MODEL ASSUMPTION, not published tariff"
+25,50000,7,0.12,115.068493150685,"MODEL ASSUMPTION, not published tariff"
+26,50000,14,0.12,230.13698630137,"MODEL ASSUMPTION, not published tariff"
+27,50000,30,0.12,493.150684931507,"MODEL ASSUMPTION, not published tariff"
+<PARSED TEXT FOR SHEET: 9 / 32 TABS
+TAB NAME: 08_Контракты_гейты>
+index,CONTRACT EVIDENCE / SALES ≠ RAIL TAKE-OR-PAY,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+0,Наличие морского контракта/договора купли-продажи НЕ передаёт обязанность грузовладельца использовать ещё не построенную железную дорогу.,,,,,,,,
+1,,,,,,,,,
+2,ID,Отправитель / оператор,Клиент / покупатель,Товар,Доказательство,Источники,Тип существующего обязательства,Firm new rail,Не хватает
+3,K01,АО «Росатом Арктика»,АО «Чукотснаб»,нефтеналивные грузы Чукотки,подписан 3-летний договор морской перевозки,S11,signed SEA,нет,тариф/объём этого договора отдельно
+4,K02,FESCO,грузовладельцы FADL не раскрыты,северный завоз,исполненные рейсы в 2025 и 2026,"S07,S08",completed service,нет,разделение по конечным покупателям
+5,K03,Teck Red Dog,Trail (часть) + зарубежные покупателей,цинковые/свинцовые концентраты,долгосрочные продажи концентрата по коммерческим договорам,S25,sales contracts (not rail),нет,"перевозчики, сроки и масса каждой части"
+6,K04,Usibelli,Fort Wainwright/Eielson,уголь,опубликована действующая клиентская цепочка,S24,"existing supply, term unknown",нет,действительные перевозочные соглашения и тоннаж
+7,K05,АО Сусуманзолото,клиенты не раскрыты,промышленные поставки,"переговоры с ЖДЯ, общий поток группы >250kt",S04,discussion only,нет,firm commitments и split
+8,K06,АО ЗРК Павлик,клиенты не раскрыты,промышленные поставки,"переговоры с ЖДЯ, общий поток группы >250kt",S04,discussion only,нет,firm commitments и split
+9,K07,АО Полиметалл,клиенты не раскрыты,промышленные поставки,"переговоры с ЖДЯ, общий поток группы >250kt",S04,discussion only,нет,firm commitments и split
+10,K08,Китайские грузовладельцы,американские конечные покупатели,контейнерный транзит Китай→США,нет публичных подтверждений контрактов на новую линию,"S27,S31,S32",no proposed rail contract,нет,"необходимы заинтересованные стороны, legal, baseline"
+11,K09,ГДК Баимская,покупатели меди не установлены,концентрат,проект портовой инфраструктуры и обогатительного комбината,S14,asset construction only,нет,offtake по реальному продукту
+<PARSED TEXT FOR SHEET: 10 / 32 TABS
+TAB NAME: 09_Двойной_счет>
+index,DUPLICATE / NESTING CONTROL,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4
+0,"Никакой автоматической суммы по столбцу I листа 02. Разные годы, разные объекты, TEU, американские тонны и продукт внутри завода.",,,,
+1,,,,,
+2,Group ID,Cards count,Cards IDs,Rule,Needed to reconcile
+3,AMUR2025,4,"C18, C19, C20, C21",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+4,ANCH2025,1,C26,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+5,ARRC-2026-gravel,1,C27,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+6,BAIM-term,1,C17,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+7,BAIM-work,1,C16,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+8,EMO2025,1,C13,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+9,EMO2026-contracted,1,C14,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+10,FADL2025,1,C08,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+11,FADL2026-V1,2,"C09, C10",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+12,FCDL3,1,C23,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+13,FCDL5,1,C22,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+14,FML-service,2,"C01, C02",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+15,JDY-group250,3,"C04, C05, C06",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+16,MATSON-GES,2,"C11, C12",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+17,MMTP2025,1,C03,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+18,Natalka-inbound,1,C07,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+19,PEVEK2025,1,C15,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+20,RED-DOG-2025,2,"C29, C30",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+21,USIBELLI,1,C28,NEVER sum these cards when group overlaps/contains subflows,document-dependent
+22,VMTP2025,2,"C24, C25",NEVER sum these cards when group overlaps/contains subflows,document-dependent
+<PARSED TEXT FOR SHEET: 11 / 32 TABS
+TAB NAME: 10_Узлы_активы>
+index,NODE-LEVEL ECONOMIC ROLES,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+0,Инвестиции в существующую логистику Магадана и Чукотки должны быть жизнеспособны без трансконтинентального тоннеля.,,,,,
+1,,,,,,
+2,Хаб,Функция,Подтверждённая база,Разрыв,Независимый путь,Sources
+3,Магадан,порт/склады/автодоставка,"FML weekly, 4d; 1.8347m tonnes port handled",no railroad in port,"independent P0: yard, digital freight booking, cold chain","S01,S03"
+4,Нижний Бестях,existing Yakutian railway terminus,existing rail network,no through rail Magadan,P1 origin for future Magadan rail; stage Hatynga,"S04,S30"
+5,Тунцзян—Нижнеленинское,Chinese railway gateway,6.4Mt two way in 2025,not an export-to-USA terminal,P1 OD only if producers/consignees confirmed,"S15,S16"
+6,Владивосток/Восточный,"sea gateway, FCDL and FML",806k TEU VMT 2025,traffic may be already served by sea,"P0 feeder & transload, new hub only if incremental","S18,S19"
+7,Певек/Чаун,seasonal Arctic port,"674kt Pevek 2025, 2Mt Chaun planned",marine ice + no Chukotka rail,P0 independent resupply; P2 conditional rail,"S13,S14"
+8,Анкоридж,Alaska sea and rail distribution,Port 5.5m US short t 2025,no Nome→Anchorage rail,independent Alaska market comparator,"S21,S22"
+9,Фэрбанкс,existing Alaska rail north terminus,Usibelli coal and ARR freight services,no Canada rail link; Nome rail missing,P4 only after international approach TEO,"S24,S28"
+10,Ном,port expansion site / possible support node,"future port works, not rail route",no existing Alaska rail to Nome,only separately justified port upgrades,S22
+<PARSED TEXT FOR SHEET: 12 / 32 TABS
+TAB NAME: 11_Реестр_запросов>
+index,COMMERCIAL DATA ROOM / RFQ BACKLOG,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4
+0,"Конкретные входы, формат приемки и адресаты. Никаких обращений или договоров от имени пользователя не направлялось.",,,,
+1,,,,,
+2,ID,Получатель запроса,Что запросить,Фаза,Приёмка
+3,D01,FESCO FML,"Quote all-in port→port and warehouse→warehouse: 20/40ft, reefers, dwell, timetable, actual sailed voyages",Magadan P0,effective-dated quote ID in RUB or USD; 2025-26 performance
+4,D02,MMTP,"Manifest aggregated by HS/commodity, loading port, shipper, consignee, monthly net tons, containers; 2024–26",Magadan P0,"remove repeat handling, confidentiality agreements"
+5,D03,Susumanzoloto,24m consignment ledger + vendor + buyer + tonnes and quote,Yakutia→Magadan P1,"firm company-specific freight, not >250k group"
+6,D04,ZRK Pavlik,"Inbound equipment, reagents, outbound product by tonne and mode",Magadan P1,net tonnes vs internal rock processing
+7,D05,Polymetal,"Current owner/legal entity, mines/sites, scheduled input tonnes",Magadan P1,contract scope per mine
+8,D06,Polyus Magadan,"Actual purchases, import HS, container receipts, ore external movement only",Magadan P1,exclude 12.4mt internal ore
+9,D07,Rosatom Arktika / Chukotsnab,"Signed contracts (redacted), quantity by commodity, 2026 264kt vs224.9kt time-series",Chukotka P0,only contracting party verified; no tunnel pledge
+10,D08,FESCO FADL,"Vessel manifest, village destination, split TEU→tonne, 2025/2026 season",Chukotka P0/P2,do not double count with EMO and Pevek
+11,D09,Port Pevek,"2025 674k actual by commodity and sender, portal, custody",Chukotka P0,duplicate-check with Rosatom and FESCO
+12,D10,GDK Baimskaya,"Offtake contracts, concentrate output (not ore), Chaun roadmap, all-in shipping cost",Chukotka P2,2mt design != mined output
+13,D11,IFR-1 bridge operator,"2025 6.4mt by monthly origin, destination, import/export, HS and end customer",China border P1,separate 10.5mt capacity from actual
+14,D12,Russian Railways,"Feasible path, gauges, wagon restrictions, switching, actual RZD tariff",China/Amur/AYAM P1,no imaginary through Magadan rail
+15,D13,Matson,GES eligible FCL quotation and P90 lead-time for Shanghai/Chicago with terminal SLA,China→USA alternative,14d published not universal
+16,D14,Other ocean operators,Shanghai/LA; Ningbo/Seattle; Shanghai/Vancouver all-in bids for identical origin/destination,Pacific ocean baseline,price quote by week+currency+unit
+17,D15,Alaska Railroad,Published base tariffs for actual cargo and fuel surcharge by waybill date,Alaska domestic,percentage or $/mile only as applicable
+18,D16,Teck Red Dog,Blended wet tonnes by consignee and route; 2026 renewed trucking/shipping contracts,Alaska/Trail/Asia,no mass or buyer split publicly
+19,D17,Usibelli Coal Mine,Annual rail tons to Eielson/Fort Wainwright/Healy by contract,Alaska domestic,contract-term and customer volumes needed
+20,D18,US/Canada customs advisors,"HS10 product, origins, transit status, sanctions, duties, BIS controls, insurance, bank clearance",International P4,written opinion before quote or LOI
+21,D19,Independent engineering team,"GIS alignments P1/P2/P4, gradients, axle loads, 1,520 vs 1,435 gauge and maintenance",Network feasibility,design/BOQ to avoid single tariff for all links
+22,D20,Commercial sponsor,"Shipper LOI and later binding take-or-pay by OD, minimum annual paid net tonnes and escalation",All P2/P4,contract > expression of interest
+23,D21,FESCO / FIT Magadan,"Retrieve and validate dated FML 21.05, FADL 19.05, FCDL 22.10 2026 tariff PDFs and separate FIT terminal orders",P0 Magadan + China / Chukotka,public catalogue exists; quote must match shipment and effective date
+<PARSED TEXT FOR SHEET: 13 / 32 TABS
+TAB NAME: 12_Право_риски>
+index,LEGAL GATES | НЕ ОБХОД САНКЦИЙ,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+0,"Правовая допустимость зависит от реального товара, контрагентов, банков, страховщиков и юрисдикций. Нет общего автоматического разрешения.",,,,,
+1,,,,,,
+2,ID,Правовой вопрос,Что установлено,Что блокирует,Критерий закрытия,Source
+3,L01,US new investment,US persons may be prohibited from new investments in Russia,US money/US persons in SPV,"lawyer scope, beneficial owners, license or redesign",S31
+4,L02,US Russia-related trade,"Routine sale may not count as new investment, but product/entity prohibitions still apply",any USA→Russia segment,"commodity, counterparty and bank screening",S32
+5,L03,Export controls BIS,EAR reexports and foreign-made products subject to rules,"equipment, electronics, machinery","HS+ECCN, origin, destination, end-use",S33
+6,L04,Canadian sanctions,"Entity, ship, financial and import/export rules must be checked",Canada bridge/port/rail,country-specific written opinion and permits,S34
+7,L05,Rules of origin,Mere transit or repacking not a substantial transformation,China→US via Russia,CBP binding ruling for concrete product if needed,S35
+8,L06,Cross-border infrastructure,No official treaty or bankable permitted cross-Bering rail found,P4 construction,government agreements and environmental process,"S31,S34"
+9,L07,Dangerous goods and safety,Special rail/port security and tunnel life-safety rules,"fuel, chemicals, batteries",separate HAZOP/QRA and legal certifications,"S03,S33"
+10,L08,Customs and import duty,"Tariff varies by HS, origin, destination, calendar date",all cross-border cases,customs broker dated landed-cost statement,S35
+<PARSED TEXT FOR SHEET: 14 / 32 TABS
+TAB NAME: 13_Стадии_решений>
+index,STAGE GATES: PROTECT REGIONAL OPTIONALITY,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+0,No investment to be booked on an unverified international cargo stream. Independently useful projects are analyzed first.,,,,,
+1,,,,,,
+2,Phase,Asset,Current gap,Required commercial/engineering evidence,Upside independently,Gate
+3,P0,Magadan port+warehouse+road,no new cross-border line,shipper paid P&L; port+FML quote; storage and service quality,region can benefit now,Invest only against incremental local net margin
+4,P0a,Chukotka North Supply,existing marine seasonal,EMO + Chukotsnab confirmed contract; actual supply cost and availability,independent regional logistics,No port–rail assumption
+5,P1,Yakutia to Magadan railway,new 1670km nominal,"named owner-tonnage, grade & engineering CAPEX, full 4d-FML baseline",local network before tunnel,Use independent CBA
+6,P2,Magadan–Chukotka and Chaun,no through rail,"Chaun design vs port 2025; by-cargo offtake, last mile",branch can be analyzed separately,No future copper cargo in current tonnes
+7,P3,Bering Strait tunnel,not permitted,"geotech, QRA, maritime/border EIA, electricity, international agreement",conditional only,HOLD
+8,P4,Alaska/Canada North American rail links,no continuous Alaska to Canada/ Nome connection,"independent freight market, access and railway construction TEO",conditional only,HOLD
+<PARSED TEXT FOR SHEET: 15 / 32 TABS
+TAB NAME: 14_QA>
+index,EVIDENCE / FORMULA ACCEPTANCE,Unnamed: 1,Unnamed: 2,Unnamed: 3
+0,Green PASS means arithmetic and structure only; it is NOT proof of signed freight demand or engineering feasibility.,,,
+1,,,,
+2,Контроль,Расчет / текущий статус,Ожидается,Почему важно
+3,Количество карт,30,30,must be 30
+4,Обязательные rail-контракты,0,0,no signed new rail commitments public
+5,Инвестиционно допустимые карты,0,0,all 7 evidence flags required
+6,Счёт публичных источников,39,39,URL and caveat provided
+7,Значений гипотетического тарифа,6,6,SCENARIO ONLY
+8,Карточек с величиной,12,12,not actual tonnes across all
+9,Плановая мощность ≠ фактический груз,0,0,verification constraint
+10,US short ton→metric tonne,0.90718474,0.90718474,unit conversion constant
+11,E.M.O. headline vs components (tonnes),10,10,rounded official figures may differ by ~10t
+<PARSED TEXT FOR SHEET: 16 / 32 TABS
+TAB NAME: 15_Статьи>
+index,EVIDENCE-BASED PUBLICATION ROADMAP,Unnamed: 1,Unnamed: 2,Unnamed: 3
+0,Честно маркировать IMPLEMENTED / ACTUAL / PROPOSAL / HYPOTHESIS. Никаких вымышленных грузоотправителей или контрактов.,,,
+1,,,,
+2,ID,Тема,Источник ядра,Следующая верификация
+3,V11-A,Магадан: реальный конкурент — еженедельная морская линия 4 дня,FML и тарифы MMTP,расчёт полной door-to-door
+4,V11-B,"Чукотка: долгосрочный морской договор уже существует, но не на тоннель",АО Росатом Арктика/Чукотснаб,стоимость contract & season
+5,V11-C,"Граница 6,4 млн тонн: через Тунцзян идут в основном грузы в Китай",бридж 2025,разбивка 2025 по HS
+6,V11-D,"Red Dog: когда 1,2 млн тонн уже имеют морскую логистику",Teck SEC,buyer and price split
+7,V11-E,Разрыв между 14 днями Matson и ещё не построенной магистралью,Matson GES,реальные all-in quotes
+8,V11-F,"Почему 12,4 млн тонн руды внутри ГОКа не груз тоннеля",Polyus Natalka,входящие поставки BOM
+9,V12,Первая договорная база OD и контрактный тарифный баланс,"RFQ, LOI, HS & permits",только after primary documents
+<PARSED TEXT FOR SHEET: 17 / 32 TABS
+TAB NAME: 16_V12_Обзор>
+index,V12  /  Переход к реальным тарифным границам,Unnamed: 1,Unnamed: 2,Unnamed: 3
+0,Новые вкладки V12 добавлены после 16 листов V11. V11 не изменяется по смыслу; все тарифы по данным на 25.10.2026.,,,
+1,,,,
+2,Контур,Выявленный факт / изменение,Решение для модели,Критическое ограничение
+3,SASCO: линия до Магадана,8 опубликованных ставок COC/SOC в обоих направлениях,Базовый межпортовый конкурент к гипотетической железной дороге,Не дорога в Магадан; не привязывать расписание FESCO к тарифу SASCO
+4,MMTP: разделение ставок,"Экспортно-импортные 20ft 5 216,8 ₽ / каботажные 4 695,2 ₽",Терминальный тариф только при применимости,SASCO включает ПРР — не добавлять второй раз
+5,Alaska Railroad,Документ ARR 3001-E действующий с 01.01.2026,Компаратор для нынешней системы морская баржа + ж/д,Не тариф Аляска—Россия и не rail-only
+6,SASCO расписания,Судозаходы октябрь 2026 опубликованы перевозчиком,Отдельный модуль ожидания и риска сроков,"Это ETA/ETD, не фактическая punctuality"
+7,Китай—США,Matson GES Shanghai—Chicago 14 дней,"Контроль скоростного лидера, жесткий hurdle",Нет цены услуги и нет сравнимой заявки через РФ
+8,Магаданский хаб без тоннеля,Отдельная проектная CF-модель на дополнительных контейнерах,Критерий объёма для окупаемости вводимого терминала,"100% гипотетические inputs, без законтрактованных tonnages"
+9,Юридическая фильтрация,Россия подпадает под ряд экспортных ограничений BIS,"До тарифа — классификация товаров, маршрут, сторона, лицензия",Никаких схем обхода происхождения или санкций
+10,Инвестиционный перенос V11→V12,30 исследовательских карточек; нет договоров на новую линию,0 грузов автоматически входят в bankable спрос,Реальный старый морской контракт не равен железнодорожному
+<PARSED TEXT FOR SHEET: 18 / 32 TABS
+TAB NAME: 17_V12_Источники>
+index,Доказательная база  /  новые первоисточники,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+0,Всякая ставка связана с документом и датой; старые 39 источников V11 сохранены в исходном разделе 01.,,,,,,
+1,,,,,,,
+2,ID,Владелец,Период,Что доказывает,Тип свидетельства,Граница использования,Прямой URL
+3,V12-01,SASCO,25.05.2026; effective 15.06.2026,line tariff 20/40 COC/SOC VVO-Magadan both directions,public operator tariff PDF,full line CY-CY includes loading/unloading and bunker; excludes VAT and local last mile,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf
+4,V12-02,Magadan port,02.03.2026; effective 01.04.2026,port export/import vs cabotage tariff; source shows two different tables,regulated price disclosure,"terminal price only, never double-add to SASCO if included",https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf
+5,V12-03,SASCO,25.10.2026 web snapshot,listed sailings October/November; marketing 10 day transit and >=4 departures/month,carrier service page,"departure/arrival future ETAs are schedule, not punctuality proof",https://www.sasco.ru/service/linear/vladivostok-magadan/
+6,V12-04,FESCO,25.10.2026 web snapshot,FML 1 sailing/week; quoted transit 4d from Vladivostok,carrier service page,not the SASCO tariff or confirmed door-to-door,https://www.fesco.ru/ru/clients/container/line/fml/
+7,V12-05,FESCO,"22.10.2026 FCDL, 21.05.2026 FML",tariff document catalog; rate values not parsed,carrier tariff index,do not fabricate FESCO full freight quote from index,https://www.fesco.ru/ru/clients/schedule/tariffs/
+8,V12-06,Alaska Railroad,issued 01.12.2025; effective 01.01.2026,"ARR 3001-E, joint rail/marine rates per 100 lbs Seattle–AK",carrier published tariff,not mainland rail-only nor Bering price; commodity/carload restrictions,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf
+9,V12-07,Alaska Railroad,2026 web snapshot,Anchorage–Fairbanks six weekdays directions; marine schedule dates,carrier schedule,timetable is not actual delivery or service agreement,https://www.alaskarailroad.com/freight/shipping-schedule
+10,V12-08,Matson,2026 current operator page,Guaranteed Expedited Service Shanghai–Chicago 14d FCL,carrier marketed guarantee,"terms apply, not a universal market freight rate",https://www.matson.com/china/ges.html
+11,V12-09,Железные дороги Якутии,02.09.2026,"roadmap, route studies and 5/10 yr cargo validation Nizhny Bestyakh–Magadan",rail developer,"not a built line, approved engineering design, or supply contract",https://rw-y.ru/press/news/yakutiya-i-magadanskaya-oblast-sdelali-pervyy-shag-k-prakticheskoy-realizatsii-zheleznoy-dorogi-nizh/?special=Y
+12,V12-10,РЖД-Партнер / ЖДЯ,22.05.2026,stage Bestyakh–Khandyga ~375km initial 9Mt/yr potential 20Mt/yr,rail project source,"proposal capacity, not present available capacity",https://www.rzd-partner.ru/zhd-transport/news/proekt-stroitelstva-zheleznodorozhnoy-linii-nizhniy-bestyakh-magadan-optimiziruyut/
+13,V12-11,ЖДЯ,2026,named miners and aggregate >250kt/yr shipments,rail developer meeting,"overlapping group shipments, cannot allocate to named firms",https://rw-y.ru/press/news/klyuchevye-promyshlennye-kompanii-magadana-obsudili-logistiku-s-zheleznymi-dorogami-yakutii-v-svete-/?special=Y
+14,V12-12,Росатом Арктика,29.05.2026,3-year marine Chukotsnab agreements; 264kt operator broader commitment,operator press release,"signed for sea, not rail; 264kt not volume of the contract",https://atommedia.online/press-releases/rosatom-arktika-podpisal-tryekhletniy-dogovor-s-klyuchevym-postavshchikom-severnogo-zavoza-chukotki/
+15,V12-13,Росатом Арктика,2026 publication,224.9kt 2026 announced plan with class split,operator press release,different-date plan vs 264kt; not sum,https://atommedia.online/press-releases/edinyy-morskoy-operator-severnogo-zavoza-otpravil-na-chukotku-tanker-s-dizelnym-toplivom/
+16,V12-14,Magadan port,October 2026 file listing,monthly disclosed available capacity exists for October 2026,operator index to xls,"XLS underlying bytes not retrieved, numeric free capacity unverified",https://magadanport.ru/klientam/
+17,V12-15,Association of Sea Commercial Ports,2026 publication re FY2025,MMTP handled 1.8347 million tonnes 2025,industry association,"operator throughput, not unserved demand",https://www.morport.com/rus/news/associaciya-morskih-torgovyh-portov-pozdravlyaet-s-yubileem-generalnogo-direktora-pao
+18,V12-16,IFR-1 via RZD-Partner,02.10.2026,Tongjiang–Nizhneleninskoye 8 train pairs/day and design 10.5 Mtpa,operator interview,network entry capacity not approved Magadan cargo,https://www.rzd-partner.ru/zhd-transport/comments/po-mostu-cherez-amur-v-kitay-poydet-bolshe-poezdov-/
+19,V12-17,КРДВ,2026 publication,Chaun terminal design capacity around 2 Mtpa,project implementation update,not actual rail demand,https://erdc.ru/news/yuriy-trutnev-provel-soveshchanie-o-khode-realizatsii-proekta-baimskogo-goka/
+20,V12-18,FESCO,23.10.2026,final FADL voyage: 422 TEU incl 96 refrigerated; 271 t general,carrier notice,TEU not tonnes; final voyage not end-year total,https://www.fesco.ru/ru/press-center/news/fesco-otpravila-zaklyuchitelnyy-reys-iz-vladivostoka-na-chukotku-v-navigatsiyu-2026-goda/
+21,V12-19,BIS US Commerce,as of 25.10.2026,"EAR Russia restrictions, red flags, transit conditions",US regulator,"not blanket legal verdict; assess product, route, parties",https://www.bis.gov/licensing/country-guidance/russia-belarus
+22,V12-20,BIS US Commerce,as of 25.10.2026,General Prohibition Eight transit via Russia for subject items,US law rule,not universal ban on all non-EAR goods; license analyses required,https://www.bis.gov/regulations/ear/736
+23,V12-21,US CBP,2025 ruling,substantial transformation test for country of origin,US customs ruling,transshipment alone does not establish new origin,https://rulings.cbp.gov/docs/hq/2025/h342474
+24,V12-22,Kamchatka Shipping Company,23.10.2026 snapshot,"sailing ETD/ETA Vladivostok–Magadan, weather 6d",carrier schedule,one ETD displays anomalous October date; must independently verify,https://kasco.su/schedule_vvo-mag/
+<PARSED TEXT FOR SHEET: 19 / 32 TABS
+TAB NAME: 18_V12_SASCO_ставки>
+index,SASCO  /  ПОЛНЫЙ ЛИНЕЙНЫЙ ТАРИФ CY—CY,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13
+0,"Из официального приказа №391 от 25.05.2026; действует с 15.06.2026. НДС и последняя миля не включены. Оператор SASCO, не FESCO.",,,,,,,,,,,,,
+1,,,,,,,,,,,,,,
+2,ID,Из,В,Размер,Владение,Тип,Ед.,Ставка ₽,НДС,Что входит,Не входит,Дата действия,Ссылка,Статус
+3,L01,Владивосток/Восточный,Магадан,20,COC,DC/HC/OT,₽/конт.,121500,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,доставка от CY до клиента; оговорённые доплаты,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+4,L02,Магадан,Владивосток/Восточный,20,COC,DC/HC/OT,₽/конт.,38170,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,выдача пустого контейнера под погрузку и последняя миля,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+5,L03,Владивосток/Восточный,Магадан,20,SOC,DC/HC/OT,₽/конт.,109840,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,доставка от CY до клиента; оговорённые доплаты,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+6,L04,Магадан,Владивосток/Восточный,20,SOC,DC/HC/OT,₽/конт.,38170,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,выдача пустого контейнера под погрузку и последняя миля,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+7,L05,Владивосток/Восточный,Магадан,40,COC,DC/HC/OT,₽/конт.,210670,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,доставка от CY до клиента; оговорённые доплаты,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+8,L06,Магадан,Владивосток/Восточный,40,COC,DC/HC/OT,₽/конт.,62500,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,выдача пустого контейнера под погрузку и последняя миля,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+9,L07,Владивосток/Восточный,Магадан,40,SOC,DC/HC/OT,₽/конт.,197585,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,доставка от CY до клиента; оговорённые доплаты,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+10,L08,Магадан,Владивосток/Восточный,40,SOC,DC/HC/OT,₽/конт.,62500,без НДС,фрахт; бункер; ПРР в портах; погрузка на авто в пункте назначения,выдача пустого контейнера под погрузку и последняя миля,15.06.2026,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,"public, subject to conditions"
+<PARSED TEXT FOR SHEET: 20 / 32 TABS
+TAB NAME: 19_V12_MMTP_ставки>
+index,Магаданский порт  /  тарифы разных режимов,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+0,"Приказ №248 от 02.03.2026, в силе с 01.04.2026. ПРР в порту не прибавлять к базовой SASCO ставке, если та уже включает эти работы.",,,,,,,,,
+1,,,,,,,,,,
+2,ID,Режим,Операция,Ед.,Прямой вариант ₽,Порт. перемещение 1 кат. ₽,Источник,Дата,Значение для сравнения,Включено в SASCO?
+3,P01,каботаж,груженый 20ft,конт.,4695.2,11245.2,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,только применимая услуга,обычно да: ПРР порта линии
+4,P02,каботаж,груженый 40ft,конт.,6063.9,13259.8,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,только применимая услуга,обычно да: ПРР порта линии
+5,P03,экспорт/импорт,груженый 20ft,конт.,5216.8,12494.4,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,не заменяет каботаж,проверить услугу
+6,P04,экспорт/импорт,груженый 40ft,конт.,6737.6,14732.8,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,не заменяет каботаж,проверить услугу
+7,P05,каботаж,уголь навалом,метрич. т,284.8,379.6,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,"ставка перевалки, не фрахт",не применимо контейнер SASCO
+8,P06,каботаж,минералы строит. навалом,метрич. т,413.1,574.8,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,"ставка перевалки, не фрахт",не применимо контейнер SASCO
+9,P07,каботаж,20ft порожний,конт.,3982.3,8243.4,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,зависит от условий возврата,у SASCO возврат COC в прямом направлении предусмотрен
+10,P08,каботаж,40ft порожний,конт.,4122.1,8243.4,https://www.magadanport.ru/wp-content/uploads/2026/04/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0-1-%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B-%D0%BD%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%9F%D0%A0%D0%A0-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BA%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-%D0%9F%D0%90%D0%9E-%D0%9C%D0%9C%D0%A2%D0%9F-2026-%D0%B3%D0%BE%D0%B4.pdf,01.04.2026,зависит от условий возврата,у SASCO возврат COC в прямом направлении предусмотрен
+<PARSED TEXT FOR SHEET: 21 / 32 TABS
+TAB NAME: 20_V12_Alaska_тариф>
+index,Alaska Railroad  /  опубликованный тариф ARR 3001-E,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12
+0,Весь маршрут Seattle→Alaska включает морскую баржу/судно и железную дорогу. Значения нельзя использовать как цену новой железной дороги из Чукотки.,,,,,,,,,,,,
+1,,,,,,,,,,,,,
+2,ID,Класс груза,Откуда,Куда,"Мин. масса, фунт/вагон",Цена USD / 100 фунт,USD/US short ton,USD/метрич. т,Пункт тарифа,Страница PDF,Действует,Ссылка,Ограничения
+3,A01,"Гравий/песок, в упаковке",Seattle WA,Anchorage AK,150000,13.95,279,307.544855748075,3020,44,01.01.2026,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,"Ставка на 100 фунтов; условия на класс груза, мин. масса и оборудование"
+4,A02,"Гравий/песок, в упаковке",Seattle WA,Fairbanks AK,150000,16.29,325.8,359.133025099365,3020,44,01.01.2026,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,"Ставка на 100 фунтов; условия на класс груза, мин. масса и оборудование"
+5,A03,"Строительные кирпичи/блоки, упаковка",Seattle WA,Anchorage AK,120000,13.91,278.2,306.663006699335,3030,44,01.01.2026,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,"Ставка на 100 фунтов; условия на класс груза, мин. масса и оборудование"
+6,A04,"Строительные кирпичи/блоки, упаковка",Seattle WA,Fairbanks AK,120000,16.79,335.8,370.156138208615,3030,44,01.01.2026,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,"Ставка на 100 фунтов; условия на класс груза, мин. масса и оборудование"
+7,A05,Нефтепродукты в упаковке,Seattle WA,Anchorage AK,120000,16.31,326.2,359.573949623735,3110,54,01.01.2026,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,"Ставка на 100 фунтов; условия на класс груза, мин. масса и оборудование"
+8,A06,Нефтепродукты в упаковке,Seattle WA,Fairbanks AK,120000,18.1,362,399.03669455485,3110,54,01.01.2026,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,"Ставка на 100 фунтов; условия на класс груза, мин. масса и оборудование"
+<PARSED TEXT FOR SHEET: 22 / 32 TABS
+TAB NAME: 21_V12_Расписания>
+index,Реальное расписание конкурентов  /  не путать ETA и факт,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11
+0,"SASCO публичные ETD/ETA на октябрь–ноябрь 2026, проверено 25.10; FESCO отдельно сообщает 4 дня и 1 отправление в неделю.",,,,,,,,,,,
+1,,,,,,,,,,,,
+2,ID,Перевозчик,Судно/сервис,Из,Отправление ETD,В,Прибытие ETA,"Переход, суток",Тип времени,Реальная punctuality?,URL,Комментарий
+3,S01,SASCO,Саско Ангара 2638,Владивосток,2026-10-13 00:00:00,Магадан,2026-10-18 00:00:00,5,плановый,не проверена,https://www.sasco.ru/service/linear/vladivostok-magadan/,"Показана опубликованная схема, не AIS"
+4,S02,SASCO,Симушир 2639,Владивосток,2026-10-18 00:00:00,Магадан,2026-10-25 00:00:00,7,плановый,не проверена,https://www.sasco.ru/service/linear/vladivostok-magadan/,"ETA 25 октября, не подтверждение фактического прибытия"
+5,S03,SASCO,Саско Авача 2640,Владивосток,2026-10-24 00:00:00,Магадан,2026-10-30 00:00:00,6,плановый,не проверена,https://www.sasco.ru/service/linear/vladivostok-magadan/,Будущая ETA
+6,S04,SASCO,Саско Ангара 2641,Владивосток,2026-10-29 00:00:00,Магадан,2026-11-04 00:00:00,6,плановый,не проверена,https://www.sasco.ru/service/linear/vladivostok-magadan/,Будущие ETD/ETA
+7,S05,FESCO,FML,Владивосток,,Магадан,,4,заявлено перевозчиком,не проверена,https://www.fesco.ru/ru/clients/container/line/fml/,Раз в неделю; заявленное транзитное время 4 дня
+<PARSED TEXT FOR SHEET: 23 / 32 TABS
+TAB NAME: 22_V12_Порог_жд_тарифа>
+index,Порог конкурентоспособности  /  только all-in против all-in,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14
+0,"Синие значения — сценарные inputs. Колонка E = опубликованный SASCO CY–CY, колонка L пуста до реального RFQ на новую ж/д. Риск = 0 модельно.",,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,
+2,Кейс,Направление,Размер,Влад.,Ставка SASCO ₽,"Масса, т [допущ.]",Стоимость товара ₽/т [допущ.],Стоимость капитала [допущ.],Ж/д быстрее на дней [допущ.],Эффект риска ₽ [допущ.],Предел ALL-IN ЖД ₽,ЖД RFQ ₽ [пусто],Экономия против RFQ ₽,Статус RFQ,Применимость
+3,L01,Владивосток/Восточный → Магадан,20,COC,121500,15,500000,0.18,2,0,128897.260273973,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+4,L02,Магадан → Владивосток/Восточный,20,COC,38170,15,500000,0.18,0,0,38170,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+5,L03,Владивосток/Восточный → Магадан,20,SOC,109840,15,500000,0.18,2,0,117237.260273973,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+6,L04,Магадан → Владивосток/Восточный,20,SOC,38170,15,500000,0.18,0,0,38170,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+7,L05,Владивосток/Восточный → Магадан,40,COC,210670,22,500000,0.18,2,0,221519.315068493,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+8,L06,Магадан → Владивосток/Восточный,40,COC,62500,22,500000,0.18,0,0,62500,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+9,L07,Владивосток/Восточный → Магадан,40,SOC,197585,22,500000,0.18,2,0,208434.315068493,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+10,L08,Магадан → Владивосток/Восточный,40,SOC,62500,22,500000,0.18,0,0,62500,,,НЕТ RFQ,"Сценарий ускорения, НЕ подтвержденное ETA; сравнить совместимый CY-CY и 20/40; различать SASCO и FESCO"
+<PARSED TEXT FOR SHEET: 24 / 32 TABS
+TAB NAME: 23_V12_Калькулятор_цепи>
+index,"Полная ставка OD  /  фрахт, перевалка, последняя миля",Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+0,"Задача — исключить двойной счет. Значения ИСТИНА в колонке F запрещают добавлять ПРР в общий tariff, если договор SASCO already includes.",,,,,,,,
+1,,,,,,,,,
+2,OD,Компонент,Документ,Ставка ₽/40ft,Ед.,Уже включено в line? (1/0),Добавить в стоимость ₽,Проверка,Источник/ограничение
+3,OD-01,SASCO Владивосток → Магадан 40ft COC,SASCO CY-CY,210670,₽/конт.,0,210670,ДОБАВИТЬ,V12-01; Базовый фрахт+обязательные ПРР
+4,OD-01,ПРР Магадан 40ft cabotage,MMTP отдельный прайс,6063.9,₽/конт.,1,0,ВХОДИТ,V12-02; Не суммировать: уже в ставке SASCO
+5,OD-01,Доставка CY→склад клиента в Магадане,Не опубликован,,₽/конт.,0,,ТРЕБУЕТ RFQ,MISSING; Отдельный RFQ нужен
+6,OD-01,Демередж/сверхнормативное хранение,Условия договора,,₽/конт.,0,,ТРЕБУЕТ RFQ,MISSING; Цена зависит от фактического времени
+7,OD-02,Ж/д Владивосток → Магадан через Якутию,Линия не построена,,₽/конт.,0,,ТРЕБУЕТ RFQ,"MISSING; Отдельная модель с CAPEX, OPEX и допуском"
+8,OD-03,"Китай→Владивосток, морской сервис FCDL",FESCO тариф в каталоге,,₽/конт.,0,,ТРЕБУЕТ RFQ,MISSING; Числовая ставка не извлечена
+<PARSED TEXT FOR SHEET: 25 / 32 TABS
+TAB NAME: 24_V12_Экономика_хаба>
+index,Магадан  /  самостоятельная экономика дополнительного терминала,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12
+0,"НИ ОДНОГО НОВОГО ГРУЗА НЕ ПРИПИСАНО ВЫРУЧКЕ. Только аналитический тест дополнительного контейнерного сервиса: не портовый оборот, не железнодорожный CAPEX.",,,,,,,,,,,,
+1,,,,,,,,,,,,,
+2,Кейс,Контейнеров/год (новых),Вклад ₽/конт. после перем. затрат,Фикс. OPEX ₽/год,Ставка [реальная],Срок лет,Модельный CAPEX ₽,Годовой поток ₽,Аннуитетный фактор,NPV ₽,Макс. CAPEX для NPV>=0 ₽,Нужно контейнеров/год при CAPEX,Статус
+3,H01,2500,14000,60000000,0.12,15,500000000,-25000000,6.81086448946501,-670271612.236625,0,9530,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+4,H02,5000,14000,60000000,0.12,15,500000000,10000000,6.81086448946501,-431891355.10535,68108644.8946501,9530,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+5,H03,10000,14000,60000000,0.12,15,500000000,80000000,6.81086448946501,44869159.1572006,544869159.157201,9530,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+6,H04,20000,14000,60000000,0.12,15,500000000,220000000,6.81086448946501,998390187.682302,1498390187.6823,9530,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+7,H05,10000,8000,60000000,0.12,15,500000000,20000000,6.81086448946501,-363782710.2107,136217289.7893,16677,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+8,H06,10000,20000,60000000,0.12,15,500000000,140000000,6.81086448946501,453521028.525101,953521028.525101,6671,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+9,H07,10000,14000,60000000,0.16,15,500000000,80000000,5.5754561626124,-53963506.9910077,446036493.008992,10692,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+10,H08,10000,14000,60000000,0.12,10,500000000,80000000,5.65022302841087,-47982157.7271307,452017842.272869,10607,"СИНТЕТИЧЕСКИЙ ТЕСТ, никаких реальных обязывающих объёмов"
+<PARSED TEXT FOR SHEET: 26 / 32 TABS
+TAB NAME: 25_V12_Приоритетные_RFQ>
+index,Контактная программа  /  14 проверок грузовой цепочки,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+0,"Каждая строка — ЗАПРОС ДОКАЗАТЕЛЬСТВА, а не отправленное письмо, LOI или согласие грузовладельца.",,,,,,,,,
+1,,,,,,,,,,
+2,RFQ ID,V11 карточки,Контрагент/организация,Что именно проверяем,Имеющийся документ,Недостающая информация,Поле для контракта на новую линию,Критичность,Источник,Состояние
+3,R01,C01,FESCO / клиент линии FML,40ft и 20ft COC/SOC Владивосток→Магадан,"FML 1 рейс/неделю, заявлено 4 дня",all-in RFQ по партиям; free time; detention; last mile,"отдельный cargo owner, firm tonnage, срок, штрафы",P0,https://www.fesco.ru/ru/clients/container/line/fml/,НЕ ЗАПРАШИВАЛОСЬ
+4,R02,C01,SASCO,Действительность публичных ставок 121500/210670 и условия скидок,Приказ №391,"актуальный 2026 период, лимит 200 TEU для скидки, availability",не является rail take-or-pay,P0,https://www.sasco.ru/upload/iblock/380/8lje24r4vr718hhbkt8amq66323mhin1/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%D1%8B_25.05.26.pdf,НЕ ЗАПРАШИВАЛОСЬ
+5,R03,C03,ПАО ММТП,"Свободные мощности, склады, пропуск автотранспорта",Октябрь 2026 XLS опубликован,содержимое XLS и ограничения терминала; стоимость реконструкции,договор приёма и обработки новой доп. партии,P0,https://magadanport.ru/klientam/,НЕ ЗАПРАШИВАЛОСЬ
+6,R04,C04 C05 C06,ЖДЯ / Сусуманзолото / Павлик / Полиметалл,Разделить >250 тыс. т по предприятиям,Сообщение ЖДЯ об общей группе,"истинные OD, виды грузов, годовые тонны, действующая ставка, условия",firm minimum per entity ≠ совокупные 250кт,P0,https://rw-y.ru/press/news/klyuchevye-promyshlennye-kompanii-magadana-obsudili-logistiku-s-zheleznymi-dorogami-yakutii-v-svete-/?special=Y,НЕ ЗАПРАШИВАЛОСЬ
+7,R05,C07,Полюс / Наталка,Промышленное снабжение и last-mile,Факт производственного объекта,"закупка грузов, доставка до шахты, Incoterms, опасные грузы",двусторонний допустимый оффтейк железной дороги,P1,https://polyus.com/ru/operations/operating_mines/natalka1/,НЕ ЗАПРАШИВАЛОСЬ
+8,R06,C08 C09 C10,FESCO FADL,Сезонная Чукотка — 2026 рейсы и TEU,"Завершающий рейс 422 TEU, 271 т генерального",перевод TEU в реальную загрузку и контрактные OD,не использовать агрегаты как рельсовую загрузку,P1,https://www.fesco.ru/ru/press-center/news/fesco-otpravila-zaklyuchitelnyy-reys-iz-vladivostoka-na-chukotku-v-navigatsiyu-2026-goda/,НЕ ЗАПРАШИВАЛОСЬ
+9,R07,C13 C14,Росатом Арктика / Чукотснаб,"Морской северный завоз, нефтепродукты и уголь",Договор 3 года; пресс-релиз 264кт,"объём КОНКРЕТНОГО договора, пункт погрузки/выгрузки, цена, compliance",новое rail обязательство отсутствует,P0,https://atommedia.online/press-releases/rosatom-arktika-podpisal-tryekhletniy-dogovor-s-klyuchevym-postavshchikom-severnogo-zavoza-chukotki/,НЕ ЗАПРАШИВАЛОСЬ
+10,R08,C17,Баимский ГОК / терминал Чаун,Концентрат: проектная грузовая логистика,Проектная способность около 2 млн т/год,"реальный offtake, покупателей, сетка судов, условия портов",без тоннельного LOI,P2,https://erdc.ru/news/yuriy-trutnev-provel-soveshchanie-o-khode-realizatsii-proekta-baimskogo-goka/,НЕ ЗАПРАШИВАЛОСЬ
+11,R09,C18,ИФР-1 / погранпереход Тунцзян,Проверить реальный контейнерный поток в РФ,"10,5 млн т/год мощность, 8 пар поездов","свободные слоты, грузы, коды, терминалы, тарифы",контракт Китай→Магадан отсутствует,P1,https://www.rzd-partner.ru/zhd-transport/comments/po-mostu-cherez-amur-v-kitay-poydet-bolshe-poezdov-/,НЕ ЗАПРАШИВАЛОСЬ
+12,R10,C22 C23,FESCO FCDL,Китай→Владивосток тариф и расписание,22.10.2026 каталог тарифов,"полные ставки origin+destination, ТН ВЭД, detention",новый OD не подписан,P0,https://www.fesco.ru/ru/clients/schedule/tariffs/,НЕ ЗАПРАШИВАЛОСЬ
+13,R11,C11 C12,Matson,Shanghai/Ningbo→Chicago time/price comparator,GES 14/16 дней,"условия money-back, actual quote, door-to-door and holds",не Bering agreement,P1,https://www.matson.com/china/ges.html,НЕ ЗАПРАШИВАЛОСЬ
+14,R12,C26 C27,Port of Alaska / ARR,Внутреннее распределение Аляски,Публикуются joint tariff и графики,"специфичные классы товара, реальная ставка freight, переправа",без линии к Берингии,P1,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf,НЕ ЗАПРАШИВАЛОСЬ
+15,R13,C28,Usibelli / local buyers,Проверить угольные маршруты Healy→Fairbanks,Действующая логистика,"объёмы и контрактные цены, будущая потребность вне штата",кроссбордер не подтвержден,P2,https://www.usibelli.com/service-two,НЕ ЗАПРАШИВАЛОСЬ
+16,R14,C29 C30,Teck / Trail,"Цинковые/свинцовые концентраты, Red Dog",1.2 млн влажных тонн всего морем,"объёмы отдельно до Trail, conversion wet/dry, rail quote",нет новой линии и согласий,P2,https://www.sec.gov/Archives/edgar/data/886986/000088698626000004/teck-20251231xexx991aif.htm,НЕ ЗАПРАШИВАЛОСЬ
+<PARSED TEXT FOR SHEET: 27 / 32 TABS
+TAB NAME: 26_V12_Мощности>
+index,Мощность  /  не подменять существующий оборот свободной ёмкостью,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+0,"Упоминаемые цифры различаются по grain: фактические тонны, проектный груз, число рейсов, плановая пропускная способность и публичная ссылка на XLS.",,,,,,,,
+1,,,,,,,,,
+2,Объект,Единица,Оценка,Дата,Тип,Имеет ли отношение к новой линии?,Можно включить в forecast?,Источник,Замечание
+3,Магадан порт MMTP,метрич. тонн,1834700,2025,ФАКТ: обработано,существующие перевалки,НЕТ,https://www.morport.com/rus/news/associaciya-morskih-torgovyh-portov-pozdravlyaet-s-yubileem-generalnogo-direktora-pao,не дополнительная грузовая база
+4,Магадан порт: доступная мощность Oct-26,метрич. тонн,,октябрь 2026,"XLS опубликован, не прочитан",потенциальная техническая мощность,НЕТ,https://magadanport.ru/klientam/,числовое значение не подтверждено
+5,ЖДЯ / три добывающие группы,метрич. тонн,250000,2026 сообщение,НИЖНЯЯ ГРАНИЦА агр. >250k,потребности от реальных предприятий,НЕТ,https://rw-y.ru/press/news/klyuchevye-promyshlennye-kompanii-magadana-obsudili-logistiku-s-zheleznymi-dorogami-yakutii-v-svete-/?special=Y,не повторять в C04 C05 C06
+6,Нижний Бестях→Хандыга,метрич. т/год,9000000,2026 предпроект,ПРОЕКТ: начальный уровень,будущая проектная capacity,НЕТ,https://www.rzd-partner.ru/zhd-transport/news/proekt-stroitelstva-zheleznodorozhnoy-linii-nizhniy-bestyakh-magadan-optimiziruyut/,не существует
+7,Тунцзян→Нижнеленинское,метрич. т/год,10500000,2026 интервью,ТЕХНИЧЕСКАЯ мощность,существующий переход,НЕТ,https://www.rzd-partner.ru/zhd-transport/comments/po-mostu-cherez-amur-v-kitay-poydet-bolshe-poezdov-/,груз через мост не гарантирует спрос в Магадан
+8,Чаун порт,метрич. т/год,2000000,2026 проект,ПРОЕКТ,мощность будущего терминала,НЕТ,https://erdc.ru/news/yuriy-trutnev-provel-soveshchanie-o-khode-realizatsii-proekta-baimskogo-goka/,не экспортный оффтейк
+9,ФАДЛ финальный рейс 2026,TEU,422,22.10.2026,РЕЙС,сезонный фидер,НЕТ,https://www.fesco.ru/ru/press-center/news/fesco-otpravila-zaklyuchitelnyy-reys-iz-vladivostoka-na-chukotku-v-navigatsiyu-2026-goda/,96 TEU рефрижераторных входят в 422 TEU
+10,ФАДЛ финальный рейс 2026,метрич. тонн,271,22.10.2026,РЕЙС: ген. грузы,другой вид/единица,НЕТ,https://www.fesco.ru/ru/press-center/news/fesco-otpravila-zaklyuchitelnyy-reys-iz-vladivostoka-na-chukotku-v-navigatsiyu-2026-goda/,не прибавлять к TEU как тонны
+11,Росатом 2026 контрактные обязательства,метрич. тонн,264000,29.05.2026,АГРЕГАТ планы оператора,северный завоз морем,НЕТ,https://atommedia.online/press-releases/rosatom-arktika-podpisal-tryekhletniy-dogovor-s-klyuchevym-postavshchikom-severnogo-zavoza-chukotki/,конкретный договор не 264kt
+12,Росатом 2026 более поздний план,метрич. тонн,224900,публикация 2026,ДРУГАЯ оценка,северный завоз морем,НЕТ,https://atommedia.online/press-releases/edinyy-morskoy-operator-severnogo-zavoza-otpravil-na-chukotku-tanker-s-dizelnym-toplivom/,"не складывать с 264kt, требуется reconcile"
+<PARSED TEXT FOR SHEET: 28 / 32 TABS
+TAB NAME: 27_V12_Сеть_и_этапы>
+index,Транспортная сеть  /  каждая граница эффективности отдельно,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+0,"Логика build/no-build по интерфейсам: порт и мелкая интермодальность могут работать раньше железной дороги, тоннель позже или никогда.",,,,,,
+1,,,,,,,
+2,Этап,Узел/сегмент,Что реально есть,Что предстоит построить/подтвердить,Экономика автономна?,Решение,Источник/заметка
+3,A0,Владивосток,портовые сервисы FESCO/SASCO + терминалы,"контрактные тарифы, capacity, контроль груза",ДА,Текущая коммерция,https://www.fesco.ru/ru/clients/container/line/fml/
+4,A1,Магадан порт,круглогодичный порт и тарифы; оборот 2025,"доступная мощность, емкость складов, D&D, cold-chain",ДА,Standalone hub RFQ,https://magadanport.ru/klientam/
+5,A2,Магадан последняя миля,автодоставка существует,"цифровизация склада, окна прибытия, TMS, SLA",ДА,Терминальное ТЭО,отдельные контракты
+6,B1,Нижний Бестях—Хандыга,планирование и мостовые обоснования,"375 км первая фаза, мерзлота, мосты, CAPEX",УСЛОВНО,ПредТЭО,https://www.rzd-partner.ru/zhd-transport/news/proekt-stroitelstva-zheleznodorozhnoy-linii-nizhniy-bestyakh-magadan-optimiziruyut/
+7,B2,Хандыга—Магадан,планируемое продолжение,"изыскания, 5/10-летние OD, тариф/время, источники дохода",УСЛОВНО,ПредТЭО,https://rw-y.ru/press/news/yakutiya-i-magadanskaya-oblast-sdelali-pervyy-shag-k-prakticheskoy-realizatsii-zheleznoy-dorogi-nizh/?special=Y
+8,C1,Китай—Тунцзян—Россия,сущ. железнодорожный мост,"свободные слоты и совместимые ставки, 1435/1520 мм","ДА, сейчас на иных OD",Проверить RFQ,https://www.rzd-partner.ru/zhd-transport/comments/po-mostu-cherez-amur-v-kitay-poydet-bolshe-poezdov-/
+9,C2,Благовещенск,автодорожный международный мост,"интермодальная перевалка, не приписывать железнодорожную линию","ДА, авто",Отдельный дорожный RFQ,не является ж/д мостом
+10,D1,Магадан—Чукотка,нет сквозной железной дороги,"новая трасса, EIA, коренные народы, supply",НЕТ для транзита,Концепция,никаких утвержденных порталов
+11,D2,Берингов переход,нет международного тоннеля,геология/морские работы/безопасность/право,НЕТ,HOLD,нет bankable ТЭО
+12,D3,Аляска—Канада,непрерывного rail нет,новая линия и разрешения,НЕТ для транзита,HOLD,https://www.alaskarailroad.com/sites/default/files/freight/ARR-3001-E.pdf
+13,D4,Китай—Чикаго,Matson GES существующий,сравнимый quote и compliance для альтернативы,ДА у конкурента,Хард-бенчмарк,https://www.matson.com/china/ges.html
+<PARSED TEXT FOR SHEET: 29 / 32 TABS
+TAB NAME: 28_V12_Compliance>
+index,"Юридический выпуск  /  проверка до перевозки, не после",Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+0,Юридическая допустимость пересечения РФ и США не выводится из существования порта или общего товаропотока. Это независимый stop-gate.,,,,,,
+1,,,,,,,
+2,Гейт,Объект,Проверка,Что может блокировать,Требуемое доказательство,Ответственный контрагент (класс),Источник
+3,L01,Товар/HS/ТНВЭД,"коды 6–10 знаков, состав, происхождение",разные контрольные режимы,описание товара + HS + EAR classification,грузовладелец/таможенный специалист,https://www.bis.gov/licensing/country-guidance/russia-belarus
+4,L02,EAR/BIS transit,General Prohibition Eight и лицензии по реальному товару,транзит through Russia subject item,правовое заключение / лицензия где требуется,экспорт-контроль юрист,https://www.bis.gov/regulations/ear/736
+5,L03,OFAC / санкционные списки,"все компании, бенефициары, банки, суда, страховщики",SDN и секторальные ограничения,проверка участников/структур платежа,юрист US sanctions,https://ofac.treasury.gov/sanctions-list-service
+6,L04,US country of origin,substantial transformation / marking,переупаковка не меняет origin,CBP ruling при необходимости,таможенный брокер,https://rulings.cbp.gov/docs/hq/2025/h342474
+7,L05,CA/US/China тарифы,"HTS, 301, AD/CVD, CBAM если применимо",высокие пошлины и запреты,HTS+тарифная карта на дату груза,импортер / брокер,https://rulings.cbp.gov/docs/hq/2025/h342474
+8,L06,Таможенные транзитные режимы,"Т1/внутренний транзит, документы, гарантии","избыточные проверки, разрывы",процессная схема с юрисдикциями,таможня/оператор,нужны первичные согласования
+9,L07,Hazmat,IMDG/RID/нормы и разрешения,ограничения длинного тоннеля,риск/HAZOP согласования,оператор/регуляторы,допуск неизвестен
+10,L08,Международный переход,международное соглашение и пограничные посты,нет разрешения на действующий тоннель,межправсоглашение и полномочия,госорганы RU/US,проектная гипотеза
+11,L09,Юрисдикция и коренные народы,"экология, землепользование, предварительные консультации",отказ/модификация трассы,"EIA/консультации, альтернативы",проектная компания/сообщества,не проведены для линии
+12,L10,Финансовые расчеты,"платежные банки, валюта, страхование",отказ платежа/страхового покрытия,банковские term sheets и страховщик,банк/страховщик,не подтверждены
+<PARSED TEXT FOR SHEET: 30 / 32 TABS
+TAB NAME: 29_V12_Группы_V11>
+index,Проверка двойного счёта  /  30 карточек V11,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+0,Идентификаторы C01–C30 сохранены как в V11. Сгруппированные объёмы не суммируются; показатель PEVЕК или 250kt industrial group нельзя умножать по карточкам.,,,,,,
+1,,,,,,,
+2,V11 ID,Кто,Группа дублирования,Количество карточек в группе,Можно считать как новый договор?,Почему нет,Ссылка на исходную карточку
+3,C01,FESCO,FML-service,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+4,C02,FESCO / Dalreftrans,FML-service,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+5,C03,PAO Magadan Sea Trading Port,MMTP2025,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+6,C04,AO Susumanzoloto,JDY-group250,3,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+7,C05,AO ZRK Pavlik,JDY-group250,3,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+8,C06,AO Polymetal,JDY-group250,3,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+9,C07,AO Polyus Magadan,Natalka-inbound,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+10,C08,FESCO,FADL2025,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+11,C09,FESCO,FADL2026-V1,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+12,C10,FESCO,FADL2026-V1,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+13,C11,Matson,MATSON-GES,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+14,C12,Matson,MATSON-GES,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+15,C13,Rosatom EMO,EMO2025,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+16,C14,AO Rosatom Arktika,EMO2026-contracted,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+17,C15,Pevek Marine Port,PEVEK2025,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+18,C16,OOO GDK Baimskaya,BAIM-work,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+19,C17,OOO GDK Baimskaya,BAIM-term,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+20,C18,IFR-1 bridge operator,AMUR2025,4,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+21,C19,coal exporters undisclosed,AMUR2025,4,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+22,C20,ore exporters undisclosed,AMUR2025,4,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+23,C21,Chinese importers / retailers unknown,AMUR2025,4,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+24,C22,FESCO,FCDL5,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+25,C23,FESCO,FCDL3,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+26,C24,FESCO / VMTP,VMTP2025,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+27,C25,FESCO / VMTP,VMTP2025,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+28,C26,Port of Alaska / Municipality Anchorage,ANCH2025,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+29,C27,Alaska Railroad,ARRC-2026-gravel,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+30,C28,Usibelli Coal Mine,USIBELLI,1,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+31,C29,Teck Red Dog,RED-DOG-2025,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+32,C30,Teck Red Dog,RED-DOG-2025,2,НЕТ,Один и тот же агрегат может быть на нескольких карточках; новая линия не законтрактована,02_Карточки
+<PARSED TEXT FOR SHEET: 31 / 32 TABS
+TAB NAME: 30_V12_Data_Room>
+index,Data room  /  обязательные поля для bankable OD,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6
+0,"Сохранить копию договора/тарифа и доказательство объёма, а не только слова в пресс-релизе. Источники могут быть закрыты NDA.",,,,,,
+1,,,,,,,
+2,Field ID,Раздел,Параметр,Ед. / формат,Критерий приемки,Нет — что запрещается,Возможный источник
+3,D01,OD,Грузовладелец и юридическое лицо,ИНН / рег. №,контрагент проверен,консолидация без владельца недопустима,покупатель/поставщик
+4,D02,OD,Покупатель / место фактической доставки,адрес / координаты,последняя миля известна,не рассчитывать door-to-door,грузополучатель
+5,D03,Товар,код HS / ТНВЭД / EAR,"HS6–10, ECCN",классификация с документами,юридический стоп-гейт,товаровед/юрист
+6,D04,Масса,"нетто, брутто, wet/dry, TEU",с разными единицами,реальное взвешивание / контейнерный лист,не переводить TEU в т вручную,коносаменты
+7,D05,Объём,факт за 24 мес по OD,тонны/конт/мес,разбивка по месяцам,без сезонности нельзя оценить trains/day,оператор/1С/ERP
+8,D06,Тариф,факт оплачено и surcharge,валюта/конт/т,"счет-фактура, условия",цена перевозки неизвестна,счёт/договор
+9,D07,Условия,"Incoterms 2020, CY, THC, D&D",строки cost waterfall,нет перекрытия и двойных платежей,не сравнивать тарифы,оператор
+10,D08,Время,"отгрузка→прибытие, распределение",P50/P90 суток,исторические timestamps,не считать скорость service page фактом,TMS/AIS/EDI
+11,D09,Ценность времени,стоимость товара + цена капитала,RUB/т + % годовых,согласовано грузовладельцем,выигрыш во времени только сценарный,финансы грузовладельца
+12,D10,Сезонность,"навигация, работа складов, ограничения",дни/мес,непрерывное 12м наблюдение,транзит нельзя считать круглогодичным,порт/гидромет
+13,D11,Контракт,take-or-pay / минимальный платёж,тонн / срок / валюта,подписан с санкциями и правом,0 bankable ton,юридический отдел
+14,D12,Линия,"слоты, локомотивы, оборудование",график/мощность,firm capacity / energy,тоннельный прогноз не подтверждён,инфраструктурный оператор
+15,D13,Риски,страхование и reliability,SLA; P95 loss,полис/страховая котировка,сравнение с морем не полное,страховщик
+16,D14,Экология,консультации и EIA,акт/отчёт,по конкретному маршруту,геотрасса в HOLD,регуляторы и сообщества
+<PARSED TEXT FOR SHEET: 32 / 32 TABS
+TAB NAME: 31_V12_QA>
+index,Контроль пригодности модели V12  /  инвестиционный фильтр,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4
+0,"PASS означает только формальное качество и правильный тип данных, не коммерческую окупаемость. Непроверенные тарифные quotes отмечены нулём.",,,,
+1,,,,,
+2,Гейт,Формула / значение,Ожидание,Статус,Интерпретация
+3,Исходные 30 карточек сохранены,30,30,PASS,Исходная база V11 не переписана
+4,"Новые ставки SASCO, строк",8,8,PASS,Опубликованные ставки ≠ реальные грузовые контракты
+5,MMTP два разных режима,8,8,PASS,Не смешивать каботаж и экспорт/импорт
+6,RFQ пакеты,14,14,PASS,Запросы ещё не отправлялись
+7,Новых котировок железной дороги,0,0,PASS,Нет тарифной базы для новой железной дороги
+8,Новых подписанных rail take-or-pay,0,0,PASS,Договоры старой перевозки не засчитывать
+9,Коммерчески пригодные по 7 полям V11,0,0,PASS,Нет инвестиционной подтверждённости
+10,Ненадёжные страницы Magadan XLS,0,0,PASS,"Ссылка есть, числовые данные не извлечены"
