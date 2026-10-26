@@ -67,3 +67,18 @@ GitHub-архив содержит проверяемые **текстовые �
 
 **Правовой и методологический дисклеймер**: все числа в сценариях подлежат сверке с первоисточниками, датами, единицами, валютой, НДС и периметром проекта. Данные прошлых версий сохраняются с историческими датами, а не выдаются за текущие.
 
+
+
+## Research repository completeness receipt — 26 October 2026
+
+**GitHub:** searchable V7–V14 historical research, all 100 sheet sections from indexed V7, reconstructed 53-sheet V13 and 72-sheet V14 text snapshots, 11 normalized CSV registries, evidence rules, network/economics/safety/legal chapters, SHA-256 manifest, seven open implementation issues and research validation workflow.
+
+**Original binaries:** 31 byte-preserved original V8–V14 source files are in a **separate ChatGPT-downloadable ZIP** (SHA-256 `1f85d70dd2733d2f4d3b9e6bb8312bbe7c7bde96e7ccd0d48bced2c04ea16217`). The ZIP is **not in GitHub**, and files are not equivalent to searchable conversions. See [source manifest](archive/FILE_MANIFEST.md) and [binary import issue](https://github.com/PetrFedin/bering/issues/1).
+
+**Source gaps:** V1–V6 stand-alone binaries and V7 source binaries not recovered. Some additional V4/V7 Library documents only indexed as search snippets; see [unrecovered source list](archive/UNRECOVERED.md).
+
+**Formula QA:** 2,605 workbook formula cells across seven originals; 70 cached results are missing, including 35 in V14. See [QA report](docs/QA_WORKBOOKS.md). **GitHub Actions CI currently fails and is not certified**; see [CI issue](https://github.com/PetrFedin/bering/issues/7).
+
+**Commercial status:** no full signed new cargo commitments for P1/P2/P3, no RFQs sent. Tunnel HOLD; standalone Magadan hub remains a separate investment research question.
+
+For a detailed release receipt and process to add original source files, see [delivery status](docs/DELIVERY_STATUS.md).
