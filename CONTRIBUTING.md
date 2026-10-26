@@ -1,0 +1,3 @@
+# Contribution standard
+
+Submit changes as small versioned pull requests with source links, observed period, geography, units and evidence-class. Never edit historic V7/V8/V9 analysis in place without retaining an immutable copy and explicit errata. Reference exact source filename and SHA-256. For financial assumptions, include before/after formula test, independent calculation check, and tax/currency reconciliation. For route changes, include GIS dataset/corridor alternative and missing-link status. Work products involving personal shipment data or restricted contracts require redaction, redistribution permission and a restricted data room — not publication to this repository.
