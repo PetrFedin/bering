@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bering Corridor Source-backed observation",
+  "type": "object",
+  "required": [
+    "id",
+    "metric",
+    "source_url",
+    "publisher",
+    "observed_period",
+    "unit",
+    "status",
+    "scope"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metric": {
+      "type": "string"
+    },
+    "value": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observed_period": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "tax_basis": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "FACT",
+        "CONTRACT",
+        "PUBLISHED_TARIFF",
+        "PLAN",
+        "SCENARIO",
+        "MISSING",
+        "CONFLICT"
+      ]
+    },
+    "limitations": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

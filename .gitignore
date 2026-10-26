@@ -1,0 +1,15 @@
+# No unpublished customer/private evidence, API tokens, or local mutable caches
+.env
+.env.*
+*.pem
+*.p12
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.swp
+*.tmp
+scratch/
+rendered/
+local_private/
+private_waybills/
+raw_customer_invoices/

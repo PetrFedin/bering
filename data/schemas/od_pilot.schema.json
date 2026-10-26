@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bering pilot commercial OD decision",
+  "type": "object",
+  "required": [
+    "pilot",
+    "route",
+    "contract_evidence",
+    "incremental_volume",
+    "investment_gate"
+  ],
+  "properties": {
+    "pilot": {
+      "enum": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "route": {
+      "type": "string"
+    },
+    "shipper": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "receiver": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contract_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "actual_waybill": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "invoice_payment_proof": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "incremental_volume": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "price_d2d": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "price_currency": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "legal_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "investment_gate": {
+      "enum": [
+        "HOLD",
+        "REVIEW",
+        "PASS"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
