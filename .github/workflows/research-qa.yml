@@ -1,12 +1,25 @@
-name: Research Data QA
+name: Bering Research QA
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
-  validate:
+  research-qa:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - name: Run CSV and provenance QA
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python version
+        run: python3 --version
+      - name: CSV and SHA manifest
         run: python3 scripts/validate_research.py
+      - name: Commercial gate regression suite
+        run: python3 -m unittest discover -s tests -v
+      - name: Verify current three pilots remain HOLD
+        run: |
+          python3 scripts/commercial_gate.py data/pilots/P1.json data/pilots/P2.json data/pilots/P3.json --output pilot_gates.json
+          python3 -c 'import json; x=json.load(open("pilot_gates.json")); assert x["evaluated"]==3; assert all(r["gate"]=="HOLD" and not r["bankable_revenue_approved"] for r in x["results"])'

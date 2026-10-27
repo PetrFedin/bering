@@ -1,0 +1,85 @@
+{
+  "pilot_id": "P1",
+  "route_id": "P1_RESEARCH_ONLY",
+  "origin": "Владивосток",
+  "destination": "Магадан",
+  "cargo_class": "dry_40ft",
+  "unit": "40ft_container",
+  "cost_currency": "RUB",
+  "cost_tax_basis": "EX_VAT",
+  "documents": {
+    "signed_contract": null,
+    "firm_quote": null,
+    "waybill": null,
+    "actual_delivery": null,
+    "invoice": null,
+    "payment": null,
+    "baseline_24m": null,
+    "additionality": null,
+    "capacity": null,
+    "legal_review": null
+  },
+  "evidence_records": {},
+  "volumes": {
+    "contracted": null,
+    "diverted": null,
+    "duplicated": null
+  },
+  "margin": {
+    "new_unit_contribution_rub": null,
+    "displaced_old_unit_contribution_rub": null,
+    "incremental_fixed_opex_rub": null,
+    "incremental_risk_cost_rub": null
+  },
+  "d2d_components": [
+    {
+      "name": "pickup",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "origin_handling",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "freight",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "storage",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "destination_handling",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "last_mile",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "insurance",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    },
+    {
+      "name": "equipment",
+      "included_in_freight": null,
+      "amount_rub": null,
+      "evidence_id": null
+    }
+  ],
+  "status_note": "No real RFQ, waybill, payment or contractual incremental tonnage received; HOLD."
+}
