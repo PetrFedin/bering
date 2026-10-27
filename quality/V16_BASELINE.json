@@ -1,0 +1,67 @@
+{
+  "as_of": "2026-10-27",
+  "assessment_type": "DOCUMENT_AND_REPO_AUDIT_NOT_EXTERNAL_CERTIFICATION",
+  "as_of_commit": "e6dcc74cee46b327c399a1a0a5d4f8f282831d0f",
+  "prior_subjective_estimate": {
+    "concept": 8,
+    "science": 5,
+    "commercial": 4,
+    "engineering": 2,
+    "government": 2,
+    "reproducibility": 5
+  },
+  "formal_scores": {
+    "concept": null,
+    "science": null,
+    "commercial": null,
+    "engineering": null,
+    "government": null,
+    "reproducibility": null
+  },
+  "critical_conditions": {
+    "independent_peer_review": false,
+    "binding_incremental_cargo_and_true_d2d": false,
+    "field_engineering_surveys_and_engineering_scope": false,
+    "legal_esia_and_international_framework": false,
+    "originals_uploaded_ci_green_independent_math": false
+  },
+  "objective_observations": [
+    {
+      "claim": "GitHub Actions latest observed run",
+      "value": "failure",
+      "evidence": "https://github.com/PetrFedin/bering/actions/runs/40522262073"
+    },
+    {
+      "claim": "3 commercial pilots passed",
+      "value": 0,
+      "evidence": "https://github.com/PetrFedin/bering/blob/main/data/pilots/P1.json"
+    },
+    {
+      "claim": "V7 report vs source indexed sheet mismatch",
+      "value": "98 in dated report vs 100 in indexed workbook extraction; version chronology unresolved",
+      "evidence": "archive/workbook-extractions/V07_master_100_tabs_extracted.txt"
+    },
+    {
+      "claim": "V14.1 vs Python risk term",
+      "value": "legacy Excel M omits risk, Python margin subtracts risk; fixed only in separately generated V15.2 workbook",
+      "evidence": "https://github.com/PetrFedin/bering/blob/main/scripts/commercial_gate.py"
+    },
+    {
+      "claim": "Original XLSX/Word binaries in repository",
+      "value": "incomplete; V8-V14 external ZIP available but not committed to GitHub",
+      "evidence": "https://github.com/PetrFedin/bering/blob/main/archive/FILE_MANIFEST.md"
+    },
+    {
+      "claim": "Magadan hub 30k vs 150k TEU project plans",
+      "value": "unreconciled",
+      "evidence": "https://github.com/PetrFedin/bering/issues/3"
+    }
+  ],
+  "scope_notes": [
+    "Scores on research workmanship and construction investment are not interchangeable.",
+    "Prior estimates are subjective orientation; formal ratings left null until independent criterion-level review.",
+    "Any critical condition blocks claimed 8.5–9 for that axis regardless of other accomplishments.",
+    "Source publication does not equal accepted contract; planned capacity does not equal actual throughput.",
+    "No broad project 8.5 headline from averaging six scores. Each axis must individually satisfy requirements."
+  ]
+}

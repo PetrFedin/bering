@@ -1,0 +1,385 @@
+{
+  "title": "Bering Corridor: evidence-bound 0-10 rubric",
+  "version": "2026-10-27/V16",
+  "owner": "research project",
+  "applies_to": "Defined assessment perimeter and phase only",
+  "not_official_certification": true,
+  "target_min": 8.5,
+  "target_desired": 9,
+  "explanation": "These are bespoke operational acceptance criteria inspired by GAO, World Bank and relevant Russian project-documentation law; they are not a government/ISO rating standard. Scores are awarded only for independently inspected evidence for the chosen segment and stage. Unreviewed evidence remains unscored.",
+  "score_levels": {
+    "UNASSESSED": null,
+    "NO_EVIDENCE": 0,
+    "PRELIMINARY": 0.25,
+    "PARTIAL_VERIFIED": 0.5,
+    "MOSTLY_VERIFIED": 0.75,
+    "FULLY_VERIFIED": 1
+  },
+  "require_independent_review_for_all_numeric_scoring": true,
+  "axes": [
+    {
+      "id": "concept",
+      "title": "Исследовательская концепция",
+      "previous_subjective_indication_not_verified": 8,
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "C1",
+          "title": "Раздельные периметры: порт, железная дорога, Чукотка, переход",
+          "weight": 2,
+          "required_proof": "Схема активов и независимые границы денежных потоков",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "C2",
+          "title": "Альтернативы: без строительства, модернизация порта, автологистика, железная дорога, тоннель",
+          "weight": 2,
+          "required_proof": "Подписанная матрица альтернатив и сопоставимые OD",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "C3",
+          "title": "Географическая и технологическая реалистичность",
+          "weight": 2,
+          "required_proof": "GIS/топология с реальными и отсутствующими соединениями",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "C4",
+          "title": "Критерии выбора и отказа (kill criteria)",
+          "weight": 2,
+          "required_proof": "Явные пороги стоимости, спроса, права и безопасности",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "C5",
+          "title": "Независимость региональных выгод от тоннеля",
+          "weight": 2,
+          "required_proof": "Доказательство отдельных инвестиционных и общественных эффектов",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Научная доказательность",
+      "previous_subjective_indication_not_verified": 5,
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "S1",
+          "title": "Зарегистрированные гипотезы и правила опровержения",
+          "weight": 2,
+          "required_proof": "Реестр H1–H3, до анализа согласованные tests/thresholds",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "S2",
+          "title": "Первичные источники, протокол поиска и конфликтов",
+          "weight": 2,
+          "required_proof": "Search log, даты, критерии включения, line-level citations",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "S3",
+          "title": "Эмпирические OD-данные и сопоставимый baseline",
+          "weight": 2,
+          "required_proof": "Накладные, условия перевозки, сезонный период и контрфакт",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "S4",
+          "title": "Воспроизводимость математики и неопределённости",
+          "weight": 2,
+          "required_proof": "Независимый пересчёт, тесты, вероятностные границы, валидация",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "S5",
+          "title": "Независимая внешняя рецензия",
+          "weight": 2,
+          "required_proof": "Две профильные экспертизы, протокол замечаний и исправлений",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "title": "Коммерческая обоснованность Магаданского хаба",
+      "previous_subjective_indication_not_verified": 4,
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "B1",
+          "title": "Названные отправители, получатели, товар и их собственный OD",
+          "weight": 2,
+          "required_proof": "Письменные подтверждения компаний и товарные коды",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "B2",
+          "title": "Фактические полные D2D цены и сроки",
+          "weight": 2,
+          "required_proof": "2+ действующих ставки и обезличенные счета/накладные по одному OD",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "B3",
+          "title": "Доказанная дополнительность и групповая маржа",
+          "weight": 2,
+          "required_proof": "24-месячный baseline, new/diverted/duplicate, реальные OPEX",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "B4",
+          "title": "Юридическая допустимость и реальная пропускная способность",
+          "weight": 2,
+          "required_proof": "Внешнее правовое заключение и подтверждённые терминальные слоты",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "B5",
+          "title": "Обязательные договоры и коммерческая устойчивость",
+          "weight": 2,
+          "required_proof": "Финансово состоятельные контрагенты, take-or-pay/условные контракты, downside",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "title": "Инженерная готовность выбранного участка",
+      "previous_subjective_indication_not_verified": 2,
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "E1",
+          "title": "Согласованная трасса и варианты с размерами и границами",
+          "weight": 2,
+          "required_proof": "GIS, геодезия, перечень мостов и интерфейсов",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "E2",
+          "title": "Полевые изыскания для мерзлоты, грунтов, гидрологии и сейсмики",
+          "weight": 2,
+          "required_proof": "Отчёты по действительным створам, лицензированные исполнители",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "E3",
+          "title": "WBS и актуальный раздельный CAPEX/OPEX",
+          "weight": 2,
+          "required_proof": "Ведомость объёмов, цена базового года, класс зрелости, риски",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "E4",
+          "title": "Эксплуатация, мощность, RAMS и аварийная безопасность",
+          "weight": 2,
+          "required_proof": "Моделирование движения, энергия, эвакуация, резервирование",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "E5",
+          "title": "Независимая инженерная проверка и закрытие стыков",
+          "weight": 2,
+          "required_proof": "Интерфейсы стран/сетей, внешний design review, risk register",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        }
+      ]
+    },
+    {
+      "id": "government",
+      "title": "Государственная, социальная и правовая готовность",
+      "previous_subjective_indication_not_verified": 2,
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "G1",
+          "title": "Матрица юрисдикций/компетентных органов по каждому сегменту",
+          "weight": 2,
+          "required_proof": "Актуальные законы, правовые заключения РФ/США/Канады",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "G2",
+          "title": "Экологический и социальный baseline, включая права коренных народов",
+          "weight": 2,
+          "required_proof": "Изыскания влияния и записи консультаций по реальным территориям",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "G3",
+          "title": "План разрешений, землепользования и трансграничных договоров",
+          "weight": 2,
+          "required_proof": "Реестр стадий, условий и документов, а не предположения",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "G4",
+          "title": "Независимый CBA: бюджетная отдача и социальный эффект",
+          "weight": 2,
+          "required_proof": "Экономические затраты, перераспределение, бюджетные обязательства",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "G5",
+          "title": "Доказанная институциональная выполнимость",
+          "weight": 2,
+          "required_proof": "Роли заказчика, финансирующей стороны и оператора, согласованный governance",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "title": "Воспроизводимость и GitHub",
+      "previous_subjective_indication_not_verified": 5,
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "R1",
+          "title": "Оригиналы всех используемых исходных материалов сохранены",
+          "weight": 2,
+          "required_proof": "XLSX/DOCX/CSV с проверенными SHA-256 непосредственно в GitHub/защищённом архиве",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "R2",
+          "title": "CI проходит на SHA релиза",
+          "weight": 2,
+          "required_proof": "Проверяемый успешный GitHub Actions run и воспроизводимые тесты",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "R3",
+          "title": "Независимый математический пересчёт, включая риски",
+          "weight": 2,
+          "required_proof": "Excel/Python parity, отрицательные тесты, все P0 исправлены",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "R4",
+          "title": "Прослеживаемость данных до первичного документа",
+          "weight": 2,
+          "required_proof": "Source-ID, дата, единица, scope, ревизия, хэш, непротиворечивый manifest",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        },
+        {
+          "id": "R5",
+          "title": "Контроль изменений и независимый reviewer",
+          "weight": 2,
+          "required_proof": "PR + review, версионирование, журнал errata, защита main",
+          "review_status": "UNASSESSED",
+          "reviewer": null,
+          "evidence_refs": []
+        }
+      ]
+    }
+  ],
+  "critical_caps": [
+    {
+      "axis": "science",
+      "if_unmet": "independent_peer_review",
+      "cap": 8
+    },
+    {
+      "axis": "commercial",
+      "if_unmet": "binding_incremental_cargo_and_true_d2d",
+      "cap": 4.5
+    },
+    {
+      "axis": "engineering",
+      "if_unmet": "field_engineering_surveys_and_engineering_scope",
+      "cap": 4
+    },
+    {
+      "axis": "government",
+      "if_unmet": "legal_esia_and_international_framework",
+      "cap": 4
+    },
+    {
+      "axis": "reproducibility",
+      "if_unmet": "originals_uploaded_ci_green_independent_math",
+      "cap": 6
+    }
+  ],
+  "score_is_null_until_external_review": true,
+  "sources": [
+    {
+      "title": "GAO-20-195G",
+      "url": "https://www.gao.gov/products/gao-20-195g"
+    },
+    {
+      "title": "World Bank PPP appraisal",
+      "url": "https://ppp.worldbank.org/appraising-potential-ppp-projects"
+    },
+    {
+      "title": "AACE cost classification guide including rail RP98R-18, excludes major tunnels",
+      "url": "https://library.aacei.org/pgd01/pgd01.shtml"
+    },
+    {
+      "title": "RF Government Regulation No 87, linear objects",
+      "url": "https://www.consultant.ru/document/cons_doc_LAW_75048/"
+    }
+  ]
+}
