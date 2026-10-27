@@ -1,49 +1,53 @@
 #!/usr/bin/env python3
-"""Read-only QA for public research registry CSVs and the provenance files.
-No network activity or modification of source spreadsheets.
-"""
+"""Read-only QA of original CSV evidence registers and provenance manifest."""
 from pathlib import Path
-import csv, re, sys
-from urllib.parse import urlparse
+import csv
+import re
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REGISTRIES = ROOT / "data" / "registries"
-HEX = re.compile(r"^[0-9a-f]{64}$")
+REGISTRY = ROOT / "data" / "registries"
+SHA = ROOT / "provenance" / "SHA256SUMS_available_originals.txt"
 
-def dialect_and_rows(path):
-    text = path.read_text(encoding="utf-8-sig")
-    preview = text[:4096]
-    try:
-        dialect = csv.Sniffer().sniff(preview, delimiters=",;\t")
-    except csv.Error:
-        dialect = csv.excel
-    return list(csv.reader(text.splitlines(), dialect=dialect))
+
+def validate_csv(path):
+    with path.open("r", encoding="utf-8-sig", newline="") as fh:
+        head = fh.readline()
+        if head.startswith("<PARSED TEXT") or head.startswith("index,"):
+            raise ValueError("spreadsheet reader wrapper or index column in CSV")
+        delimiter = ";" if head.count(";") > head.count(",") else ","
+        fh.seek(0)
+        reader = csv.reader(fh, delimiter=delimiter, strict=True)
+        rows = iter(reader)
+        header = next(rows)
+        if not header or len(header)<2 or any(not cell.strip() for cell in header):
+            raise ValueError("missing/empty CSV column name")
+        count=0
+        for i,row in enumerate(rows,2):
+            if len(row)!=len(header):
+                raise ValueError(f"row {i} has {len(row)} fields; expected {len(header)}")
+            count+=1
+        return count
+
 
 def main():
-    files=sorted(REGISTRIES.glob("*.csv"))
-    failures=[]
-    scanned=0
-    for path in files:
+    errors=[];files=0;rows=0
+    for path in sorted(REGISTRY.glob("*.csv")):
         try:
-            rows=dialect_and_rows(path)
-            if not rows or len(rows[0]) < 2:
-                failures.append(f"{path}: no parseable header")
-                continue
-            scanned+=len(rows)-1
-            if any(not row for row in rows):
-                failures.append(f"{path}: empty rows")
-        except Exception as e:
-            failures.append(f"{path}: {e}")
-    manifest=ROOT / "provenance" / "SHA256SUMS_available_originals.txt"
-    if manifest.exists():
-        for line in manifest.read_text(encoding="utf-8").splitlines():
-            if line.startswith("#") or not line.strip():
-                continue
-            chunks=line.split(None,1)
-            if len(chunks)!=2 or not HEX.fullmatch(chunks[0]):
-                failures.append("Malformed SHA256 manifest row: "+line[:80])
-    print(f"CSV files={len(files)} records={scanned} errors={len(failures)}")
-    for issue in failures:print(issue,file=sys.stderr)
-    return bool(failures)
+            rows+=validate_csv(path);files+=1
+        except (ValueError,UnicodeError,csv.Error,OSError,StopIteration) as e:
+            errors.append(f"{path}: {e}")
+    if files==0:errors.append("No validated CSV registers found")
+    if SHA.exists():
+        for i,line in enumerate(SHA.read_text(encoding="utf-8").splitlines(),1):
+            if not line.strip() or line.startswith("#"):continue
+            parts=line.split(maxsplit=1)
+            if len(parts)!=2 or not re.fullmatch(r"[0-9a-f]{64}",parts[0]):
+                errors.append(f"Malformed SHA-256 row {i}")
+    print(f"CSV files={files}, rows={rows}, errors={len(errors)}")
+    for err in errors: print(err,file=sys.stderr)
+    return int(bool(errors))
+
+
 if __name__=="__main__":
     sys.exit(main())
