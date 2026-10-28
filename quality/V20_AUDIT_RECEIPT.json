@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-28",
+  "repository": "PetrFedin/bering",
+  "workstream": "V20 technical acceptance",
+  "status": {
+    "local_financial_arithmetic": "PASS_SELECTED_223_OF_223",
+    "archive_source_integrity": "PASS_31_OF_31",
+    "portable_source_pack": "PASS_42_OF_42",
+    "github_ci": "BLOCKED_PRE_RUNNER",
+    "original_binaries_committed_to_github": false,
+    "independent_official_peer_review": false,
+    "investable": false
+  },
+  "artifact_sha256": {
+    "source_v15_2": "2b1242069cdb5e68c04ca11bedc6f60f4535cadfb74ced8ad7f257b872055b25",
+    "audit_xlsx": "ddec3d98ec77b2bfa0ecb1c671503dfcbea58904ca332b78588a889734bf2c08",
+    "import_zip": "284f14b29b3849c03450ae0d5b77eba5632696fc066750e4ed5f8792543a7f98"
+  },
+  "scenario_screening": {
+    "npv_rub": -32408127371.726753,
+    "no_ramp_teu_cm_rub": 150041.0002498402,
+    "ramp_teu_cm_rub": 192026.3272748439,
+    "assumption_not_contract": true
+  },
+  "git_sources": {
+    "runner_probe": "https://github.com/PetrFedin/bering/actions/runs/40539570411",
+    "issue_bin": "https://github.com/PetrFedin/bering/issues/1",
+    "issue_ci": "https://github.com/PetrFedin/bering/issues/7"
+  },
+  "warning": "No new signed freight; no full Excel recalculation; source archive kept separately until authorized import."
+}

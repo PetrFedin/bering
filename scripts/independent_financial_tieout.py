@@ -21,10 +21,16 @@ def numeric(v):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--book",required=True,type=Path)
+    ap.add_argument("--expected-sha256",type=str,default=None)
     ap.add_argument("--manifest",type=Path)
     ap.add_argument("--root",type=Path)
     ap.add_argument("--output",type=Path)
     args=ap.parse_args()
+    if bool(args.manifest) != bool(args.root):
+        ap.error("--manifest and --root must be provided together")
+    actual_sha=hashlib.sha256(args.book.read_bytes()).hexdigest()
+    if args.expected_sha256 and actual_sha != args.expected_sha256.lower():
+        ap.error("Workbook SHA-256 does not match pinned source")
     wf=load_workbook(args.book,data_only=False,read_only=True)
     wc=load_workbook(args.book,data_only=True,read_only=True)
     assert len(wf.sheetnames)==72
@@ -112,7 +118,7 @@ def main():
             items.append({"filename":row["original_filename"],"sha256":row["sha256"],"pass":valid})
         archive={"files":len(items),"passed":sum(x["pass"] for x in items),"items":items,"all_pass":all(x["pass"] for x in items)}
     totals={"tests":len(tests),"passed":sum(x["pass"] for x in tests),"failed":sum(not x["pass"] for x in tests)}
-    result={"source_workbook":args.book.name,"source_sha256":hashlib.sha256(args.book.read_bytes()).hexdigest(),"source_sheet_count":len(wf.sheetnames),
+    result={"source_workbook":args.book.name,"source_sha256":actual_sha,"source_hash_gate":"MATCH" if args.expected_sha256 else "NOT_PINNED","source_sheet_count":len(wf.sheetnames),
             "tests":tests,"summary":totals,"scenarios":inputs,"dcf":{"npv_rub":npv_dcf,"presented_source_cached":wc.worksheets[44]["K27"].value,
             "zero_npv_teu_margin_no_ramp_rub_per_teu":break_even_teu,
             "zero_npv_teu_margin_with_ramp_rub_per_teu":ramp_break_even_unit_teu,"interpretation":"Audit diagnostic; no evidenced new cargo or contractual margin"},
