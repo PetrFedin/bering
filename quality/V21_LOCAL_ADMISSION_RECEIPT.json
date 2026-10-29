@@ -13,8 +13,8 @@
     "selected_arithmetic_checks_total": 223,
     "git_blob_integrity_checked_files": 42,
     "git_blob_integrity_expected_files": 42,
-    "unit_tests_passed": 12,
-    "unit_tests_expected": 12
+    "unit_tests_passed": 13,
+    "unit_tests_expected": 13
   },
   "github": {
     "original_binaries_committed": false,
