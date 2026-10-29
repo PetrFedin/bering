@@ -47,6 +47,15 @@ class FormulaLineageTest(unittest.TestCase):
               'external_link_formulas':[],'embedded_formula_ref_errors':[],
               'hidden_sheets':[], 'pilot_gate_caches': {'test':{'N5':'HOLD'}}}
         self.assertEqual(assess(fake,{'workbook_sha256':'different'})['status'],'FAIL')
+    def test_incomplete_gate_set_is_not_a_valid_hold(self):
+        fake={'workbook_sha256':'A','formula_sha256':'B','formula_count':493,'sheet_count':72,
+              'missing_caches':35,'missing_caches_sha256':'C','sheet_names_sha256':'D',
+              'external_link_formulas':[],'embedded_formula_ref_errors':[],
+              'hidden_sheets':[], 'pilot_gate_caches': {'test':{'N5':'HOLD'}}}
+        exp={k:fake[k] for k in ('workbook_sha256','formula_sha256','formula_count','sheet_count','missing_caches','missing_caches_sha256','sheet_names_sha256')}
+        result=assess(fake,exp)
+        self.assertEqual(result['status'],'FAIL')
+        self.assertFalse(result['checks']['three_pilots_hold'])
     def test_ready_pilot_fails_acceptance(self):
         fake={'workbook_sha256':'A','formula_sha256':'B','formula_count':493,'sheet_count':72,
               'missing_caches':35,'missing_caches_sha256':'C','sheet_names_sha256':'D',

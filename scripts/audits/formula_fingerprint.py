@@ -67,8 +67,12 @@ def assess(observation: dict, expected: dict) -> dict:
     checks['no_external_formula_links']=len(observation['external_link_formulas'])==0
     checks['no_ref_formula_errors']=len(observation['embedded_formula_ref_errors'])==0
     checks['no_hidden_sheets']=len(observation['hidden_sheets'])==0
-    checks['three_pilots_hold']=(all(v=='HOLD'
-        for gate in observation['pilot_gate_caches'].values() for v in gate.values()))
+    required_gate_cells=((GATE_SHEET,'N'),(D2D_SHEET,'F'),(FINAL_SHEET,'H'))
+    gates=observation['pilot_gate_caches']
+    checks['three_pilots_hold']=(set(gates)=={sheet for sheet,_ in required_gate_cells}
+        and all(set(gates[sheet])=={f'{col}{row}' for row in (5,6,7)}
+            and all(gates[sheet][f'{col}{row}']=='HOLD' for row in (5,6,7))
+            for sheet,col in required_gate_cells))
     return {'status':'PASS_FORMULA_LINEAGE_ONLY' if all(checks.values()) else 'FAIL',
             'checks':checks,'observation':observation,
             'fully_recalculated':False,'contracts_verified':False,
