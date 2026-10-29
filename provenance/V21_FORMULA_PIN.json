@@ -1,0 +1,12 @@
+{
+  "release": "V15.2 original unchanged",
+  "source_path": "archive/originals/V15_2/Bering_Corridor_V15_2_Risk_Evidence_Aligned_2026-10-27.xlsx",
+  "workbook_sha256": "2b1242069cdb5e68c04ca11bedc6f60f4535cadfb74ced8ad7f257b872055b25",
+  "formula_sha256": "54eb4aa7aaa37759884794df0262328355b1b59556ca312f888225ad50ca600b",
+  "formula_count": 493,
+  "sheet_count": 72,
+  "missing_caches": 35,
+  "missing_caches_sha256": "56c85de93393b6117fef86ac7a6805a4036ae612cf1ea18b101047a38666d000",
+  "notes": "Fingerprints are source integrity controls only: do NOT attest formulas are economically correct or recalculated.",
+  "sheet_names_sha256": "ecf4f82149f82d51c74a5d3c029e788d9b2cadb78d4327718953c9b5cc870a07"
+}
