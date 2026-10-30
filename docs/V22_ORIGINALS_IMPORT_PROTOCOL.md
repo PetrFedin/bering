@@ -78,3 +78,15 @@ python scripts/audits/import_originals_v22.py --repo . \
 - The actual V20 ZIP, remote Actions result, complete Excel recalculation, external financial audit and all three pilot documents **remain unverified**.
 
 **Release decision:** HOLD. V22 is an importer engineering PR only.
+
+
+## 2026-10-30 GitHub runner recheck — confirmed FAIL before steps
+
+The newly created synthetic-only V22 workflow **ran as a GitHub event but failed before any step executed**:
+
+- [V22 run 40977769784](https://github.com/PetrFedin/bering/actions/runs/40977769784)
+- Exact SHA: 15675e2d669a0c4b7cfe4e421aa7150407c929c0
+- Job: test-importer-only; conclusion=failure, runner_id=0, steps=[].
+- Fetching the job log returned 404 BlobNotFound; there are no Python, checkout, or dependency execution logs.
+- This matches the previous pre-step [runner probe 40539570411](https://github.com/PetrFedin/bering/actions/runs/40539570411), but **does not establish the underlying reason**. Possible Actions account/repository policy and billing/usage conditions must be checked in authorized GitHub settings, not guessed.
+- **Do not mark GitHub CI GREEN or call the V22 importer remotely tested.** The 21 passing tests are local synthetic tests only.
