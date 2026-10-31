@@ -1,0 +1,53 @@
+{
+  "schema_version": "V25",
+  "as_of": "2026-10-31",
+  "group_id": "RESEARCH_GROUP_UNVERIFIED",
+  "currency": "RUB",
+  "tax_basis": "EX_VAT",
+  "shipments": [],
+  "legs": [],
+  "incumbent_services": [],
+  "group_baseline": {
+    "months_covered": null,
+    "evidence_id": null
+  },
+  "pilot_costs": {
+    "P1": {
+      "incremental_fixed_rub": null,
+      "incremental_risk_rub": null,
+      "cost_event_ids": {
+        "fixed": "PENDING_P1_FIXED",
+        "risk": "PENDING_P1_RISK"
+      },
+      "evidence": {
+        "fixed": null,
+        "risk": null
+      }
+    },
+    "P2": {
+      "incremental_fixed_rub": null,
+      "incremental_risk_rub": null,
+      "cost_event_ids": {
+        "fixed": "PENDING_P2_FIXED",
+        "risk": "PENDING_P2_RISK"
+      },
+      "evidence": {
+        "fixed": null,
+        "risk": null
+      }
+    },
+    "P3": {
+      "incremental_fixed_rub": null,
+      "incremental_risk_rub": null,
+      "cost_event_ids": {
+        "fixed": "PENDING_P3_FIXED",
+        "risk": "PENDING_P3_RISK"
+      },
+      "evidence": {
+        "fixed": null,
+        "risk": null
+      }
+    }
+  },
+  "source_status": "NO_AUTHENTICATED_PAID_SHIPMENTS_PROVIDED_NOT_OBSERVED_ZERO_DEMAND"
+}
