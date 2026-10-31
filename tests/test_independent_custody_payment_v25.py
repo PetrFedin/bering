@@ -403,6 +403,18 @@ class V25Tests(unittest.TestCase):
         self.index[eid]['reviewed_on'] = '2026-09-10'
         self.assertEqual(self.assess()['status'], 'HOLD')
 
+    def test_59_shared_source_file_count_is_unique(self):
+        before = self.assess()
+        self.assertEqual(before['status'], 'REVIEW')
+        first = self.event()
+        second = self.event(name='CARRIER_ARRIVE')
+        second['source_evidence_id'] = first['source_evidence_id']
+        self.assertNotEqual(second['source_record_locator'], first['source_record_locator'])
+        after = self.assess()
+        self.assertEqual(after['status'], 'REVIEW')
+        self.assertEqual(after['source_evidence_files_verified'],
+                         before['source_evidence_files_verified'] - 1)
+
     def test_46_parser_requires_timestamp_offset(self):
         self.assertIsNone(as_utc('2026-09-01T08:00:00'))
         self.assertIsNotNone(as_utc('2026-09-01T10:00:00+02:00'))
