@@ -16,6 +16,9 @@ from pathlib import Path
 from typing import Any
 
 PILOTS = frozenset(('P1', 'P2', 'P3'))
+# Intentionally narrow documented 40ft codes; unsupported equipment needs a reviewed schema extension.
+DRY_ISO_TYPES = frozenset(('42G0', '42G1', '45G0', '45G1'))
+REEFER_ISO_TYPES = frozenset(('42R1', '42R3', '45R1'))
 CONTAINER = re.compile(r'^[A-Z]{3}U[0-9]{7}$')
 IDENTIFIER = re.compile(r'^[A-Za-z0-9_-]{6,100}$')
 EVIDENCE = re.compile(r'^EV-[A-Z0-9][A-Z0-9_-]{5,}$')
@@ -114,6 +117,8 @@ def evaluate(v23: Any, v23_bytes: bytes, identity: Any, *,
     as_of = parse_date(identity.get('as_of'))
     if as_of is None or identity.get('as_of') != v23.get('as_of'):
         errors.append('V24 as_of must be valid and equal to V23 as_of')
+    if as_of is not None and as_of > date.today():
+        errors.append('V24 as_of may not be a future observation date')
         as_of = date.min
     if identity.get('group_id') != v23.get('group_id'):
         errors.append('V24 group_id does not match V23 economic group')
@@ -187,9 +192,9 @@ def evaluate(v23: Any, v23_bytes: bytes, identity: Any, *,
                 errors.append(c_label + ': same physical container repeated within one economic shipment')
             seen_in_shipment.add(number)
             size_type = c.get('iso_size_type')
-            expected_family = 'R' if pilot == 'P2' else 'G'
-            if not isinstance(size_type, str) or not re.fullmatch(r'4[25]' + expected_family + r'[0-9]', size_type):
-                errors.append(c_label + ': ISO size/type must claim 40ft compatible with pilot cargo class')
+            permitted = REEFER_ISO_TYPES if pilot == 'P2' else DRY_ISO_TYPES
+            if size_type not in permitted:
+                errors.append(c_label + ': ISO 40ft size/type outside documented dry or reefer subset')
             loaded = parse_date(c.get('loaded_on'))
             delivered = parse_date(c.get('delivered_on'))
             if loaded is None or delivered is None or not (loaded <= delivered <= as_of):
