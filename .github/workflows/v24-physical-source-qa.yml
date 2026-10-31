@@ -1,0 +1,60 @@
+name: Bering V24 physical cargo identity (research only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/v24-source-identity-linkage-20261031
+  pull_request:
+    paths:
+      - 'scripts/shipment_identity_v24.py'
+      - 'scripts/release_commercial_v24.py'
+      - 'tests/test_shipment_identity_v24.py'
+      - 'tests/test_release_commercial_v24.py'
+      - 'data/pilots/V24_identity_unverified.json'
+      - '.github/workflows/v24-physical-source-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  physical-identity-and-economics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout pinned commit
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile V24 modules and synthetic tests
+        run: |
+          python -m compileall -q scripts/shipment_identity_v24.py scripts/release_commercial_v24.py
+          python -m compileall -q tests/test_shipment_identity_v24.py tests/test_release_commercial_v24.py
+      - name: Run 51 synthetic security and source-linking tests
+        run: |
+          python -m unittest discover -s tests -p 'test_shipment_identity_v24.py' -v
+          python -m unittest discover -s tests -p 'test_release_commercial_v24.py' -v
+      - name: Read-only physical evidence baseline must remain HOLD
+        run: |
+          python scripts/shipment_identity_v24.py \
+            --v23 data/pilots/V23_cross_pilot_unverified.json \
+            --identities data/pilots/V24_identity_unverified.json \
+            --out v24_physical_identity_receipt.json
+          python -c "import json; r=json.load(open('v24_physical_identity_receipt.json')); assert r['status']=='HOLD' and r['v23_shipment_records']==0 and r['linked_40ft_containers']==0 and r['contracts_authenticated'] is False and r['bankable_revenue_approved'] is False"
+      - name: Integrated commercial and physical source gates must remain HOLD
+        run: |
+          python scripts/release_commercial_v24.py \
+            --repo . \
+            --out v24_combined_receipt.json
+          python -c "import json; r=json.load(open('v24_combined_receipt.json')); assert r['status']=='HOLD' and r['financial_and_commercial_gate']=='HOLD' and r['physical_source_identity_gate']=='HOLD' and r['investment_approved'] is False and r['bankable_revenue_approved'] is False"
+      - name: Attach research-only receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bering-v24-research-hold
+          path: |
+            v24_physical_identity_receipt.json
+            v24_combined_receipt.json
+          if-no-files-found: ignore
