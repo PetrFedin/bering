@@ -26,6 +26,8 @@
 
 | V24 | 31 Oct 2026 | Evidence-backed forecasting: official 2020–2024 series vs unaligned 2025, 36-month actuals prerequisite, frozen 12-month seasonal-naive holdout benchmark | [Forecast module](../scripts/forecast_v24.py), [method/source review](V24_EVIDENCE_GATED_FORECAST.md), 20 synthetic regression tests, canonical no-claim JSON and machine-readable receipt | Draft, 20/20 local synthetic PASS only, P1/P2/P3 actual forecast HOLD, no source contracts/CI/investment approval |
 
+| V25 | 31 Oct 2026 | Match unique physical consignment, each route leg and incumbent terminal margin to identical V23 source, not just summed numbers; keep unknown data null | [V25 exact source join](../scripts/source_join_v25.py), [method + 2026 primary sources](V25_SOURCE_LINK_AND_ECONOMIC_ADMISSION_RU.md), 28 local synthetic tests, QA and HOLD receipts | Draft; real contracts/paid OD unknown; Actions failed pre-step; 0/3 pilot investment gates approved |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.
