@@ -1,0 +1,56 @@
+name: Bering V24 research cargo forecast and source gates
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/v24-evidence-gated-forecast-20261031
+  pull_request:
+    paths:
+      - 'scripts/forecast_v24.py'
+      - 'tests/test_forecast_v24.py'
+      - 'data/pilots/V24_forecast_unverified.json'
+      - 'data/public/V24_MAGADAN_PUBLIC_CONTEXT.json'
+      - 'docs/V24_EVIDENCE_GATED_FORECAST.md'
+      - '.github/workflows/v24-forecast-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-gated-research-forecast:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source compilation and JSON syntax
+        run: |
+          python -m compileall -q scripts/forecast_v24.py
+          python -m json.tool data/pilots/V24_forecast_unverified.json > /dev/null
+          python -m json.tool data/public/V24_MAGADAN_PUBLIC_CONTEXT.json > /dev/null
+      - name: Run 20 synthetic tests (not freight evidence)
+        run: |
+          python -m unittest discover -s tests -p 'test_forecast_v24.py' -v
+      - name: Official zero-claim input must produce HOLD and NO group forecast
+        run: |
+          python scripts/forecast_v24.py --input data/pilots/V24_forecast_unverified.json --output v24_forecast_receipt.json
+          python - <<'PY'
+          import json
+          r=json.load(open('v24_forecast_receipt.json'))
+          assert r['status']=='HOLD'
+          assert r['group_forecast_40ft'] is None
+          assert r['group_status']=='HOLD_UNTIL_V23_SOURCE_TIEOUT'
+          assert set(r['pilot_forecasts']) == {'P1','P2','P3'}
+          assert all(v['status']=='HOLD' and v['forecast_12m'] is None for v in r['pilot_forecasts'].values())
+          assert r['bankable_revenue_approved'] is False and r['investment_approved'] is False
+          PY
+      - name: Publish only research HOLD receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bering-v24-hold-only
+          path: v24_forecast_receipt.json
+          if-no-files-found: ignore
