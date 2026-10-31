@@ -232,6 +232,8 @@ def audit(payload, records=None, root=None, v23=None):
             if not evidence_ok(r.get('evidence',{}).get(kind),records,root,cutoff):
                 missing.append(p+':unverified '+kind+' cost')
     if v23 is None:missing.append('V23 source-level tie-out not supplied')
+    elif not isinstance(v23,dict) or v23.get('group_id')!=payload.get('group_id') or v23.get('as_of')!=payload.get('as_of'):
+        err.append('V23 source group or as_of period differs from V25')
     else:
         yes,why=verify_v23(indexed,v23,costs)
         out['source_to_v23_match']=yes
