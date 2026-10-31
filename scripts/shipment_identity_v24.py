@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Conservative V24 source-to-claim reconciliation for 40ft cargo.
 
-One V23 economic shipment may contain several 40ft containers; it MUST provide
-one separately documented identity row per physical unit. Data consistency and
+One V23 economic shipment may contain several 40ft containers. Require
+one identity record per shipment and one source-linked item per physical unit. Data consistency and
 checksum integrity never authenticate shipping, payment or legal documents.
 """
 from __future__ import annotations
@@ -11,7 +11,7 @@ import argparse
 import hashlib
 import json
 import re
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 from typing import Any
 
