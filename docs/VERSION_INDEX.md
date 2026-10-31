@@ -24,6 +24,8 @@
 
 | V23 | 31 Oct 2026 | Prevent duplicate economic shipments, consignment IDs and shared costs across P1/P2/P3; reconcile each pilot's new volume and incremental group margin | [Cross-pilot engine](../scripts/cross_pilot_additionality_v23.py), [combined decision gate](../scripts/release_commercial_v23.py), 32+16 local synthetic tests, [method](V23_CROSS_PILOT_ADDITIONALITY.md), unverified zero-claim input and CI smoke | Draft, remote CI not certified; 0/3 pilots admitted; investment HOLD |
 
+| V24 | 31 Oct 2026 | Cross-check claimed ISO 6346 40ft unit identity, B/L, actual dates, source-file SHA, quantity and original V23 bytes before manual review | Physical identity engine, combined V23/V24 controller, 51 local synthetic/mock tests, [V24 evidence protocol](V24_SOURCE_IDENTITY_ADMISSION.md), [QA receipt](../quality/V24_ADMISSION_RECEIPT.json) | Draft; GitHub Actions fails before steps, original source files and authenticated consignments unavailable; P1/P2/P3 HOLD |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.
