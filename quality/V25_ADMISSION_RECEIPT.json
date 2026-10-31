@@ -1,0 +1,88 @@
+{
+  "schema_version": "V25_ADMISSION_RECEIPT",
+  "snapshot_utc": "2026-10-31",
+  "repository": "PetrFedin/bering",
+  "branch": "audit/v25-independent-document-reconciliation-20261031",
+  "base": "audit/v24-source-identity-linkage-20261031",
+  "scope": "Read-only synthetic custody, carrier/terminal/receiver events and invoice-bank settlement reconciliation; no source-content authentication or actual real customer cargo",
+  "source_blobs": {
+    "scripts/independent_custody_payment_v25.py": "cce1124bb42b271d484a7ad8a18bfb1a458a510c",
+    "scripts/release_commercial_v25.py": "83d314268b2fa9f8fd4758737f163b8108542993",
+    "tests/test_independent_custody_payment_v25.py": "dfc987a30786452706c339fdd7207db4cc287fde",
+    "tests/test_release_commercial_v25.py": "f689d3db8caf684ff7c8bc7b3e5ffc702a372256",
+    "data/pilots/V25_documentary_unverified.json": "88091f755ad16e01bc859717cd6c0376195a18be"
+  },
+  "inherited_input_hashes": {
+    "v23_sha256": "adff60ac8f365baf14e37ed82ed2a7fe135e79d516c4abc824c7d0c2c4289885",
+    "v24_sha256": "72432ad4ffee16a5cc956f9c6667865c1e719ee7d624df7cfad94917bb61a0b3"
+  },
+  "local_tests": {
+    "python": "3.13.5",
+    "v25_synthetic_unit_tests": {
+      "passed": 71,
+      "total": 71,
+      "source": "fictional documents, pseudo-organizations and amounts only"
+    },
+    "v25_mocked_controller_tests": {
+      "passed": 19,
+      "total": 19,
+      "source": "subprocess mocks, no bank or carrier"
+    },
+    "inherited_v24_synthetic_and_mock_tests": {
+      "passed": 54,
+      "total": 54
+    },
+    "total_passed": 144,
+    "total_run": 144,
+    "mutation_probe": {
+      "synthetic_mutations": 800,
+      "uncaught_exceptions": 0,
+      "seed": 20261031
+    },
+    "compilation": "PASS",
+    "source_baseline": "HOLD",
+    "actual_v25_shipment_records": 0,
+    "actual_invoice_records": 0,
+    "actual_bank_settlement_records": 0,
+    "real_paid_cargo_verified": false,
+    "integrated_real_world_e2e_verified": false
+  },
+  "remote_ci": {
+    "latest_checked_run": "https://github.com/PetrFedin/bering/actions/runs/41198237363",
+    "checked_head_sha": "d75b6adfbf6a2974aebc6e248749373f57e51096",
+    "name": "v25-source-and-settlement-qa",
+    "conclusion": "failure",
+    "runner_id": 0,
+    "steps_executed": 0,
+    "root_cause": "UNKNOWN",
+    "remote_tests_executed": false
+  },
+  "synthetic_arithmetic_not_cargo": {
+    "example_invoice_net_rub": "100.00",
+    "example_declared_vat_rub": "20.00",
+    "example_gross_rub": "120.00",
+    "sample_number_of_fictional_invoices": 3,
+    "sample_fictional_gross_sum_rub": "360.00",
+    "actual_income_rub": null
+  },
+  "independent_gates": {
+    "original_files_v20_git_blob_verified": false,
+    "source_file_contents_authenticated": false,
+    "actual_real_carrier_evidence": false,
+    "actual_real_terminal_evidence": false,
+    "actual_receiver_delivery_confirmed": false,
+    "bank_cash_independently_confirmed": false,
+    "group_24m_od_baseline_verified": false,
+    "group_new_volume_and_contribution_margin_proven": false,
+    "full_excel_model_recalculated": false,
+    "github_ci_green_on_sha": false,
+    "independent_review_complete": false,
+    "P1": "HOLD",
+    "P2": "HOLD",
+    "P3": "HOLD",
+    "investment_approved": false,
+    "bankable_revenue_approved": false
+  },
+  "disposition": "DRAFT_LOCAL_SYNTHETIC_QA_PASS_REMOTE_CI_HOLD_COMMERCIAL_HOLD",
+  "notes": "Data files hold no authentic new freight, bank receipts, waybills or signed contracts. Stored checksums prove byte matching only; external legal/payment and commercial reviews are required."
+}
