@@ -25,7 +25,7 @@ Inputs:
 - Bureau International des Containers (BIC): [Container Identification Number](https://www.bic-code.org/identification-number/) — owner code, U for freight containers, six-digit serial number and check digit.
 - Hapag-Lloyd: [Container Specification, ISO size/type table](https://static-cf.hapag-lloyd.com/content/dam/website/downloads/press_and_media/publications/15211_Container_Specification_engl_Gesamt_web.pdf) — examples 42G1 and 45G1 for 40ft dry, and 42R1 and 45R1 for 40ft refrigerated.
 
-V24 intentionally supports **only container-category U**, with 40ft dry size/type family 42Gx / 45Gx for P1/P3, and refrigerated 42Rx / 45Rx for P2. This is a conservative research subset, **not** a claim that these four families cover every valid real-world container configuration. Non-standard or special equipment must go to manual review under a future explicit schema extension; never silently coerce 20ft, 45ft, open-top or flat-rack equipment to ordinary dry 40ft. Size/type values are **claims until validated against actual records**.
+V24 intentionally supports **only container-category U**, with documented dry codes **42G0, 42G1, 45G0, 45G1** for P1/P3, and refrigerated codes **42R1, 42R3, 45R1** for P2. This is a conservative research subset, **not** a claim that these four families cover every valid real-world container configuration. Non-standard or special equipment must go to manual review under a future explicit schema extension; never silently coerce 20ft, 45ft, open-top or flat-rack equipment to ordinary dry 40ft. Size/type values are **claims until validated against actual records**.
 
 ISO 6346 check digits detect transcription errors; they do not independently establish that an owner is registered, a physical unit exists or the quoted size/type is truthful. BIC lookup and real terminal documentation are separate provenance tasks.
 
@@ -38,7 +38,7 @@ ISO 6346 check digits detect transcription errors; they do not independently est
 5. Normalize B/L references and reject **identical B/L+physical-container combinations** across any pilots or within one pilot.
 6. If the *same physical container* appears on **overlapping time intervals** under different B/Ls, classify as AMBIGUOUS/HOLD (not automatically fraud); legitimate reuse on later non-overlapping dates is permitted.
 7. Reject reuse of one evidence ID as two different physical container-movement events.
-8. Invalid/future/reversed loading/delivery dates are INVALID. A source reviewed after as_of cannot be used as support for that historical release.
+8. Invalid/future/reversed loading/delivery dates and a future source as_of date are INVALID. A source reviewed after as_of cannot be used as support for that historical release.
 9. Hash and reviewer checks must pass for every claimed waybill, container movement and actual delivery. Missing files, path traversal, changed source bytes and identical sender/reviewer cause HOLD.
 10. Default dataset explicitly carries **zero recorded shipments** because real data has not yet been obtained. This is missing evidence, **not demonstrated zero market demand**.
 
@@ -75,9 +75,9 @@ With actual authorized documents, use **both** --evidence-index and --evidence-d
 
 Python 3.11-compatible modules, executed **locally** with Python 3.13.5:
 
-- **37/37** physical-identification tests with synthetic test-only container numbers and text files: check-digit failures, 20ft imposters, reefer/dry mismatch, cross-pilot B/L+container duplication, same-container interval overlap, allowed non-overlapping reuse, exact V23 fingerprint, evidence corruption and reviewer separation, incorrect quantities and time periods.
+- **40/40** physical-identification tests with synthetic test-only container numbers and text files: check-digit failures, 20ft imposters, reefer/dry mismatch, cross-pilot B/L+container duplication, same-container interval overlap, allowed non-overlapping reuse, exact V23 fingerprint, evidence corruption and reviewer separation, incorrect quantities and time periods.
 - **14/14** combined-controller interaction tests with **mocked subprocess results**: BOTH HOLD, asymmetric gates, INVALID rejection, true flags forbidden, missing sources, bad process results, and shared V23 file path.
-- **51/51 total PASS** in an isolated local sandbox. This is not a GitHub-hosted run, a real waybill test or a complete integration E2E with actual consignments.
+- **54/54 total PASS** in an isolated local sandbox. This is not a GitHub-hosted run, a real waybill test or a complete integration E2E with actual consignments.
 - Locally executed research-only V23→V24 identity baseline: HOLD, 0 **recorded** V23 shipments, 0 recorded physical container identities, two explicit missing-evidence findings; no bankable cargo.
 - Five local source and test files were compared by exact Git object SHA against the version committed to GitHub.
 
