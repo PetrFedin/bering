@@ -12,6 +12,7 @@ on:
       - 'tests/test_independent_custody_payment_v25.py'
       - 'tests/test_release_commercial_v25.py'
       - 'data/pilots/V25_documentary_unverified.json'
+      - 'quality/fuzz_v25.py'
       - '.github/workflows/v25-documentary-evidence-qa.yml'
 
 permissions:
@@ -32,7 +33,7 @@ jobs:
         run: |
           python -m compileall -q scripts/independent_custody_payment_v25.py scripts/release_commercial_v25.py
           python -m compileall -q tests/test_independent_custody_payment_v25.py tests/test_release_commercial_v25.py
-      - name: V25 fake-document and payment regressions (83 tests)
+      - name: V25 fake-document and payment regressions (90 tests)
         run: python -m unittest discover -s tests -p 'test_*v25.py' -v
       - name: V25 deterministic malformed-input fuzz (800 cases)
         run: python quality/fuzz_v25.py
