@@ -169,6 +169,8 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
     seen_shipments: set[tuple[str, str]] = set()
     used_event_ids: set[str] = set()
     used_invoice_refs: set[str] = set()
+    used_invoice_source_rows: set[tuple[str, str]] = set()
+    used_bank_source_rows: set[tuple[str, str]] = set()
     used_bank_txns: set[str] = set()
     verified_source_ids: set[str] = set()
     used_evidence_rows: set[tuple[str, str]] = set()
@@ -333,6 +335,14 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
         if inv.get('adjustment_status') != 'NONE':
             missing.append(ctx + ':credit_note_or_invoice_adjustment_clearance')
         invoice_eid = inv.get('source_evidence_id')
+        invoice_locator = inv.get('source_record_locator')
+        if not ident(invoice_locator):
+            missing.append(ctx + ':invoice_source_record_locator')
+        elif isinstance(invoice_eid, str):
+            invoice_row = (invoice_eid, invoice_locator.casefold())
+            if invoice_row in used_invoice_source_rows:
+                errors.append(ctx + ': invoice source row reused across shipments')
+            used_invoice_source_rows.add(invoice_row)
         if not source_ok(invoice_eid, evidence_index, evidence_dir, cutoff):
             missing.append(ctx + ':verified_invoice_source')
         else:
@@ -379,6 +389,18 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
             if not ident(bank_org) or (ident(issuer) and bank_org.casefold() == issuer.casefold()):
                 errors.append(label + ': bank must be a distinct identified organization')
             payment_eid = bank.get('source_evidence_id')
+            bank_locator = bank.get('source_record_locator')
+            if not ident(bank_locator):
+                missing.append(label + ':bank_source_record_locator')
+            elif isinstance(payment_eid, str):
+                bank_row = (payment_eid, bank_locator.casefold())
+                if bank_row in used_bank_source_rows:
+                    errors.append(label + ': bank source row reused as two payments')
+                used_bank_source_rows.add(bank_row)
+            if (bank.get('payer_org_id') != payer
+                    or bank.get('beneficiary_org_id') != issuer
+                    or normalized_reference(bank.get('invoice_ref')) != invoice_ref):
+                errors.append(label + ': bank payer/beneficiary/invoice reference differs from invoice')
             if payment_eid == v23_payment_eid:
                 link_to_v23_payment = True
             if not source_ok(payment_eid, evidence_index, evidence_dir, cutoff):
