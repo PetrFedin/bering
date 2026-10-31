@@ -100,6 +100,21 @@ class ShipmentIdentityTests(unittest.TestCase):
         self.identity['shipments'][1]['containers'][0]['iso_size_type'] = '45G1'
         self.assertEqual(self.assess()['status'], 'INVALID')
 
+    def test_unsupported_dry_size_type_does_not_pass_by_regex_only(self):
+        self.identity['shipments'][0]['containers'][0]['iso_size_type'] = '45G9'
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_unsupported_reefer_size_type_does_not_pass_by_regex_only(self):
+        self.identity['shipments'][1]['containers'][0]['iso_size_type'] = '45R9'
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_future_as_of_is_invalid_even_if_both_inputs_match(self):
+        self.v23['as_of'] = '2099-01-01'
+        self.identity['as_of'] = '2099-01-01'
+        self.v23_bytes = json.dumps(self.v23, sort_keys=True).encode('utf-8')
+        self.identity['v23_input_sha256'] = hashlib.sha256(self.v23_bytes).hexdigest()
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
     def test_invalid_category_letter_rejected(self):
         self.assertFalse(iso6346_valid('ABCA1234567'))
 
