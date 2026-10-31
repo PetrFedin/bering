@@ -1,0 +1,33 @@
+{
+  "stage": "V25",
+  "as_of": "2026-10-31",
+  "scope": "Exact physical shipment, group incumbent CM and shared-cost source tieout against V23",
+  "parent_pr": "https://github.com/PetrFedin/bering/pull/16",
+  "local": {
+    "python": "3.13.5",
+    "tests_passed": 28,
+    "tests_total": 28,
+    "fixture": "SYNTHETIC_NOT_PAID_CARGO",
+    "layout_smoke": "PASS",
+    "canonical_no_source_exit_code": 3,
+    "canonical_status": "HOLD",
+    "group_incremental_cm_rub": null,
+    "bankable_revenue_approved": false,
+    "investment_approved": false
+  },
+  "source_git_blob_sha1": "e5f68699244d15d5dfe13797e394f053ec4fff6e",
+  "test_git_blob_sha1": "4a2c18b4a94955885ec5a4c48ca754bdf21867f8",
+  "original_paid_shipments_received": 0,
+  "independent_bank_reconciliation_done": false,
+  "original_group_24_month_OD_available": false,
+  "real_incremental_margin_verified": false,
+  "remote_ci": {
+    "result": "FAILURE_BEFORE_JOB_STEPS",
+    "observed_run_id": 41200797483,
+    "url": "https://github.com/PetrFedin/bering/actions/runs/41200797483",
+    "steps": null,
+    "root_cause_verified": false
+  },
+  "output": "DRAFT_LOCAL_SYNTHETIC_TESTS_PASS_REMOTE_CI_HOLD_SOURCE_DATA_HOLD_INVESTMENT_HOLD",
+  "note": "Synthetic 190 RUB test amount is not freight revenue, actual additional margin or a forecast. Even source-level matching needs external document authenticity checks."
+}
