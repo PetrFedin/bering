@@ -67,7 +67,7 @@ Supply --evidence-index **together** with --evidence-dir for externally reviewed
 
 ## Local synthetic testing
 
-32/32 automated unit tests passed locally on Python 3.13.5. Checks include shipment overlap, consignment duplication, duplicated cost event, absent 24-month baseline, tampered document, non-independent reviewers, inconsistent FX/VAT, lost incumbent margin, invalid monetary precision, excluded items, future-dated data, missing cost and output exit codes.
+**32/32 shipment-grain tests** passed locally on Python 3.13.5. In addition, **16/16 combined-gate regression tests** passed locally after correcting a test-fixture error; these tests mock subprocess outputs and do not substitute for the GitHub-hosted end-to-end run. Checks include shipment overlap, consignment duplication, duplicated cost event, absent 24-month baseline, tampered document, non-independent reviewers, inconsistent FX/VAT, lost incumbent margin, invalid monetary precision, excluded items, future-dated data, missing cost and output exit codes.
 
 An *entirely synthetic* screening example, not a freight forecast:
 
@@ -96,3 +96,28 @@ An *entirely synthetic* screening example, not a freight forecast:
 5. Obtain external financial/legal review before any committee decision. The engine never approves funding.
 
 **Decision:** P1/P2/P3 = HOLD; no bankable incremental freight proven. The international rail and Bering crossing remain research scenarios.
+
+
+## V23 integrated commercial decision gate
+
+The new [combined release controller](../scripts/release_commercial_v23.py) invokes the existing P1/P2/P3 commercial evidence gate and the independent cross-pilot V23 engine on the **same checkout**. It applies these additional fail-closed conditions:
+
+- All three individual pilot records must be present, distinct and without structural errors.
+- All three cross-pilot records must be present; bankability flags may never be true.
+- To reach REVIEW, **every** pilot must individually be REVIEW, cross-pilot must be REVIEW and the numbers must reconcile per pilot:
+  - new 40ft container quantity, exactly;
+  - incremental group contribution margin, exactly in Decimal;
+  - combined group contribution margin versus the sum of the three pilots.
+- Missing data yields HOLD. Invalid structure, mismatched numbers or unavailable subprocess results yield INVALID.
+- REVIEW **cannot** become an investment approval; a real contract and operational due diligence remain necessary.
+
+Read-only commands from repository root:
+
+~~~bash
+python -m unittest discover -s tests -p 'test_release_commercial_v23.py' -v
+python scripts/release_commercial_v23.py --repo . --output v23_integrated_receipt.json
+~~~
+
+The default command uses the **explicitly unverified, zero-claim research baseline**, and must yield HOLD. After independent source verification, use a separate local/private file with --cross-input plus --evidence-index and --evidence-dir. Keep confidential original source documents outside GitHub.
+
+**Remaining limitation:** the two gate inputs are still independently maintained. Exact numerical reconciliation reduces inconsistency but does not prove that the source record sets describe the same real-world consignment. Source-to-source join reconciliation and third-party review are separate admission requirements. The V23 combined-controller tests are **mocked interaction tests**, not real multi-party external commercial E2E.
