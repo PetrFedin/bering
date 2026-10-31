@@ -415,6 +415,26 @@ class V25Tests(unittest.TestCase):
         self.assertEqual(after['source_evidence_files_verified'],
                          before['source_evidence_files_verified'] - 1)
 
+    def test_60_malformed_list_pilot_does_not_crash(self):
+        self.v25['shipments'][0]['pilot_id'] = ['P1']
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_61_malformed_v23_source_pilot_does_not_crash(self):
+        self.v23['shipments'][0]['pilot_id'] = ['P1']
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_62_malformed_container_number_does_not_crash(self):
+        self.event()['container_number'] = ['not container']
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_63_malformed_event_kind_does_not_crash(self):
+        self.event()['event_type'] = {'a': 'CARRIER_LOAD'}
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_64_malformed_v24_pilot_does_not_crash(self):
+        self.v24['shipments'][0]['pilot_id'] = {'bad': 'value'}
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
     def test_46_parser_requires_timestamp_offset(self):
         self.assertIsNone(as_utc('2026-09-01T08:00:00'))
         self.assertIsNotNone(as_utc('2026-09-01T10:00:00+02:00'))
