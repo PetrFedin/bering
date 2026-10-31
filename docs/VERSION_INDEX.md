@@ -24,6 +24,8 @@
 
 | V23 | 31 Oct 2026 | Prevent duplicate economic shipments, consignment IDs and shared costs across P1/P2/P3; reconcile each pilot's new volume and incremental group margin | [Cross-pilot engine](../scripts/cross_pilot_additionality_v23.py), [combined decision gate](../scripts/release_commercial_v23.py), 32+16 local synthetic tests, [method](V23_CROSS_PILOT_ADDITIONALITY.md), unverified zero-claim input and CI smoke | Draft, remote CI not certified; 0/3 pilots admitted; investment HOLD |
 
+| V24 | 31 Oct 2026 | Evidence-backed forecasting: official 2020–2024 series vs unaligned 2025, 36-month actuals prerequisite, frozen 12-month seasonal-naive holdout benchmark | [Forecast module](../scripts/forecast_v24.py), [method/source review](V24_EVIDENCE_GATED_FORECAST.md), 20 synthetic regression tests, canonical no-claim JSON and machine-readable receipt | Draft, 20/20 local synthetic PASS only, P1/P2/P3 actual forecast HOLD, no source contracts/CI/investment approval |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.
