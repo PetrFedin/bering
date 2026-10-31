@@ -1,0 +1,10 @@
+{
+  "schema_version": "V25",
+  "as_of": "2026-10-31",
+  "group_id": "RESEARCH_ONLY_GROUP_UNVERIFIED",
+  "currency": "RUB",
+  "v23_input_sha256": "adff60ac8f365baf14e37ed82ed2a7fe135e79d516c4abc824c7d0c2c4289885",
+  "v24_identity_sha256": "72432ad4ffee16a5cc956f9c6667865c1e719ee7d624df7cfad94917bb61a0b3",
+  "shipments": [],
+  "status_note": "NO VERIFIED CARRIER, TERMINAL, CONSIGNEE, INVOICE OR BANK RECORDS. Zero recorded shipments indicates no evidence supplied, NOT zero market demand."
+}
