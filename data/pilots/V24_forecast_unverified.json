@@ -1,0 +1,11 @@
+{
+  "schema_version": "V24",
+  "as_of": "2026-10-31",
+  "unit": "paid_new_40ft_containers",
+  "series": [
+    {"pilot_id": "P1", "observations": []},
+    {"pilot_id": "P2", "observations": []},
+    {"pilot_id": "P3", "observations": []}
+  ],
+  "research_note": "NO VERIFIED MONTHLY PAID INCREMENTAL SHIPMENT LEDGER. Missing months do not equal zero. Port tonnes, terminal capacity, public tariffs and synthetic test volumes are not paid new 40ft shipments. All P1/P2/P3 forecasts and investment release HOLD."
+}
