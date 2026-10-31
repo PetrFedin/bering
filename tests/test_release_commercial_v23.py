@@ -22,14 +22,17 @@ class FakeProc:
 def pilots(status='HOLD', errs=None):
     return {'evaluated': 3, 'results': [
         {'pilot_id': p, 'gate': status, 'bankable_revenue_approved': False,
+         'net_new_40ft_containers': 1, 'incremental_group_cm_rub': 100,
          'errors': errs or []} for p in ('P1','P2','P3')]}
 
 
 def cross(status='HOLD', errs=None):
-    return {'status': status, 'pilots': {p: {'status': status}
-                                      for p in ('P1','P2','P3')},
+    return {'status': status, 'pilots': {p: {'status': status,
+                  'classification_counts_40ft': {'new': 1, 'diverted': 0},
+                  'screening_incremental_group_cm_rub': '100'}
+                  for p in ('P1','P2','P3')},
             'bankable_revenue_approved': False, 'errors': errs or [],
-            'screening_total_incremental_group_cm_rub': '290'}
+            'screening_total_incremental_group_cm_rub': '300'}
 
 
 class ReleaseJoinTests(unittest.TestCase):
@@ -55,13 +58,28 @@ class ReleaseJoinTests(unittest.TestCase):
     def test_only_cross_review_still_hold(self):
         self.assertEqual(self.run_case(cross_case=cross('REVIEW'))['status'], 'HOLD')
 
+    def test_inconsistent_volume_blocks_review(self):
+        bad = cross('REVIEW')
+        bad['pilots']['P3']['classification_counts_40ft']['new'] = 2
+        self.assertEqual(self.run_case(pa=pilots('REVIEW'), cross_case=bad)['status'], 'INVALID')
+
+    def test_inconsistent_per_pilot_margin_blocks_review(self):
+        bad = cross('REVIEW')
+        bad['pilots']['P3']['screening_incremental_group_cm_rub'] = '101'
+        self.assertEqual(self.run_case(pa=pilots('REVIEW'), cross_case=bad)['status'], 'INVALID')
+
+    def test_inconsistent_group_margin_blocks_review(self):
+        bad = cross('REVIEW')
+        bad['screening_total_incremental_group_cm_rub'] = '301'
+        self.assertEqual(self.run_case(pa=pilots('REVIEW'), cross_case=bad)['status'], 'INVALID')
+
     def test_only_pilots_review_still_hold(self):
         self.assertEqual(self.run_case(pa=pilots('REVIEW'))['status'], 'HOLD')
 
     def test_all_review_is_still_not_investment_pass(self):
         r = self.run_case(pa=pilots('REVIEW'), cross_case=cross('REVIEW'))
         self.assertEqual(r['status'], 'REVIEW')
-        self.assertEqual(r['cross_pilot_incremental_group_cm_rub'], '290')
+        self.assertEqual(r['cross_pilot_incremental_group_cm_rub'], '300')
         self.assertFalse(r['bankable_revenue_approved'])
         self.assertFalse(r['investment_approved'])
 
