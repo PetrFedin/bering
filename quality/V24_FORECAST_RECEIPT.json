@@ -1,0 +1,40 @@
+{
+  "stage": "V24",
+  "as_of": "2026-10-31",
+  "branch": "audit/v24-evidence-gated-forecast-20261031",
+  "base": "audit/v23-cross-pilot-cargo-integrity-20261030",
+  "files_verified_sha1": {
+    "code": "85e74cbb6e9fa32e0395f4f445eaeb9525d4ebaf",
+    "tests": "4b742ab8bda8f0ad7f03b4a70b180b179e42c57f",
+    "zero_claim_input": "0c582f48ada90d3be9fecc817454bca9e73df62e",
+    "public_context": "bfc67014f01f6ffe19f761cc0cdaee437867d7ae",
+    "method": "0b596e1573fdf4f8193bcd4737bc9e299c5994d5",
+    "workflow": "ae69b20442b5db01d7666507ab5e34e54b22878d"
+  },
+  "local_tests": {
+    "passed": 20,
+    "total": 20,
+    "python": "3.13",
+    "fixtures": "SYNTHETIC",
+    "result": "PASS"
+  },
+  "real_paid_pilot_records_received": 0,
+  "verified_36_month_history_count": 0,
+  "default_canonical_result": {
+    "status": "HOLD",
+    "P1": null,
+    "P2": null,
+    "P3": null,
+    "group": null
+  },
+  "source_perimeter_2025": "UNRESOLVED",
+  "original_pilot_contracts_verified": false,
+  "actual_pilot_forecast_error_estimated": false,
+  "independent_review_completed": false,
+  "remote_v24_ci": "NOT_CERTIFIED",
+  "previous_v23_runner_failure": "https://github.com/PetrFedin/bering/actions/runs/41193097041",
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "status": "DRAFT_LOCAL_SYNTHETIC_TESTS_PASS_REMOTE_CI_HOLD_INVESTMENT_HOLD",
+  "note": "20/20 tests are locally executed on fabricated fixtures only, source docs and source-to-source V23 consignment tie-out remain absent."
+}
