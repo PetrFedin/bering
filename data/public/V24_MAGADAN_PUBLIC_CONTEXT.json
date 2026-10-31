@@ -1,0 +1,95 @@
+{
+  "snapshot": "2026-10-31",
+  "purpose": "Public contextual observations and third-party target only; NOT inputs for P1-P3 paid incremental cargo forecasts",
+  "measures": [
+    {
+      "series_id": "MMTP_NAMED_MUNICIPAL_CARGO_2020_2024",
+      "evidence_status": "PUBLISHED_HISTORICAL_ACTUAL",
+      "source_class": "PRIMARY_MUNICIPAL_REPORT",
+      "source_title": "Итоги социально-экономического развития МО «Город Магадан» в 2024 году",
+      "url": "https://magadangorod.ru/common/upload/43/editor/file/broshura_za_2024.pdf",
+      "printed_page": 17,
+      "scope": "Municipal table: volume of cargo processed by 'Магаданский морской торговый порт'; whether the legal entity boundary matches later media reports requires independent confirmation.",
+      "unit": "thousand_metric_tonnes",
+      "observations": {
+        "2020": "1189.7",
+        "2021": "1254.0",
+        "2022": "1409.6",
+        "2023": "1226.6",
+        "2024": "1251.2"
+      },
+      "original_source_archived_in_repository": false
+    },
+    {
+      "series_id": "MAGADAN_SEAPORT_2025_AUTHORITY",
+      "evidence_status": "PUBLISHED_HISTORICAL_ACTUAL",
+      "source_class": "PRIMARY_PORT_AUTHORITY",
+      "source_title": "Филиал ФГБУ АМП Охотского моря и Татарского пролива в морском порту Магадан",
+      "url": "https://ampvanino.ru/magadan/",
+      "scope": "Total port Magadan cargo throughput; per-port authority page.",
+      "unit": "thousand_metric_tonnes",
+      "observations": {
+        "2025": "1834.7"
+      },
+      "original_source_archived_in_repository": false
+    },
+    {
+      "series_id": "MMTP_2025_ASSOCIATION_STATEMENT",
+      "evidence_status": "PUBLISHED_BUT_PERIMETER_UNRECONCILED",
+      "source_class": "INDUSTRY_ASSOCIATION_PUBLICATION",
+      "source_title": "Ассоциация морских торговых портов: сообщение об операторе ПАО «ММТП»",
+      "url": "https://www.morport.com/rus/news/associaciya-morskih-torgovyh-portov-pozdravlyaet-s-yubileem-generalnogo-direktora-pao",
+      "scope": "Industry association attributes the same 1834.7 thousand tonnes to PАО MMTP, rather than expressly to all port operators; requires reconciliation against audited company figures and port statistics.",
+      "unit": "thousand_metric_tonnes",
+      "observations": {
+        "2025": "1834.7"
+      },
+      "cross_source_note": "The numeric equality to authority's total port figure is not evidence of identical accounting scope.",
+      "original_source_archived_in_repository": false
+    },
+    {
+      "series_id": "MMTP_2032_REPORTED_PROJECTION",
+      "evidence_status": "SECONDARY_REPORT_OF_2032_PLAN_NOT_OBSERVED",
+      "source_class": "SECONDARY_PORTNEWS_ARTICLE",
+      "source_title": "PortNews, 29 June 2026, quoting unavailable operator environmental/business justification",
+      "url": "https://portnews.ru/news/393455/",
+      "scope": "PАО MMTP company's reported projection, not all Magadan port cargo",
+      "unit": "thousand_metric_tonnes",
+      "reported_2024_actual_by_cargo": {
+        "container_tonnes": "890.1",
+        "coal_tonnes": "225.1",
+        "general_tonnes": "119.2"
+      },
+      "reported_2032_projection_by_cargo": {
+        "container_tonnes": "1000.0",
+        "coal_tonnes": "350.0",
+        "general_tonnes": "130.0"
+      },
+      "original_justification_document_verified": false,
+      "forbidden_as_pilot_contract_forecast": true
+    },
+    {
+      "series_id": "FAR_EAST_PORT_BASIN_2025",
+      "evidence_status": "PUBLISHED_HISTORICAL_ACTUAL",
+      "source_class": "PRIMARY_RUSSIAN_MINISTRY_OF_TRANSPORT",
+      "source_title": "Минтранс РФ, итоги работы водного транспорта за 2025 год",
+      "url": "https://mintrans.gov.ru/eye/press-center/news/12504",
+      "scope": "All Russian Far Eastern maritime ports; NOT Magadan-specific",
+      "unit": "million_metric_tonnes",
+      "observations": {
+        "2025": "252.1"
+      },
+      "reported_yoy_pct": "6.6",
+      "cannot_allocate_growth_to_magadan": true
+    }
+  ],
+  "comparability_status": "HOLD",
+  "conflict_requiring_reconciliation": "2025 authority labels 1834.7 thousand t as total seaport whereas association attributes same volume to PАО MMTP; boundary unclear. Do not append to 2020-24 municipal series or assert 2025 company YoY.",
+  "disallowed_conversions": [
+    "tonnes-to-TEU without cargo type, verified weights and tare",
+    "port-wide tonnes-to-new-paid-40ft",
+    "terminal capacity-to-paid demand",
+    "secondary public target-to-investment case"
+  ],
+  "actual_new_paid_40ft_pilots_documented": null
+}
