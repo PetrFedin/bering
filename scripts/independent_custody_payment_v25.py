@@ -170,6 +170,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
     used_event_ids: set[str] = set()
     used_invoice_refs: set[str] = set()
     used_bank_txns: set[str] = set()
+    verified_source_ids: set[str] = set()
     used_evidence_rows: set[tuple[str, str]] = set()
     total_paid = Decimal('0')
     all_finance_complete = True
@@ -263,7 +264,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
             if not isinstance(event_evidence, str) or not EVIDENCE_ID.fullmatch(event_evidence):
                 missing.append(path + ':source_evidence_id')
             elif source_ok(event_evidence, evidence_index, evidence_dir, cutoff):
-                stats['source_evidence_files_verified'] += 1
+                verified_source_ids.add(event_evidence)
                 if not provenance_matches(event_evidence, org, occurred.date(), evidence_index, cutoff):
                     missing.append(path + ':source_actor_or_review_time_unverified')
             else:
@@ -335,7 +336,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
         if not source_ok(invoice_eid, evidence_index, evidence_dir, cutoff):
             missing.append(ctx + ':verified_invoice_source')
         else:
-            stats['source_evidence_files_verified'] += 1
+            verified_source_ids.add(invoice_eid)
             if not provenance_matches(invoice_eid, issuer, invoice_date, evidence_index, cutoff):
                 missing.append(ctx + ':invoice_source_issuer_or_review_time_unverified')
         settlements = fin.get('bank_settlements')
@@ -383,7 +384,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
             if not source_ok(payment_eid, evidence_index, evidence_dir, cutoff):
                 missing.append(label + ':verified_bank_source')
             else:
-                stats['source_evidence_files_verified'] += 1
+                verified_source_ids.add(payment_eid)
                 if not provenance_matches(payment_eid, bank_org, when, evidence_index, cutoff):
                     missing.append(label + ':bank_source_actor_or_review_time_unverified')
         if not link_to_v23_payment:
@@ -406,6 +407,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
         missing.append('no source-linked real-world documentary events or payments available')
     if not source23 or not source24:
         missing.append('no linked source V23/V24 shipments available')
+    stats['source_evidence_files_verified'] = len(verified_source_ids)
     status = 'INVALID' if errors else 'HOLD' if missing or warnings or not all_finance_complete else 'REVIEW'
     stats['bank_gross_paid_rub'] = str(total_paid) if status == 'REVIEW' else None
     return _fail(status, errors, missing, warnings, stats, v23_sha=h23, v24_sha=h24)
