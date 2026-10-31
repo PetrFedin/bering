@@ -1,0 +1,80 @@
+{
+  "stage": "V23",
+  "as_of_utc": "2026-10-31",
+  "repository": "PetrFedin/bering",
+  "branch": "audit/v23-cross-pilot-cargo-integrity-20261030",
+  "base_branch": "audit/v22-originals-importer-20261030",
+  "scope": "Research-only shipment-level duplicate and contribution-margin controls, combined with existing individual P1/P2/P3 evidence gates. No investment approvals.",
+  "files": {
+    "cross_pilot_engine": {
+      "path": "scripts/cross_pilot_additionality_v23.py",
+      "git_blob_sha1": "c14c09a2c2d87c670978ae3fe4fe42fafd024b5b"
+    },
+    "cross_pilot_tests": {
+      "path": "tests/test_cross_pilot_additionality_v23.py",
+      "git_blob_sha1": "0a49ac3495ef1f2abf0644ea61fe63b4c27b5e70"
+    },
+    "combined_controller": {
+      "path": "scripts/release_commercial_v23.py",
+      "git_blob_sha1": "bdab75da02055598dd5005418b24efbdc9b3af24"
+    },
+    "controller_tests": {
+      "path": "tests/test_release_commercial_v23.py",
+      "git_blob_sha1": "ff02eb0314b661a658e857e89db821277d761701"
+    },
+    "zero_claim_input": "data/pilots/V23_cross_pilot_unverified.json",
+    "method": "docs/V23_CROSS_PILOT_ADDITIONALITY.md",
+    "workflow": ".github/workflows/v23-cross-pilot-qa.yml"
+  },
+  "tests": {
+    "local_python": "3.13.5",
+    "cross_pilot": {
+      "passed": 32,
+      "total": 32,
+      "source_data": "synthetic",
+      "result": "PASS"
+    },
+    "combined_gate": {
+      "passed": 16,
+      "total": 16,
+      "source_data": "mocked subprocess synthetic",
+      "result": "PASS"
+    },
+    "total_passed": 48,
+    "total_run": 48,
+    "tests_with_real_paid_shipments": 0,
+    "remote_ci": {
+      "result": "FAILED_BEFORE_STEPS",
+      "last_observed_run_url": "https://github.com/PetrFedin/bering/actions/runs/41193097041",
+      "observed_sha": "f6d08a2a0b7b94ef05dec7db423fc4b8a8ed473f",
+      "runner_id": 0,
+      "steps": 0,
+      "verified_root_cause": false
+    }
+  },
+  "evidence_state": {
+    "raw_originals_in_github": 0,
+    "raw_originals_expected_from_v20_manifest": 42,
+    "actual_cross_pilot_shipments_in_research_template": 0,
+    "original_pilots": {
+      "P1": "HOLD",
+      "P2": "HOLD",
+      "P3": "HOLD"
+    },
+    "current_group_incremental_margin_rub": null,
+    "bankable_revenue_approved": false,
+    "source_documents_authenticated": false,
+    "full_excel_recalculation_verified": false,
+    "independent_commercial_review_verified": false,
+    "investment_approved": false
+  },
+  "synthetic_example_not_economic_fact": {
+    "P1_rub": "185",
+    "P2_rub": "65",
+    "P3_rub": "40",
+    "group_rub": "290",
+    "method": "Two NEW 40ft at 100 - 10 - 5; one DIVERTED 40ft at (200-120) - 10 - 5; one NEW 40ft at 50 - 5 - 5. Purely fabricated numeric fixtures."
+  },
+  "status": "DRAFT_LOCAL_QA_PASS_REMOTE_CI_HOLD_INVESTMENT_HOLD",
+  "note": "Source integrity and matching keys cannot prove legal authenticity, true economic additionality or that two different keys do not represent the same real-world cargo."
+}
