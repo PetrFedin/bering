@@ -58,7 +58,7 @@ class ReconcileV25Tests(unittest.TestCase):
                 'incremental_risk_rub':'5',
                 'cost_event_ids':{'fixed':f'FIXED_{p}','risk':f'RISK_{p}'},
                 'evidence':{'fixed':doc(),'risk':doc()}}
-        self.v23={'schema_version':'V23','group_id':'TEST_GROUP_001',
+        self.v23={'schema_version':'V23','group_id':'TEST_GROUP_001','as_of':'2026-10-31',
              'currency':'RUB','tax_basis':'EX_VAT',
              'shipments':[dict(s) for s in self.payload['shipments']],
              'pilot_costs':self.payload['pilot_costs']}
@@ -133,6 +133,12 @@ class ReconcileV25Tests(unittest.TestCase):
         self.assertEqual(self.audit(v23=v)['status'],'INVALID')
     def test_mismatched_v23_fixed_cost_invalid(self):
         v=json.loads(json.dumps(self.v23));v['pilot_costs']['P1']['incremental_fixed_rub']='100'
+        self.assertEqual(self.audit(v23=v)['status'],'INVALID')
+    def test_v23_different_reporting_period_invalid(self):
+        v=json.loads(json.dumps(self.v23));v['as_of']='2026-09-30'
+        self.assertEqual(self.audit(v23=v)['status'],'INVALID')
+    def test_v23_different_group_invalid(self):
+        v=json.loads(json.dumps(self.v23));v['group_id']='OTHER_GROUP_1'
         self.assertEqual(self.audit(v23=v)['status'],'INVALID')
     def test_v23_cost_event_id_mismatch_invalid(self):
         v=json.loads(json.dumps(self.v23));v['pilot_costs']['P2']['cost_event_ids']['risk']='OTHER_RISK'
