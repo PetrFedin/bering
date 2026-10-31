@@ -22,6 +22,8 @@
 
 | V22 | 30 Oct 2026 | Safe source ZIP importer with explicit rights/privacy approval and failure tests | Python importer, 21 synthetic fixture tests, isolated Actions workflow, [import protocol](V22_ORIGINALS_IMPORT_PROTOCOL.md) | Topic branch only; real originals not imported; runner and investment HOLD |
 
+| V23 | 31 Oct 2026 | Prevent duplicate economic shipments, consignment IDs and shared costs across P1/P2/P3; reconcile each pilot's new volume and incremental group margin | [Cross-pilot engine](../scripts/cross_pilot_additionality_v23.py), [combined decision gate](../scripts/release_commercial_v23.py), 32+16 local synthetic tests, [method](V23_CROSS_PILOT_ADDITIONALITY.md), unverified zero-claim input and CI smoke | Draft, remote CI not certified; 0/3 pilots admitted; investment HOLD |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.
