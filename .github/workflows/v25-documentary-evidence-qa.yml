@@ -1,0 +1,62 @@
+name: Bering V25 independent evidence and payment QA (research only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/v25-independent-document-reconciliation-20261031
+  pull_request:
+    paths:
+      - 'scripts/independent_custody_payment_v25.py'
+      - 'scripts/release_commercial_v25.py'
+      - 'tests/test_independent_custody_payment_v25.py'
+      - 'tests/test_release_commercial_v25.py'
+      - 'data/pilots/V25_documentary_unverified.json'
+      - '.github/workflows/v25-documentary-evidence-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  v25-source-and-settlement-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout commit
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile read-only controllers and tests
+        run: |
+          python -m compileall -q scripts/independent_custody_payment_v25.py scripts/release_commercial_v25.py
+          python -m compileall -q tests/test_independent_custody_payment_v25.py tests/test_release_commercial_v25.py
+      - name: V25 fake-document and payment regressions (78 tests)
+        run: python -m unittest discover -s tests -p 'test_*v25.py' -v
+      - name: V24 predecessor source-linkage regressions (54 tests)
+        run: |
+          python -m unittest discover -s tests -p 'test_shipment_identity_v24.py' -v
+          python -m unittest discover -s tests -p 'test_release_commercial_v24.py' -v
+      - name: Empty real-source baseline must be HOLD
+        run: |
+          python scripts/independent_custody_payment_v25.py \
+            --v23 data/pilots/V23_cross_pilot_unverified.json \
+            --v24 data/pilots/V24_identity_unverified.json \
+            --v25 data/pilots/V25_documentary_unverified.json \
+            --out v25_documentary_receipt.json
+          python -c "import json; r=json.load(open('v25_documentary_receipt.json')); assert r['status']=='HOLD' and r['bank_gross_paid_rub'] is None and r['v25_documentary_records']==0 and r['bankable_revenue_approved'] is False and r['investment_approved'] is False"
+      - name: Integrated P1-P3 to V25 must be HOLD, never PASS
+        run: |
+          python scripts/release_commercial_v25.py \
+            --repo . --out v25_integrated_receipt.json
+          python -c "import json; r=json.load(open('v25_integrated_receipt.json')); assert r['status']=='HOLD' and r['bankable_revenue_approved'] is False and r['investment_approved'] is False and r['cash_independently_confirmed'] is False"
+      - name: Upload non-private receipts only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bering-v25-research-only-hold
+          path: |
+            v25_documentary_receipt.json
+            v25_integrated_receipt.json
+          if-no-files-found: ignore
