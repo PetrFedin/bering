@@ -1,0 +1,43 @@
+name: Bering V23 cross-pilot integrity (synthetic only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/v23-cross-pilot-cargo-integrity-20261030
+  pull_request:
+    paths:
+      - 'scripts/cross_pilot_additionality_v23.py'
+      - 'tests/test_cross_pilot_additionality_v23.py'
+      - 'data/pilots/V23_cross_pilot_unverified.json'
+      - '.github/workflows/v23-cross-pilot-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  shipment-anti-double-count:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and unit test (synthetic records; no customer originals)
+        run: |
+          python -m compileall -q scripts/cross_pilot_additionality_v23.py tests/test_cross_pilot_additionality_v23.py
+          python -m unittest discover -s tests -p 'test_cross_pilot_additionality_v23.py' -v
+      - name: Research baseline must remain HOLD; null means missing, not zero
+        run: |
+          python scripts/cross_pilot_additionality_v23.py \
+            --input data/pilots/V23_cross_pilot_unverified.json \
+            --output v23_unverified_receipt.json
+          python -c "import json; r=json.load(open('v23_unverified_receipt.json')); assert r['status']=='HOLD' and r['screening_total_incremental_group_cm_rub'] is None and all(v['status']=='HOLD' for v in r['pilots'].values()) and r['source_records']==0 and r['bankable_revenue_approved'] is False"
+      - name: Attach research-only receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bering-v23-research-hold
+          path: v23_unverified_receipt.json
+          if-no-files-found: ignore
