@@ -157,7 +157,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
                 errors.append(f'{name}[{i}]: record must be object')
                 continue
             pilot, shipment = row.get('pilot_id'), row.get('economic_shipment_id')
-            if pilot not in PILOTS or not ident(shipment):
+            if not isinstance(pilot, str) or pilot not in PILOTS or not ident(shipment):
                 errors.append(f'{name}[{i}]: invalid pilot or shipment identity')
                 continue
             key = pilot, shipment.casefold()
@@ -180,7 +180,7 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
             errors.append(ctx + ': expected object')
             continue
         pilot, shipment = rec.get('pilot_id'), rec.get('economic_shipment_id')
-        if pilot not in PILOTS or not ident(shipment):
+        if not isinstance(pilot, str) or pilot not in PILOTS or not ident(shipment):
             errors.append(ctx + ': invalid pilot or shipment')
             continue
         key = pilot, shipment.casefold()
@@ -230,10 +230,10 @@ def evaluate(v23: Any, raw23: bytes, v24: Any, raw24: bytes, v25: Any,
             else:
                 used_event_ids.add(event_id.casefold())
             num, kind, leg = ev.get('container_number'), ev.get('event_type'), ev.get('leg')
-            if num not in expected:
+            if not isinstance(num, str) or num not in expected:
                 errors.append(path + ': container absent in V24 source identity')
                 continue
-            if kind not in EVENT_ROLE:
+            if not isinstance(kind, str) or kind not in EVENT_ROLE:
                 errors.append(path + ': unsupported custody event type')
                 continue
             required_legs = ('SHA-VVO','VVO-MGD') if pilot == 'P3' else ('VVO-MGD',)
