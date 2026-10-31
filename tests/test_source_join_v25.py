@@ -4,7 +4,9 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
-sys.path.insert(0,str(Path(__file__).resolve().parent))
+_HERE=Path(__file__).resolve()
+_SRC=_HERE.parents[1] / 'scripts'
+sys.path.insert(0,str(_SRC if _SRC.is_dir() else _HERE.parent))
 from source_join_v25 import audit,verify_v23
 
 TOKENS=['a'*64,'b'*64,'c'*64]
