@@ -100,7 +100,8 @@ class V25Tests(unittest.TestCase):
                                 'gross_rub': '120.00', 'adjustment_status': 'NONE',
                                 'issuer_org_id': f'SHIPPER_FAKE_{i:02d}',
                                 'payer_org_id': f'BUYER_FAKE_{i:02d}',
-                                'source_evidence_id': invoice_eid},
+                                'source_evidence_id': invoice_eid,
+                                'source_record_locator': f'INVOICE_LINE_{i:04d}'},
                     'bank_settlements': [{
                         'transaction_ref': f'BANKTX_FAKE_{i:04d}',
                         'settled_on': '2026-09-15', 'currency': 'RUB',
@@ -108,6 +109,10 @@ class V25Tests(unittest.TestCase):
                         'amount_gross_rub': '120.00',
                         'bank_org_id': f'BANK_FAKE_{i:02d}',
                         'source_evidence_id': payid,
+                        'source_record_locator': f'PAYMENT_LINE_{i:04d}',
+                        'payer_org_id': f'BUYER_FAKE_{i:02d}',
+                        'beneficiary_org_id': f'SHIPPER_FAKE_{i:02d}',
+                        'invoice_ref': f'INVOICE_FAKE_{i:04d}',
                     }],
                 },
             })
@@ -297,6 +302,7 @@ class V25Tests(unittest.TestCase):
         p2 = copy.deepcopy(p)
         p2['amount_gross_rub'] = '50.00'
         p2['transaction_ref'] = 'BANKTX_FAKE_9999'
+        p2['source_record_locator'] = 'PAYMENT_LINE_9999'
         self.v25['shipments'][0]['financial']['bank_settlements'].append(p2)
         self.assertEqual(self.assess()['status'], 'REVIEW')
 
@@ -434,6 +440,45 @@ class V25Tests(unittest.TestCase):
     def test_64_malformed_v24_pilot_does_not_crash(self):
         self.v24['shipments'][0]['pilot_id'] = {'bad': 'value'}
         self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_65_invoice_source_locator_missing_holds(self):
+        self.v25['shipments'][0]['financial']['invoice'].pop('source_record_locator')
+        self.assertEqual(self.assess()['status'], 'HOLD')
+
+    def test_66_bank_source_locator_missing_holds(self):
+        self.v25['shipments'][0]['financial']['bank_settlements'][0].pop('source_record_locator')
+        self.assertEqual(self.assess()['status'], 'HOLD')
+
+    def test_67_bank_line_reused_with_fake_transaction_ref_invalid(self):
+        one = self.v25['shipments'][0]['financial']['bank_settlements'][0]
+        other = copy.deepcopy(one)
+        other['transaction_ref'] = 'FRAUDULENT_OTHER_TXN'
+        other['amount_gross_rub'] = '1.00'
+        one['amount_gross_rub'] = '119.00'
+        self.v25['shipments'][0]['financial']['bank_settlements'].append(other)
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_68_bank_beneficiary_mismatch_invalid(self):
+        self.v25['shipments'][0]['financial']['bank_settlements'][0]['beneficiary_org_id'] = 'OTHER_BENEFICIARY'
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_69_bank_payer_mismatch_invalid(self):
+        self.v25['shipments'][0]['financial']['bank_settlements'][0]['payer_org_id'] = 'OTHER_PAYER_0000'
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_70_bank_invoice_ref_mismatch_invalid(self):
+        self.v25['shipments'][0]['financial']['bank_settlements'][0]['invoice_ref'] = 'OTHER_INVOICE_000'
+        self.assertEqual(self.assess()['status'], 'INVALID')
+
+    def test_71_second_payment_unique_statement_line_and_txn_reviews(self):
+        p = self.v25['shipments'][0]['financial']['bank_settlements'][0]
+        p['amount_gross_rub'] = '70.00'
+        other = copy.deepcopy(p)
+        other['transaction_ref'] = 'DIFFERENT_PAYMENT_001'
+        other['source_record_locator'] = 'PAYMENT_LINE_NEW2'
+        other['amount_gross_rub'] = '50.00'
+        self.v25['shipments'][0]['financial']['bank_settlements'].append(other)
+        self.assertEqual(self.assess()['status'], 'REVIEW')
 
     def test_46_parser_requires_timestamp_offset(self):
         self.assertIsNone(as_utc('2026-09-01T08:00:00'))
