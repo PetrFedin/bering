@@ -26,6 +26,8 @@
 
 | V24 | 31 Oct 2026 | Cross-check claimed ISO 6346 40ft unit identity, B/L, actual dates, source-file SHA, quantity and original V23 bytes before manual review | Physical identity engine, combined V23/V24 controller, 54 local synthetic/mock tests, [V24 evidence protocol](V24_SOURCE_IDENTITY_ADMISSION.md), [QA receipt](../quality/V24_ADMISSION_RECEIPT.json) | Draft; GitHub Actions fails before steps, original source files and authenticated consignments unavailable; P1/P2/P3 HOLD |
 
+| V25 | 31 Oct 2026 | Correlate cargo custody events, carrier/terminal/receiver source rows, RUB invoice VAT/gross and independently identified bank settlement | [Source/settlement engine](../scripts/independent_custody_payment_v25.py), [joined gate](../scripts/release_commercial_v25.py), 144 local regression tests (90 V25 + 54 V24), 800 malformed-input mutations, [protocol](V25_CUSTODY_PAYMENT_ADMISSION.md), [QA receipt](../quality/V25_ADMISSION_RECEIPT.json) | Draft; remote Actions fails before steps, no actual authenticated paid cargo, 0/3 admitted, investment HOLD |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.
