@@ -3,9 +3,13 @@ import copy
 import hashlib
 import tempfile
 import unittest
+import sys
 from datetime import date
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if (ROOT / "scripts" / "forecast_v24.py").exists():
+    sys.path.insert(0, str(ROOT / "scripts"))
 import forecast_v24 as v24
 
 
