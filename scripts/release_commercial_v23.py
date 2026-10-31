@@ -9,21 +9,25 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+from decimal import Decimal, InvalidOperation
 import sys
 from pathlib import Path
 
 PILOTS = ('P1', 'P2', 'P3')
 
 
-def audit(repo: Path, *, index: Path | None = None, documents: Path | None = None) -> dict:
+def audit(repo: Path, *, index: Path | None = None, documents: Path | None = None,
+          cross_input: Path | None = None) -> dict:
     root = repo.resolve(strict=True)
     if bool(index) != bool(documents):
         return {'status': 'INVALID', 'errors': ['Evidence index and documents directory must be supplied together'],
                 'bankable_revenue_approved': False}
     cmd_pilot = [sys.executable, str(root / 'scripts/commercial_gate.py'),
                  *(str(root / 'data/pilots' / (p + '.json')) for p in PILOTS)]
+    cross_source = (cross_input.resolve() if cross_input else
+                    root / 'data/pilots/V23_cross_pilot_unverified.json')
     cmd_cross = [sys.executable, str(root / 'scripts/cross_pilot_additionality_v23.py'),
-                 '--input', str(root / 'data/pilots/V23_cross_pilot_unverified.json')]
+                 '--input', str(cross_source)]
     if index is not None:
         cmd_pilot.extend(['--evidence-index', str(index.resolve()) , '--evidence-dir', str(documents.resolve())])
         cmd_cross.extend(['--evidence-index', str(index.resolve()), '--evidence-dir', str(documents.resolve())])
@@ -67,13 +71,30 @@ def audit(repo: Path, *, index: Path | None = None, documents: Path | None = Non
         errors.append('Individual pilot reported structural errors')
     if cross.get('status') == 'INVALID' or cross.get('errors'):
         errors.append('Cross-pilot data integrity failed')
-    if errors:
-        gate = 'INVALID'
-    elif all(states.get(p) == 'REVIEW' and cross_rows[p].get('status') == 'REVIEW'
-             for p in PILOTS) and cross.get('status') == 'REVIEW':
-        gate = 'REVIEW'
-    else:
-        gate = 'HOLD'
+    ready_for_tieout = (not errors and cross.get('status') == 'REVIEW'
+                        and all(states.get(p) == 'REVIEW' and cross_rows[p].get('status') == 'REVIEW'
+                                for p in PILOTS))
+    if ready_for_tieout:
+        try:
+            total = Decimal('0')
+            for p in PILOTS:
+                own = next(row for row in rows if row['pilot_id'] == p)
+                cross_row = cross_rows[p]
+                counted = cross_row['classification_counts_40ft']['new']
+                from_pilot = Decimal(str(own['net_new_40ft_containers']))
+                if not isinstance(counted, int) or isinstance(counted, bool) or from_pilot != Decimal(counted):
+                    raise ValueError(f'{p}: net-new 40ft volume differs across source gates')
+                individual = Decimal(str(own['incremental_group_cm_rub']))
+                group = Decimal(str(cross_row['screening_incremental_group_cm_rub']))
+                if not individual.is_finite() or not group.is_finite() or individual != group:
+                    raise ValueError(f'{p}: incremental margin differs across source gates')
+                total += group
+            group_total = Decimal(str(cross['screening_total_incremental_group_cm_rub']))
+            if not group_total.is_finite() or group_total != total:
+                raise ValueError('Group total differs from sum of pilot results')
+        except (KeyError, IndexError, TypeError, StopIteration, ValueError, InvalidOperation) as exc:
+            errors.append('Cross-source numeric reconciliation FAIL: ' + str(exc))
+    gate = ('INVALID' if errors else 'REVIEW' if ready_for_tieout else 'HOLD')
     return {'status': gate, 'individual_gates': states,
             'cross_pilot_status': cross.get('status'),
             'cross_pilot_incremental_group_cm_rub': cross.get('screening_total_incremental_group_cm_rub')
@@ -89,10 +110,12 @@ def main() -> int:
     parser.add_argument('--repo', type=Path, default=Path('.'))
     parser.add_argument('--evidence-index', type=Path)
     parser.add_argument('--evidence-dir', type=Path)
+    parser.add_argument('--cross-input', type=Path, help='Externally reconciled V23 record file; default is zero-claim baseline')
     parser.add_argument('--output', type=Path)
     parser.add_argument('--require-review', action='store_true')
     args = parser.parse_args()
-    receipt = audit(args.repo, index=args.evidence_index, documents=args.evidence_dir)
+    receipt = audit(args.repo, index=args.evidence_index, documents=args.evidence_dir,
+                    cross_input=args.cross_input)
     text = json.dumps(receipt, ensure_ascii=False, indent=2) + '\n'
     if args.output:
         args.output.write_text(text, encoding='utf-8')
