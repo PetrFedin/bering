@@ -213,11 +213,14 @@ def audit(payload, records=None, root=None, v23=None):
         r=costs.get(p)
         if not isinstance(r,dict):err.append(p+':missing costs');continue
         if not isinstance(r.get('evidence'),dict):err.append(p+':cost evidence must be object');continue
-        try:
-            fixed=money(r.get('incremental_fixed_rub'));risk=money(r.get('incremental_risk_rub'))
-            if fixed<0 or risk<0:raise ValueError('incremental costs must be nonnegative')
-            valid_costs[p]=(fixed,risk)
-        except ValueError as exc:err.append(p+':'+str(exc))
+        if r.get('incremental_fixed_rub') is None or r.get('incremental_risk_rub') is None:
+            missing.append(p+':unverified incremental fixed/risk costs')
+        else:
+            try:
+                fixed=money(r.get('incremental_fixed_rub'));risk=money(r.get('incremental_risk_rub'))
+                if fixed<0 or risk<0:raise ValueError('incremental costs must be nonnegative')
+                valid_costs[p]=(fixed,risk)
+            except ValueError as exc:err.append(p+':'+str(exc))
         cids=r.get('cost_event_ids')
         if not isinstance(cids,dict) or set(cids)!={'fixed','risk'}:
             err.append(p+':two cost events required');continue
