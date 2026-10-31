@@ -25,7 +25,7 @@ jobs:
         run: |
           python -m compileall -q scripts/source_join_v25.py
           python -m json.tool data/pilots/V25_no_verified_consignments.json > /dev/null
-      - name: Run 26 synthetic tests, never infer real revenue
+      - name: Run 28 synthetic tests, never infer real revenue
         run: |
           python -m unittest discover -s tests -p 'test_source_join_v25.py' -v
       - name: Unverified cargo must yield HOLD and null money
