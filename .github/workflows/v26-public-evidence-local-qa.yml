@@ -2,6 +2,17 @@ name: Bering V26 research-source quality (manual; not commercial admission)
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/public/V26_PUBLIC_SOURCE_REGISTER.json'
+      - 'data/pilots/V26_EMPTY_PROOF_INTAKE.json'
+      - 'scripts/public_market_forecast_v26.py'
+      - 'scripts/evidence_readiness_v26.py'
+      - 'scripts/offline_qa_v26.py'
+      - 'tests/test_public_market_forecast_v26.py'
+      - 'tests/test_evidence_readiness_v26.py'
+      - 'quality/fuzz_v26.py'
+      - '.github/workflows/v26-public-evidence-local-qa.yml'
 
 permissions:
   contents: read
