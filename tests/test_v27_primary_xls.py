@@ -50,6 +50,23 @@ class V27PrimaryTests(unittest.TestCase):
             self.assertEqual(out['status'], 'SOURCE_FETCH_INCOMPLETE')
             self.assertTrue(all(x['file_sha256'] is None for x in out['sources'].values()))
 
+    def test_encrypted_public_xls_retains_raw_sha_without_false_metric(self):
+        with tempfile.TemporaryDirectory() as d:
+            raw = OLE_MAGIC + b'SYNTHETIC_ENCRYPTED_FIXTURE'
+            with patch('scripts.v27_primary_xls.get_public_xls', return_value=raw), \
+                 patch('scripts.v27_primary_xls.inspect_original',
+                       side_effect=ValueError('Workbook is encrypted')):
+                out, code = run(Path(d), require_all=True, save_originals=True)
+            self.assertEqual(code, 2)
+            self.assertEqual(out['status'], 'SOURCE_BYTES_ACQUIRED_MAPPING_BLOCKED')
+            for key, item in out['sources'].items():
+                self.assertEqual(item['file_sha256'], sha256(raw))
+                self.assertEqual(item['file_bytes'], len(raw))
+                self.assertTrue(item['raw_file_acquired'])
+                self.assertEqual(item['status'], 'SOURCE_BYTES_ACQUIRED_PARSING_BLOCKED')
+                self.assertEqual(item['metrics_accepted'], 0)
+                self.assertEqual((Path(d)/'original_xls'/(key+'.xls')).read_bytes(), raw)
+
     def test_valid_source_still_needs_manual_mapping(self):
         with tempfile.TemporaryDirectory() as d:
             mock_result = {'status': 'ORIGINAL_BYTES_PARSED_METRICS_REQUIRE_MANUAL_CELL_MAPPING',
