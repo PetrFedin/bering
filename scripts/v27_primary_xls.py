@@ -116,19 +116,37 @@ def run(out: Path, *, require_all: bool = False, save_originals: bool = False) -
                'metrics_accepted': 0, 'period_grain': '9M_CUMULATIVE_NOT_MONTHLY', 'sources': {},
                'company_OD_verified': False, 'new_40ft_paid_volume_verified': False}
     failed = False
+    fetched_all = True
     for key, (url, asof) in OFFICIAL.items():
         try:
             content = get_public_xls(url)
-            info = inspect_original(content, key)
-            info.update(source_url=url, period_end=asof)
-            if save_originals:
-                (files / (key + '.xls')).write_bytes(content)
         except Exception as exc:
             failed = True
-            info = {'source_url': url, 'period_end': asof, 'status': 'SOURCE_NOT_PARSED',
-                    'reason': str(exc)[:300], 'file_sha256': None, 'metrics_accepted': 0}
+            fetched_all = False
+            info = {'source_url': url, 'period_end': asof, 'status': 'SOURCE_NOT_ACQUIRED',
+                    'reason': str(exc)[:300], 'raw_file_acquired': False,
+                    'file_sha256': None, 'file_bytes': None, 'metrics_accepted': 0}
+            receipt['sources'][key] = info
+            continue
+        # Preserve evidence of the exact original bytes even when the file
+        # is encrypted or its BIFF workbook cannot be parsed by xlrd.
+        raw_metadata = {'source_url': url, 'period_end': asof,
+                        'raw_file_acquired': True, 'ole_compound_confirmed': True,
+                        'file_sha256': sha256(content), 'file_bytes': len(content),
+                        'metrics_accepted': 0}
+        if save_originals:
+            (files / (key + '.xls')).write_bytes(content)
+        try:
+            info = inspect_original(content, key)
+            info.update(raw_metadata)
+        except Exception as exc:
+            failed = True
+            info = {**raw_metadata, 'status': 'SOURCE_BYTES_ACQUIRED_PARSING_BLOCKED',
+                    'reason': str(exc)[:300], 'candidate_rows': []}
         receipt['sources'][key] = info
-    receipt['status'] = 'SOURCE_FETCH_INCOMPLETE' if failed else 'RAW_XLS_ACQUIRED_MAPPING_PENDING'
+    receipt['status'] = ('SOURCE_FETCH_INCOMPLETE' if not fetched_all else
+                         'RAW_XLS_ACQUIRED_MAPPING_PENDING' if not failed else
+                         'SOURCE_BYTES_ACQUIRED_MAPPING_BLOCKED')
     (out / 'primary_xls_receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return receipt, 2 if failed and require_all else 0
 
@@ -148,6 +166,8 @@ def main() -> int:
                               ensure_ascii=False))
     print(json.dumps({'status': result['status'], 'originals': {
         key: {'sha256': value.get('file_sha256'), 'status': value['status'],
+              'raw_file_acquired': value.get('raw_file_acquired', False),
+              'file_bytes': value.get('file_bytes'),
               'candidate_rows': len(value.get('candidate_rows', [])),
               'error_if_any': value.get('reason')}
         for key, value in result['sources'].items()},
