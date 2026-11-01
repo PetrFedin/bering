@@ -15,7 +15,7 @@ An XLS publicly posted by the operator is a company-specific disclosure. Neither
 1. Allows HTTPS downloads only from the official Magadan port disclosure upload path and refuses off-origin redirects;
 2. Rejects oversized files and anything lacking the OLE compound document magic bytes;
 3. Logs exact SHA-256, byte length, individual worksheet dimensions and potential label-cell coordinates;
-4. Places originals in a **private GitHub Actions artifact** for seven days for human review. It does not automatically commit an operator's binary or assume redistribution permission;
+4. Keeps XLS bytes **transiently on the GitHub hosted runner only**; prints SHA-256 and candidate cell coordinates in the job log and step summary. **No Action artifact upload is used** because V27 first CI run encountered `Artifact storage quota has been hit`. The raw XLS bytes are **not preserved in GitHub**. An authorized, rights-reviewed byte-preserving transfer is still required before a permanent research archive;
 5. Does not execute Excel macros/formulas and **accepts zero numerical metrics automatically**. Rows are candidate source evidence, not certified cargo tonnage.
 
 A failed source download is a **failed acquisition job**, separate from the code's quality-test status. Do not mark source verification GREEN merely because the synthetic regression job is GREEN.
@@ -59,3 +59,9 @@ python scripts/v27_monthly_od_gate.py \
 Expected default: port monthly 0/24, OD 0/96, both **HOLD**, `projection=null`, `investment_approved=false`. The separate primary XLS acquisition job is explicitly **not** a substitute for these data categories.
 
 Next hard blockers: rights-screened original historical Bering spreadsheets V20-V21, verified 24-month shipper and incumbent group data, genuine signed new freight, carrier/terminal/recipient acceptance, priced quotes, actual bank settlement and independent financial/security review. Main and funding remain HOLD.
+
+## 1 Nov 2026: GitHub Actions artifact quota incident
+
+First V27 PR CI run [41349929715](https://github.com/PetrFedin/bering/actions/runs/41349929715) **executed 351/351 repository regression tests** and all HOLD controls passed. The otherwise-successful local-gates job failed on the final artifact upload with exact GitHub log error: `Failed to CreateArtifact: Artifact storage quota has been hit`; as a result the dependent source acquisition job was **SKIPPED**. This does **not** prove a public XLS download failure.
+
+A revised V27 workflow removes both artifact-upload steps and retains source SHA/worksheet candidates in job logs and the GitHub Step Summary (at no additional artifact storage charge). The public XLS acquisition must be independently rerun and its status verified; the prior unsuccessful run does not establish source bytes.
