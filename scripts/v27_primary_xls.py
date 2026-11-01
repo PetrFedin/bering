@@ -106,7 +106,14 @@ def inspect_original(data: bytes, source_name: str, *, candidate_limit: int = 35
             'status': 'ORIGINAL_BYTES_PARSED_METRICS_REQUIRE_MANUAL_CELL_MAPPING'}
 
 
-def run(out: Path, *, require_all: bool = False, save_originals: bool = False) -> tuple[dict, int]:
+def run(out: Path, *, require_all: bool = False, save_originals: bool = False,
+        expected_raw_sha256: dict[str, str] | None = None) -> tuple[dict, int]:
+    if expected_raw_sha256 is not None:
+        if (not isinstance(expected_raw_sha256, dict)
+                or set(expected_raw_sha256) != set(OFFICIAL)
+                or any(not isinstance(v, str) or not re.fullmatch(r'[0-9a-f]{64}', v)
+                       for v in expected_raw_sha256.values())):
+            raise ValueError('Incomplete or malformed four-source original SHA-256 pin')
     out.mkdir(parents=True, exist_ok=True)
     files = out / 'original_xls'
     if save_originals:
@@ -134,6 +141,13 @@ def run(out: Path, *, require_all: bool = False, save_originals: bool = False) -
                         'raw_file_acquired': True, 'ole_compound_confirmed': True,
                         'file_sha256': sha256(content), 'file_bytes': len(content),
                         'metrics_accepted': 0}
+        if expected_raw_sha256 is not None and sha256(content) != expected_raw_sha256[key]:
+            failed = True
+            receipt['sources'][key] = {**raw_metadata,
+                'status': 'SOURCE_BYTES_CHANGED_SINCE_REVIEW',
+                'reason': 'Source original SHA-256 differs from pinned GitHub runner receipt',
+                'candidate_rows': []}
+            continue
         if save_originals:
             (files / (key + '.xls')).write_bytes(content)
         try:
@@ -157,8 +171,17 @@ def main() -> int:
     p.add_argument('--require-all', action='store_true')
     p.add_argument('--save-originals', action='store_true', help='save only inside transient runner, not git commit')
     p.add_argument('--print-candidates', type=int, default=0, help='print at most N source-labeled candidate cells per report; never accepted figures')
+    p.add_argument('--pinned-source-register', type=Path, help='expected SHA-256 of all four official OLE sources')
     args = p.parse_args()
-    result, code = run(args.output_dir, require_all=args.require_all, save_originals=args.save_originals)
+    pinned = None
+    if args.pinned_source_register is not None:
+        register = json.loads(args.pinned_source_register.read_text(encoding='utf-8'))
+        if not isinstance(register, dict) or not isinstance(register.get('sources'), list):
+            p.error('Pinned source register JSON must include sources array')
+        pinned = {s.get('id'):s.get('source_sha256') for s in register['sources']
+                  if isinstance(s, dict)}
+    result, code = run(args.output_dir, require_all=args.require_all,
+                       save_originals=args.save_originals, expected_raw_sha256=pinned)
     if args.print_candidates > 0:
         for source_key, details in result['sources'].items():
             print(json.dumps({'source': source_key, 'candidate_only_not_accepted':

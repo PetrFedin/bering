@@ -65,3 +65,16 @@ Next hard blockers: rights-screened original historical Bering spreadsheets V20-
 First V27 PR CI run [41349929715](https://github.com/PetrFedin/bering/actions/runs/41349929715) **executed 351/351 repository regression tests** and all HOLD controls passed. The otherwise-successful local-gates job failed on the final artifact upload with exact GitHub log error: `Failed to CreateArtifact: Artifact storage quota has been hit`; as a result the dependent source acquisition job was **SKIPPED**. This does **not** prove a public XLS download failure.
 
 A revised V27 workflow removes both artifact-upload steps and retains source SHA/worksheet candidates in job logs and the GitHub Step Summary (at no additional artifact storage charge). The public XLS acquisition must be independently rerun and its status verified; the prior unsuccessful run does not establish source bytes.
+
+## 1 November 2026: public original bytes found, spreadsheet contents still encrypted
+
+Two independently executed GitHub-hosted retrievals downloaded all four public OLE ` .xls sources from the officially disclosed MMTP URLs and produced stable exact original SHA-256 values, sizes and OLE header checks:
+
+| Original | Original bytes | SHA-256 | Reader result |
+|---|---:|---|---|
+| MP1_2026_9M | 267,264 | `20f684ee23777db318d2dda4942891d8a7ee57e43140fe0c0c47d767893f61a2` | `Workbook is encrypted` |
+| MP2_2026_9M | 923,136 | `11afb90722824351676e8c2d800c8bee71564fec5d66bf3234149659c9e36a42` | `Workbook is encrypted` |
+| MP1_2025_9M | 259,584 | `ba8c378d15ef70273ecd54d75463f98928ab73387fbe85be20a207ddc88254aa` | `Workbook is encrypted` |
+| MP2_2025_9M | 893,952 | `288ef40904064f29884375072fc7a0619f1522a00809c069217c28ff9d37e294` | `Workbook is encrypted` |
+
+Verified action runs: [run 41350323889](https://github.com/PetrFedin/bering/actions/runs/41350323889) and [run 41350390175](https://github.com/PetrFedin/bering/actions/runs/41350390175). **These raw bytes were held temporarily only by GitHub runners, NOT committed as XLS binaries**. The repository [source register](../data/public/V27_PRIMARY_SOURCE_REGISTER.json) now pins the exact 4 original checksums. V27 source loader rejects any unexpected future file-byte change. XLS parsing is NOT complete, no operator metric has been accepted, and none of the four sources proves any monthly OD or Bering cargo. Independently obtaining legally authorized unencrypted primary materials remains necessary.

@@ -67,6 +67,35 @@ class V27PrimaryTests(unittest.TestCase):
                 self.assertEqual(item['metrics_accepted'], 0)
                 self.assertEqual((Path(d)/'original_xls'/(key+'.xls')).read_bytes(), raw)
 
+    def test_source_sha_pin_mismatch_fails_closed(self):
+        raw = OLE_MAGIC + b'FAKE_SOURCE_BYTES'
+        expected = {key:'0'*64 for key in OFFICIAL}
+        with tempfile.TemporaryDirectory() as d:
+            with patch('scripts.v27_primary_xls.get_public_xls', return_value=raw):
+                out, code = run(Path(d), require_all=True, expected_raw_sha256=expected)
+            self.assertEqual(code, 2)
+            self.assertEqual(out['status'], 'SOURCE_BYTES_ACQUIRED_MAPPING_BLOCKED')
+            for item in out['sources'].values():
+                self.assertEqual(item['file_sha256'], sha256(raw))
+                self.assertEqual(item['status'], 'SOURCE_BYTES_CHANGED_SINCE_REVIEW')
+                self.assertEqual(item['metrics_accepted'], 0)
+
+    def test_source_sha_pin_allows_identical_ciphertext_but_not_claimed_metrics(self):
+        raw = OLE_MAGIC + b'PUBLIC_BUT_PASSWORD_PROTECTED'
+        expected = {key:sha256(raw) for key in OFFICIAL}
+        with tempfile.TemporaryDirectory() as d:
+            with patch('scripts.v27_primary_xls.get_public_xls', return_value=raw), \
+                 patch('scripts.v27_primary_xls.inspect_original', side_effect=ValueError('Workbook is encrypted')):
+                out, code = run(Path(d), require_all=True, expected_raw_sha256=expected)
+            self.assertEqual(code, 2)
+            self.assertTrue(all(v['status']=='SOURCE_BYTES_ACQUIRED_PARSING_BLOCKED' for v in out['sources'].values()))
+            self.assertEqual(out['metrics_accepted'],0)
+
+    def test_malformed_incomplete_pins_rejected(self):
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertRaisesRegex(ValueError, 'four-source original SHA-256 pin'):
+                run(Path(d), expected_raw_sha256={'MP1_2026_9M':'0'*64})
+
     def test_valid_source_still_needs_manual_mapping(self):
         with tempfile.TemporaryDirectory() as d:
             mock_result = {'status': 'ORIGINAL_BYTES_PARSED_METRICS_REQUIRE_MANUAL_CELL_MAPPING',
