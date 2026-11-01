@@ -1,0 +1,53 @@
+name: Bering V26 batch invoice settlement reconciliation (research only)
+on:
+  workflow_dispatch:
+  push:
+    branches: [audit/v26-batch-invoice-settlement-20261031]
+  pull_request:
+    paths:
+      - 'scripts/settlement_allocation_v26.py'
+      - 'tests/test_settlement_allocation_v26.py'
+      - 'data/pilots/V26_no_verified_invoice_settlements.json'
+      - '.github/workflows/v26-batch-settlement-qa.yml'
+permissions:
+  contents: read
+jobs:
+  settlement-allocations:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and validate research input
+        run: |
+          python -m compileall -q scripts/settlement_allocation_v26.py
+          python -m json.tool data/pilots/V26_no_verified_invoice_settlements.json > /dev/null
+      - name: Re-run V25 freight join tests and V26 settlement tests
+        run: |
+          python -m unittest discover -s tests -p 'test_source_join_v25.py' -v
+          python -m unittest discover -s tests -p 'test_settlement_allocation_v26.py' -v
+      - name: No real invoices must return HOLD without false revenue
+        run: |
+          set +e
+          python scripts/settlement_allocation_v26.py --input data/pilots/V26_no_verified_invoice_settlements.json --output v26_missing_source_receipt.json > /dev/null
+          code=$?
+          set -e
+          test "$code" -eq 3
+          python - <<'PY'
+          import json
+          x=json.load(open('v26_missing_source_receipt.json'))
+          assert x['status']=='HOLD'
+          assert x['matched_physical_40ft'] is None
+          assert x['group_incremental_cm_rub'] is None
+          assert x['mechanically_reconciled_gross_rub'] is None
+          assert x['bankable_revenue_approved'] is False
+          PY
+      - name: Upload HOLD-only research receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bering-v26-no-real-documents
+          path: v26_missing_source_receipt.json
+          if-no-files-found: ignore

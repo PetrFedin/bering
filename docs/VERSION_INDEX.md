@@ -28,6 +28,8 @@
 
 | V25 | 31 Oct 2026 | Match unique physical consignment, each route leg and incumbent terminal margin to identical V23 source, not just summed numbers; keep unknown data null | [V25 exact source join](../scripts/source_join_v25.py), [method + 2026 primary sources](V25_SOURCE_LINK_AND_ECONOMIC_ADMISSION_RU.md), 28 local synthetic tests, QA and HOLD receipts | Draft; real contracts/paid OD unknown; Actions failed pre-step; 0/3 pilot investment gates approved |
 
+| V26 | 31 Oct 2026 | Batch invoice-to-physical container and bank transactions, no double-counted invoice or duplicate bank event, exact VAT/RUB reconciliation | [Algorithm](../scripts/settlement_allocation_v26.py), [limitations](V26_INVOICE_PAYMENT_ALLOCATION_RU.md), 30 local synthetic tests | Draft; 0 original invoices/payments received, combined V25/V26 E2E HOLD, hosted CI not GREEN |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.

@@ -1,0 +1,12 @@
+{
+  "schema_version": "V26",
+  "as_of": "2026-10-31",
+  "group_id": "RESEARCH_GROUP_UNVERIFIED",
+  "currency": "RUB",
+  "amount_basis": "GROSS_NET_VAT_SEPARATELY",
+  "source_type": "SETTLED_INVOICE_ALLOCATION_RESEARCH",
+  "refunds_declared": false,
+  "invoices": [],
+  "payments": [],
+  "source_note": "No authenticated business documents supplied; absent records do not mean actual zero shipments or revenue."
+}

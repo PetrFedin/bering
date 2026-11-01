@@ -1,0 +1,25 @@
+{
+  "version": "V26",
+  "as_of": "2026-10-31",
+  "scope": "Research-only batch invoice and bank settlement allocations",
+  "verified_real_invoices": 0,
+  "verified_real_payments": 0,
+  "new_local_tests_passed": 30,
+  "v25_legacy_tests_passed": 28,
+  "source_to_v25_batch_integration_complete": false,
+  "real_incremental_group_contribution_rub": null,
+  "bank_authenticity_verified": false,
+  "investment_authorized": false,
+  "remote_ci_green_verified": false,
+  "status": "DRAFT_LOCAL_QA_PASS_REAL_PAYMENTS_HOLD_REMOTE_CI_HOLD_INVESTMENT_HOLD",
+  "sha256_by_file": {
+    "V26_HOLD_RECEIPT.json": "31a1b905df54c9083e8febe8ab74602b977a9099aa3db0b27b37cbacc122efce",
+    "tests/test_settlement_allocation_v26.py": "e06028b7f42b326094c3aab4422892a399661178ccde4a13bdf6920d3cc26481",
+    "tests/test_source_join_v25.py": "22028d7043b120b0d7b15d3f7b030ba589607489e34bf76fed84335f61d68f4a",
+    "scripts/source_join_v25.py": "cc8a0cf213f662e77b9ba900efcd1710db9a545b8e1ab70f218c64d958ea137a",
+    "scripts/settlement_allocation_v26.py": "ac42114918da9149f8b66be0ebb1a73b753ef2e64584ee4d66f0dfae707ac06d",
+    "docs/V26_INVOICE_PAYMENT_ALLOCATION_RU.md": "11bf04c9e663e5962c05e1e96cc8864bccb4ef2f860cbe6e6416875e43903ace",
+    ".github/workflows/v26-batch-settlement-qa.yml": "9872adeef6b9f6431ad7da4db74cacdf55a0f45182d8c14c72cd6edcede81236",
+    "data/pilots/V26_no_verified_invoice_settlements.json": "5c2727b8dbd4dc446cab1463a7834cbb338404256528cccfd7e0b5384b26b75a"
+  }
+}
