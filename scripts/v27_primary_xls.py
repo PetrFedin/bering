@@ -137,9 +137,15 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output-dir', type=Path, required=True)
     p.add_argument('--require-all', action='store_true')
-    p.add_argument('--save-originals', action='store_true', help='temporary runner artifact, not git commit')
+    p.add_argument('--save-originals', action='store_true', help='save only inside transient runner, not git commit')
+    p.add_argument('--print-candidates', type=int, default=0, help='print at most N source-labeled candidate cells per report; never accepted figures')
     args = p.parse_args()
     result, code = run(args.output_dir, require_all=args.require_all, save_originals=args.save_originals)
+    if args.print_candidates > 0:
+        for source_key, details in result['sources'].items():
+            print(json.dumps({'source': source_key, 'candidate_only_not_accepted':
+                              details.get('candidate_rows', [])[:min(args.print_candidates, 100)]},
+                              ensure_ascii=False))
     print(json.dumps({'status': result['status'], 'originals': {
         key: {'sha256': value.get('file_sha256'), 'status': value['status'],
               'candidate_rows': len(value.get('candidate_rows', []))}
