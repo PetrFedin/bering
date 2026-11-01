@@ -121,3 +121,9 @@ customer purchase decisions have not been received.
    integration under separate approved PRs.
 
 **Commercial:** P1 HOLD / P2 HOLD / P3 HOLD. **Investment:** HOLD.
+
+## Hosted V26 research QA, 1 November 2026
+
+[GitHub V26 run 41347030929](https://github.com/PetrFedin/bering/actions/runs/41347030929) executed on a real hosted runner, with **269/269** V22–V26-tagged tests, **1,000** source mutation checks without unhandled errors, and full V23–V25 commercial baseline **HOLD**. [Bering Research QA 41347030976](https://github.com/PetrFedin/bering/actions/runs/41347030976) independently passed **314/314** repository unit tests. The tested GitHub PR merge commit was `07aa9be0aa22fc0ab1f6886ef6fd52785a2ac567`; code head `d59c8690b6ccf0fa9897fc9ed4bddc2a4a4d491b`.
+
+These are **software integrity and evidence-completeness results**. The original MP1/MP2 XLS files and P1–P3 contracts, OD records, bank settlements and actual shipments still have not been authenticated. Financial forecasts and investment permission remain NULL/HOLD.

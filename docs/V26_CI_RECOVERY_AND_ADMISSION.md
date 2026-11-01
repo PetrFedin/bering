@@ -1,6 +1,6 @@
 # Bering V26 | GitHub runner recovery: evidence and no-cost path
 
-**2026-10-31** | **Status: not restored** | Current main protected=false
+**2026-10-31** | **Status: hosted-runner dispatch restored for the checked V26 PR test workflows; other admission checks still require proof** | Current main protected=false
 
 ## Verified evidence
 
@@ -76,3 +76,14 @@ GitHub documentation:
 
 Open blockers: #7 hosted runner, #18 protection, #1 historical originals,
 #4 pilot additionality. No branch merged and no billable resources authorized.
+
+
+## 1 November 2026 — independently verified hosted runner recovery
+
+- [Bering Research QA 41347030976](https://github.com/PetrFedin/bering/actions/runs/41347030976) completed **SUCCESS**: actual hosted runner ID `1000186265`, checkout, Python, `scripts/validate_research.py` (**11 CSV files / 218 rows / 0 structural errors**), `unittest discover` (**314/314 PASS**), and the individual P1/P2/P3 baseline gates all `HOLD`.
+- [Bering V26 workflow 41347030929](https://github.com/PetrFedin/bering/actions/runs/41347030929) completed **SUCCESS**: actual hosted runner `1000186267`, Python **3.11.17**, **269/269** tests matching `test_*v2*.py`, **1,000/1,000** deterministic corrupt-input cases with **0** unhandled errors, V25 documentary baseline = `HOLD`, 29-category proof-readiness baseline = `HOLD`, the complete existing commercial controller V23–V25 = `HOLD`, and Bering investment flag = false.
+- The checked-out code was the GitHub-created **PR merge candidate** `07aa9be0aa22fc0ab1f6886ef6fd52785a2ac567` (V26 head `d59c8690b6ccf0fa9897fc9ed4bddc2a4a4d491b` against V25 base). Record merge SHA as actual test subject, not an invented direct-checkout of the head.
+- **Interpretation:** runner availability and unit/integrated research workflows are now proven **GREEN**, so it is no longer accurate to say every GitHub Action is blocked. The root cause of the **earlier** pre-step failures is nevertheless unresolved. Do not infer that billing or GitHub's October 30 incident caused them.
+- **Remaining blockers are independent of CI:** no original source binaries in GitHub, no independently authenticated P1/P2/P3 customer/waybill/payment sources, no validated 24-month group OD, no independent financial and security review, no branch protection of main. Research QA success is **not** commercial or investment admission.
+
+A separate machine-readable [remote receipt](../quality/V26_REMOTE_CI_RECEIPT.json) preserves the run IDs, actual GitHub runner, PR merge SHA, scope, pass counts and unresolved gates. Workflow execution is now demonstrated, but **no automatic merge, production or CAPEX approval**.
