@@ -1,0 +1,73 @@
+{
+  "schema": "V28_REMOTE_DISPATCH_AND_SOURCE_ADMISSION_RECEIPT",
+  "dated": "2026-11-02",
+  "branch": "audit/v28-market-perimeter-competitive-capacity-20261102",
+  "draft_pull_request": "https://github.com/PetrFedin/bering/pull/24",
+  "checked_head_sha": "b1867c2e50c77aae1b0b8479d3041f39a2c4f880",
+  "root_source_commit": "c49e47aa2539356bb3fd0ca334c89e7eb1236cd1",
+  "local_validation": {
+    "unit_tests": 40,
+    "passed": 40,
+    "synthetic_mutation_cases": 750,
+    "invalid_input_mutations_detected": 720,
+    "unhandled_exceptions_or_false_admissions": 0,
+    "full_v25_to_v28_real_integrated_application_e2e": "NOT_EXECUTED_LOCAL_PARTIAL_SNAPSHOT"
+  },
+  "remote_ci": {
+    "research_qa": {
+      "url": "https://github.com/PetrFedin/bering/actions/runs/41351746628",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "started_steps": 0
+    },
+    "v28": {
+      "url": "https://github.com/PetrFedin/bering/actions/runs/41351746636",
+      "first_attempt": {
+        "conclusion": "failure",
+        "runner_id": 0,
+        "started_steps": 0
+      },
+      "second_attempt": {
+        "triggered": true,
+        "conclusion": "failure",
+        "runner_id": 0,
+        "started_steps": 0
+      },
+      "reason": "UNKNOWN_GITHUB_DISPATCH_PRE_STEP_FAILURE_NOT_A_PYTHON_TEST_RESULT"
+    },
+    "prior_v27_research_success": "https://github.com/PetrFedin/bering/actions/runs/41350746174",
+    "prior_v27_quality_local_gates_success": "https://github.com/PetrFedin/bering/actions/runs/41350746164",
+    "v28_green_on_same_sha": false,
+    "source_code_in_ci_executed": false
+  },
+  "evidence": {
+    "market_2024_port_teu_secondary": "80900",
+    "market_2025_port_teu_secondary": "84300",
+    "difference_teu": "3400",
+    "yoy_pct": "4.20",
+    "MMTP_operator_2025_all_cargo_tonnes": "1834700",
+    "third_party_announced_may_design_TEUs": "30000",
+    "third_party_announced_oct_design_TEUs": "150000",
+    "capacity_versions_added_together": false,
+    "competitor_project_scope_signed_match": false,
+    "competitor_built_and_commissioned_proven": false,
+    "primary_morcenter_originals": false,
+    "v27_operator_months_with_originals": 0,
+    "v27_OD_months_with_originals": 0,
+    "signed_new_bering_cargo_40ft": null,
+    "independent_paid_invoices": false,
+    "group_incremental_contribution_margin_rub": null,
+    "bering_project_NPV_rub": null
+  },
+  "main_branch": {
+    "sha": "e6dcc74cee46b327c399a1a0a5d4f8f282831d0f",
+    "protected": false,
+    "modified_in_v28": false
+  },
+  "P1": "HOLD",
+  "P2": "HOLD",
+  "P3": "HOLD",
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "overall": "DRAFT_LOCAL_QA_PASS_REMOTE_CI_BLOCKED_INDEPENDENT_SOURCE_ADMISSION_HOLD"
+}
