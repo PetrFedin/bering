@@ -58,3 +58,9 @@ python scripts/v28_group_decision.py --repo .
 5. GitHub main is not protected; do not merge the version chain without CI, PR review and reliable evidence.
 
 **Investment decision remains HOLD. No signed Bering new cargo, bankable group revenue, forecast or return is admitted.**
+
+## GitHub release and access limitation — 2 November 2026
+
+[PR #24](https://github.com/PetrFedin/bering/pull/24) is a separate **Draft** on V27, not merged into main. Both test workflows failed **before the first command** on two V28 code revisions: [Research QA 41351746628](https://github.com/PetrFedin/bering/actions/runs/41351746628) and [V28 gate 41351746636](https://github.com/PetrFedin/bering/actions/runs/41351746636), each showing runner ID zero and no job steps. This is **not a test failure** or GREEN CI. GitHub Actions runner/billing settings endpoints cannot currently be inspected via the connected GitHub app. The root cause of dispatch failure is unknown; a rerun was attempted and the jobs remained failed before steps. Check the repo owner-visible Actions banner and billing/policy status before changing workflow code.
+
+For private `PetrFedin/bering`, the GitHub REST Rulesets endpoint returns `403: Upgrade to GitHub Pro or make this repository public to enable this feature`. The `main` branch reports `protected=false`. No payment, visibility change or automatic merge is authorized. Source and code evidence must remain in Draft PR; release HOLD is enforced by process only until server-side branch protection is available. [P0 capacity-source conflict issue #26](https://github.com/PetrFedin/bering/issues/26) tracks the unverified 30k/150k relationship and legal project phase.

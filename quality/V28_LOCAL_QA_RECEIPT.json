@@ -8,11 +8,14 @@
   "fuzzed_malformed_source_mutations": 750,
   "unhandled_exceptions_or_false_admissions": 0,
   "full_v25_to_v28_integration_local": "NOT_RUN_OLDER_REPOSITORY_MODULES_MISSING",
-  "github_hosted_ci_status": "NOT_RUN_YET",
+  "github_hosted_ci_status": "FAILED_BEFORE_FIRST_RUNNER_STEP",
   "observed_2024_magadan_port_teu": "80900",
   "observed_2025_magadan_port_teu": "84300",
   "observation_precision": "SECONDARY_MORCENTER_QUOTATION_NOT_ORIGINAL_DATA",
-  "announced_mlc_capacities_teu_per_year": ["30000", "150000"],
+  "announced_mlc_capacities_teu_per_year": [
+    "30000",
+    "150000"
+  ],
   "competing_project_design_scope_resolved": false,
   "competing_terminal_commissioning_confirmed": false,
   "v27_verified_od_months": 0,
@@ -21,5 +24,16 @@
   "incremental_group_cm_rub": null,
   "project_npv_rub": null,
   "investment_approved": false,
-  "P1": "HOLD", "P2": "HOLD", "P3": "HOLD"
+  "P1": "HOLD",
+  "P2": "HOLD",
+  "P3": "HOLD",
+  "github_remote_cause_verified": false,
+  "github_action_run_ids": [
+    41351656353,
+    41351656442,
+    41351746628,
+    41351746636
+  ],
+  "machine_remote_receipt": "quality/V28_REMOTE_CI_BLOCKER.json",
+  "main_protection": "NOT_ENABLED_RULESETS_403_PRIVATE_REPO"
 }
