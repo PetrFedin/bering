@@ -28,6 +28,23 @@ jobs:
         run: git rev-parse HEAD
       - name: Run full historical and V27 regression suite on one SHA
         run: python -m unittest discover -s tests -v
+      - name: Published KASCO list rates are VAT-inclusive CY-CY, never project contribution
+        run: |
+          python scripts/v27_public_rates.py \
+            --input data/public/V27_KASCO_LIST_RATE_20261101.json \
+            --out v27_list_rate_receipt.json
+          python - <<'PY'
+          import json
+          r=json.load(open('v27_list_rate_receipt.json'))
+          assert r['status']=='PUBLIC_LIST_RATE_ONLY'
+          assert r['quoted_40ft_dry_rub_incl_vat']=='239767'
+          assert r['quoted_40ft_reefer_rub_incl_vat']=='315000'
+          assert r['reefer_minus_dry_rub_incl_vat']=='75233'
+          assert r['reefer_vs_dry_premium_percent']=='31.38'
+          assert r['d2d_rub'] is None
+          assert r['group_incremental_margin_rub'] is None
+          assert r['bankable_revenue_approved'] is False
+          PY
       - name: Robustness for malformed research inputs
         run: python quality/fuzz_v27.py
       - name: Missing actual OD evidence must not produce an investment forecast
@@ -115,7 +132,7 @@ jobs:
               msg='## V27 publicly posted original XLS files\n\n'
               msg+='Acquisition status: '+d['status']+'\n\n'
               for name,rec in d['sources'].items():
-                  msg+=f"- {name}: {rec['status']}; SHA-256={rec.get('file_sha256')}; candidate cells={len(rec.get('candidate_rows',[]))}\n"
+                  msg+=f"- {name}: {rec['status']}; raw-byte SHA-256={rec.get('file_sha256')}; raw bytes={rec.get('file_bytes')}; reason={rec.get('reason')}; candidate cells={len(rec.get('candidate_rows',[]))}\n"
               msg+='\nCandidate cells are not authenticated throughput, 40ft OD or new Bering demand.\n'
           print(msg)
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(msg)
