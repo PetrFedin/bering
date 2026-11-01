@@ -1,0 +1,54 @@
+{
+  "schema": "V27_PUBLIC_PRIMARY_XLS_REGISTER",
+  "operator": "PAO Magadan Maritime Commercial Port (MMTP)",
+  "scope": "regulated-services disclosure for one operator; not the entire Magadan port basin",
+  "index_page": "https://magadanport.ru/raskrytie-informacii/",
+  "index_page_verified": "2026-11-01",
+  "source_availability_on_web": "POSTED_LINKS_VERIFIED",
+  "original_file_bytes_verified_in_current_runtime": false,
+  "auto_conversion_to_monthly_40ft_allowed": false,
+  "sources": [
+    {
+      "id": "MP1_2026_9M",
+      "form": "MP-1",
+      "period": "2026-01..2026-09",
+      "posted": "2026-10-07",
+      "url": "https://magadanport.ru/wp-content/uploads/2026/10/MP10014726.xls",
+      "source_sha256": null,
+      "source_excel_cells_accepted": null,
+      "source_status": "LINK_VERIFIED_FILE_NOT_PARSED"
+    },
+    {
+      "id": "MP2_2026_9M",
+      "form": "MP-2",
+      "period": "2026-01..2026-09",
+      "posted": "2026-10-07",
+      "url": "https://magadanport.ru/wp-content/uploads/2026/10/MP20014726.xls",
+      "source_sha256": null,
+      "source_excel_cells_accepted": null,
+      "source_status": "LINK_VERIFIED_FILE_NOT_PARSED"
+    },
+    {
+      "id": "MP1_2025_9M",
+      "form": "MP-1",
+      "period": "2025-01..2025-09",
+      "posted": "2025-10-08",
+      "url": "https://magadanport.ru/wp-content/uploads/2025/10/MP10014725.xls",
+      "source_sha256": null,
+      "source_excel_cells_accepted": null,
+      "source_status": "LINK_VERIFIED_FILE_NOT_PARSED"
+    },
+    {
+      "id": "MP2_2025_9M",
+      "form": "MP-2",
+      "period": "2025-01..2025-09",
+      "posted": "2025-10-08",
+      "url": "https://magadanport.ru/wp-content/uploads/2025/10/MP20014725.xls",
+      "source_sha256": null,
+      "source_excel_cells_accepted": null,
+      "source_status": "LINK_VERIFIED_FILE_NOT_PARSED"
+    }
+  ],
+  "meaning": "These are 9-month disclosures. Even if a line has cargo tons, the 9M number is not the individual September 2026 monthly volume, and the operator is not the entire region or Bering demand.",
+  "additional_sources_available": "Official magadanport.ru/klientam page publishes monthly available-capacity spreadsheets for 2024-2026; available capacity is not realized cargo movement."
+}

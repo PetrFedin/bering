@@ -1,0 +1,9 @@
+{
+  "schema": "V27_24M_GROUP_OD",
+  "unit": "40ft_container",
+  "window_start": "2024-10",
+  "window_end": "2026-09",
+  "coverage": [],
+  "shipments": [],
+  "note": "Expected 3 pilot lanes x 24 months plus 24 incumbent group months = 96 independently attested month-slots. No historical OD files obtained. Null is not zero."
+}

@@ -1,0 +1,32 @@
+{
+  "stage": "V27",
+  "date": "2026-11-01",
+  "status": "LOCAL_UNIT_PASS_SOURCE_OD_HOLD",
+  "source_pages_verified": 1,
+  "public_xls_links_verified": 4,
+  "public_xls_raw_bytes_imported": 0,
+  "port_monthly": {
+    "required_months": 24,
+    "source_documented_months": 0,
+    "status": "HOLD"
+  },
+  "od": {
+    "pilots": 3,
+    "required_pilot_months": 72,
+    "required_incumbent_group_months": 24,
+    "total_required_months": 96,
+    "source_documented_months": 0,
+    "status": "HOLD"
+  },
+  "actual_signed_new_cargo_for_bering": null,
+  "actual_bank_settlements_verified": false,
+  "group_incremental_contribution_rub": null,
+  "forecast_Bering_new_volume": null,
+  "investment_approved": false,
+  "github_hosted_ci_status": "NOT_RUN_ON_V27_BRANCH_YET",
+  "local_unit_tests": 37,
+  "local_unit_passed": 37,
+  "synthetic_mutations": 400,
+  "unhandled_errors": 0,
+  "notes": "Public official MP-1/2 9-month forms are operator disclosures, not 24 individual months or company OD."
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "V27_PORT_MONTHLY",
+  "entity_scope": "MMTP_OPERATOR",
+  "metric": "CONTAINER_CARGO_TONNES",
+  "unit": "tonnes",
+  "window_start": "2024-10",
+  "window_end": "2026-09",
+  "observations": [],
+  "note": "No monthly operator data from real original source have been received; quarterly and 9M totals must not be backfilled into months."
+}
