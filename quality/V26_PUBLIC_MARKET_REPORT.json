@@ -1,0 +1,89 @@
+{
+  "status": "PUBLIC_CONTEXT_ONLY",
+  "source_register_sha256": "2d1b0934684bae49d02587c39082046d21ecca945ce08d9c1c19cce7f5c98747",
+  "observed_port_2025_all_cargo_tonnes": "1834700",
+  "observed_far_east_basin_2025_all_cargo_tonnes": "252100000",
+  "reported_operator_2024_container_cargo_tonnes": "890100",
+  "operator_2032_container_target_tonnes": "1000000",
+  "operator_target_implied_annual_growth_percent": "1.4659",
+  "annual_path": [
+    {
+      "year": 2024,
+      "operator_target_smooth_interpolation_tonnes": "890100",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "REPORTED_HISTORICAL"
+    },
+    {
+      "year": 2025,
+      "operator_target_smooth_interpolation_tonnes": "903148",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2026,
+      "operator_target_smooth_interpolation_tonnes": "916387",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2027,
+      "operator_target_smooth_interpolation_tonnes": "929821",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2028,
+      "operator_target_smooth_interpolation_tonnes": "943451",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2029,
+      "operator_target_smooth_interpolation_tonnes": "957281",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2030,
+      "operator_target_smooth_interpolation_tonnes": "971314",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2031,
+      "operator_target_smooth_interpolation_tonnes": "985553",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "MATHEMATICAL_INTERPOLATION_NOT_OBSERVED"
+    },
+    {
+      "year": 2032,
+      "operator_target_smooth_interpolation_tonnes": "1000000",
+      "flat_2024_counterfactual_tonnes": "890100",
+      "record_type": "TARGET_POINT"
+    }
+  ],
+  "unextracted_operator_2026_9m_reports": [
+    "MAGADAN_MMTP_2026_9M_MP1_PRIMARY_UNEXTRACTED",
+    "MAGADAN_MMTP_2026_9M_MP2_PRIMARY_UNEXTRACTED"
+  ],
+  "direct_2026_actual_container_tonnage": null,
+  "pilot_specific_40ft_units": {
+    "P1": null,
+    "P2": null,
+    "P3": null
+  },
+  "project_paid_40ft_units": null,
+  "project_incremental_group_cm_rub": null,
+  "project_investment_npv_rub": null,
+  "commercial_gate": "HOLD",
+  "investment_approved": false,
+  "probability_forecast_verified": false,
+  "method": "CAGR=(2032 operator reported target / 2024 operator reported actual)^(1/8)-1; intervening years are illustrative, NOT operator annual forecasts.",
+  "critical_scope_notes": [
+    "All-port cargo, operator container cargo tonnes, TEU and 40ft units are different grains.",
+    "The 2032 value is an operator target reported by a secondary publisher, not a realized cargo contract.",
+    "2026 primary XLS data is listed but its raw bytes were not downloaded or audited.",
+    "No 24-month origin-destination/customer base, costs or bank-verified new cargo supports a Bering revenue projection."
+  ],
+  "errors": []
+}

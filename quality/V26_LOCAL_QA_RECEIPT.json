@@ -1,0 +1,49 @@
+{
+  "schema_version": "V26_LOCAL_QA_1",
+  "python": "3.13.5",
+  "repo_directory": "/mnt/data/bering_v26",
+  "git_head": null,
+  "git_worktree_clean": null,
+  "github_remote_test_executed": false,
+  "github_actions_green": false,
+  "external_document_authentication": false,
+  "source_files_sha256": {
+    "scripts/shipment_identity_v24.py": "f6677777a5981bd5375102724770255bca8ca4fee86c989edb8aed960ad4eb54",
+    "scripts/release_commercial_v24.py": "dc58b53651df813a05b3a2cb5094edf667fb85e635ef3f55da993dd30ada8ca4",
+    "scripts/independent_custody_payment_v25.py": "fa86416642479424108231cb0dae2714807eaf9d447d292ea360158a4ba15958",
+    "scripts/release_commercial_v25.py": "8ac1d034bcc94bf54f381dc7fb8c3a831ec716ec8b090453a24e27bde61dbc49",
+    "scripts/public_market_forecast_v26.py": "ca6f2b00fbdd70b6964d53189b1718126104805382c2a7d97173bb96b6902d0c",
+    "scripts/evidence_readiness_v26.py": "d39257ce69ea1ce3581aa1ab14e18a32b70f3e89f6a8064705f3eb59b4e625b3",
+    "data/public/V26_PUBLIC_SOURCE_REGISTER.json": "2d1b0934684bae49d02587c39082046d21ecca945ce08d9c1c19cce7f5c98747",
+    "data/pilots/V26_EMPTY_PROOF_INTAKE.json": "347192f1a96e1e46974f77c16ff188b818e159006970e976fab25af2fe7b3b97",
+    "data/pilots/V23_cross_pilot_unverified.json": "adff60ac8f365baf14e37ed82ed2a7fe135e79d516c4abc824c7d0c2c4289885",
+    "data/pilots/V24_identity_unverified.json": "72432ad4ffee16a5cc956f9c6667865c1e719ee7d624df7cfad94917bb61a0b3",
+    "data/pilots/V25_documentary_unverified.json": "7efbc0c7dfe40b7742ea31f5779a45dae8cdcf81bb7ebb870050b0afacdfb818"
+  },
+  "error_items": [],
+  "unit_tests": {
+    "count": 200,
+    "returncode": 0,
+    "summary": "----------------------------------------------------------------------\nRan 200 tests in 1.170s\n\nOK\n"
+  },
+  "documentary_baseline": {
+    "status": "HOLD",
+    "bank_gross_paid_rub": null,
+    "source_records": 0,
+    "bankable_revenue_approved": false
+  },
+  "market_report": {
+    "status": "PUBLIC_CONTEXT_ONLY",
+    "commercial_gate": "HOLD",
+    "project_incremental_group_cm_rub": null,
+    "target_cagr_percent": "1.4659"
+  },
+  "evidence_intake_baseline": {
+    "status": "HOLD",
+    "required_slots": 29,
+    "locally_verified_file_slots": 0
+  },
+  "full_integrated_commercial_baseline": "NOT_RUN_PARTIAL_LOCAL_SNAPSHOT",
+  "project_investment_approved": false,
+  "status": "LOCAL_QA_PASS_REMOTE_CI_UNVERIFIED"
+}

@@ -1,0 +1,70 @@
+{
+  "status": "HOLD",
+  "as_of": "2026-10-31",
+  "total_proof_categories": 29,
+  "source_categories_with_locally_verified_bytes": 0,
+  "per_pilot": {
+    "P1": {
+      "source_categories_with_valid_bytes": 0,
+      "source_categories_required": 9,
+      "source_categories_missing_or_unverified": 9,
+      "pilot_gate": "HOLD",
+      "real_paid_40ft_volume": null
+    },
+    "P2": {
+      "source_categories_with_valid_bytes": 0,
+      "source_categories_required": 10,
+      "source_categories_missing_or_unverified": 10,
+      "pilot_gate": "HOLD",
+      "real_paid_40ft_volume": null
+    },
+    "P3": {
+      "source_categories_with_valid_bytes": 0,
+      "source_categories_required": 10,
+      "source_categories_missing_or_unverified": 10,
+      "pilot_gate": "HOLD",
+      "real_paid_40ft_volume": null
+    }
+  },
+  "duplicates_for_review": {},
+  "missing": [
+    "P1.carrier_waybill:not_received",
+    "P1.consignee_pod:not_received",
+    "P1.customer_order:not_received",
+    "P1.group_od_history_24m:not_received",
+    "P1.incumbent_group_margin_costs:not_received",
+    "P1.independent_bank_settlement:not_received",
+    "P1.invoice_net_vat_gross:not_received",
+    "P1.priced_d2d_quote:not_received",
+    "P1.terminal_events:not_received",
+    "P2.carrier_waybill:not_received",
+    "P2.consignee_pod:not_received",
+    "P2.customer_order:not_received",
+    "P2.group_od_history_24m:not_received",
+    "P2.incumbent_group_margin_costs:not_received",
+    "P2.independent_bank_settlement:not_received",
+    "P2.invoice_net_vat_gross:not_received",
+    "P2.priced_d2d_quote:not_received",
+    "P2.reefer_temperature_energy:not_received",
+    "P2.terminal_events:not_received",
+    "P3.carrier_waybill:not_received",
+    "P3.consignee_pod:not_received",
+    "P3.customer_order:not_received",
+    "P3.feeder_and_customs_clearance:not_received",
+    "P3.group_od_history_24m:not_received",
+    "P3.incumbent_group_margin_costs:not_received",
+    "P3.independent_bank_settlement:not_received",
+    "P3.invoice_net_vat_gross:not_received",
+    "P3.priced_d2d_quote:not_received",
+    "P3.terminal_events:not_received"
+  ],
+  "errors": [],
+  "all_external_entities_authenticated": false,
+  "original_source_content_truth_verified": false,
+  "bank_receipts_independently_authenticated": false,
+  "new_40ft_volume": null,
+  "incremental_group_cm_rub": null,
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "note": "This is a document intake completeness gate, not proof of actual business or cash."
+}
