@@ -1,0 +1,85 @@
+name: Bering V28 source-perimeter and integrated investment HOLD QA
+
+on:
+  pull_request:
+    paths:
+      - 'data/public/V28_*'
+      - 'scripts/v28_*'
+      - 'tests/test_v28_*'
+      - 'quality/fuzz_v28.py'
+      - 'quality/V28_*'
+      - 'docs/V28_*'
+      - '.github/workflows/v28-market-and-commercial-readiness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-investment-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record actual checked-out commit, including PR merge SHA
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository regression
+        run: python -m unittest discover -s tests -v
+      - name: Malformed source perimeter must fail safely
+        run: python quality/fuzz_v28.py
+      - name: Compare only authenticated scopes and versioned claims
+        run: |
+          python scripts/v28_market_perimeter.py \
+            --register data/public/V28_MAGADAN_MARKET_PERIMETER.json \
+            --out v28_market_research_only.json
+          python - <<'PY'
+          import json
+          r=json.load(open('v28_market_research_only.json'))
+          assert r['status']=='CONTEXT_VALID_REVIEW_REQUIRED'
+          assert r['historical_port_teu']['actual_2025_reported']=='84300'
+          assert r['historical_port_teu']['physical_40ft_containers'] is None
+          assert r['project_capacity_version_conflict']['future_in_service_capacity'] is None
+          assert r['project_capacity_version_conflict']['version_ratio_not_capacity_addition']=='5.00'
+          assert r['signed_new_cargo_40ft'] is None and r['project_NPV_rub'] is None
+          assert r['bankable_revenue_approved'] is False and r['investment_approved'] is False
+          PY
+      - name: Real integrated V25 -> V28 source-gates must all HOLD
+        run: |
+          python scripts/v28_group_decision.py --repo . --out v28_integrated_receipt.json
+          python - <<'PY'
+          import json
+          r=json.load(open('v28_integrated_receipt.json'))
+          assert r['status']=='HOLD',r['errors']
+          assert r['component_status']['market']=='CONTEXT_VALID_REVIEW_REQUIRED'
+          assert r['component_status']['port_monthly']=='HOLD'
+          assert r['component_status']['group_od']=='HOLD'
+          assert r['component_status']['document_intake']=='HOLD'
+          assert r['component_status']['commercial']=='HOLD'
+          assert r['signed_new_40ft'] is None
+          assert r['incremental_group_cm_rub'] is None
+          assert r['bering_npv_rub'] is None
+          assert r['bankable_revenue_approved'] is False
+          assert r['investment_approved'] is False
+          print('V28: CI executed all research evidence gates, investment HOLD')
+          PY
+      - name: Source-only receipt without artifact storage
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          msg=['## Bering V28 evidence controls', '', 'Market statistics and design capacities do not certify customer cargo.']
+          for file in ['v28_market_research_only.json','v28_integrated_receipt.json']:
+              p=Path(file)
+              if p.exists():
+                  r=json.loads(p.read_text())
+                  msg.append(f"- {file}: {r['status']}; investment={r['investment_approved']}")
+              else:
+                  msg.append(f'- {file}: NOT GENERATED')
+          text='\n'.join(msg)+'\n'
+          print(text)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(text)
+          PY

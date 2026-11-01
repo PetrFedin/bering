@@ -1,0 +1,95 @@
+{
+  "schema": "V28_MARKET_PERIMETER_1",
+  "as_of": "2026-11-01",
+  "territory": "MAGADAN_RU",
+  "purpose": "Cross-source historical throughput and announced competitive capacity, not Bering booked traffic",
+  "observations": [
+    {
+      "id": "MAGADAN_ALL_PORTS_2024_TEU",
+      "entity_scope": "MAGADAN_ALL_PORT_TERMINALS",
+      "measure": "ANNUAL_HANDLED_CONTAINERS",
+      "period": "2024",
+      "unit": "TEU",
+      "value": "80900",
+      "evidence_class": "HISTORICAL_REPORTED_SECONDARY",
+      "source_url": "https://www.finmarket.ru/news/6331647",
+      "source_issued": "2025-01-28",
+      "source_attribution": "Morcenter analytical review, reported by Finmarket",
+      "source_original_bytes_authenticated": false
+    },
+    {
+      "id": "MAGADAN_ALL_PORTS_2025_TEU",
+      "entity_scope": "MAGADAN_ALL_PORT_TERMINALS",
+      "measure": "ANNUAL_HANDLED_CONTAINERS",
+      "period": "2025",
+      "unit": "TEU",
+      "value": "84300",
+      "evidence_class": "HISTORICAL_REPORTED_SECONDARY",
+      "source_url": "https://morvesti.ru/news/1679/120254/",
+      "source_issued": "2026-02-02",
+      "source_attribution": "Morcenter review, reported by Morskie Vesti Rossii",
+      "source_original_bytes_authenticated": false
+    },
+    {
+      "id": "MMTP_OPERATOR_2025_TONNES",
+      "entity_scope": "MMTP_INDIVIDUAL_TERMINAL_OPERATOR",
+      "measure": "ANNUAL_ALL_CARGO_TONNES",
+      "period": "2025",
+      "unit": "tonnes",
+      "value": "1834700",
+      "evidence_class": "ASSOCIATION_REPORTED_OPERATOR",
+      "source_url": "https://www.morport.com/rus/news/associaciya-morskih-torgovyh-portov-pozdravlyaet-s-yubileem-generalnogo-direktora-pao",
+      "source_issued": "2026-05-18",
+      "source_attribution": "Association of Sea Commercial Ports, referring to PAO MMTP",
+      "source_original_bytes_authenticated": false
+    }
+  ],
+  "capacity_claim_versions": [
+    {
+      "id": "MAGADAN_MLC_MAY2026_CAPACITY",
+      "project_id": "MAGADAN_MARINE_LOGISTICS_CENTER",
+      "project_legal_entity": "OOO Morskoy Logisticheskiy Tsentr",
+      "scope_review": "NOT_RECONCILED_WITH_OCT2026",
+      "evidence_class": "PUBLISHED_INVESTMENT_PROJECT_CARD",
+      "issued": "2026-05-25",
+      "phase": "PUBLIC_INVESTMENT_CARD_MAY_2026",
+      "measure": "ANNOUNCED_ANNUAL_CONTAINER_DESIGN_CAPACITY",
+      "unit": "TEU_per_year",
+      "value": "30000",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "construction_and_operations_proven": false,
+      "engineering_scope_match_certified": false
+    },
+    {
+      "id": "MAGADAN_MLC_OCT2026_CAPACITY",
+      "project_id": "MAGADAN_MARINE_LOGISTICS_CENTER",
+      "project_legal_entity": "OOO Morskoy Logisticheskiy Tsentr",
+      "scope_review": "NOT_RECONCILED_WITH_MAY2026",
+      "evidence_class": "STATE_EXPERTISE_ANNOUNCEMENT",
+      "issued": "2026-10-01",
+      "phase": "FIRST_STAGE_DESIGN_REVIEW_POSITIVE",
+      "measure": "ANNOUNCED_ANNUAL_CONTAINER_DESIGN_CAPACITY",
+      "unit": "TEU_per_year",
+      "value": "150000",
+      "source_url": "https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e",
+      "construction_and_operations_proven": false,
+      "engineering_scope_match_certified": false
+    }
+  ],
+  "verification_controls": {
+    "primary_morcenter_teu_table_bytes_verified": false,
+    "actual_paid_bering_40ft_shipments_verified": false,
+    "physical_capacity_commissioned_verified": false,
+    "signed_competitor_scope_revision_provided": false,
+    "comparable_od_24_months_authenticated": false,
+    "v27_24m_operator_series_authenticated": false,
+    "licensed_source_data_resale_permitted": false
+  },
+  "accounting_rules": {
+    "never_add_capacity_versions": true,
+    "never_convert_teu_to_40ft_without_mix": true,
+    "never_equate_capacity_to_demand": true,
+    "never_equate_operator_tonnes_with_all_port_teu": true,
+    "never_use_market_context_as_paid_bering_volume": true
+  }
+}

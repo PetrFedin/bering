@@ -1,0 +1,6 @@
+{
+  "mutation_cases": 750,
+  "invalid_inputs_detected": 720,
+  "unhandled_or_false_admission": 0,
+  "examples": []
+}
