@@ -61,17 +61,28 @@ jobs:
           assert b['status']=='HOLD' and b['total_proof_categories']==29
           assert b['source_categories_with_locally_verified_bytes']==0
           PY
-      - name: Upload synthetic-only quality receipt
+      - name: Summarize audit results without artifact storage
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bering-v27-documented-source-hold
-          path: |
-            v27_baseline_receipt.json
-            v27_existing_commercial_receipt.json
-            v27_existing_evidence_receipt.json
-          if-no-files-found: ignore
-          retention-days: 7
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          summary=['## V27 baseline and documentary controls', '', 'No actual OD or revenue admitted.']
+          for filename in ('v27_baseline_receipt.json','v27_existing_commercial_receipt.json','v27_existing_evidence_receipt.json'):
+              p=Path(filename)
+              if not p.exists():
+                  summary.append(f'- {filename}: missing receipt')
+                  continue
+              d=json.loads(p.read_text())
+              if filename=='v27_baseline_receipt.json':
+                  summary.append(f"- Operator monthly: {d['operator_monthly']['status']}, {d['operator_monthly']['reported_months']}/24 source months")
+                  summary.append(f"- Group OD: {d['group_24m_od']['status']}, {d['group_24m_od']['source_backed_months']}/96 source-backed months")
+              else:
+                  summary.append(f"- {filename}: {d['status']}")
+          text='\n'.join(summary)+'\n'
+          print(text)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as output:output.write(text)
+          PY
 
   primary-originals:
     needs: local-gates
@@ -89,12 +100,23 @@ jobs:
           python scripts/v27_primary_xls.py \
             --output-dir v27_primary_review \
             --require-all \
-            --save-originals
-      - name: Preserve exact primary source bytes and candidate cell locators for independent review
+            --print-candidates 45
+      - name: Post public source provenance to workflow summary without using artifact storage
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bering-v27-public-xls-review-only
-          path: v27_primary_review/
-          if-no-files-found: ignore
-          retention-days: 7
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path('v27_primary_review/primary_xls_receipt.json')
+          if not p.exists():
+              msg='## V27 public XLS\nOriginal source receipt not available. No data admitted.\n'
+          else:
+              d=json.loads(p.read_text(encoding='utf-8'))
+              msg='## V27 publicly posted original XLS files\n\n'
+              msg+='Acquisition status: '+d['status']+'\n\n'
+              for name,rec in d['sources'].items():
+                  msg+=f"- {name}: {rec['status']}; SHA-256={rec.get('file_sha256')}; candidate cells={len(rec.get('candidate_rows',[]))}\n"
+              msg+='\nCandidate cells are not authenticated throughput, 40ft OD or new Bering demand.\n'
+          print(msg)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(msg)
+          PY
