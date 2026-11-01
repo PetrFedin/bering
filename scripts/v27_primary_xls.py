@@ -148,7 +148,8 @@ def main() -> int:
                               ensure_ascii=False))
     print(json.dumps({'status': result['status'], 'originals': {
         key: {'sha256': value.get('file_sha256'), 'status': value['status'],
-              'candidate_rows': len(value.get('candidate_rows', []))}
+              'candidate_rows': len(value.get('candidate_rows', [])),
+              'error_if_any': value.get('reason')}
         for key, value in result['sources'].items()},
         'numerical_metrics_accepted': 0, 'company_OD_verified': False}, indent=2))
     return code
