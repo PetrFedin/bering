@@ -44,10 +44,13 @@ jobs:
           assert x['mechanically_reconciled_gross_rub'] is None
           assert x['bankable_revenue_approved'] is False
           PY
-      - name: Upload HOLD-only research receipt
+      - name: Record HOLD receipt in GitHub job summary (no artifact quota)
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bering-v26-no-real-documents
-          path: v26_missing_source_receipt.json
-          if-no-files-found: ignore
+        run: |
+          echo '### V26 | no original settlement records, investment HOLD' >> "$GITHUB_STEP_SUMMARY"
+          echo "Commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          if test -f v26_missing_source_receipt.json; then
+            sha256sum v26_missing_source_receipt.json | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'NOT GENERATED: v26_missing_source_receipt.json' >> "$GITHUB_STEP_SUMMARY"
+          fi
