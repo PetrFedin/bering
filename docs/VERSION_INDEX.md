@@ -30,6 +30,8 @@
 
 | V26 | 31 Oct 2026 | Verify public Magadan/FE port statistics against source, separate operator 2032 target from realized cargo, verify P1–P3 documentary readiness and diagnose runner | [Public data register](../data/public/V26_PUBLIC_SOURCE_REGISTER.json), [forecast quality gate](../scripts/public_market_forecast_v26.py), [proof intake control](../scripts/evidence_readiness_v26.py), 200 local regression tests, 1,000 deterministic malformed cases, [method](V26_PUBLIC_DATA_AND_FORECAST.md), [CI recovery](V26_CI_RECOVERY_AND_ADMISSION.md) | Draft; GitHub Research QA 314 PASS and V26 scoped QA 269 PASS + 1,000 malformed inputs on PR merge, full existing commercial gate HOLD; 0/29 independent sources, P1–P3 investment HOLD |
 
+| V27 | 01 Nov 2026 | Acquire operator MP-1/2 exact original 2025/2026 9M XLS, separate monthly port metric from 24-month group OD and avoid fake interval forecasts | [Source intake](../scripts/v27_primary_xls.py), [24M OD gate](../scripts/v27_monthly_od_gate.py), [96 month-slot matrix](../data/od/V27_REQUIRED_COVERAGE_96.csv), 37 local tests + 400 mutations, [method](V27_EVIDENCE_AND_FORECAST_PROTOCOL.md) | Draft PR #23; monthly operator 0/24, OD 0/96, external source retrieval & CI review pending, P1/P2/P3 HOLD |
+
 ## Fidelity and preservation
 
 - Files under `archive/versions/` and `archive/workbook-extractions/` are **searchable conversions**, not replacement binary XLSX/DOCX.
