@@ -1,0 +1,23 @@
+name: Bering zero-dependency runner dispatch diagnostic
+
+on:
+  push:
+    branches:
+      - audit/v28-market-perimeter-competitive-capacity-20261102
+    paths:
+      - .github/workflows/ci-dispatch-diagnostic.yml
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  runner-allocation-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Prove that GitHub allocated a runner
+        run: |
+          echo "CI_DISPATCH_OK=true"
+          echo "sha=$GITHUB_SHA"
+          echo "repository=$GITHUB_REPOSITORY"
+          python3 --version
