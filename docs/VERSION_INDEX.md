@@ -1,8 +1,8 @@
 ## V30 — 09.11.2026 · Сверка байтов первичной документации и коммерческого HOLD (Draft)
 
 - [Акт V30 — 4/10 проверенных PDF, география, недостающие исходники, CI](V30_PRIMARY_EVIDENCE_AND_CI_AUDIT.md); [реестр SHA](../data/public/V30_PUBLIC_PDF_BYTE_AUDIT_20261109.json); [дефект географии](../data/public/V30_PDF_SOURCE_FINDINGS_20261109.json).
-- [Неотправленный пакет запросов](V30_PRIMARY_SOURCE_REQUEST_PACK.md); [OD intake 0/96](../data/pilots/V30_EXTERNAL_SOURCE_INTAKE_20261109.json); [fail-closed шлюз](../scripts/v30_primary_evidence_gate.py); [отрицательные тесты](../tests/test_v30_primary_evidence_gate.py); [CI блокер](../quality/V30_CI_PRE_RUNNER_DIAGNOSTIC_20261109.json).
-- [Повторяемый безопасный загрузчик PDF](../scripts/v30_public_pdf_acquire.py) и [пакет запросов первоисточникам](V30_OUTREACH_LETTER_TEMPLATES_NOT_SENT.md) — без отправленных сообщений и обхода HTTP 429.
+- [Неотправленный пакет запросов](V30_OUTREACH_LETTER_TEMPLATES_NOT_SENT.md); [OD intake 0/96](../data/pilots/V30_EXTERNAL_SOURCE_INTAKE_20261109.json); [fail-closed шлюз](../scripts/v30_primary_evidence_gate.py); [отрицательные тесты](../tests/test_v30_primary_evidence_gate.py); [CI блокер](../quality/V30_CI_PRE_RUNNER_DIAGNOSTIC_20261109.json).
+- [Повторяемый безопасный загрузчик PDF](../scripts/v30_public_pdf_acquire.py) — без обхода HTTP 429.
 - Нет заверенного сравнения проектных редакций 30k/150k, подписанных грузов и оплаченных P1–P3, нет удалённой CI-приёмки. Исследование DRAFT, main/investment HOLD.
 
 ## V29 — 09.11.2026 · Стадии, сроки и доказательность (Draft)

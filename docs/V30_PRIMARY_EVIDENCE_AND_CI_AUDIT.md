@@ -46,7 +46,7 @@
 
 - [Реестр байтов](../data/public/V30_PUBLIC_PDF_BYTE_AUDIT_20261109.json) — реальные checksum/size попыток, не переписанный 52-row metadata.
 - [Источник текстового дефекта](../data/public/V30_PDF_SOURCE_FINDINGS_20261109.json) — номер PDF, страницы, SHA, метод, ограничение редакции.
-- [Неотправленный пакет запросов](V30_PRIMARY_SOURCE_REQUEST_PACK.md) — адресаты и права доступа ещё требуют проверки.
+- [Неотправленный пакет запросов](V30_OUTREACH_LETTER_TEMPLATES_NOT_SENT.md) — адресаты и права доступа ещё требуют проверки.
 - [Коммерческий intake](../data/pilots/V30_EXTERNAL_SOURCE_INTAKE_20261109.json) — 0/96, нулевые receipt counts, неизвестные грузы/деньги как `null`.
 - [CI diagnosis](../quality/V30_CI_PRE_RUNNER_DIAGNOSTIC_20261109.json) — фактические runs и неопределённая причина.
 - [Контроллер](../scripts/v30_primary_evidence_gate.py) и [тесты](../tests/test_v30_primary_evidence_gate.py) сверяют 52-реестр, 10 attempted, 4 byte-matched, 96 OD и блокировки. С `--pdf-root` хеши пересчитываются **на фактических PDF**; без него `source_bytes_recomputed_at_runtime=null`, чтобы не выдавать журнал за независимое чтение оригиналов. При подмене данных — `INVALID`.
