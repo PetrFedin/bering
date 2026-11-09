@@ -1,0 +1,93 @@
+{
+  "schema": "V29_TIME_SCOPE_V1",
+  "as_of": "2026-11-09",
+  "purpose": "Read-only staged external evidence: planned design, schedule and operator document availability are not verified commercial demand.",
+  "claims": [
+    {
+      "id": "MLC_MAY_2026_30000_DESIGN",
+      "entity_scope": "MLC_MAGADAN_COMPETITOR",
+      "claim_class": "ANNOUNCED_DESIGN_CAPACITY",
+      "stage": "INVESTMENT_CARD",
+      "measure": "CONTAINER_DESIGN_CAPACITY",
+      "unit": "TEU_per_year",
+      "value": "30000",
+      "source_date": "2026-05-25",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "source_qualification": "Regional investor presentation, not certified operating capacity.",
+      "source_document_bytes_authenticated": false,
+      "physical_commissioning_verified": false,
+      "actual_paid_bering_cargo_verified": false
+    },
+    {
+      "id": "MLC_OCT_2026_150000_DESIGN",
+      "entity_scope": "MLC_MAGADAN_COMPETITOR",
+      "claim_class": "ANNOUNCED_DESIGN_CAPACITY",
+      "stage": "POSITIVE_DESIGN_EXPERTISE",
+      "measure": "CONTAINER_DESIGN_CAPACITY",
+      "unit": "TEU_per_year",
+      "value": "150000",
+      "source_date": "2026-10-01",
+      "source_url": "https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e",
+      "source_qualification": "Expert review of first-stage design; not commissioning or verified operating throughput.",
+      "source_document_bytes_authenticated": false,
+      "physical_commissioning_verified": false,
+      "actual_paid_bering_cargo_verified": false
+    },
+    {
+      "id": "MLC_PORTFOLIO_150000_DESIGN",
+      "entity_scope": "MLC_MAGADAN_COMPETITOR",
+      "claim_class": "THIRD_PARTY_PROJECT_DESCRIPTION",
+      "stage": "UNDATED_PROJECT_PORTFOLIO",
+      "measure": "CONTAINER_DESIGN_CAPACITY",
+      "unit": "TEU_per_year",
+      "value": "150000",
+      "source_date": null,
+      "source_url": "https://terramaris.ru/prom",
+      "source_qualification": "Undated company portfolio corroborates a published design figure, not formal document revision equivalence.",
+      "source_document_bytes_authenticated": false,
+      "physical_commissioning_verified": false,
+      "actual_paid_bering_cargo_verified": false
+    },
+    {
+      "id": "MLC_REGIONAL_2030_PLANNED_YEAR",
+      "entity_scope": "MLC_MAGADAN_COMPETITOR",
+      "claim_class": "REGIONAL_PROJECT_PLAN",
+      "stage": "REGIONAL_STRATEGY_2030",
+      "measure": "PLANNED_COMMISSIONING_YEAR",
+      "unit": "year",
+      "value": "2030",
+      "source_date": "2026-04-30",
+      "source_url": "https://base.garant.ru/414156851/da0ca740e319b67eff630b4065586e13/",
+      "source_qualification": "Secondary reproduction of regional decree 230-pp; planned year is not certified commissioning, and source original is not reauthenticated.",
+      "source_document_bytes_authenticated": false,
+      "physical_commissioning_verified": false,
+      "actual_paid_bering_cargo_verified": false
+    },
+    {
+      "id": "MMTP_NOV_2026_AVAILABLE_CAPACITY_LIST",
+      "entity_scope": "MMTP_EXISTING_PORT_OPERATOR",
+      "claim_class": "DOCUMENT_AVAILABILITY_ONLY",
+      "stage": "OPERATOR_WEBPAGE",
+      "measure": "AVAILABLE_CAPACITY_REPORT_LISTED",
+      "unit": "document_presence",
+      "value": null,
+      "source_date": null,
+      "source_url": "https://www.magadanport.ru/klientam/",
+      "source_qualification": "Official operator lists an XLS for November 2026 available capacity; file bytes not read and available capacity is not actual shipments.",
+      "source_document_bytes_authenticated": false,
+      "physical_commissioning_verified": false,
+      "actual_paid_bering_cargo_verified": false
+    }
+  ],
+  "controls": {
+    "design_versions_reconciled": false,
+    "commissioned_capacity_verified": false,
+    "actual_paid_bering_cargo_verified": false,
+    "monthly_actual_operator_cargo_verified": false,
+    "never_sum_design_versions": true,
+    "never_promote_planned_year_to_actual": true,
+    "never_equate_available_capacity_and_throughput": true,
+    "investment_approved": false,
+    "bankable_revenue_approved": false
+  }
+}

@@ -1,0 +1,55 @@
+name: Bering V29 time-scope and staged-claim HOLD gate
+
+on:
+  pull_request:
+    paths:
+      - 'data/public/V29_*'
+      - 'scripts/v29_*'
+      - 'tests/test_v29_*'
+      - 'docs/V29_*'
+      - '.github/workflows/v29-timeline-claims.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  staged-source-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record actual checkout SHA
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test frozen source stage gate and tampering cases
+        run: python -m unittest discover -s tests -p 'test_v29_*.py' -v
+      - name: V29 must remain context only
+        run: |
+          python scripts/v29_timeline_claim_guard.py --register data/public/V29_COMPETITOR_TIMELINE_CLAIMS.json --out v29_context.json
+          python - <<'PY'
+          import json
+          r=json.load(open('v29_context.json'))
+          assert r['status']=='RESEARCH_CONTEXT_ONLY',r['errors']
+          assert r['planned_2030_commission_year']=='2030'
+          assert r['verified_commission_year'] is None
+          assert r['verified_in_service_capacity_teu_per_year'] is None
+          assert r['operator_nov_2026_actual_containers'] is None
+          assert r['new_paid_bering_40ft'] is None
+          assert r['group_incremental_cm_rub'] is None
+          assert r['bankable_revenue_approved'] is False
+          assert r['investment_approved'] is False
+          PY
+      - name: Previously integrated commercial gates must remain HOLD
+        run: |
+          python scripts/v28_group_decision.py --repo . --out v29_previous_gates.json
+          python - <<'PY'
+          import json
+          r=json.load(open('v29_previous_gates.json'))
+          assert r['status']=='HOLD',r['errors']
+          assert r['bankable_revenue_approved'] is False
+          assert r['investment_approved'] is False
+          assert r['bering_npv_rub'] is None
+          PY

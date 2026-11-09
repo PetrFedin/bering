@@ -1,3 +1,9 @@
+## V29 — 09.11.2026 · Стадии, сроки и доказательность (Draft)
+
+- [Сводка и новые внешние источники](V29_TIMELINE_AND_CLAIM_STAGE.md)
+- [Реестр стадий](../data/public/V29_COMPETITOR_TIMELINE_CLAIMS.json), [проверка](../scripts/v29_timeline_claim_guard.py), [отрицательные тесты](../tests/test_v29_timeline_claim_guard.py)
+- Планируемый ввод в 2030 не считается состоявшимся. Различие 30k/150k не разрешено. Коммерческий и инвестиционный HOLD, main не изменён.
+
 # Research version index
 
 | Stage | Date | Primary question | Material | Status |
