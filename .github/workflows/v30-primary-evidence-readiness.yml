@@ -1,0 +1,76 @@
+name: Bering V30 primary-source and investment HOLD QA
+
+on:
+  pull_request:
+    paths:
+      - 'data/public/V30_*'
+      - 'data/pilots/V30_*'
+      - 'quality/V30_*'
+      - 'scripts/v30_*'
+      - 'tests/test_v30_*'
+      - 'docs/V30_*'
+      - '.github/workflows/v30-primary-evidence-readiness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-claim-and-commercial-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout commit actually tested
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository regression
+        run: python -m unittest discover -s tests -v
+      - name: No public source receipt becomes original-byte or financial approval
+        run: |
+          python scripts/v30_primary_evidence_gate.py --repo . --out v30_gate_receipt.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('v30_gate_receipt.json').read_text())
+          assert r['status']=='HOLD',r['errors']
+          assert r['claimed_digest_matches_in_versioned_receipt']==4
+          assert r['source_bytes_recomputed_at_runtime'] is None
+          assert r['source_scope_status']=='RECEIPT_ONLY_BYTES_NOT_RECOMPUTED'
+          assert r['official_2026_expertise_approved_revision_matched'] is False
+          assert r['od_required_group_months']==96
+          assert r['od_authenticated_group_months']==0
+          assert r['real_new_paid_40ft'] is None
+          assert r['group_incremental_cm_rub'] is None
+          assert r['bering_npv_rub'] is None
+          assert r['investment_approved'] is False
+          assert r['bankable_revenue_approved'] is False
+          PY
+      - name: Previous V25-V29 controls must remain research-only
+        run: |
+          python scripts/v28_group_decision.py --repo . --out v30_previous_integrated_gate.json
+          python scripts/v29_timeline_claim_guard.py --register data/public/V29_COMPETITOR_TIMELINE_CLAIMS.json --out v30_previous_timeline_gate.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('v30_previous_integrated_gate.json').read_text())
+          b=json.loads(Path('v30_previous_timeline_gate.json').read_text())
+          assert a['status']=='HOLD',a['errors']
+          assert b['status']=='RESEARCH_CONTEXT_ONLY',b['errors']
+          assert not a['investment_approved'] and not b['investment_approved']
+          PY
+      - name: Print read-only decision summary, no artifact storage
+        if: always()
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          text=['## Bering V30 source validation','', 'Research-only; raw PDFs and customer records intentionally not in Git.']
+          for f in ('v30_gate_receipt.json','v30_previous_integrated_gate.json','v30_previous_timeline_gate.json'):
+              p=Path(f)
+              text.append(f'- {f}: '+('RECEIPT EXISTS' if p.exists() else 'NOT EXECUTED'))
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as stream:
+              stream.write('\n'.join(text)+'\n')
+          PY
