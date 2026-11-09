@@ -9,6 +9,11 @@ on:
       - 'quality/fuzz_v28.py'
       - 'quality/V28_*'
       - 'docs/V28_*'
+      - 'data/public/V29_*'
+      - 'scripts/v29_*'
+      - 'tests/test_v29_*'
+      - 'docs/V29_*'
+      - '.github/workflows/v29-timeline-claims.yml'
       - '.github/workflows/v28-market-and-commercial-readiness.yml'
   workflow_dispatch:
 
@@ -64,6 +69,21 @@ jobs:
           assert r['bankable_revenue_approved'] is False
           assert r['investment_approved'] is False
           print('V28: CI executed all research evidence gates, investment HOLD')
+          PY
+      - name: V29 competing terminal schedule must remain research-only
+        run: |
+          python -m unittest discover -s tests -p 'test_v29_*.py' -v
+          python scripts/v29_timeline_claim_guard.py --register data/public/V29_COMPETITOR_TIMELINE_CLAIMS.json --out v29_timeline_context.json
+          python - <<'PY'
+          import json
+          r = json.load(open('v29_timeline_context.json'))
+          assert r['status'] == 'RESEARCH_CONTEXT_ONLY', r['errors']
+          assert r['planned_2030_commission_year'] == '2030'
+          assert r['verified_commission_year'] is None
+          assert r['design_versions_sum_teu_per_year'] is None
+          assert r['new_paid_bering_40ft'] is None
+          assert r['bering_npv_rub'] is None
+          assert r['investment_approved'] is False
           PY
       - name: Source-only receipt without artifact storage
         if: always()
