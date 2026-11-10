@@ -1,0 +1,63 @@
+name: Bering V31 regulatory-stage evidence and commercial HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'data/public/V31_*'
+      - 'quality/V31_*'
+      - 'scripts/v31_*'
+      - 'tests/test_v31_*'
+      - 'docs/V31_*'
+      - '.github/workflows/v31-regulatory-source-and-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regulatory-and-investment-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Commit actually checked out
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run full repository regression
+        run: python -m unittest discover -s tests -v
+      - name: Verify V31 research gate
+        run: |
+          python scripts/v31_regulatory_stage_gate.py --out v31_source_context.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result=json.loads(Path('v31_source_context.json').read_text())
+          assert result['status']=='RESEARCH_CONTEXT_ONLY',result['errors']
+          assert result['environmental_panel_started_order']=='878-О'
+          assert result['environmental_expertise_final_result'] is None
+          assert result['source_revisions_matched'] is False
+          assert result['capacity_sum_teu_per_year'] is None
+          assert result['commissioning_verified'] is False
+          assert result['new_paid_bering_40ft'] is None
+          assert result['hosted_runner_green'] is False
+          assert result['investment_approved'] is False
+          PY
+      - name: All previous research controls still fail closed
+        run: |
+          python scripts/v28_group_decision.py --repo . --out v31_group_decision.json
+          python scripts/v29_timeline_claim_guard.py --out v31_timeline_context.json
+          python scripts/v30_primary_evidence_gate.py --repo . --out v31_document_context.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a,b,c=[json.loads(Path(name).read_text()) for name in (
+              'v31_group_decision.json','v31_timeline_context.json','v31_document_context.json')]
+          assert a['status']=='HOLD',a['errors']
+          assert b['status']=='RESEARCH_CONTEXT_ONLY',b['errors']
+          assert c['status']=='HOLD',c['errors']
+          assert c['source_bytes_recomputed_at_runtime'] is None
+          assert c['od_authenticated_group_months']==0
+          assert not a['investment_approved'] and not b['investment_approved'] and not c['investment_approved']
+          PY

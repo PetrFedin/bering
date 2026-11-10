@@ -1,3 +1,9 @@
+## V31 — 10.11.2026 · Раздельные экспертизы и уточнение GitHub CI (Draft)
+
+- [Акт V31 с источниками, допусками и ограничениями](V31_REGULATORY_AND_CI_EVIDENCE_AUDIT.md), [регуляторный реестр](../data/public/V31_REGULATORY_STAGE_CHAIN.json), [CI-аннотации](../quality/V31_GITHUB_PRE_RUNNER_ANNOTATIONS.json).
+- [Защитный контроллер](../scripts/v31_regulatory_stage_gate.py), [отрицательные тесты](../tests/test_v31_regulatory_stage_gate.py): в изолированной среде 17 тестовых методов PASS. Это **не полный репозиторный прогон** и не hosted CI GREEN.
+- Старт экологической экспертизы № 878-О не равен её финальному результату, публикация Главгосэкспертизы по проектной документации — другая процедура. 30k/150k TEU не сведены. P1–P3 и инвестиции HOLD; main без изменений.
+
 ## V30 — 09.11.2026 · Сверка байтов первичной документации и коммерческого HOLD (Draft)
 
 - [Акт V30 — 4/10 проверенных PDF, география, недостающие исходники, CI](V30_PRIMARY_EVIDENCE_AND_CI_AUDIT.md); [реестр SHA](../data/public/V30_PUBLIC_PDF_BYTE_AUDIT_20261109.json); [дефект географии](../data/public/V30_PDF_SOURCE_FINDINGS_20261109.json).

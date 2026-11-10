@@ -1,0 +1,30 @@
+{
+  "schema": "V31_GITHUB_PRE_RUNNER_ANNOTATIONS_V1",
+  "as_of": "2026-11-10",
+  "head_sha": "a15ce22516abcea09905bdf98237b12090116b61",
+  "source": "GITHUB_CONNECTED_CHECK_RUN_METADATA",
+  "runs": [
+    {
+      "id": 42641304489,
+      "name": "Bering V30 primary-source and investment HOLD QA",
+      "conclusion": "failure",
+      "check_annotations_count": 1,
+      "annotation_text_verified": false,
+      "runner_execution_verified": false
+    },
+    {
+      "id": 42641304182,
+      "name": "Bering Research QA",
+      "conclusion": "failure",
+      "check_annotations_count": 2,
+      "annotation_text_verified": false,
+      "runner_execution_verified": false
+    }
+  ],
+  "mac_source_device_online": false,
+  "github_hosted_ci_green": false,
+  "billing_or_policy_cause_verified": false,
+  "pre_runner_root_cause": "UNKNOWN",
+  "external_independent_acceptance_complete": false,
+  "investment_approved": false
+}

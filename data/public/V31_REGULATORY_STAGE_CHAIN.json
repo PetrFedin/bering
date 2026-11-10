@@ -1,0 +1,49 @@
+{
+  "schema": "V31_REGULATORY_STAGE_V1",
+  "as_of": "2026-11-10",
+  "claims": [
+    {
+      "id": "INVESTOR_CARD_MAY_2026",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "stage": "INVESTOR_PRESENTATION",
+      "date": "2026-05-25",
+      "measure": "PROJECT_DESIGN_TEUS_PER_YEAR",
+      "value": "30000",
+      "source_review": "PUBLIC_WEBPAGE",
+      "official_signed_document_verified": false
+    },
+    {
+      "id": "RPN_ENV_COMMISSION_AUG_2026",
+      "source_url": "https://rpn.gov.ru/regions/cmu23/gov-services/gov-eco-exp/",
+      "stage": "ENVIRONMENTAL_EXPERTISE_COMMISSION_STARTED",
+      "date": "2026-08-31",
+      "measure": "REGULATORY_ORDER_NUMBER",
+      "value": "878-О",
+      "source_review": "INDEXED_OFFICIAL_PAGE_TEXT_ONLY",
+      "official_signed_document_verified": false
+    },
+    {
+      "id": "GGE_ENGINEERING_PUBLIC_OCT_2026",
+      "source_url": "https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e",
+      "stage": "POSITIVE_ENGINEERING_EXPERTISE_REPORTED",
+      "date": "2026-10-01",
+      "measure": "PROJECT_DESIGN_TEUS_PER_YEAR",
+      "value": "150000",
+      "source_review": "OFFICIAL_PRESS_RELEASE",
+      "official_signed_document_verified": false
+    }
+  ],
+  "controls": {
+    "environmental_expertise_positive_signed_verified": false,
+    "engineering_expertise_original_signed_verified": false,
+    "environmental_expertise_negative_signed_verified": false,
+    "design_30k_150k_revision_crosswalk_verified": false,
+    "construction_permit_verified": false,
+    "commissioning_permit_verified": false,
+    "physical_containers_at_mlc_verified": false,
+    "new_paid_bering_cargo_verified": false,
+    "independent_assessment_complete": false,
+    "bankable_revenue_approved": false,
+    "investment_approved": false
+  }
+}
