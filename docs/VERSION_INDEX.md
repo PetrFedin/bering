@@ -1,3 +1,9 @@
+## V34 — 13.11.2026 · Распределение банковских транзакций, счетов и контейнеров (Draft)
+
+- [Методика и запреты на инвестиционные выводы](V34_PAYMENT_AND_ADDITIONALITY_RECONCILIATION.md), [контроллер](../scripts/v34_bank_allocation_gate.py), [40 синтетических тестов](../tests/test_v34_bank_allocation_gate.py), [пустой контракт](../data/evidence/V34_EMPTY_BANK_ALLOCATION_CONTRACT.json).
+- [Локальный QA на V32+V33+V34](V34_LOCAL_QA_RECEIPT_20261113.json) — 113/113 PASS (31+42+40), **не** полная регрессия репозитория; [P0-диагностика GitHub Actions](V34_GITHUB_HOSTED_RUNNER_DIAGNOSTIC.md): точный root cause неизвестен.
+- 24×4 OD-слота остаются неподтверждёнными (0/96 проверенных, не нулевой реальный грузопоток); bank source authenticity не подтверждена, paid incremental 40ft и NPV null; main не изменён, investment HOLD.
+
 ## V33 — 13.11.2026 · Структурная проверка будущих отгрузок, оплат и переносов (Draft)
 
 - [Методика, ограничения и критерии доказательств](V33_SHIPMENT_EVIDENCE_AND_ADDITIONALITY.md), [валидатор](../scripts/v33_shipment_proof_quality.py), [42 локальных теста](../tests/test_v33_shipment_proof_quality.py), [пустой контракт](../data/evidence/V33_EMPTY_OD_CONTRACT.json).

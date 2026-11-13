@@ -1,0 +1,9 @@
+{
+  "schema": "BERING_V34_BANK_ALLOCATION_V1",
+  "source_notice": "RESEARCH_ONLY_CLAIMED_VALUES_NOT_INDEPENDENT_BANK_PROOF",
+  "v33_source_sha256": null,
+  "invoices": [],
+  "bank_transactions": [],
+  "allocations": [],
+  "shipment_invoice_links": []
+}

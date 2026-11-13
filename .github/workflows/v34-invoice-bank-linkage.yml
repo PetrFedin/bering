@@ -1,0 +1,58 @@
+name: Bering V34 invoice-bank linkage research HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/v34_*'
+      - 'tests/test_v34_*'
+      - 'data/evidence/V34_*'
+      - 'docs/V34_*'
+      - '.github/workflows/v34-invoice-bank-linkage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  payment-reconciliation-research-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact checkout SHA
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository unit suite when runner is assigned
+        run: python -m unittest discover -s tests -v
+      - name: V34 empty baseline must not promote a payment
+        run: |
+          python scripts/v34_bank_allocation_gate.py --out v34_no_source.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('v34_no_source.json').read_text())
+          assert r['status'] == 'NO_SOURCE_RECORDS_IN_SCOPE', r['errors']
+          assert r['candidate_fully_claimed_paid_invoices'] is None
+          assert r['bank_settlement_verified_independently'] is False
+          assert r['paid_incremental_40ft'] is None
+          assert r['incremental_group_contribution_margin_rub'] is None
+          assert r['bering_npv_rub'] is None
+          assert r['investment_approved'] is False
+          PY
+      - name: V33 empty baseline and all earlier financial gates remain HOLD
+        run: |
+          python scripts/v33_shipment_proof_quality.py --repo . --out v34_v33_no_source.json
+          python scripts/v32_decision_evidence_gate.py --repo . --out v34_v32_no_source.json
+          python scripts/v28_group_decision.py --repo . --out v34_v28_group.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for name, expected in [('v34_v33_no_source.json','NO_SOURCE_RECORDS_IN_SCOPE'),
+                                 ('v34_v32_no_source.json','HOLD'),
+                                 ('v34_v28_group.json','HOLD')]:
+              r = json.loads(Path(name).read_text())
+              assert r['status'] == expected, (name,r['errors'])
+              assert r['investment_approved'] is False
+          PY
