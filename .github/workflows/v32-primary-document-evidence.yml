@@ -1,0 +1,64 @@
+name: Bering V32 document intake integrity and investment HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'data/evidence/V32_*'
+      - 'quality/V32_*'
+      - 'scripts/v32_*'
+      - 'tests/test_v32_*'
+      - 'docs/V32_*'
+      - '.github/workflows/v32-primary-document-evidence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-docket-research-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Identify checkout SHA
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository unit suite, if a real runner starts
+        run: python -m unittest discover -s tests -v
+      - name: V32 missing documents must NOT become approvals
+        run: |
+          python scripts/v32_decision_evidence_gate.py --repo . --out v32_read_only_gate.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('v32_read_only_gate.json').read_text())
+          assert r['status']=='HOLD',r['errors']
+          assert r['required_document_categories']==12
+          assert r['required_group_months']==96
+          assert r['source_verified_group_months']==0
+          assert r['private_documents_with_recomputed_matching_sha256'] is None
+          assert r['paid_incremental_40ft'] is None
+          assert r['group_incremental_cm_rub'] is None
+          assert r['bering_npv_rub'] is None
+          assert not r['investment_approved']
+          PY
+      - name: Previous V28–V31 gates remain HOLD
+        run: |
+          python scripts/v28_group_decision.py --repo . --out v32_previous_group.json
+          python scripts/v29_timeline_claim_guard.py --out v32_previous_timeline.json
+          python scripts/v30_primary_evidence_gate.py --repo . --out v32_previous_primary.json
+          python scripts/v31_regulatory_stage_gate.py --out v32_previous_regulatory.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          statuses={'v32_previous_group.json':'HOLD',
+                    'v32_previous_timeline.json':'RESEARCH_CONTEXT_ONLY',
+                    'v32_previous_primary.json':'HOLD',
+                    'v32_previous_regulatory.json':'RESEARCH_CONTEXT_ONLY'}
+          for path,expected in statuses.items():
+              r=json.loads(Path(path).read_text())
+              assert r['status']==expected,(path,r['errors'])
+              assert r['investment_approved'] is False
+          PY

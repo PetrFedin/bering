@@ -1,0 +1,54 @@
+{
+  "schema": "V32_PUBLIC_EVIDENCE_SEARCH_V1",
+  "as_of": "2026-11-10",
+  "status": "SOURCE_SEARCH_PARTIAL",
+  "scope": "Public web research and authenticated GitHub metadata; no customer systems, local Mac originals or sealed regulatory certificates accessed",
+  "checked_sources": [
+    {
+      "question": "Whether environmental expertise for Stage 1 finished positive or negative",
+      "official_source": "https://rpn.gov.ru/regions/cmu23/gov-services/gov-eco-exp/",
+      "observed": "Start notice dated 2026-08-31, order 878-О, 42 working days; no project-specific final order independently authenticated",
+      "original_pdf_or_signed_result_obtained": false,
+      "answer": "UNKNOWN_NOT_NEGATIVE"
+    },
+    {
+      "question": "Engineering approval and design figure",
+      "official_source": "https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e",
+      "observed": "Agency press statement dated 2026-10-01 reports positive assessment of Stage 1 project and surveys; design up to 150000 TEU/year",
+      "original_pdf_or_signed_result_obtained": false,
+      "answer": "PRESS_STATEMENT_NOT_SIGNED_ORIGINAL"
+    },
+    {
+      "question": "May investor design figure",
+      "official_source": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "observed": "Earlier investor announcement 30000 TEU/year, unlike October engineering press statement 150000; no signed revision crosswalk",
+      "original_pdf_or_signed_result_obtained": false,
+      "answer": "UNRECONCILED_VERSIONS"
+    },
+    {
+      "question": "Hosted CI real execution",
+      "official_source": "https://github.com/PetrFedin/bering/actions/runs/42736728458",
+      "observed": "V31 regulator gate failed before any steps published, prior check-run shows annotation count, exact annotation text and billing policy unavailable",
+      "original_pdf_or_signed_result_obtained": false,
+      "answer": "NOT_GREEN_ROOT_CAUSE_UNKNOWN"
+    }
+  ],
+  "other_github_ci_run": "https://github.com/PetrFedin/bering/actions/runs/42736728434",
+  "general_external_pattern_reference": "https://github.com/orgs/community/discussions/212472",
+  "general_external_pattern_is_repo_specific_root_cause": false,
+  "claims_not_made": [
+    "No final environmental result exists",
+    "Environmental expertise was negative",
+    "Approval of engineering documentation equals environmental approval",
+    "150000 TEU is in-service throughput",
+    "No actual P1-P3 freight exists",
+    "The GitHub failures were definitely caused by billing"
+  ],
+  "mac_remote_device_online_at_check": false,
+  "outreach_messages_sent": 0,
+  "customer_originals_examined_now": 0,
+  "approved_expertise_originals_examined_now": 0,
+  "new_signed_paid_bering_40ft_verified": null,
+  "github_hosted_ci_green": false,
+  "investment_approved": false
+}

@@ -1,3 +1,9 @@
+## V32 — 13.11.2026 · Контроль приёма документов, влияющих на инвестиционный вывод (Draft)
+
+- [Методика V32](V32_DECISION_GRADE_EVIDENCE_INTAKE.md), [12 категорий доказательств](../data/evidence/V32_DECISION_DOCUMENT_DOCKET.json), [журнал проверки источников](../quality/V32_PUBLIC_EVIDENCE_SEARCH_20261110.json).
+- [Fail-closed контроллер](../scripts/v32_decision_evidence_gate.py), [31 тест](../tests/test_v32_decision_evidence_gate.py), [необязательная локальная проверка SHA-256](V32_PRIVATE_BYTES_SUBMISSION_TEMPLATE.json).
+- На отдельном проверочном стенде V32 31/31 PASS; это не доказательство реальной оплаты и не полная регрессия всей системы. Готовность: DRAFT / P1-P3 HOLD / investment HOLD / main unchanged.
+
 ## V31 — 10.11.2026 · Раздельные экспертизы и уточнение GitHub CI (Draft)
 
 - [Акт V31 с источниками, допусками и ограничениями](V31_REGULATORY_AND_CI_EVIDENCE_AUDIT.md), [регуляторный реестр](../data/public/V31_REGULATORY_STAGE_CHAIN.json), [CI-аннотации](../quality/V31_GITHUB_PRE_RUNNER_ANNOTATIONS.json).
