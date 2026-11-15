@@ -1,0 +1,47 @@
+{
+  "schema": "BERING_V36_PUBLIC_REGULATORY_SOURCE_REVIEW_V1",
+  "as_of": "2026-11-16",
+  "evidence_scope": "PUBLIC_ONLINE_STATEMENTS_ONLY",
+  "claims": [
+    {
+      "claim_id": "MLC_INVESTOR_CARD_30K_DESIGN",
+      "source": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "source_type": "PUBLISHED_INVESTMENT_CARD",
+      "source_last_updated": "2026-10-26",
+      "measure": "DECLARED_CONTAINER_CAPACITY_TEU_PER_YEAR",
+      "value": 30000,
+      "signed_approved_revision_produced": false,
+      "new_paid_bering_cargo_proven": false
+    },
+    {
+      "claim_id": "MLC_GGE_150K_DESIGN",
+      "source": "https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e",
+      "source_type": "OFFICIAL_PUBLIC_PRESS_RELEASE",
+      "source_published": "2026-10-01",
+      "measure": "DECLARED_CONTAINER_CAPACITY_TEU_PER_YEAR",
+      "value": 150000,
+      "signed_approved_revision_produced": false,
+      "new_paid_bering_cargo_proven": false
+    },
+    {
+      "claim_id": "ENVIRONMENTAL_REGISTRY_NOT_COMPLETE_WARNING",
+      "source": "https://rpn.gov.ru/activity/gee-registry/",
+      "source_type": "OFFICIAL_REGISTRY_PAGE",
+      "measure": "SOURCE_COMPLETENESS_WARNING",
+      "value": "Publisher says public registry may be incomplete and refers to authorized territorial body for current data",
+      "signed_mlc_stage1_final_result_verified": false,
+      "positive_result_proven": false,
+      "negative_result_proven": false
+    }
+  ],
+  "design_30k_150k_revisions_reconciled": false,
+  "published_capacities_must_not_be_added": true,
+  "mlc_stage1_final_environmental_conclusion_verified": false,
+  "mlc_actual_operation_verified": false,
+  "independent_external_review_completed": false,
+  "new_paid_bering_40ft": null,
+  "group_incremental_margin_rub": null,
+  "bering_npv_rub": null,
+  "investment_approved": false,
+  "limitations": "Official registry disclaimer makes a negative search result inconclusive. Press releases and project cards are not signed approved revisions, commissioning permits, or bankable Bering revenue."
+}

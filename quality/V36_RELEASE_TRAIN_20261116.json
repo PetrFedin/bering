@@ -1,0 +1,23 @@
+{
+  "schema": "BERING_V36_READONLY_GITHUB_RELEASE_TRAIN_V1",
+  "as_of": "2026-11-16",
+  "repository": "PetrFedin/bering",
+  "default_branch": "main",
+  "main_sha_observed": "e6dcc74cee46b327c399a1a0a5d4f8f282831d0f",
+  "main_protected_observed": false,
+  "main_change_requested": false,
+  "pull_requests": [
+    {"number": 24, "version": "V28", "draft": true, "merged": false, "base_branch": "audit/v27-primary-od-monthly-forecast-20261101", "head_sha": "8c3f5ceb9776d8a69cdda381810ce2ed49510f04"},
+    {"number": 27, "version": "V29", "draft": true, "merged": false, "base_branch": "audit/v28-market-perimeter-competitive-capacity-20261102", "head_sha": "b45ae95158fc11e44684aaa8a840a19688cb2f73"},
+    {"number": 29, "version": "V30", "draft": true, "merged": false, "base_branch": "audit/v29-timeline-claim-controls-20261109", "head_sha": "a15ce22516abcea09905bdf98237b12090116b61"},
+    {"number": 30, "version": "V31", "draft": true, "merged": false, "base_branch": "audit/v30-primary-evidence-and-ci-diagnostics-20261109", "head_sha": "3c26772a22945252df5f09328d96ca39160861bc"},
+    {"number": 32, "version": "V32", "draft": true, "merged": false, "base_branch": "audit/v31-regulatory-stages-and-ci-annotations-20261110", "head_sha": "c82d25830946eaa1d49cff4a094e45961c2442f8"},
+    {"number": 33, "version": "V33", "draft": true, "merged": false, "base_branch": "audit/v32-decision-grade-evidence-intake-20261113", "head_sha": "6281b6cf42fb90b3ae776887bfd2cbd1d82b0c63"},
+    {"number": 34, "version": "V34", "draft": true, "merged": false, "base_branch": "audit/v33-shipment-proof-and-additionality-20261113", "head_sha": "d066b90882428afadef3bb6ea1cc49e740c579fe"},
+    {"number": 35, "version": "V35", "draft": true, "merged": false, "base_branch": "audit/v34-invoice-bank-document-linkage-20261113", "head_sha": "01e5061cd24259128fc9685c2d3d89cbe3120ed1"}
+  ],
+  "github_hosted_full_regression_green": false,
+  "final_release_head_verified": false,
+  "investment_approved": false,
+  "notes": "This is a read-only checkpoint, not a live updater. Each listed PR was returned as open Draft by connected GitHub at review time. No merges performed; branch protection is absent."
+}

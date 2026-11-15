@@ -1,3 +1,9 @@
+## V36 — 16.11.2026 · Журнал происхождения доказательств и проверка релизной цепочки (Draft)
+
+- [V36 методика и границы выводов](V36_EVIDENCE_INTAKE_AND_RELEASE_READINESS.md), [программный контроль](../scripts/v36_evidence_intake_chain.py), [47 тестов](../tests/test_v36_evidence_intake_chain.py), [пустой событийный журнал](../data/evidence/V36_EMPTY_PRIVATE_EVENT_LEDGER_TEMPLATE.json).
+- [Верификация источников](../quality/V36_SOURCE_VERIFICATION_20261116.json), [историческая цепочка Draft PR](../quality/V36_RELEASE_TRAIN_20261116.json), [локальная QA-квитанция](../quality/V36_LOCAL_QA_RECEIPT_20261116.json): 47 V36 + 42 V35 теста пройдены в изолированной среде. Полный checkout/hosted CI не проверен.
+- Требуются подтверждения выдавших сторон, заключение ГЭЭ, approved ПД, 96 OD group-month, оплаченный новый груз и independent financial review. Все инвестиционные gates HOLD; main unchanged.
+
 ## V35 — 16.11.2026 · Сверка локальных байтов и межверсионных ссылок документов (Draft)
 
 - [Методика и ограничения V35](V35_LOCAL_SOURCE_BYTE_LINEAGE.md), [код](../scripts/v35_evidence_bytes_custody_gate.py), [42 синтетических теста](../tests/test_v35_evidence_bytes_custody_gate.py), [пустой manifest](../data/evidence/V35_EMPTY_PRIVATE_BYTES_MANIFEST.json), [QA receipt](V35_LOCAL_QA_RECEIPT_20261116.json).

@@ -1,0 +1,6 @@
+{
+  "schema": "BERING_V36_PRIVATE_EVENT_CHAIN_V1",
+  "notice": "SELF_REPORTED_EVENTS_NOT_EXTERNAL_ATTESTATIONS",
+  "parent_commit_sha": "01e5061cd24259128fc9685c2d3d89cbe3120ed1",
+  "events": []
+}
