@@ -1,3 +1,8 @@
+## V35 — 16.11.2026 · Сверка локальных байтов и межверсионных ссылок документов (Draft)
+
+- [Методика и ограничения V35](V35_LOCAL_SOURCE_BYTE_LINEAGE.md), [код](../scripts/v35_evidence_bytes_custody_gate.py), [42 синтетических теста](../tests/test_v35_evidence_bytes_custody_gate.py), [пустой manifest](../data/evidence/V35_EMPTY_PRIVATE_BYTES_MANIFEST.json), [QA receipt](V35_LOCAL_QA_RECEIPT_20261116.json).
+- В частичной локальной среде 42/42 PASS, но отсутствуют полная регрессия, заверенные документы и independent GitHub-hosted GREEN. Наличие локальных файлов/совпадение SHA не является подтверждением банка или дополнительного контейнерного спроса. P1-P3 / Investment HOLD.
+
 ## V34 — 13.11.2026 · Распределение банковских транзакций, счетов и контейнеров (Draft)
 
 - [Методика и запреты на инвестиционные выводы](V34_PAYMENT_AND_ADDITIONALITY_RECONCILIATION.md), [контроллер](../scripts/v34_bank_allocation_gate.py), [40 синтетических тестов](../tests/test_v34_bank_allocation_gate.py), [пустой контракт](../data/evidence/V34_EMPTY_BANK_ALLOCATION_CONTRACT.json).

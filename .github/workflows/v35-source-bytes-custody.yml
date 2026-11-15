@@ -1,0 +1,52 @@
+name: Bering V35 source byte custody and investment HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/v35_*'
+      - 'tests/test_v35_*'
+      - 'docs/V35_*'
+      - 'data/evidence/V35_*'
+      - '.github/workflows/v35-source-bytes-custody.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-bytes-research-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact checked-out SHA
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository regression
+        run: python -m unittest discover -s tests -q
+      - name: V35 cannot certify unavailable source bytes
+        run: |
+          python scripts/v35_evidence_bytes_custody_gate.py --out v35_gate_no_bytes.json
+          python - <<'PY'
+          import json
+          r = json.load(open('v35_gate_no_bytes.json', encoding='utf-8'))
+          assert r['status'] == 'NO_PRIVATE_SOURCE_RECORDS', r['errors']
+          assert r['local_source_files_with_recomputed_matching_sha256'] is None
+          assert r['paid_incremental_40ft'] is None
+          assert r['group_incremental_cm_rub'] is None
+          assert r['bering_npv_rub'] is None
+          assert r['investment_approved'] is False
+          PY
+      - name: Preserve V32-V34 closed financial gates
+        run: |
+          python scripts/v32_decision_evidence_gate.py --repo . --out v35_v32.json
+          python scripts/v33_shipment_proof_quality.py --repo . --out v35_v33.json
+          python scripts/v34_bank_allocation_gate.py --repo . --out v35_v34.json
+          python - <<'PY'
+          import json
+          for f in ('v35_v32.json', 'v35_v33.json', 'v35_v34.json'):
+              data = json.load(open(f, encoding='utf-8'))
+              assert data['investment_approved'] is False, f
+          PY
