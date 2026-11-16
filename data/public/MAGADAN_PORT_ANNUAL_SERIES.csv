@@ -1,0 +1,20 @@
+entity,year,indicator,value,unit,yoy_pct,source_id,notes
+PORT_MAGADAN_ALL,2020,cargo_turnover,1.63,млн т,+3.5,S32,"контейнеры +19,0% (TEU, динамика)"
+PORT_MAGADAN_ALL,2021,cargo_turnover,null,млн т,,,
+PORT_MAGADAN_ALL,2022,cargo_turnover,null,млн т,,,
+PORT_MAGADAN_ALL,2023,cargo_turnover,1.64,млн т,,S31,"расчётно: 1,71/1,042"
+PORT_MAGADAN_ALL,2024,cargo_turnover,1.71,млн т,+4.2,S31,"нефтепродукты 27,2% (+10,4%); судозаходы 244 (+5,2%)"
+PORT_MAGADAN_ALL,2025-8M,cargo_turnover,1.190,млн т,+0.8,S31,"8М2024: 1,180 млн т"
+PORT_MAGADAN_ALL,2025-Q1,containers,18000,TEU,+3.5,S05,"порт целиком, АСОП/Морцентр"
+MMTP,2024,cargo_turnover,1251.2,тыс. т,,MP10014724,"первичка МП-1, PR #38; = 73% порта (согласуется с 75-80%)"
+MMTP,2024,containers_loaded,48732,TEU,,MP10014724,
+MMTP,2024,containers_cargo,890.1,тыс. т,,S30,"обоснование хоздеятельности"
+MMTP,2024,coal,225.1,тыс. т,,S30,
+MMTP,2024,general_cargo,119.2,тыс. т,,S30,
+MMTP,2025,cargo_turnover,1334.4,тыс. т,,MP10014725_FY,"первичка МП-1"
+MMTP,2025,containers_loaded,51606,TEU,,MP10014725_FY,
+MMTP,2026-9M,containers_loaded,42245,TEU,+9.3,MP10014726,"первичка МП-1"
+MMTP,2032,cargo_turnover_plan,1500,тыс. т,,S30,"план"
+MMTP,2032,containers_cargo_plan,1000,тыс. т,,S30,"план"
+MMTP,2032,coal_plan,350,тыс. т,,S30,"план"
+MMTP,2032,general_cargo_plan,130,тыс. т,,S30,"план"
