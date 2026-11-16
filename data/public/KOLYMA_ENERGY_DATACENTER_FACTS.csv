@@ -1,0 +1,18 @@
+entity,year,indicator,value,unit,source_id,notes
+KOLYMSKAYA_GES,2025,installed_capacity,900,МВт,S107,первый агрегат 1982; модернизация
+KOLYMSKAYA_GES,2025,avg_annual_generation_design,3325,млн кВт·ч,S107,
+KOLYMSKAYA_GES,2025,generation_fact,1883,млн кВт·ч,S108,+3% каскад суммарно; суточный максимум 7,5 млн кВт·ч 31.12.2025
+KOLYMSKAYA_GES,cumulative,generation_since_start,78884,млн кВт·ч,S108,
+UST_SREDNEKANSKAYA_GES,2024,installed_capacity,570,МВт,S106,4×142,5; ввод в постоянную эксплуатацию 06.12.2024
+UST_SREDNEKANSKAYA_GES,2024,avg_annual_generation_design,2555,млн кВт·ч,S106,
+UST_SREDNEKANSKAYA_GES,2024,guaranteed_capacity,132,МВт,S106,проектная
+UST_SREDNEKANSKAYA_GES,2025,generation_fact,1130,млн кВт·ч,S108,резерв к проектной ~1,4 млрд кВт·ч/год
+UST_SREDNEKANSKAYA_GES,cumulative,generation_since_start,6047,млн кВт·ч,S108,
+KOLYMA_CASCADE,2025,generation_fact,3014,млн кВт·ч,S108,+3,0% к 2024; Колымаэнерго = 95% генерации региона
+KOLYMA_CASCADE,,winter_guaranteed_capacity_perspective,430,МВт,S106,перспектива при подъёме НПУ Колымской ГЭС
+TOR_KOLYMA,2026,total_investment,88.4,млрд ₽,S110,публикация 16.11.2026; ранее (04.2026) фигурировало ~107 млрд — расхождение зафиксировано
+DATACENTER_TOR,2026,power,150,МВт,S110,проект АФК «Система»; хостинг и обслуживание вычислительного оборудования
+DATACENTER_TOR,2026,capex,4.3,млрд ₽,S112,в составе ТОР «Колыма»
+DATACENTER_TOR,2027,planned_launch_Q1,,,S111,mining-space.com (низкий авторитет): 20 га, uptime 98%, майнинг — подтверждение null
+MAGADAN_OBLAST,2026,tariff_population_single,7.49,₽/кВт·ч,S114,население, 1-й диапазон, с НДС; тариф для бизнеса = null
+IRKUTSK_BENCHMARK,2026,tariff_business_1CK,5.3,₽/кВт·ч,S113,без НДС, 09.2026, Иркутскэнергосбыт 5,49→6,13 — бенчмарк «гидро-региона»
