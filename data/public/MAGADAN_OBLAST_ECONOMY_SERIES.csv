@@ -1,0 +1,27 @@
+entity,year,indicator,value,unit,yoy_pct,source_id,notes
+MAGADAN_OBLAST,2022,GRP,315.9,млрд ₽,,S73,номинал
+MAGADAN_OBLAST,2023,GRP,408.46,млрд ₽,,S70,Росстат
+MAGADAN_OBLAST,2024,GRP,527.33,млрд ₽,+29.1,S70,Росстат; ранняя оценка правительства 489,6 — устарела
+MAGADAN_OBLAST,2025,GRP,600,млрд ₽,,S72,прогноз правительства (>600); в сопоставимых ценах +0,4% (S69)
+MAGADAN_OBLAST,2025,GRP_growth_real,0.4,%,,S69,ТАСС 04.06.2026, сопоставимые цены
+MAGADAN_OBLAST,2024,GRP_per_capita,3936.3,тыс. ₽,,S73,
+MAGADAN_OBLAST,2025,population,134544,чел,,S73,
+MAGADAN_OBLAST,2023,gold_output,48.0,т,-6.6,S74,
+MAGADAN_OBLAST,2024,gold_output,54.1,т,+12.7,S74,Полюс Магадан 14,1; Павлик 12,8; Полиметалл 8,1; Сусуманзолото 5,5; Арбат 3,1
+MAGADAN_OBLAST,2025,gold_output,55.5,т,+2.6,S75,ТАСС; региональный релиз 55,1 т (S75-note)
+MAGADAN_OBLAST,2024,silver_output,423.2,т,-19.7,S74,Омсукчанский округ 330,1 т
+MAGADAN_OBLAST,2025,silver_output_plan,600,т,,S74,план
+MAGADAN_OBLAST,2042,gold_output_plan,60.9,т,,S77,прогноз стратегии: 54→60,9 т/год к 2042
+MAGADAN_OBLAST,2025-9M,gold_output,31.11,т,,S76,+3,0 т к 9М2024; Тенькинский округ 20,0 т
+MAGADAN_OBLAST,2025-9M,silver_output,154.4,т,,S76,
+MAGADAN_OBLAST,2025-9M,lead_output,3400.1,т,,S76,
+MAGADAN_OBLAST,2025-9M,zinc_output,3298.4,т,,S76,
+MAGADAN_OBLAST,2025-9M,copper_output,119.8,т,,S76,
+SOKOL_AIRPORT,2016,cargo,7.4,тыс. т,,S79,почта 1,0 тыс. т; свежий ряд null
+SOKOL_AIRPORT,2024,terminal_capacity,1,млн пасс/год,,S78,новый терминал с 22.12.2024
+KOLYMA_ROAD_R504,2022,asphalt_yakutia_side,157,км,,S82,из 1197 км по Якутии
+KOLYMA_ROAD_R504,2022,asphalt_magadan_side,138,км,,S82,из 835 км по области
+KOLYMA_ROAD_R504,2025,no_direct_link_months,4.5,мес/год,,S81,переправа через Алдан: ледовая янв–апр, паром июнь–сен
+FESCO_MARKET,2026-04,rate_40ft_shanghai_moscow_landbridge,7700,USD,+15,S83,к концу февраля
+FESCO_MARKET,2026-04,rate_40ft_shanghai_moscow_intermodal,8400,USD,+11,S83,через порты ДВ
+FESCO_MARKET,2026-04,rate_40ft_shanghai_spb_sea,6500,USD,+14,S83,
