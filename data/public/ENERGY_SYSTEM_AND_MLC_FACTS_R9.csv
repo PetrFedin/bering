@@ -1,0 +1,26 @@
+entity,year,indicator,value,unit,source_id,notes
+MAGADAN_EES,2030,installed_capacity,1790,МВт,S123,ГЭС 1470 + ТЭС 320; без изменений 2025–2030
+MAGADAN_EES,2030,coverage_with_limits,1576.1,МВт,S123,
+MAGADAN_EES,1991,historical_max_load,658,МВт,S123,
+MAGADAN_EES,2018,max_load,502,МВт,S125,
+MAGADAN_EES,2023,max_load,460,МВт,S123,рост обусловлен золотодобычей
+MAGADAN_EES,2025,max_load_forecast,536,МВт,S123,+10,74% — вводы горнодобычи
+MAGADAN_EES,2030,max_load_forecast,546,МВт,S123,
+MAGADAN_EES,2030,power_surplus,822,МВт,S123,с учётом останова крупнейшего агрегата
+MAGADAN_EES,2024,consumption,3158,млн кВт·ч,S123,оценка
+MAGADAN_EES,2030,consumption_forecast,3633,млн кВт·ч,S123,
+MAGADAN_EES,2030,energy_deficit_low_water_winter,-158,млн кВт·ч,S123,октябрь–апрель маловодного года; −10 (2025) → −158 (2030)
+MAGADAN_EES,2030,tes_fuel_need,319.7,тыс. т у.т.,S123,удельный расход 564,1 г у.т./кВт·ч
+ARKAGALINSKAYA_GRES,,installed_capacity,224,МВт,S125,законсервирована с 1993; зимой 7–10 МВт; аварийный резерв
+MAGADAN_CHP,,installed_capacity,96,МВт,S126,тепловая 495 Гкал/ч
+KOLYMA_WINTER,,winter_flow,3,м³/с,S124,зимний сток 3–5 м³/с; мин. 0,3; ледостав 200–270 сут
+VOCL_INCIDENT,2017-04-17,customers_affected,80,тыс. чел,S127,повреждение кабеля р-н Хабаровска; Камчатка+Магадан+Сахалин без интернета
+VOCL_INCIDENT,2023-10-11,event,trawler_damage,,S128,ВОЛС Петропавловск—Анадырь; траление в охранной зоне
+VOCL_INCIDENT,2026-08-12,event,planned_repair,,S129,ПВОЛС Камчатка—Сахалин; ограничение сервисов
+MLC_MAGADAN,2025,current_fish_throughput,10,тыс. т/год,S130,осадка ≤4 м; ГТС 100% под демонтаж
+MLC_MAGADAN,2029,stage1_GTS,capex 12.3,млрд ₽,S130,региональный бюджет; ГК ЕКС; ввод конец 2029
+MLC_MAGADAN,2026-10-01,GGE_stage1,4_причала_517.6м,,S131,ГГЭ+: 4 грузовых причала 517,6 м + берегоукрепление 774,3 м
+MLC_MAGADAN,2030s,fish_target,200,тыс. т/год,S130,200–250 тыс. т; уровень 1980-х; полная работа начало 2030-х
+MLC_MAGADAN,,cold_storage,10,тыс. т,S130,единовременное хранение; этап 2, частные ~8 млрд ₽
+MLC_MAGADAN,,area,14,га,S130,концессия; возможно 20+ га
+NORDGOLD_PRIOKHOTYE,2026-09-03,agreement_capex,80,млрд ₽,S132,ВЭФ-2026; >80 млрд; конечный продукт — медный концентрат; 14 лицензий; ГИ начаты 2026
