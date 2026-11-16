@@ -1,0 +1,14 @@
+entity,year,indicator,value,unit,source_id,notes
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,2016,length,1700,км,S115,подводная часть + наземные участки
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,2016,capacity_max,8,Тбит/с,S115,проектный максимум; доступная ёмкость null
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,2016,capex,5,млрд ₽,S115,подводная часть 3,3 млрд ₽
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,2016,launch,2016,год,S116,Сахалин—Магадан 2кв2016; Камчатка 4кв2016; коммерция конец 2016
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,2016,internet_price_effect,-75,%,S115,цены на интернет в Магадане −3–4 раза
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,,redundancy,0,шт,R8,вторая независимая трасса отсутствует — риск единой линии
+VOCL_SAKHALIN_MAGADAN_KAMCHATKA,,rtt_moscow_estimate,80,мс,R8,оценка исследования 80–120 мс по длине трассы; не измерение
+MAGADAN_OBLAST,2026,tariff_population_single,7.49,₽/кВт·ч,S119,1-й диапазон, с НДС
+MAGADAN_OBLAST,2026,tariff_population_night,5.99,₽/кВт·ч,S119,
+MAGADAN_OBLAST,2026,tariff_population_electrostove,5.24,₽/кВт·ч,S119,
+MAGADAN_OBLAST,2026,tariff_business,,₽/кВт·ч,S120,нерегулируемые ежемесячные цены ГП; значение null
+DATACENTER_TOR,,power_required_grid,170,МВт,R8,оценка: 150 МВт × PUE 1,15–1,3 → 170–195 МВт от сети
+KOLYMA_CASCADE,,winter_guaranteed_perspective,430,МВт,R7/S106,при подъёме НПУ Колымской ГЭС
