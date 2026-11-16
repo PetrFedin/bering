@@ -1,2 +1,30 @@
-# Research documentation
-Read [STATUS](STATUS.md) for decisions, [VERSION_INDEX](VERSION_INDEX.md) for history, [EVIDENCE_STANDARD](EVIDENCE_STANDARD.md) for proof criteria, [CORRIDOR_NETWORK](CORRIDOR_NETWORK.md) for nodes and alternatives, and [ROADMAP](ROADMAP.md) for the execution backlog. Other analyses are in this directory; original derived files reside under archive/ and data/.
+# Документация Bering Corridor
+
+## Актуальная точка входа
+
+- [Текущий статус и гейты](STATUS.md) — актуализировано 17.11.2026.
+- [Открытые исследования R1–R18](research/README.md) — основной индекс текущей исследовательской серии.
+- [Каталог машиночитаемых данных](../data/public/README.md) — источники S01–S211, расчёты C01–C43, интегрированные реестры и массивы.
+- [Акт полноты и порядка репозитория](REPOSITORY_AUDIT_20261117.md) — что проверено и что изменено после R18.
+
+## Методика и инвестиционные ограничения
+
+- [Система доказательств и словарь данных](EVIDENCE_STANDARD.md).
+- [Экономическая методология](ECONOMIC_METHOD.md).
+- [Методологический инструментарий](METHODOLOGY_TOOLKIT.md).
+- [Архитектура сети и альтернатив](CORRIDOR_NETWORK.md).
+- [Коммерческая модель Магаданского хаба](MAGADAN_HUB.md).
+- [Три коммерческих пилота](COMMERCIAL_PILOTS.md).
+- [Инженерные и юридические гейты](ENGINEERING_LEGAL_GATES.md).
+- [Дорожная карта](ROADMAP.md) и [журнал решений](DECISION_LOG.md).
+
+## История и техническая приёмка
+
+- [Реестр версий V1–V36](VERSION_INDEX.md) — исторические снимки и технические раунды; не заменяет индекс R1–R18.
+- [Статус переноса материалов](DELIVERY_STATUS.md).
+- [QA исторических рабочих книг](QA_WORKBOOKS.md).
+- [Протокол сопровождения](MAINTENANCE_PROTOCOL.md).
+- [Мониторинг источников](SOURCE_MONITOR.md) — требует восстановления GitHub Actions по issue #7.
+- [Диагностика CI](CI_DIAGNOSTIC_CHECKLIST_20261116.md).
+
+Архивные извлечения находятся в `archive/`, данные — в `data/`, проверки — в `scripts/`, `tests/` и `quality/`. Исторические документы не переписываются под текущее состояние; корректировки фиксируются новыми датированными раундами.
