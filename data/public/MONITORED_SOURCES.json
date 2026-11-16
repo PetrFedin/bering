@@ -1,0 +1,14 @@
+{
+  "document": "Monitored public sources registry",
+  "updated": "2026-11-16",
+  "rule": "sha256=null означает 'первый запуск фиксирует базовый хеш'; изменение хеша = алерт (job падает, уведомление владельцу). Алерт = сигнал проверить источник, не факт.",
+  "sources": [
+    {"name": "MMTP disclosure page", "url": "https://magadanport.ru/raskrytie-informacii/", "sha256": null, "what_changes_mean": "новые МП-1/МП-2, тарифы, инвестпрограмма"},
+    {"name": "MMTP MP-1 9M2026", "url": "https://magadanport.ru/wp-content/uploads/2026/10/MP10014726.xls", "sha256": "20f684ee23777db318d2dda4942891d8a7ee57e43140fe0c0c47d767893f61a2", "what_changes_mean": "переиздание формы 9 мес. 2026"},
+    {"name": "MMTP MP-2 9M2026", "url": "https://magadanport.ru/wp-content/uploads/2026/10/MP20014726.xls", "sha256": "11afb90722824351676e8c2d800c8bee71564fec5d66bf3234149659c9e36a42", "what_changes_mean": "переиздание формы 9 мес. 2026"},
+    {"name": "MLC Magadan investment card", "url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/", "sha256": null, "what_changes_mean": "изменение мощности/бюджета/сроков проекта (issues #25/#26)"},
+    {"name": "RPN eco-expertise notices Magadan", "url": "https://rpn.gov.ru/regions/cmu23/gov-services/gov-eco-exp/", "sha256": null, "what_changes_mean": "публикация итогового заключения ГЭЭ (issue #31)"},
+    {"name": "SASCO tariffs", "url": "https://www.sasco.ru/", "sha256": null, "what_changes_mean": "изменение каботажных тарифов"},
+    {"name": "KASCO Vladivostok-Magadan schedule", "url": "https://kasco.su/schedule_vvo-mag/", "sha256": null, "what_changes_mean": "изменение расписания/ставок КМП"}
+  ]
+}
