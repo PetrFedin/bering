@@ -1,0 +1,42 @@
+name: Bering V21 Source & Financial Admission
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'archive/originals/**'
+      - 'provenance/V20_IMPORT_SHA256.json'
+      - 'provenance/files.json'
+      - '.github/workflows/source-admission-v21.yml'
+permissions:
+  contents: read
+jobs:
+  evidence-admission:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-audit.txt
+      - name: Fail closed if originals or formulas are absent / changed
+        run: |
+          python scripts/audits/formula_fingerprint.py \
+            --book archive/originals/V15_2/Bering_Corridor_V15_2_Risk_Evidence_Aligned_2026-10-27.xlsx \
+            --expected provenance/V21_FORMULA_PIN.json
+      - name: Run source integrity and fraud-resistant admission unit tests
+        run: python -m unittest -v scripts/audits/test_formula_and_git.py scripts/audits/test_release_admission_v21.py
+      - name: Verify all 42 committed originals and 223 selected financial results
+        run: python scripts/audits/release_admission_v21.py --repo . --out v21_local_admission.json
+      - name: Attach receipt if produced
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bering-v21-source-admission
+          path: v21_local_admission.json
+          if-no-files-found: ignore

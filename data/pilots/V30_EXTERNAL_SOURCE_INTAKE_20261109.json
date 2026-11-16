@@ -1,0 +1,39 @@
+{
+  "schema": "V30_EXTERNAL_PRIMARY_SOURCE_REQUESTS_V1",
+  "as_of": "2026-11-09",
+  "period_first": "2024-10",
+  "period_last": "2026-09",
+  "months": 24,
+  "group_or_pilot_ids": [
+    "P1",
+    "P2",
+    "P3",
+    "GROUP_EXISTING"
+  ],
+  "expected_month_slots": 96,
+  "authenticated_month_slots": 0,
+  "requests_submitted": 0,
+  "requests_sent": false,
+  "raw_contracts_received": 0,
+  "original_waybills_received": 0,
+  "verified_receipt_events": 0,
+  "paid_invoices_received": 0,
+  "verified_bank_settlements": 0,
+  "primary_actual_40ft_shipment_count": null,
+  "new_group_incremental_contribution_margin_rub": null,
+  "bering_npv_rub": null,
+  "contact_details_for_pilots_verified": false,
+  "client_permission_to_use_raw_records": false,
+  "raw_data_in_repository": false,
+  "requires": [
+    "Customer-provided 24-month shipment-level OD with anonymized stable shipment IDs and same time zone",
+    "Independent carrier B/L and loading evidence reconciled to terminal event",
+    "Customer receiving event and invoice/credit note paired to bank settlement",
+    "Group-existing OD and contribution margin to exclude internal diversion",
+    "Written redistribution and privacy permissions before sharing records"
+  ],
+  "P1": "HOLD",
+  "P2": "HOLD",
+  "P3": "HOLD",
+  "investment_approved": false
+}

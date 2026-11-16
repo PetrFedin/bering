@@ -1,0 +1,26 @@
+{
+  "schema": "BERING_V35_LOCAL_QA_RECEIPT_V1",
+  "as_of": "2026-11-16",
+  "execution_environment": "CURRENT_EPHEMERAL_CONTAINER_PYTHON_3.13.5",
+  "test_command": "python3 -m unittest discover -s tests -q",
+  "new_v35_unit_tests_executed": 42,
+  "new_v35_unit_tests_passed": 42,
+  "integration_test_with_actual_v33_v34_modules": false,
+  "historical_previous_turn_test_total_reported": 146,
+  "historical_previous_turn_suite_reverified_here": false,
+  "full_github_checkout_tested": false,
+  "github_hosted_ci_green": false,
+  "public_certified_mlc_document_received": false,
+  "validated_bank_settlement_received": false,
+  "pilot_new_paid_40ft": null,
+  "bering_npv_rub": null,
+  "investment_approved": false,
+  "sha256": {
+    "scripts/v35_evidence_bytes_custody_gate.py": "3f89cd45e8620369af96a5c5f11a5c83be6cdd9cfd9b434b9cabc5cd204ee3b9",
+    "tests/test_v35_evidence_bytes_custody_gate.py": "c2e6d193ad2e66f01bd2df846d2a299e90a56d97ecdde09273bde42f160f6f0d",
+    "docs/V35_LOCAL_SOURCE_BYTE_LINEAGE.md": "6f28e5f00eee5c00d875455f4a2e1c2e85ae26d109f22d363a142ebec24fe3b3",
+    "data/evidence/V35_EMPTY_PRIVATE_BYTES_MANIFEST.json": "bd23040254e4313f22741391ee03ab950e016cb5919b79a0889ff2c54984116b",
+    ".github/workflows/v35-source-bytes-custody.yml": "e1ffa4970cfdc403f9a0af842425a686cb09f02232e1136e6960e7c3d142c868"
+  },
+  "limitations": "Current tests include synthetic fixtures and stubbed positive structural checks; full integrated previous modules and actual private source bytes were not available. SHA checks do not prove issuer identity, signature or actual payment."
+}

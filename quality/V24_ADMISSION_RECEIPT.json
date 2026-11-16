@@ -1,0 +1,77 @@
+{
+  "release": "V24",
+  "date_utc": "2026-10-31",
+  "repository": "PetrFedin/bering",
+  "branch": "audit/v24-source-identity-linkage-20261031",
+  "parent": "audit/v23-cross-pilot-cargo-integrity-20261030",
+  "purpose": "Link pseudonymous V23 shipment records to claimed physical 40ft container identities, waybills and evidence bytes; NEVER admit investment automatically",
+  "local_validation": {
+    "python_version": "3.13.5",
+    "executed_in_isolated_local_sandbox": true,
+    "identity_unit_tests": {
+      "passed": 40,
+      "total": 40,
+      "source": "synthetic-only"
+    },
+    "combined_decision_unit_tests": {
+      "passed": 14,
+      "total": 14,
+      "source": "mocked subprocess outputs"
+    },
+    "total": {
+      "passed": 54,
+      "total": 54,
+      "status": "PASS"
+    },
+    "local_baseline": {
+      "status": "HOLD",
+      "v23_recorded_shipments": 0,
+      "v24_recorded_identities": 0,
+      "source_verified": false,
+      "bankable_revenue_approved": false
+    },
+    "archived_originals_tested": false,
+    "real_commercial_documents_tested": false,
+    "full_application_e2e_tested": false,
+    "note": "Local isolated sandbox tests rerun after 40ft ISO allowlist and nonfuture as_of hardening; 40 identity + 14 mocked combined controller tests."
+  },
+  "remote_validation": {
+    "github_workflow": "Bering V24 physical cargo identity (research only)",
+    "run_url": "https://github.com/PetrFedin/bering/actions/runs/41197054915",
+    "tested_sha": "4e385f5b4c2a9f654e03e921eef0dc5665376c45",
+    "conclusion": "failure",
+    "runner_id": 0,
+    "steps_executed": 0,
+    "runner_failure_cause": "UNKNOWN",
+    "status": "CI_BLOCKED_BEFORE_FIRST_STEP",
+    "note": "This is NOT a failing executed Python test, but a GitHub Actions runner dispatch failure as observed through API"
+  },
+  "sha_ledger": {
+    "scripts/shipment_identity_v24.py": "e933e28f31051dbf65446580dea51ff24a8bfd46",
+    "scripts/release_commercial_v24.py": "ba1b65c5f3918540fec970e9c2b8c852f85e369d",
+    "tests/test_shipment_identity_v24.py": "9023b0a80fe3dcbd2fb9aa1ab53a82c279203831",
+    "tests/test_release_commercial_v24.py": "76ce0bc5295b5a5d5af0bafd328bbe6c0622c030",
+    "data/pilots/V24_identity_unverified.json": "e34dc8585328e1f76c7f4eaaae617cd0ad10b2de"
+  },
+  "input_contract": {
+    "v23_baseline": "data/pilots/V23_cross_pilot_unverified.json",
+    "v23_baseline_sha256": "adff60ac8f365baf14e37ed82ed2a7fe135e79d516c4abc824c7d0c2c4289885",
+    "v24_baseline": "data/pilots/V24_identity_unverified.json",
+    "real_shipments_recorded": 0,
+    "note": "No data means no evidence, not zero real market demand"
+  },
+  "release_gates": {
+    "source_originals_imported_to_git": false,
+    "externally_authenticated_waybills": false,
+    "independently_reconciled_group_cargo": false,
+    "real_delivery_and_payment_evidence": false,
+    "github_runner_green_on_fixed_sha": false,
+    "financial_excel_full_recalc": false,
+    "P1": "HOLD",
+    "P2": "HOLD",
+    "P3": "HOLD",
+    "bankable_revenue_approved": false,
+    "investment_approved": false
+  },
+  "status": "DRAFT_LOCAL_SYNTHETIC_TESTS_PASS_REMOTE_CI_HOLD_INVESTMENT_HOLD"
+}

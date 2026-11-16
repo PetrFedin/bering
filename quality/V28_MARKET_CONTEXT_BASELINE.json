@@ -1,0 +1,48 @@
+{
+  "status": "CONTEXT_VALID_REVIEW_REQUIRED",
+  "as_of": "2026-11-01",
+  "historical_port_teu": {
+    "entity_scope": "MAGADAN_ALL_PORT_TERMINALS",
+    "unit": "TEU",
+    "actual_2024_reported": "80900",
+    "actual_2025_reported": "84300",
+    "annual_absolute_change_TEUs": "3400",
+    "reported_yoy_pct_calculated": "4.20",
+    "source_type": "SECONDARY_REPORTS_CITING_MORCENTR",
+    "physical_40ft_containers": null,
+    "operator_specific_teus": null,
+    "bering_paid_incremental_containers": null
+  },
+  "project_capacity_version_conflict": {
+    "project_id": "MAGADAN_MARINE_LOGISTICS_CENTER",
+    "may_2026_published_design_TEUs_per_year": "30000",
+    "oct_2026_expertise_announced_design_TEUs_per_year": "150000",
+    "difference_in_published_claims_TEUs": "120000",
+    "version_ratio_not_capacity_addition": "5.00",
+    "engineering_perimeter_reconciliation": "NOT_VERIFIED",
+    "future_in_service_capacity": null,
+    "new_cargo_due_to_bering": null
+  },
+  "operator_2025_all_cargo_tonnes": "1834700",
+  "annual_2026_magadan_teu": null,
+  "monthly_operator_tonnage_24m": null,
+  "real_bering_40ft_OD_24m": null,
+  "signed_new_cargo_40ft": null,
+  "authenticated_paid_cargo": null,
+  "incremental_group_CM_rub": null,
+  "project_NPV_rub": null,
+  "market_report_substitutes_original_evidence": false,
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "P1": "HOLD",
+  "P2": "HOLD",
+  "P3": "HOLD",
+  "manual_actions_required": [
+    "Obtain original Morcenter port TEU tables, with source bytes and method.",
+    "Get design phase change log 30k to 150k TEU from project owner/engineering authority.",
+    "Verify actual permit, financing, commissioning date and operating status.",
+    "Obtain customer-by-customer 24-month OD and documented paid new freight for P1-P3.",
+    "Check incumbent group displacement across existing terminals before funding."
+  ],
+  "errors": []
+}

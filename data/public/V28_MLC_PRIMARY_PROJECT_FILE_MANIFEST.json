@@ -1,0 +1,544 @@
+{
+  "schema": "V28_PUBLIC_PROJECT_VOLUME_METADATA_V1",
+  "as_of": "2026-11-02",
+  "public_announcement": "https://o-v-o-s.ru/49/40020",
+  "public_archive": "https://disk.yandex.ru/d/VBtKSnvIO1rolQ",
+  "metadata_access_method": "Yandex Disk official unauthenticated public resources API",
+  "source_api_endpoints": [
+    "https://cloud-api.yandex.net/v1/disk/public/resources?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FVBtKSnvIO1rolQ&limit=100&fields=_embedded.items.name,_embedded.items.type,_embedded.items.path,_embedded.items.size,_embedded.items.sha256,_embedded.total,name,type",
+    "https://cloud-api.yandex.net/v1/disk/public/resources?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fd%2FVBtKSnvIO1rolQ&path=%2F%D0%A3%D0%A2%D0%92%D0%95%D0%A0%D0%96%D0%94%D0%95%D0%9D%D0%9D%D0%AB%D0%95%20%D0%9C%D0%90%D0%A2%D0%95%D0%A0%D0%98%D0%90%D0%9B%D0%AB%20%D0%9E%D0%92%D0%9E%D0%A1&limit=100&fields=_embedded.items.name,_embedded.items.type,_embedded.items.path,_embedded.items.size,_embedded.items.sha256,_embedded.total,name,type"
+  ],
+  "root_listing_count": 49,
+  "root_pdf_files": 48,
+  "approved_environmental_subdirectory_files": 4,
+  "total_pdf_files": 52,
+  "exact_document_bytes_downloaded_into_research_repo": 0,
+  "document_contents_verified": 0,
+  "positive_expertise_2026_matches_uploaded_2025_revisions": false,
+  "documentary_capacity_30000_150000_scope_reconciled": false,
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "note": "SHA256 hashes copied from file owner metadata API. They are useful future verification targets, not independently recalculated from downloaded PDFs. Files are publicly listed but contents have not been read or certified.",
+  "documents": [
+    {
+      "path": "/Том 1.1_П-25-2025-00-ПЗ-1.1.pdf",
+      "bytes": 3318012,
+      "sha256_from_public_api": "147b9ca6cc81d2118b5ee293d74ae49f1f4f21849dbdcf8a588ffa5491c77017",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 1.2_П-25-2025-00-ПЗ-1.2.pdf",
+      "bytes": 9047311,
+      "sha256_from_public_api": "ac61f69e93b87e332e4107747bfe804fa6edbe76f507aadd71f745bd97264e30",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 1.3 П-25-2025-00-НИР-1.3.pdf",
+      "bytes": 12083164,
+      "sha256_from_public_api": "7611339ca967473765eeebd74d7b69fe0528e3fb859857516c7111ccdf389f09",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 10.1 П-25-2025-00-ТБЭ-10.1.pdf",
+      "bytes": 1485116,
+      "sha256_from_public_api": "c9f98a4236961a8e79849f21f59eedf212921fcfd8b9837841bc790a394dde8f",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 11.1 П-25-2025-00-ОДИ-11.1.pdf",
+      "bytes": 1101275,
+      "sha256_from_public_api": "f26ca9603e8c12c3bd4c8665efe0e1ee672f519306c5a9f019b77a324aaaef21",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.1.1 П-25-2025-00-ГОЧС-13.1.1.pdf",
+      "bytes": 6022126,
+      "sha256_from_public_api": "246594718b1b5dbc3285288289e38b90a5cecffb9371e6f80ccd5f478281a9dc",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.2.1 П-25-2025-00-ДБГ-13.2.1.pdf",
+      "bytes": 3187256,
+      "sha256_from_public_api": "62edc72d105bfcda29aa25011feb943c128148f0ac20a7e4c2f58df1cbd89d0a",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.3.1 П-25-2025-00-ПТ-13.3.1.pdf",
+      "bytes": 2392932,
+      "sha256_from_public_api": "a0374353150677f86af2af49eebbade1a2a71ee31cf1a70b56f016d499754582",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.4.1 П-25-2025-00-ГОЧС-13.4.1.pdf",
+      "bytes": 3553541,
+      "sha256_from_public_api": "58c7f8e58caf201a2eac9d2c204f3dd9b419045f8226ba6b2a31bb75ff6cfa0a",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.4.2 П-25-2025-00-ГОЧС-13.4.2.pdf",
+      "bytes": 1949346,
+      "sha256_from_public_api": "ec6d4b8d70e839e8388c77d6b91293df9bde3b94d55c110b1d3da7c3114a99ff",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.4.3 П-25-2025-00-ГОЧС-13.4.3.pdf",
+      "bytes": 1006295,
+      "sha256_from_public_api": "7b1eeb94fd32e4a129b125d6e91c050e717612009b2d2d219ae49390d856344c",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.4.4 П-25-2025-00-ГОЧС-13.4.4.pdf",
+      "bytes": 2488262,
+      "sha256_from_public_api": "fa8d10e2662784555130c7d98c191e87ddad58dfc44396462c1b5084046704de",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.5.1 П-25-2025-00-БМ-13.5.1.pdf",
+      "bytes": 7609630,
+      "sha256_from_public_api": "cfe20a41f9af1f2573e1f1c76657d7030ae585b405f4327a3b8ba363eed9371e",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 13.5.2 П-25-2025-00-СНО-13.5.2.pdf",
+      "bytes": 6071035,
+      "sha256_from_public_api": "2ca87116d0afb937d5350596f96f97d448932d5c4832beb78dc5eeac6fe35d9a",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 2.1 П-25-2025-00-ПЗУ-2.1.pdf",
+      "bytes": 23461290,
+      "sha256_from_public_api": "cedde4c29629883ae040a966e3e969b406a40ed152d1d3be199b15a67e4944cf",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 3.1 П-25-2025-00-АР-3.1.pdf",
+      "bytes": 3386365,
+      "sha256_from_public_api": "b527d592b73a3df2ad0558f14ff9999ca0de415d3a4c6c253f097252cd6ffc2b",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 4.1 П-25-2025-00-КР-4.1.pdf",
+      "bytes": 7581316,
+      "sha256_from_public_api": "64d897407448fdeb1fc6fccaedbce88e3b5709eff8603c058f93126c0fbb394b",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 4.2 П-25-2025-00-КР-4.2.pdf",
+      "bytes": 5786141,
+      "sha256_from_public_api": "e6cbea2ea9733ffa480df63cbe8a143dd90ee01ee2b8245ae73510e6a493a695",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 4.3 П-25-2025-00-КР-4.3.pdf",
+      "bytes": 2909083,
+      "sha256_from_public_api": "00c8a281ced9d0687c5d95f158248ca32b935ccbfcb4f2d9ab1f405d5e182b9e",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 4.4 П-25-2025-00-КР-4.4.pdf",
+      "bytes": 9709999,
+      "sha256_from_public_api": "c4d154c0d19e964a41c4c8ad89b16f25ed0d847befb2615b14353133e19435e1",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.1.1 П-25-2025-00-ИОС1-5.1.1.pdf",
+      "bytes": 13686519,
+      "sha256_from_public_api": "d787237594087eadd30bef76df0c8e95e122b89bbeb597b8e02e92c39bd398fb",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.1.2 П-25-2025-00-ИОС1-5.1.2.pdf",
+      "bytes": 1462315,
+      "sha256_from_public_api": "195aa256c222a0c760dc2f11d3bf485ab092caa82b629296975eb9ed0299efd0",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.1.3 П-25-2025-00-ИОС1-5.1.3.pdf",
+      "bytes": 6714118,
+      "sha256_from_public_api": "92ed9949d0f9a04ac2534e8765aaa97a9c1f83e83a29fd829c3c5154037848ac",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.2.1 П-25-2025-00-ИОС2-5.2.1.pdf",
+      "bytes": 18821042,
+      "sha256_from_public_api": "ff2a8e4517019b7dc9a9e1511b1f1838a8b25f8091aabf307f3456291b49ba55",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.2.2 П-25-2025-00-ИОС2-5.2.2.pdf",
+      "bytes": 1526387,
+      "sha256_from_public_api": "245d7209a9b34d5e83361590e97fbc5d2f6abfb5a3887a6670f1edde8a0aa887",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.3.1 П-25-2025-00-ИОС3-5.3.1.pdf",
+      "bytes": 10231906,
+      "sha256_from_public_api": "63878e1a3ce023c6e28514e1f5e2548579149508cf541c4589bce78251a30f10",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.3.2 П-25-2025-00-ИОС3-5.3.2.pdf",
+      "bytes": 1354487,
+      "sha256_from_public_api": "61459803be150ba9d796305f3342ec5775c18daf55207f2f75790b6920300761",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.4.1 П-25-2025-00-ИОС4-5.4.1.pdf",
+      "bytes": 1557635,
+      "sha256_from_public_api": "f111995a059e4ba1162cc56e0fbd42a3a3be934a59eb11da9e22e518c28a1a38",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.4.2 П-25-2025-00-ИОС4-5.4.2.pdf",
+      "bytes": 2815748,
+      "sha256_from_public_api": "b6e46ef1d92b85003672322cb2b99c21d73520da253c149485f6346c221133ef",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.4.3 П-25-2025-00-ИОС4-5.4.3.pdf",
+      "bytes": 2814452,
+      "sha256_from_public_api": "9219d4a2d5808c776fc55a29b6e29df6d46f37e7ee4f70741bcbc100dbe5eb9c",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.5.1 П-25-2025-00-ИОС5-5.5.1.pdf",
+      "bytes": 2115487,
+      "sha256_from_public_api": "378c5a2a8ebb379548ecd72d4b12ae39614725c057dc7e7db8c9b435943f720a",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.5.2 П-25-2025-00-ИОС5-5.5.2.pdf",
+      "bytes": 1996571,
+      "sha256_from_public_api": "7db12a42c6711c5e2cdbc0dbbadc074d3012595c12e3ba71de1ec7ee5d49a458",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.5.3 П-25-2025-00-ИОС5-5.5.3.pdf",
+      "bytes": 2632980,
+      "sha256_from_public_api": "33f5066e87b6a42c035cb124f16dfd7f25acfd1f0697d831f2a93407054129fa",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 5.5.4 П-25-2025-00-ИОС5-5.5.4.pdf",
+      "bytes": 2676028,
+      "sha256_from_public_api": "95d24cbb0153e0e2537274188a056d3f5cbe0929b84a33453dd0297ed75bbe7b",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 6.1 П-25-2025-00-ТХ-6.1.pdf",
+      "bytes": 6516371,
+      "sha256_from_public_api": "0b2d64e0cc7750b73d01b9a1016f437ebbeede02aad979d849461263b3e41015",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 6.2 П-25-2025-00-ТХ-6.2.pdf",
+      "bytes": 1899392,
+      "sha256_from_public_api": "b5878fe75f9bb362742a45a2fb0bc4e3467feb886428194ebb54fbb1f9ff4f75",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 6.3 П-25-2025-00-ТХ-6.3.pdf",
+      "bytes": 1661300,
+      "sha256_from_public_api": "68e8238667f4db499ef27a441bd9895a28833ace3c517d2ab421b8b3506d6169",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 6.4 П-25-2025-00-ТХ-6.4.pdf",
+      "bytes": 1069154,
+      "sha256_from_public_api": "76effd53495a8fafed734dc6dd80aada388a5efcbfdbb891b4f1227b992f3dc0",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 6.5 П-25-2025-00-ТХ-6.5.pdf",
+      "bytes": 12626225,
+      "sha256_from_public_api": "35e0178f81e7cbd85413c2ca722e3dce3b344a37a67bb5e52c2d5b4dc0d476f7",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 6.6 П-25-2025-00-АСОДУ-6.6.pdf",
+      "bytes": 600222,
+      "sha256_from_public_api": "8b2f68ac28184f451e9ea584db74376456c325183d9db9bb885ec771cb6e35f7",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 7.1 П-25-2025-00-ПОС-7.1.pdf",
+      "bytes": 8700150,
+      "sha256_from_public_api": "6fb8b3354df97eeb7a90110da1b6eb5f1a3fa77e6d77744e027c80504bd30c3f",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 8.1.1 П-25-2025-00-ООС-8.1.1.pdf",
+      "bytes": 6000598,
+      "sha256_from_public_api": "507c577c737b141189eab24fd9b3b609761276cf072b3ddad6fcc66516590a44",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 8.1.2 П-25-2025-00-ООС-8.1.2.pdf",
+      "bytes": 2204403,
+      "sha256_from_public_api": "90dae7a7abfdafa7223357cce417a35c3288cb9530a87f64c2f281448069a400",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 8.1.3 П-25-2025-00-ООС-8.1.3.pdf",
+      "bytes": 3381823,
+      "sha256_from_public_api": "d913878d65d8fb15d0d7ae17f8e0e4ef73d877c7a476d281f572bed7581132a2",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 8.2 П-25-2025-00-ООС-8.2.pdf",
+      "bytes": 2135699,
+      "sha256_from_public_api": "7b58f77a3bdac5d326a9ccade6e27fa8dba386122e94d772c9cc822f265fab12",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 8.3 П-25-2025-00-ООС-8.3.pdf",
+      "bytes": 1638033,
+      "sha256_from_public_api": "1e4dd03ca9f4114185ebcd426dabc37bd3a7bd9c9d7050bff1acf5147ff09c75",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 9.1 П-25-2025-00-МПБ-9.1.pdf",
+      "bytes": 1437291,
+      "sha256_from_public_api": "5087664a0fbb0d5a60029edddd9184f4929ff0421a3f66b00e1567770defdb19",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/Том 9.2 П-25-2025-00-МПБ-9.2.pdf",
+      "bytes": 3830062,
+      "sha256_from_public_api": "379116a2234580978a4795bcdd46e779e12df08ed7d2d9815e70b183e77efc27",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "PUBLIC_2025_PROJECT_VOLUME_LIST"
+    },
+    {
+      "path": "/УТВЕРЖДЕННЫЕ МАТЕРИАЛЫ ОВОС/ООО МЛЦ ОБ УТВ ОВОС.pdf",
+      "bytes": 422656,
+      "sha256_from_public_api": "5deefc54295602bc672b67727924b03302cf0d1b4dfb7b27186f5ed108e8371a",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "APPROVED_ENVIRONMENTAL_DOCUMENT_LIST"
+    },
+    {
+      "path": "/УТВЕРЖДЕННЫЕ МАТЕРИАЛЫ ОВОС/Том 8.1.1_.pdf",
+      "bytes": 5659524,
+      "sha256_from_public_api": "7a0dc41c50716eb6bc35146da0192be2770b9236d04086aa981424a690fb645e",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "APPROVED_ENVIRONMENTAL_DOCUMENT_LIST"
+    },
+    {
+      "path": "/УТВЕРЖДЕННЫЕ МАТЕРИАЛЫ ОВОС/Том 8.1.2.pdf",
+      "bytes": 1646291,
+      "sha256_from_public_api": "c5d3c0ee05e7602132458c564558ea94b076315ab0e6108ab70b84806e582cbb",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "APPROVED_ENVIRONMENTAL_DOCUMENT_LIST"
+    },
+    {
+      "path": "/УТВЕРЖДЕННЫЕ МАТЕРИАЛЫ ОВОС/Том 8.1.3.pdf",
+      "bytes": 8935888,
+      "sha256_from_public_api": "fa1bcf01a555ab04d3edea98d78c5c71f16f903f26b13707b540e146235b0e99",
+      "document_date_authenticated": false,
+      "original_pdf_bytes_downloaded_and_verified": false,
+      "content_analyzed": false,
+      "approved_design_revision_match_verified": false,
+      "document_role": "APPROVED_ENVIRONMENTAL_DOCUMENT_LIST"
+    }
+  ]
+}

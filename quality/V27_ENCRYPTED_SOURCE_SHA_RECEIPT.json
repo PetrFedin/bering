@@ -1,0 +1,49 @@
+{
+  "schema": "V27_OFFICIAL_OLE_BYTES_TWO_RUNS",
+  "captured_on": "2026-11-01",
+  "source_index": "https://magadanport.ru/raskrytie-informacii/",
+  "github_runs": [
+    "https://github.com/PetrFedin/bering/actions/runs/41350323889",
+    "https://github.com/PetrFedin/bering/actions/runs/41350390175"
+  ],
+  "sources": {
+    "MP1_2026_9M": {
+      "sha256": "20f684ee23777db318d2dda4942891d8a7ee57e43140fe0c0c47d767893f61a2",
+      "size_bytes": 267264,
+      "sha_identical_across_two_runs": true,
+      "source_ole_header_verified": true,
+      "parser_result": "Workbook is encrypted",
+      "numeric_metrics_extracted": 0
+    },
+    "MP2_2026_9M": {
+      "sha256": "11afb90722824351676e8c2d800c8bee71564fec5d66bf3234149659c9e36a42",
+      "size_bytes": 923136,
+      "sha_identical_across_two_runs": true,
+      "source_ole_header_verified": true,
+      "parser_result": "Workbook is encrypted",
+      "numeric_metrics_extracted": 0
+    },
+    "MP1_2025_9M": {
+      "sha256": "ba8c378d15ef70273ecd54d75463f98928ab73387fbe85be20a207ddc88254aa",
+      "size_bytes": 259584,
+      "sha_identical_across_two_runs": true,
+      "source_ole_header_verified": true,
+      "parser_result": "Workbook is encrypted",
+      "numeric_metrics_extracted": 0
+    },
+    "MP2_2025_9M": {
+      "sha256": "288ef40904064f29884375072fc7a0619f1522a00809c069217c28ff9d37e294",
+      "size_bytes": 893952,
+      "sha_identical_across_two_runs": true,
+      "source_ole_header_verified": true,
+      "parser_result": "Workbook is encrypted",
+      "numeric_metrics_extracted": 0
+    }
+  },
+  "source_binaries_committed_to_git": false,
+  "original_binary_bytes_stored_on_runners_only": true,
+  "company_monthly_cargo_rows_authenticated": 0,
+  "group_24m_od_evidence_cells": 0,
+  "investment_admission": "HOLD",
+  "note": "These are observed bytes from public-hosted URL downloads, not accepted commercial cargo, not decrypted source tables. The source SHA receipts do not preserve the original binary bytes."
+}

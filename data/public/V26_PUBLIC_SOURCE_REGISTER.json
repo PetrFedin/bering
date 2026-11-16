@@ -1,0 +1,100 @@
+{
+  "schema_version": "V26_PUBLIC_1",
+  "as_of": "2026-10-31",
+  "records": [
+    {
+      "id": "MAGADAN_SEAPORT_2025_ALL_CARGO_TONNES",
+      "record_type": "OBSERVED",
+      "entity": "MAGADAN_SEAPORT_ALL_TERMINALS",
+      "metric": "ALL_CARGO_TONNES",
+      "period": "2025",
+      "value": "1834700",
+      "unit": "tonnes",
+      "evidence_tier": "PRIMARY_PUBLISHED_WEB",
+      "source_url": "https://ampvanino.ru/magadan/",
+      "source_publisher": "Maritime Port Administration of the Sea of Okhotsk and Tatar Strait",
+      "source_date": null,
+      "caveat": "Whole seaport and all cargo types; NOT 40ft containers, an OD baseline or an operator-level container total."
+    },
+    {
+      "id": "FAR_EAST_PORT_BASIN_2025_ALL_CARGO_TONNES",
+      "record_type": "OBSERVED",
+      "entity": "FAR_EAST_SEAPORT_BASIN",
+      "metric": "ALL_CARGO_TONNES",
+      "period": "2025",
+      "value": "252100000",
+      "unit": "tonnes",
+      "evidence_tier": "INDUSTRY_ASSOCIATION_PUBLISHED",
+      "source_url": "https://www.morport.com/rus/news/gruzooborot-morskih-portov-rossii-za-2025-god",
+      "source_publisher": "Association of Sea Commercial Ports",
+      "source_date": "2026-01-16",
+      "caveat": "Aggregate Far Eastern basin across ports and all cargo; not Magadan demand and not 40ft cargo."
+    },
+    {
+      "id": "MAGADAN_MMTP_2024_CONTAINER_CARGO_TONNES",
+      "record_type": "REPORTED_HISTORICAL",
+      "entity": "MAGADAN_MMTP_OPERATOR",
+      "metric": "CONTAINER_CARGO_TONNES",
+      "period": "2024",
+      "value": "890100",
+      "unit": "tonnes",
+      "evidence_tier": "SECONDARY_QUOTES_OPERATOR_DOCUMENT",
+      "source_url": "https://portnews.ru/news/393455/",
+      "source_publisher": "PortNews, citing MMTP business activity substantiation",
+      "source_date": "2026-06-29",
+      "caveat": "Original business activity substantiation not in repository; not 40ft-unit count."
+    },
+    {
+      "id": "MAGADAN_MMTP_2032_CONTAINER_CARGO_TARGET_TONNES",
+      "record_type": "FORWARD_TARGET",
+      "entity": "MAGADAN_MMTP_OPERATOR",
+      "metric": "CONTAINER_CARGO_TONNES",
+      "period": "2032",
+      "value": "1000000",
+      "unit": "tonnes",
+      "evidence_tier": "SECONDARY_QUOTES_OPERATOR_DOCUMENT",
+      "source_url": "https://portnews.ru/news/393455/",
+      "source_publisher": "PortNews, citing MMTP business activity substantiation",
+      "source_date": "2026-06-29",
+      "caveat": "Published 2032 operator ambition, not observed fact, statistically estimated confidence interval or Bering-project booking."
+    },
+    {
+      "id": "MAGADAN_MMTP_2026_9M_MP1_PRIMARY_UNEXTRACTED",
+      "record_type": "DOCUMENT_DISCOVERED",
+      "entity": "MAGADAN_MMTP_OPERATOR",
+      "metric": "MP1_REPORT_NINE_MONTHS",
+      "period": "2026-09",
+      "value": null,
+      "unit": null,
+      "evidence_tier": "SOURCE_LISTING_ONLY",
+      "source_url": "https://magadanport.ru/wp-content/uploads/2026/10/MP10014726.xls",
+      "source_publisher": "Magadan Maritime Commercial Port",
+      "source_date": "2026-10-07",
+      "source_listing_url": "https://magadanport.ru/raskrytie-informacii/",
+      "caveat": "MP-1 file listed as available, original XLS bytes could not be downloaded; value unverified and MUST remain null."
+    },
+    {
+      "id": "MAGADAN_MMTP_2026_9M_MP2_PRIMARY_UNEXTRACTED",
+      "record_type": "DOCUMENT_DISCOVERED",
+      "entity": "MAGADAN_MMTP_OPERATOR",
+      "metric": "MP2_REPORT_NINE_MONTHS",
+      "period": "2026-09",
+      "value": null,
+      "unit": null,
+      "evidence_tier": "SOURCE_LISTING_ONLY",
+      "source_url": "https://magadanport.ru/wp-content/uploads/2026/10/MP20014726.xls",
+      "source_publisher": "Magadan Maritime Commercial Port",
+      "source_date": "2026-10-07",
+      "source_listing_url": "https://magadanport.ru/raskrytie-informacii/",
+      "caveat": "MP-2 file listed as available, original XLS bytes could not be downloaded; do not infer numbers from its title."
+    }
+  ],
+  "source_policy": {
+    "target_scope": "PUBLIC_MARKET_CONTEXT_ONLY",
+    "project_paid_40ft_units": null,
+    "project_new_od_volume_40ft_units": null,
+    "project_incremental_group_cm_rub": null,
+    "individual_pilot_status": {"P1": "HOLD", "P2": "HOLD", "P3": "HOLD"},
+    "not_allowed": "Do not convert tonnes into TEU/40ft units, or basin/port totals into new Bering freight, without measured cargo weights, OD records and verified invoices."
+  }
+}

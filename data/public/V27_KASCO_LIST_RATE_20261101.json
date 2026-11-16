@@ -1,0 +1,22 @@
+{
+  "schema": "V27_PUBLIC_CY_CY_RATE",
+  "captured_date": "2026-11-01",
+  "carrier": "Kamchatka Shipping Company (KASCO)",
+  "carrier_url": "https://kasco.su/schedule_vvo-mag/",
+  "origin": "Vladivostok",
+  "destination": "Magadan",
+  "scope": "CY_CY_SEA_FREIGHT_ONLY",
+  "currency": "RUB",
+  "tax_basis": "INCL_VAT",
+  "rate_is_binding_customer_quote": false,
+  "port_handling_both_ends_included": true,
+  "demurrage_and_excess_storage_excluded": true,
+  "list_rates": {
+    "dry_40ft_vvo_to_mag": "239767",
+    "reefer_40ft_vvo_to_mag": "315000",
+    "dry_40ft_mag_to_vvo": "66084",
+    "reefer_40ft_mag_to_vvo": "77267"
+  },
+  "financial_scope": "Not D2D, not incremental revenue, not comparable to P3 multi-leg inclusive tariff; not 2026 completed paid shipment proof.",
+  "source_note": "Tariffs and included/excluded services taken from carrier's public price table, viewed 2026-11-01. Printed page update time is dynamic; terms require firm written quote."
+}

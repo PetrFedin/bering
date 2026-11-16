@@ -1,0 +1,41 @@
+{
+  "stage": "V27",
+  "date": "2026-11-01",
+  "status": "LOCAL_UNIT_PASS_SOURCE_OD_HOLD",
+  "source_pages_verified": 1,
+  "public_xls_links_verified": 4,
+  "public_xls_raw_bytes_imported": 0,
+  "port_monthly": {
+    "required_months": 24,
+    "source_documented_months": 0,
+    "status": "HOLD"
+  },
+  "od": {
+    "pilots": 3,
+    "required_pilot_months": 72,
+    "required_incumbent_group_months": 24,
+    "total_required_months": 96,
+    "source_documented_months": 0,
+    "status": "HOLD"
+  },
+  "actual_signed_new_cargo_for_bering": null,
+  "actual_bank_settlements_verified": false,
+  "group_incremental_contribution_rub": null,
+  "forecast_Bering_new_volume": null,
+  "investment_approved": false,
+  "github_hosted_ci_status": "RESEARCH_QA_SUCCESS_V27_UNIT_AND_PILOT_HOLD_SUCCESS_PRIMARY_XLS_PARSER_BLOCKED",
+  "local_unit_tests": 45,
+  "local_unit_passed": 45,
+  "synthetic_mutations": 400,
+  "unhandled_errors": 0,
+  "notes": "Public official MP-1/2 9-month forms are operator disclosures, not 24 individual months or company OD.",
+  "local_test_snapshot_before_later_sha_pin_additions": true,
+  "original_ole_xls_downloaded_github_runner": 4,
+  "original_ole_xls_committed_in_git": 0,
+  "encrypted_spreadsheets_not_parsed": 4,
+  "github_full_test_cases": 363,
+  "github_full_test_passed": 363,
+  "github_v27_unit_and_commercial_job": "SUCCESS",
+  "github_source_parsing_job": "FAILED_SOURCE_XLS_ENCRYPTED",
+  "note_updated": "Do not confuse local snapshot (45) with 363 total GitHub regression tests or encrypted original source admission"
+}

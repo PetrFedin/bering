@@ -1,0 +1,83 @@
+{
+  "schema": "V29_EXECUTION_RECEIPT_V1",
+  "recorded_as_of": "2026-11-09",
+  "code_tested_sha": "6a0e48ea36f134f47da298da524c5e8a53393da1",
+  "execution_location": "AUTHORIZED_MACBOOK_LOCAL_FULL_GIT_CHECKOUT",
+  "local_python_version": "3.14.7",
+  "local_unit_tests_full": {
+    "passed": 416,
+    "total": 416,
+    "exit_code": 0,
+    "command": "python3 -m unittest discover -s tests -v"
+  },
+  "local_unit_tests_v29": {
+    "passed": 13,
+    "total": 13,
+    "exit_code": 0,
+    "command": "python3 -m unittest discover -s tests -p 'test_v29_*.py' -v"
+  },
+  "v28_fuzz": {
+    "total_mutations": 750,
+    "invalid_inputs_detected": 720,
+    "unhandled_or_false_admission": 0,
+    "command": "python3 quality/fuzz_v28.py"
+  },
+  "v29_claim_stage_gate": {
+    "status": "RESEARCH_CONTEXT_ONLY",
+    "errors": [],
+    "design_versions_reconciled": false,
+    "planned_2030_commission_year": "2030",
+    "verified_commission_year": null,
+    "verified_in_service_capacity_teu_per_year": null,
+    "new_paid_bering_40ft": null,
+    "investment_approved": false,
+    "bankable_revenue_approved": false
+  },
+  "v25_v28_combined_controller": {
+    "status": "HOLD",
+    "errors": [],
+    "market": "CONTEXT_VALID_REVIEW_REQUIRED",
+    "port_monthly": "HOLD",
+    "group_od": "HOLD",
+    "document_intake": "HOLD",
+    "commercial": "HOLD",
+    "bankable_revenue_approved": false,
+    "investment_approved": false,
+    "bering_npv_rub": null
+  },
+  "github_actions": {
+    "runner_tests_executed": false,
+    "run_receipts": [
+      {
+        "run": 42544081079,
+        "name": "Bering V28 source-perimeter and integrated investment HOLD QA",
+        "conclusion": "failure",
+        "jobs_with_steps": 0
+      },
+      {
+        "run": 42544081044,
+        "name": "Bering Research QA",
+        "conclusion": "failure",
+        "jobs_with_steps": 0
+      },
+      {
+        "run": 42544081014,
+        "name": "Bering V29 time-scope and staged-claim HOLD gate",
+        "conclusion": "failure",
+        "jobs_with_steps": 0
+      }
+    ],
+    "root_cause": "NOT_ESTABLISHED_PRE_FIRST_STEP",
+    "external_ci_green": false
+  },
+  "pilot_24month_od_reviewed": 0,
+  "pilot_24month_od_required": 96,
+  "documents_and_payments_independently_verified": false,
+  "original_mlc_project_pdfs_reviewed": false,
+  "P1": "HOLD",
+  "P2": "HOLD",
+  "P3": "HOLD",
+  "investment_approved": false,
+  "release_policy": "DRAFT_PR_ONLY_NOT_MAIN_NO_BANKABILITY",
+  "limitations": "Local full-checkout regression on cited SHA checks test code and synthetic evidence guards, not external document authenticity or infrastructure deployment. Receipt commit itself is documentation-only; re-run on final commit and record final SHA separately."
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "V30_PRIMARY_PDF_REVIEW_V1",
+  "as_of": "2026-11-09",
+  "source_archive": "https://disk.yandex.ru/d/VBtKSnvIO1rolQ",
+  "source_notice": "https://o-v-o-s.ru/49/40020",
+  "public_design_2025_pdf_bytes_verified_for_four": true,
+  "official_2026_positive_expertise_revisions_match_verified": false,
+  "findings": [
+    {
+      "id": "V30_GEO_CONFLICT_TBE_10_1_P12_P13",
+      "file": "/Том 10.1 П-25-2025-00-ТБЭ-10.1.pdf",
+      "sha256": "c9f98a4236961a8e79849f21f59eedf212921fcfd8b9837841bc790a394dde8f",
+      "pdf_pages_one_based": [
+        12,
+        13
+      ],
+      "document_heading": "Морской логистический центр «Магадан». Этап 1, Том 10.1, требования к обеспечению безопасной эксплуатации",
+      "observed_text_short": "Участок расположен на юго-западном берегу Кольского залива. Климат Мурманской области определяется...",
+      "contradicts_project_location": "Бухта Нагаева, город Магадан",
+      "evidence_method": "PDFKit native text extraction and manual inspection of rendered page 13",
+      "verified_in_observed_2025_public_copy": true,
+      "verified_in_approved_oct2026_revision": false,
+      "issue_class": "P1_SOURCE_DOCUMENT_GEOGRAPHY_DISCREPANCY",
+      "interpretation": "Strong evidence of a geographic text inconsistency in the 2025-public copy only; does not prove an error in the later expertise-approved version",
+      "investment_approved": false
+    }
+  ],
+  "other_pdf_scope": [
+    {
+      "file": "/Том 1.2_П-25-2025-00-ПЗ-1.2.pdf",
+      "pdf_pages": 50,
+      "text_search_30k_or_150k_found": false
+    },
+    {
+      "file": "/Том 6.2 П-25-2025-00-ТХ-6.2.pdf",
+      "pdf_pages": 54,
+      "text_search_30k_or_150k_found": false
+    },
+    {
+      "file": "/Том 6.5 П-25-2025-00-ТХ-6.5.pdf",
+      "pdf_pages": 55,
+      "text_search_30k_or_150k_found": false
+    },
+    {
+      "file": "/Том 10.1 П-25-2025-00-ТБЭ-10.1.pdf",
+      "pdf_pages": 78,
+      "text_search_30k_or_150k_found": false
+    }
+  ],
+  "capacity_30000_150000_official_change_log_verified": false,
+  "bankable_revenue_approved": false,
+  "investment_approved": false
+}

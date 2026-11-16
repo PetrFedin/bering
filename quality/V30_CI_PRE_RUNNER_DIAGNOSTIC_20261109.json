@@ -1,0 +1,49 @@
+{
+  "schema": "V30_CI_PRE_RUNNER_DIAGNOSTICS_V1",
+  "as_of": "2026-11-09",
+  "repo": "PetrFedin/bering",
+  "observed_code_sha": "b45ae95158fc11e44684aaa8a840a19688cb2f73",
+  "repo_private": true,
+  "actions_enabled": true,
+  "actions_allowed_actions": "all",
+  "workflow_default_permissions": "read",
+  "self_hosted_runners_count": 0,
+  "github_hosted_runner_billing_status_verified": false,
+  "billing_api_access": "NOT_AVAILABLE_GH_AUTH_NEEDS_USER_SCOPE",
+  "github_hosted_runner_allocation_cause": "UNKNOWN",
+  "github_hosted_runner_job_runs": [
+    {
+      "run": 42544250207,
+      "job": 128925694478,
+      "workflow": "v28-integrated",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    },
+    {
+      "run": 42544250203,
+      "job": 128925694437,
+      "workflow": "research-qa",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    },
+    {
+      "run": 42544250096,
+      "job": 128925694200,
+      "workflow": "v29-stage-gate",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    }
+  ],
+  "configuration_changes_made": false,
+  "billing_changes_made": false,
+  "runner_registration_made": false,
+  "github_hosted_ci_green": false,
+  "external_independent_acceptance_completed": false,
+  "investment_approved": false
+}

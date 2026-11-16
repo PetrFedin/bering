@@ -1,0 +1,51 @@
+name: Bering V26 research-source quality (no investment admission)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/public/V26_PUBLIC_SOURCE_REGISTER.json'
+      - 'data/pilots/V26_EMPTY_PROOF_INTAKE.json'
+      - 'scripts/public_market_forecast_v26.py'
+      - 'scripts/evidence_readiness_v26.py'
+      - 'scripts/offline_qa_v26.py'
+      - 'tests/test_public_market_forecast_v26.py'
+      - 'tests/test_evidence_readiness_v26.py'
+      - 'quality/fuzz_v26.py'
+      - '.github/workflows/v26-public-evidence-local-qa.yml'
+      - 'quality/V26_REMOTE_CI_RECEIPT.json'
+
+permissions:
+  contents: read
+
+jobs:
+  public-evidence-and-local-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out pinned topic commit
+        uses: actions/checkout@v4
+      - name: Record exact tested SHA
+        run: git rev-parse HEAD
+      - name: Configure Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run fail-closed public data and document readiness tests
+        run: |
+          python scripts/offline_qa_v26.py \
+            --repo . \
+            --receipt /tmp/bering-v26-local-receipt.json
+          python quality/fuzz_v26.py
+      - name: Assert local receipt is never treated as investment pass
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/bering-v26-local-receipt.json'))
+          assert r['status']=='LOCAL_QA_PASS_REMOTE_CI_UNVERIFIED'
+          assert r['market_report']['commercial_gate']=='HOLD'
+          assert r['documentary_baseline']['status']=='HOLD'
+          assert r['evidence_intake_baseline']['status']=='HOLD'
+          assert r['market_report']['project_incremental_group_cm_rub'] is None
+          assert r['project_investment_approved'] is False
+          PY

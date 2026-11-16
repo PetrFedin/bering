@@ -1,0 +1,61 @@
+{
+  "stage": "V22",
+  "date_utc": "2026-10-30",
+  "repo": "PetrFedin/bering",
+  "pull_request": "https://github.com/PetrFedin/bering/pull/13",
+  "base_branch": "audit/v21-failclosed-formulas-20261029",
+  "branch": "audit/v22-originals-importer-20261030",
+  "scope": "Importer and synthetic regression testing only; real binary source admission and bankability excluded.",
+  "implementation": {
+    "importer": "scripts/audits/import_originals_v22.py",
+    "importer_git_blob_sha1": "5cbf2f3feee09d5659fd25b9d81973496e018b6f",
+    "tests": "tests/test_import_originals_v22.py",
+    "tests_git_blob_sha1": "9d112ec0acffc566da9e81d150874b9a25a5161f",
+    "workflow": ".github/workflows/importer-v22-unit-tests.yml",
+    "protocol": "docs/V22_ORIGINALS_IMPORT_PROTOCOL.md",
+    "ci_runbook": "docs/CI_RUNNER_REMEDIATION_2026-10-30.md"
+  },
+  "validation": {
+    "local_synthetic_unit_tests": {
+      "executed": true,
+      "python_version": "3.13.5",
+      "passed": 21,
+      "total": 21,
+      "status": "PASS",
+      "test_real_originals": false
+    },
+    "remote_github_workflow": {
+      "executed_steps": false,
+      "status": "FAIL_BEFORE_STEPS",
+      "run_id": 40977769784,
+      "job_id": 123809939329,
+      "sha": "15675e2d669a0c4b7cfe4e421aa7150407c929c0",
+      "runner_id": 0,
+      "steps": 0,
+      "logs": "404 BlobNotFound",
+      "cause": "UNKNOWN"
+    },
+    "real_v20_import_zip": {
+      "available_in_session": false,
+      "sha256_expected": "284f14b29b3849c03450ae0d5b77eba5632696fc066750e4ed5f8792543a7f98",
+      "verified": false,
+      "imported_to_github": false
+    },
+    "v20_originals": {
+      "expected_manifest_entries": 42,
+      "remote_git_blobs_verified": 0,
+      "remote_originals_admission": "NOT_PERFORMED"
+    },
+    "excel_full_recalc": false,
+    "independent_security_review": false,
+    "independent_financial_review": false,
+    "pilots": {
+      "P1": "HOLD",
+      "P2": "HOLD",
+      "P3": "HOLD"
+    },
+    "bankable": false
+  },
+  "acceptance": "HOLD",
+  "note": "Do not confuse synthetic unit tests with original source, contractual, full Excel or investment certification."
+}

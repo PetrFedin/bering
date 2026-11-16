@@ -1,0 +1,77 @@
+{
+  "schema": "V30_EXECUTION_RECEIPT_V1",
+  "as_of": "2026-11-09",
+  "code_tested_sha": "12d59800d7cd8fe717891fdb381de42f52c0795f",
+  "execution_environment": "AUTHORIZED_MACBOOK_PYTHON_3_14_7_ISOLATED_GIT_WORKTREE",
+  "test_result": {
+    "command": "python3 -m unittest discover -s tests -q",
+    "passed": 443,
+    "total": 443,
+    "exit_code": 0,
+    "elapsed_seconds": 2.257,
+    "scope": "LOCAL_UNIT_REGRESSION_NOT_EXTERNAL_INDEPENDENT_ACCEPTANCE",
+    "warning": "zipfile Duplicate name audit/example.json from test fixture"
+  },
+  "evidence_controller": {
+    "command": "python3 scripts/v30_primary_evidence_gate.py --repo . --pdf-root /Users/petr/Projects/bering/local_private/MLC_V30_PUBLIC_SOURCE_SNAPSHOT_20261109/",
+    "status": "HOLD",
+    "errors": [],
+    "source_bytes_recomputed_at_runtime": 4,
+    "source_files_not_locally_present": 6,
+    "public_manifest_total": 52,
+    "selected_files_attempted": 10,
+    "approved_2026_design_match": false,
+    "od_verified_group_months": 0,
+    "od_required_group_months": 96
+  },
+  "previous_controllers": {
+    "v28_status": "HOLD",
+    "v28_errors": [],
+    "v29_status": "RESEARCH_CONTEXT_ONLY",
+    "v29_errors": []
+  },
+  "github_actions": {
+    "tested_head_sha": "12d59800d7cd8fe717891fdb381de42f52c0795f",
+    "external_ci_green": false,
+    "jobs": [
+      {
+        "run_id": 42640961095,
+        "name": "research-qa",
+        "conclusion": "failure",
+        "steps": null
+      },
+      {
+        "run_id": 42640961096,
+        "name": "evidence-claim-and-commercial-hold",
+        "conclusion": "failure",
+        "steps": null,
+        "job_id": 129241629737,
+        "log_access": "404 BlobNotFound"
+      }
+    ],
+    "runner_failure_root_cause": "UNKNOWN",
+    "billing_status_verified": false
+  },
+  "source_review": {
+    "four_owner_digest_and_length_matches": true,
+    "geographic_discrepancy_in_public_2025_pdf": true,
+    "geographic_discrepancy_verified_in_approved_2026_pdf": false,
+    "official_design_30k_150k_revision_reconciled": false
+  },
+  "commercial": {
+    "requests_sent": 0,
+    "customer_signed_paid_40ft_verified": null,
+    "commercial_cargo_amount_null": true,
+    "incumbent_group_margin_rub": null,
+    "bering_npv_rub": null
+  },
+  "release": {
+    "main_unchanged": true,
+    "investment_approved": false,
+    "bankable_revenue_approved": false,
+    "P1": "HOLD",
+    "P2": "HOLD",
+    "P3": "HOLD"
+  },
+  "notes": "QA was executed on the exact code_tested_sha. Adding this JSON receipt creates a later docs-only commit which must be separately re-tested; neither re-testing nor a versioned receipt constitutes independent acceptance."
+}

@@ -1,0 +1,60 @@
+{
+  "stage": "V27_REMOTE_INDEPENDENT_EXECUTION_RECEIPT",
+  "checked_on": "2026-11-01",
+  "repo": "PetrFedin/bering",
+  "draft_pr": "https://github.com/PetrFedin/bering/pull/23",
+  "tested_code_head_sha": "c2fe38bdbadabc4f63768f36c4d6962d081316ae",
+  "research_qa": {
+    "run": "https://github.com/PetrFedin/bering/actions/runs/41350552027",
+    "conclusion": "success",
+    "unittest_tests": 363,
+    "unittest_passed": 363
+  },
+  "v27_quality_and_sources": {
+    "run": "https://github.com/PetrFedin/bering/actions/runs/41350552162",
+    "local_gates": {
+      "job_id": 124979573842,
+      "conclusion": "success",
+      "unittest_tests": 363,
+      "unittest_passed": 363,
+      "malformed_cases": 400,
+      "uncaught_errors": 0,
+      "public_kasco_rate_test": "PASS",
+      "all_v23_v25_and_v26_commercial_hold_preserved": true
+    },
+    "public_originals": {
+      "job_id": 124979638276,
+      "conclusion": "failure",
+      "technical_reason": "All four OLE XLS successfully downloaded; xlrd returned 'Workbook is encrypted' for each; parse blocked",
+      "downloaded_ole_sources": 4,
+      "source_sha_matches_pinned_register": true,
+      "accepted_spreadsheet_numeric_cells": 0,
+      "original_file_binaries_committed_in_git": 0
+    }
+  },
+  "original_source_checksums_in": "data/public/V27_PRIMARY_SOURCE_REGISTER.json",
+  "source_originals_permanent_archive_status": "NOT_STORED",
+  "operator_months_observed_with_source_files": 0,
+  "operator_months_required": 24,
+  "od_source_backed_month_slots": 0,
+  "od_required_month_slots": 96,
+  "contracts_authenticated": false,
+  "confirmed_paid_40ft_by_bering": null,
+  "bering_new_40ft_forecast": null,
+  "group_incremental_contribution_margin_rub": null,
+  "public_kasco_tariff_snapshot": {
+    "source": "https://kasco.su/schedule_vvo-mag/",
+    "updated_on_source": "2026-10-30",
+    "dry_40ft_vvo_mag_rub_incl_vat": "239767",
+    "reefer_40ft_vvo_mag_rub_incl_vat": "315000",
+    "difference_rub": "75233",
+    "premium_percent": "31.38",
+    "scope": "CY-CY including port loading/unloading; not D2D; VAT included",
+    "signed_rate_verified": false,
+    "financial_margin_verifiable": false
+  },
+  "main_modified": false,
+  "investment_approved": false,
+  "review_status": "SOURCE_DOCUMENTS_HOLD_AND_INVESTMENT_HOLD",
+  "next_required": "Officially accessible/unlocked operator originals, and 24 months of authenticated monthly terminal and group OD sources with separate customer carrier terminal and bank validation"
+}

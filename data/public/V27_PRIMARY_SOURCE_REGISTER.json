@@ -1,0 +1,77 @@
+{
+  "schema": "V27_PUBLIC_PRIMARY_XLS_REGISTER",
+  "operator": "PAO Magadan Maritime Commercial Port (MMTP)",
+  "scope": "regulated-services disclosure for one operator; not the entire Magadan port basin",
+  "index_page": "https://magadanport.ru/raskrytie-informacii/",
+  "index_page_verified": "2026-11-01",
+  "source_availability_on_web": "PUBLIC_OLE_XLS_BYTES_HASHED_BUT_XLRD_REPORTS_ENCRYPTED",
+  "original_file_bytes_verified_in_current_runtime": false,
+  "auto_conversion_to_monthly_40ft_allowed": false,
+  "sources": [
+    {
+      "id": "MP1_2026_9M",
+      "form": "MP-1",
+      "period": "2026-01..2026-09",
+      "posted": "2026-10-07",
+      "url": "https://magadanport.ru/wp-content/uploads/2026/10/MP10014726.xls",
+      "source_sha256": "20f684ee23777db318d2dda4942891d8a7ee57e43140fe0c0c47d767893f61a2",
+      "source_excel_cells_accepted": null,
+      "source_status": "OLE_BYTES_DOWNLOADED_BIFF_ENCRYPTED_CONTENT_UNVERIFIED",
+      "raw_file_bytes": 267264,
+      "original_ole_header_verified": true,
+      "parser_error": "Workbook is encrypted",
+      "source_hash_repeated_in_two_github_runs": true
+    },
+    {
+      "id": "MP2_2026_9M",
+      "form": "MP-2",
+      "period": "2026-01..2026-09",
+      "posted": "2026-10-07",
+      "url": "https://magadanport.ru/wp-content/uploads/2026/10/MP20014726.xls",
+      "source_sha256": "11afb90722824351676e8c2d800c8bee71564fec5d66bf3234149659c9e36a42",
+      "source_excel_cells_accepted": null,
+      "source_status": "OLE_BYTES_DOWNLOADED_BIFF_ENCRYPTED_CONTENT_UNVERIFIED",
+      "raw_file_bytes": 923136,
+      "original_ole_header_verified": true,
+      "parser_error": "Workbook is encrypted",
+      "source_hash_repeated_in_two_github_runs": true
+    },
+    {
+      "id": "MP1_2025_9M",
+      "form": "MP-1",
+      "period": "2025-01..2025-09",
+      "posted": "2025-10-08",
+      "url": "https://magadanport.ru/wp-content/uploads/2025/10/MP10014725.xls",
+      "source_sha256": "ba8c378d15ef70273ecd54d75463f98928ab73387fbe85be20a207ddc88254aa",
+      "source_excel_cells_accepted": null,
+      "source_status": "OLE_BYTES_DOWNLOADED_BIFF_ENCRYPTED_CONTENT_UNVERIFIED",
+      "raw_file_bytes": 259584,
+      "original_ole_header_verified": true,
+      "parser_error": "Workbook is encrypted",
+      "source_hash_repeated_in_two_github_runs": true
+    },
+    {
+      "id": "MP2_2025_9M",
+      "form": "MP-2",
+      "period": "2025-01..2025-09",
+      "posted": "2025-10-08",
+      "url": "https://magadanport.ru/wp-content/uploads/2025/10/MP20014725.xls",
+      "source_sha256": "288ef40904064f29884375072fc7a0619f1522a00809c069217c28ff9d37e294",
+      "source_excel_cells_accepted": null,
+      "source_status": "OLE_BYTES_DOWNLOADED_BIFF_ENCRYPTED_CONTENT_UNVERIFIED",
+      "raw_file_bytes": 893952,
+      "original_ole_header_verified": true,
+      "parser_error": "Workbook is encrypted",
+      "source_hash_repeated_in_two_github_runs": true
+    }
+  ],
+  "meaning": "These are 9-month disclosures. Even if a line has cargo tons, the 9M number is not the individual September 2026 monthly volume, and the operator is not the entire region or Bering demand.",
+  "additional_sources_available": "Official magadanport.ru/klientam page publishes monthly available-capacity spreadsheets for 2024-2026; available capacity is not realized cargo movement.",
+  "original_file_sha256_captured_on_github_runner": true,
+  "actual_source_files_persisted_in_repo": false,
+  "github_verification_runs": [
+    "https://github.com/PetrFedin/bering/actions/runs/41350323889",
+    "https://github.com/PetrFedin/bering/actions/runs/41350390175"
+  ],
+  "source_bytes_observed_on": "2026-11-01"
+}

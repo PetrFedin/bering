@@ -1,0 +1,8 @@
+{
+  "schema_version": "V24",
+  "as_of": "2026-10-31",
+  "group_id": "RESEARCH_ONLY_GROUP_UNVERIFIED",
+  "v23_input_sha256": "adff60ac8f365baf14e37ed82ed2a7fe135e79d516c4abc824c7d0c2c4289885",
+  "shipments": [],
+  "status_note": "Research-only null source. No real 40ft container identities, waybills or delivery documents have been obtained. Empty list is missing evidence, NOT a market-demand zero."
+}

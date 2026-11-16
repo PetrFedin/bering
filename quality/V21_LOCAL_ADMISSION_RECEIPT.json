@@ -1,0 +1,37 @@
+{
+  "as_of": "2026-10-29",
+  "project": "Bering Corridor",
+  "status": "LOCAL_GIT_SOURCE_AND_FORMULA_CHECK_PASS__GITHUB_HOLD",
+  "source_v15_2_sha256": "2b1242069cdb5e68c04ca11bedc6f60f4535cadfb74ced8ad7f257b872055b25",
+  "formula_sha256": "54eb4aa7aaa37759884794df0262328355b1b59556ca312f888225ad50ca600b",
+  "sha_manifest_pinned": "cc97918f23c8590189e078f9e09a54682404943bfc675a4b47e1c334702b945a",
+  "local": {
+    "sheet_count": 72,
+    "formula_count": 493,
+    "missing_formula_caches": 35,
+    "selected_arithmetic_checks_passed": 223,
+    "selected_arithmetic_checks_total": 223,
+    "git_blob_integrity_checked_files": 42,
+    "git_blob_integrity_expected_files": 42,
+    "unit_tests_passed": 13,
+    "unit_tests_expected": 13
+  },
+  "github": {
+    "original_binaries_committed": false,
+    "ci_green": false,
+    "independent_code_review": false
+  },
+  "commercial": {
+    "pilot_P1": "HOLD",
+    "pilot_P2": "HOLD",
+    "pilot_P3": "HOLD",
+    "signed_incremental_cargo_verified": false
+  },
+  "limits": [
+    "no full Excel recalculation",
+    "no validation of third party contracts",
+    "no successful GitHub runner",
+    "archive local; not remotely preserved"
+  ],
+  "ref": "https://github.com/PetrFedin/bering/pull/11"
+}

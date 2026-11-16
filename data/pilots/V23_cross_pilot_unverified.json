@@ -1,0 +1,53 @@
+{
+  "schema_version": "V23",
+  "as_of": "2026-10-31",
+  "currency": "RUB",
+  "tax_basis": "EX_VAT",
+  "group_id": "RESEARCH_ONLY_GROUP_UNVERIFIED",
+  "shipments": [],
+  "pilot_costs": {
+    "P1": {
+      "currency": "RUB",
+      "tax_basis": "EX_VAT",
+      "cost_event_ids": {
+        "fixed": "PENDING_P1_FIXED",
+        "risk": "PENDING_P1_RISK"
+      },
+      "incremental_fixed_rub": null,
+      "incremental_risk_rub": null,
+      "evidence": {
+        "fixed": null,
+        "risk": null
+      }
+    },
+    "P2": {
+      "currency": "RUB",
+      "tax_basis": "EX_VAT",
+      "cost_event_ids": {
+        "fixed": "PENDING_P2_FIXED",
+        "risk": "PENDING_P2_RISK"
+      },
+      "incremental_fixed_rub": null,
+      "incremental_risk_rub": null,
+      "evidence": {
+        "fixed": null,
+        "risk": null
+      }
+    },
+    "P3": {
+      "currency": "RUB",
+      "tax_basis": "EX_VAT",
+      "cost_event_ids": {
+        "fixed": "PENDING_P3_FIXED",
+        "risk": "PENDING_P3_RISK"
+      },
+      "incremental_fixed_rub": null,
+      "incremental_risk_rub": null,
+      "evidence": {
+        "fixed": null,
+        "risk": null
+      }
+    }
+  },
+  "status_note": "NO_REAL_SHIPMENTS_RECEIVED; source event IDs are structural placeholders only, never submitted evidence. Pilot investment gates remain HOLD."
+}

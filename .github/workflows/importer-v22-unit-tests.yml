@@ -1,0 +1,31 @@
+name: Bering V22 Importer Unit Tests (NOT source admission)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/v22-originals-importer-20261030
+  pull_request:
+    paths:
+      - scripts/audits/import_originals_v22.py
+      - tests/test_import_originals_v22.py
+      - .github/workflows/importer-v22-unit-tests.yml
+
+permissions:
+  contents: read
+
+jobs:
+  test-importer-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact PR tree
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile importer and synthetic tests
+        run: python -m compileall -q scripts/audits/import_originals_v22.py tests/test_import_originals_v22.py
+      - name: Run synthetic importer regression suite (does not import originals)
+        run: python -m unittest discover -s tests -p 'test_import_originals_v22.py' -v

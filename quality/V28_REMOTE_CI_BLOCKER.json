@@ -1,0 +1,71 @@
+{
+  "schema": "V28_REMOTE_RUNNER_CI_BLOCKER_1",
+  "recorded_as_of": "2026-11-02",
+  "repository": "PetrFedin/bering",
+  "visibility": "private",
+  "branch": "audit/v28-market-perimeter-competitive-capacity-20261102",
+  "previous_V27_base": "audit/v27-primary-od-monthly-forecast-20261101",
+  "known_V28_source_head_at_failures": "b1867c2e50c77aae1b0b8479d3041f39a2c4f880",
+  "first_run_pair": [
+    {
+      "workflow": "Bering Research QA",
+      "url": "https://github.com/PetrFedin/bering/actions/runs/41351656353",
+      "head_sha": "c49e47aa2539356bb3fd0ca334c89e7eb1236cd1",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    },
+    {
+      "workflow": "Bering V28 source-perimeter and integrated investment HOLD QA",
+      "url": "https://github.com/PetrFedin/bering/actions/runs/41351656442",
+      "head_sha": "c49e47aa2539356bb3fd0ca334c89e7eb1236cd1",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    }
+  ],
+  "next_run_pair": [
+    {
+      "workflow": "Bering Research QA",
+      "url": "https://github.com/PetrFedin/bering/actions/runs/41351746628",
+      "head_sha": "b1867c2e50c77aae1b0b8479d3041f39a2c4f880",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    },
+    {
+      "workflow": "Bering V28 source-perimeter and integrated investment HOLD QA",
+      "url": "https://github.com/PetrFedin/bering/actions/runs/41351746636",
+      "head_sha": "b1867c2e50c77aae1b0b8479d3041f39a2c4f880",
+      "conclusion": "failure",
+      "runner_id": 0,
+      "steps_executed": 0
+    }
+  ],
+  "rerun_attempted": true,
+  "rerun_api_accepted": true,
+  "rerun_observed_result": "failure_pre_first_step_again",
+  "root_cause": "UNKNOWN; no runner execution or Python test logs",
+  "action_permissions_endpoint": "not accessible through current GitHub connector",
+  "rulesets_endpoint_response": "HTTP 403: Upgrade to GitHub Pro or make this repository public to enable this feature",
+  "main_branch_sha_during_assessment": "e6dcc74cee46b327c399a1a0a5d4f8f282831d0f",
+  "main_protected": false,
+  "main_updated_by_V28": false,
+  "public_visibility_change_authorized": false,
+  "paid_upgrade_authorized": false,
+  "local_v28_unit_tests_passed": 40,
+  "local_v28_unit_tests_total": 40,
+  "deterministic_invalid_input_trials": 750,
+  "uncaught_errors": 0,
+  "full_v25_v28_real_integrated_checkout_executed": false,
+  "historical_base_proof": "2025 port 84300 TEU is a reported annual all-port value, not new Bering cargo",
+  "original_source_v27_spreadsheets_unencrypted": false,
+  "pilot_admission": {
+    "P1": "HOLD",
+    "P2": "HOLD",
+    "P3": "HOLD"
+  },
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "release_status": "DRAFT_LOCAL_TEST_PASS_REMOTE_PRESTEP_CI_FAIL_INVESTMENT_HOLD"
+}

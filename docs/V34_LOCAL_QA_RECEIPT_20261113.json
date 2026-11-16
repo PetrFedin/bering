@@ -1,0 +1,26 @@
+{
+  "schema": "BERING_V34_LOCAL_QA_RECEIPT_V1",
+  "as_of": "2026-11-13",
+  "parent_commit_sha": "6281b6cf42fb90b3ae776887bfd2cbd1d82b0c63",
+  "source_test_environment": "3.13.5",
+  "local_verification_scope": "V32+V33+V34 MODULES ONLY (NOT ALL Bering tests)",
+  "tests_run": {
+    "V32": 31,
+    "V33": 42,
+    "V34": 40,
+    "combined": 113
+  },
+  "all_passed": true,
+  "source_sha256": {
+    "scripts/v34_bank_allocation_gate.py": "36796bc8eb8a052ef1c381fdb4ac7354215777515981a1dcfbd5f14187a238ff",
+    "tests/test_v34_bank_allocation_gate.py": "d3f2799c63cff6f50e39ee74461ff5775c8d6899c551fb346c4b445bfbefb032",
+    "docs/V34_PAYMENT_AND_ADDITIONALITY_RECONCILIATION.md": "993dc52eec30068eb374659decf02971efda40c73cc9db3eca1ab3ae95e50630"
+  },
+  "github_hosted_ci_green": false,
+  "full_repository_regression_approved": false,
+  "original_customer_documents_received": 0,
+  "external_bank_settlements_independently_verified": 0,
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "pending": "GitHub Actions annotations, billing status and source-backed 24m OD/paid invoice proof"
+}

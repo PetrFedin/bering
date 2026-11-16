@@ -1,0 +1,56 @@
+name: Bering V36 evidence chain, source integrity, investment HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/v36_*'
+      - 'tests/test_v36_*'
+      - 'data/evidence/V36_*'
+      - 'quality/V36_*'
+      - 'docs/V36_*'
+      - '.github/workflows/v36-evidence-chain-hold.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-intake-fail-closed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Log exact checked-out SHA
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository unit regression (only if actual runner executes)
+        run: python -m unittest discover -s tests -q
+      - name: Verify no real V36 private documents were included in Git
+        run: |
+          python scripts/v36_evidence_intake_chain.py --repo . --out v36_no_data.json
+          python - <<'PY'
+          import json
+          with open('v36_no_data.json', encoding='utf-8') as stream:
+              data = json.load(stream)
+          assert data['status'] == 'NO_PRIVATE_LEDGER', data['errors']
+          assert data['real_paid_incremental_40ft'] is None
+          assert data['group_incremental_contribution_rub'] is None
+          assert data['bering_npv_rub'] is None
+          assert data['investment_approved'] is False
+          assert data['bankable_revenue_approved'] is False
+          PY
+      - name: V32-V35 investment HOLD remains intact
+        run: |
+          python scripts/v32_decision_evidence_gate.py --repo . --out v36_v32.json
+          python scripts/v33_shipment_proof_quality.py --repo . --out v36_v33.json
+          python scripts/v34_bank_allocation_gate.py --repo . --out v36_v34.json
+          python scripts/v35_evidence_bytes_custody_gate.py --repo . --out v36_v35.json
+          python - <<'PY'
+          import json
+          for filename in ('v36_v32.json','v36_v33.json','v36_v34.json','v36_v35.json'):
+              with open(filename, encoding='utf-8') as stream:
+                  result=json.load(stream)
+              assert result['investment_approved'] is False, filename
+          PY

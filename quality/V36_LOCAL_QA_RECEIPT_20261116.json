@@ -1,0 +1,43 @@
+{
+  "schema": "BERING_V36_LOCAL_QA_RECEIPT_V1",
+  "as_of": "2026-11-16",
+  "source_branch_parent": "01e5061cd24259128fc9685c2d3d89cbe3120ed1",
+  "environment": "EPHEMERAL_LOCAL_CONTAINER_NOT_AUTHORIZED_MAC",
+  "python_version": "3.13.5",
+  "test_results": [
+    {
+      "scope": "V36 isolated module",
+      "command": "python3 -m unittest discover -s /mnt/data/bering_v36/tests -p test_v36_*.py -q",
+      "executed": 47,
+      "passed": 47
+    },
+    {
+      "scope": "V35 isolated module",
+      "command": "python3 -m unittest discover -s /mnt/data/bering_v35/tests -p test_v35_*.py -q",
+      "executed": 42,
+      "passed": 42
+    }
+  ],
+  "total_partial_tests_passed": 89,
+  "full_private_repository_checkout_available": false,
+  "full_repository_regression_verified": false,
+  "github_hosted_green_verified": false,
+  "real_mlc_final_gee_decision_verified": false,
+  "real_paid_bering_cargo_documents_received": false,
+  "bank_payment_independently_verified": false,
+  "financial_incremental_paid_40ft": null,
+  "group_incremental_margin_rub": null,
+  "bering_npv_rub": null,
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "file_sha256": {
+    "scripts/v36_evidence_intake_chain.py": "71262e572622675fac63536b4f18b651ce6b07923d1f9f018e6a50eef1323a80",
+    "tests/test_v36_evidence_intake_chain.py": "37f26cd208b76de3f7f3cb7a8621a06d3d00382a8954dab11d7d60708ee18b42",
+    "data/evidence/V36_EMPTY_PRIVATE_EVENT_LEDGER_TEMPLATE.json": "c1fe1f1c9d40cd8877f9fc4ad5096d69aed03a725dc281007000bfafd0e64343",
+    "quality/V36_SOURCE_VERIFICATION_20261116.json": "39cff221d39b0d9bf43d3910fd1698e8afe4f41d4261b19a6ee2a0042dfee6ac",
+    "quality/V36_RELEASE_TRAIN_20261116.json": "01209abdb5f4bdfadf26721db4d8d36ba04c8643532036d90bf339bacc2ed96d",
+    "docs/V36_EVIDENCE_INTAKE_AND_RELEASE_READINESS.md": "649d0e71d0821257022b6d7c6e1f637e6cecebb5c38fd274d87e9dc22990a61d",
+    ".github/workflows/v36-evidence-chain-hold.yml": "ee6bf4677003c93d70600b62008b2205a9f10360ff5bb1aedf0a33d991c09a30"
+  },
+  "limitations": "Isolated local tests, no complete GitHub checkout and no signed primary economic evidence. A matching self-reported hash-chain cannot authenticate third parties."
+}

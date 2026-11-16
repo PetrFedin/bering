@@ -1,0 +1,303 @@
+{
+  "schema_version": "V26_INTAKE_1",
+  "as_of": "2026-10-31",
+  "purpose": "Evidence intake only; no external private documents received",
+  "pilots": {
+    "P1": {
+      "customer_order": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "priced_d2d_quote": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "carrier_waybill": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "terminal_events": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "consignee_pod": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "invoice_net_vat_gross": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "independent_bank_settlement": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "group_od_history_24m": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "incumbent_group_margin_costs": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      }
+    },
+    "P2": {
+      "customer_order": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "priced_d2d_quote": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "carrier_waybill": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "terminal_events": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "consignee_pod": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "invoice_net_vat_gross": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "independent_bank_settlement": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "group_od_history_24m": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "incumbent_group_margin_costs": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "reefer_temperature_energy": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      }
+    },
+    "P3": {
+      "customer_order": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "priced_d2d_quote": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "carrier_waybill": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "terminal_events": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "consignee_pod": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "invoice_net_vat_gross": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "independent_bank_settlement": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "group_od_history_24m": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "incumbent_group_margin_costs": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      },
+      "feeder_and_customs_clearance": {
+        "status": "MISSING",
+        "evidence_id": null,
+        "relative_path": null,
+        "sha256": null,
+        "source_org_id": null,
+        "submitted_by": null,
+        "reviewed_by": null,
+        "reviewed_on": null
+      }
+    }
+  }
+}
