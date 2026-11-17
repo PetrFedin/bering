@@ -1,0 +1,53 @@
+name: Bering R20 Magadan operator and source scope QA
+on:
+  pull_request:
+    paths:
+      - 'data/public/MMTP_MP1_MONTHLY_SERIES_2024-01_2026-09.csv'
+      - 'data/public/SOURCE_REGISTRY_R20_20261117.csv'
+      - 'docs/research/OPEN_SOURCES_RESEARCH_R20_20261117.md'
+      - 'scripts/r20_magadan_source_reconciliation.py'
+      - 'tests/test_r20_magadan_source_reconciliation.py'
+      - '.github/workflows/r20-operator-source-reconciliation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-context-not-bankability:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Print commit
+        run: git rev-parse HEAD
+      - name: Full repository regression
+        run: python -m unittest discover -s tests -q
+      - name: R20 source and scope check must remain research only
+        run: |
+          python scripts/r20_magadan_source_reconciliation.py --out /tmp/r20.json
+          python - <<'PY'
+          import json
+          p=json.load(open('/tmp/r20.json'))
+          assert p['status']=='RESEARCH_CONTEXT_ONLY'
+          assert p['basis']=='REPO_MP1_MONTHLY_CSV_EXTRACTION_NOT_RECOMPUTED_FROM_ORIGINAL_XLS'
+          assert p['calendar_months']==33
+          assert p['ytd_operator']['loaded_plus_empty_teu']['2026_9m']=='69692.000'
+          assert p['fy2025_portwide_minus_operator_teu']==6
+          assert p['fy2024_portwide_minus_operator_teu']==-2336
+          assert p['fy2025_asop_minus_operator_total_kt']=='500.294'
+          assert p['current_2026_port_utilization_pct'] is None
+          assert p['new_paid_incremental_40ft'] is None
+          assert p['bering_npv_rub'] is None
+          assert p['bankable_revenue_approved'] is False
+          assert p['investment_approved'] is False
+          PY
+      - name: Previous investment hold remains
+        run: |
+          python scripts/v28_group_decision.py --repo . --out /tmp/group.json
+          python - <<'PY'
+          import json
+          a=json.load(open('/tmp/group.json'))
+          assert a['status']=='HOLD' and not a['investment_approved']
+          PY
