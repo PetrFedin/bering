@@ -1,0 +1,193 @@
+{
+  "schema": "BERING_V37_PUBLISHED_MARKET_BOUNDARIES_V1",
+  "as_of": "2026-11-17",
+  "purpose": "Frozen public-source boundary review for Magadan and MLC competitor; no bankable freight or investment admissions",
+  "records": [
+    {
+      "id": "PORT_2024_TEU",
+      "scope": "MAGADAN_ALL_PORTS",
+      "stage": "SECONDARY_REPORTED_ACTUAL",
+      "period": "2024",
+      "unit": "TEU_per_year",
+      "source_url": "https://www.interfax.ru/business/1005102",
+      "value": "80900",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "PORT_2025_TEU",
+      "scope": "MAGADAN_ALL_PORTS",
+      "stage": "SECONDARY_REPORTED_ACTUAL",
+      "period": "2025",
+      "unit": "TEU_per_year",
+      "source_url": "https://morvesti.ru/news/1679/120254/",
+      "value": "84300",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "PORT_2025_ALL_CARGO_TONNES",
+      "scope": "MAGADAN_ALL_PORTS",
+      "stage": "OFFICIAL_PORT_AUTHORITY_REPORTED_ACTUAL",
+      "period": "2025",
+      "unit": "tonnes_per_year",
+      "source_url": "https://ampvanino.ru/magadan/",
+      "value": "1834700",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "PORT_REGISTER_2009_NOMINAL_TEU",
+      "scope": "MAGADAN_PORT_2009_REGISTER",
+      "stage": "ARCHIVAL_REGISTER_DESIGN",
+      "period": "2009-11-18",
+      "unit": "TEU_per_year",
+      "source_url": "https://www.rosmorport.ru/media/File/filials/Magadansky/Magadan_svedenia.pdf",
+      "value": "45000",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_PROMOTER_TEUS",
+      "scope": "MLC_PROJECT_INVESTOR_CARD",
+      "stage": "PROMOTER_DESIGN_CLAIM",
+      "period": "2026",
+      "unit": "TEU_per_year",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "value": "30000",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_GGE_TEUS",
+      "scope": "MLC_STAGE1_DESIGN",
+      "stage": "OFFICIAL_EXPERTISE_PRESS_CLAIM",
+      "period": "2026-10-01",
+      "unit": "TEU_per_year",
+      "source_url": "https://egrz.ru/organisation/news/be268787-74bd-f111-80ff-00505634024e",
+      "value": "150000",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_PROMOTER_BUDGET_RUB_THOUSAND",
+      "scope": "MLC_PROJECT_INVESTOR_CARD",
+      "stage": "PROMOTER_FINANCIAL_CLAIM",
+      "period": "2026",
+      "unit": "thousand_RUB",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "value": "37655467",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_PROMOTER_EXTERNAL_FINANCING_RUB_THOUSAND",
+      "scope": "MLC_PROJECT_INVESTOR_CARD",
+      "stage": "PROMOTER_FINANCIAL_CLAIM",
+      "period": "2026",
+      "unit": "thousand_RUB",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "value": "15470923",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_PROMOTER_NPV_RUB_THOUSAND",
+      "scope": "MLC_PROJECT_INVESTOR_CARD",
+      "stage": "PROMOTER_FINANCIAL_CLAIM",
+      "period": "2026",
+      "unit": "thousand_RUB",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "value": "57399",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_PROMOTER_IRR_PERCENT",
+      "scope": "MLC_PROJECT_INVESTOR_CARD",
+      "stage": "PROMOTER_FINANCIAL_CLAIM",
+      "period": "2026",
+      "unit": "percent",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "value": "21.0",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "MLC_PROMOTER_PBP_MONTHS",
+      "scope": "MLC_PROJECT_INVESTOR_CARD",
+      "stage": "PROMOTER_FINANCIAL_CLAIM",
+      "period": "2026",
+      "unit": "months",
+      "source_url": "https://investinregions.ru/projects/morskoy-logisticheskiy-tsentr-magadan/",
+      "value": "115.2",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "GOV_PLAN_MLC_EVENT_32_MILLION_RUB",
+      "scope": "FEDERAL_PLAN_EVENT_32",
+      "stage": "PLANNED_PROGRAM_ENVELOPE",
+      "period": "2025-2030",
+      "unit": "million_RUB",
+      "source_url": "https://www.garant.ru/products/ipo/prime/doc/412773827/",
+      "value": "12295",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "GOV_PLAN_MLC_PORT_EVENT_33_MILLION_RUB",
+      "scope": "FEDERAL_PLAN_EVENT_33",
+      "stage": "PLANNED_PROGRAM_ENVELOPE",
+      "period": "2030",
+      "unit": "million_RUB",
+      "source_url": "https://www.garant.ru/products/ipo/prime/doc/412773827/",
+      "value": "8000",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "GOV_PLAN_MLC_TARGET_YEAR",
+      "scope": "FEDERAL_PLAN_EVENTS_32_33",
+      "stage": "PLANNED_TARGET_YEAR",
+      "period": "2030",
+      "unit": "year",
+      "source_url": "https://www.garant.ru/products/ipo/prime/doc/412773827/",
+      "value": "2030",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "PROPOSED_MOHE_NAIBA_PHASE1_TONNES",
+      "scope": "PROPOSED_CROSS_REGIONAL_CORRIDOR_NOT_PORT",
+      "stage": "SECONDARY_REPORTED_PROPOSAL",
+      "period": "2026-11-10",
+      "unit": "tonnes",
+      "source_url": "https://www.tks.ru/logistics/2026/11/10/0006/magadan-mozhet-stat-zvenom-marshruta-mezhdu-aziej-i-atlantikoj/",
+      "value": "300000",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    },
+    {
+      "id": "PROPOSED_MOHE_NAIBA_FULL_TONNES",
+      "scope": "PROPOSED_CROSS_REGIONAL_CORRIDOR_NOT_PORT",
+      "stage": "SECONDARY_REPORTED_PROPOSAL",
+      "period": "2026-11-10",
+      "unit": "tonnes",
+      "source_url": "https://www.tks.ru/logistics/2026/11/10/0006/magadan-mozhet-stat-zvenom-marshruta-mezhdu-aziej-i-atlantikoj/",
+      "value": "30000000",
+      "verification_limit": "Published claim only; signed/source-row corroboration or scope/version reconciliation remains outstanding"
+    }
+  ],
+  "guards": {
+    "original_morcenter_monthly_file_authenticated": false,
+    "investor_vs_gge_design_revision_reconciled": false,
+    "current_2026_port_registry_capacity_authenticated": false,
+    "government_program_and_promoter_budget_scope_matched": false,
+    "signed_mlc_environmental_final_conclusion_authenticated": false,
+    "mlc_commissioning_authenticated": false,
+    "vessel_20_40_loaded_empty_mix_authenticated": false,
+    "bering_real_paid_incremental_cargo_authenticated": false,
+    "od_group_months_authenticated": 0,
+    "od_group_months_required": 96,
+    "github_hosted_ci_green": false,
+    "investment_approved": false
+  },
+  "methodology_notes": [
+    "This is a versioned published-statements snapshot, not signed source authentication.",
+    "2024/2025 container throughput is total-port TEU reported by media citing Morcenter, not unique paid Bering shipments.",
+    "2009 Rosmorrechflot registered capacity 45000 TEU is ARCHIVAL and not approved to represent 2026 available capacity.",
+    "Project design 30000 TEU (promoter) and 150000 TEU (GGE press) are not additive, commissioned, or comparable to annual total-port physical flow.",
+    "RUB 20.295bn government-program events vs RUB 37.655467bn promoter budget may overlap or differ in scope; difference is NOT a funding shortfall.",
+    "RUB 57.399m NPV and 21% IRR are unsupported promoter claims until model assumptions and valuation basis are inspected.",
+    "Corridor Mohe/Naiba tonnage is a secondary-reported proposal for multiple regions, not 2026 port throughput, container TEU, or paid Bering cargo.",
+    "Icebreaker season is conditionally determined by harbormaster; no proven cost/schedule delta for Bering.",
+    "One page display says last modified May 2026 while search index said October 2026: last-update metadata of promoter card has NOT been independently resolved.",
+    "0/96 original OD coverage is missing verification evidence, NOT zero physical shipments."
+  ]
+}

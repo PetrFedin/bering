@@ -1,0 +1,60 @@
+name: Bering V37 Magadan source perimeter and HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'data/public/V37_*'
+      - 'scripts/v37_*'
+      - 'tests/test_v37_*'
+      - 'docs/V37_*'
+      - '.github/workflows/v37-market-boundary-hold.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-scope-reconciliation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record exact checked-out commit
+        run: git rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full repository unit regression (required for CI, not historical local QA)
+        run: python -m unittest discover -s tests -q
+      - name: V37 source-perimeter fail-closed snapshot
+        run: |
+          python scripts/v37_magadan_market_gate.py --register data/public/V37_MAGADAN_MARKET_EVIDENCE_20261117.json --out v37_source_gate.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('v37_source_gate.json').read_text(encoding='utf-8'))
+          assert r['status']=='RESEARCH_CONTEXT_ONLY',r['errors']
+          assert r['source_records_reviewed']==16
+          assert r['port_teu_2025_minus_2024']==3400
+          assert r['port_teu_yoy_percent_rounded_two_dp']=='4.20'
+          assert r['current_port_capacity_2026_teu'] is None
+          assert r['port_utilization_percent'] is None
+          assert r['competing_design_capacity_sum_teu'] is None
+          assert r['verified_mlc_operational_teu'] is None
+          assert r['signed_bering_incremental_shipments_40ft'] is None
+          assert r['bering_incremental_group_cm_rub'] is None
+          assert r['bering_npv_rub'] is None
+          assert not r['bankable_revenue_approved'] and not r['investment_approved']
+          PY
+      - name: Earlier commercial gate must still reject bankability
+        run: |
+          python scripts/v28_group_decision.py --repo . --out v37_previous_group_gate.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('v37_previous_group_gate.json').read_text(encoding='utf-8'))
+          assert d['status']=='HOLD',d['errors']
+          assert d['bankable_revenue_approved'] is False
+          assert d['investment_approved'] is False
+          assert d['bering_npv_rub'] is None
+          PY

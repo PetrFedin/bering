@@ -1,3 +1,9 @@
+## V37 — 17.11.2026 · Доказательный периметр контейнерного рынка и CAPEX Магадана (Draft)
+
+- [Углублённый исследовательский отчёт](V37_MAGADAN_MARKET_CAPEX_AND_CORRIDOR_DILIGENCE.md): 2024/2025 портовые TEU, данные порта в тоннах, архивная мощность 2009, несверенные 30k/150k МЛЦ, бюджет 37 655,467 млн руб. против плановых мероприятий 12 295 + 8 000 млн руб., лёд, концепция маршрута Магадан–Найба.
+- [16 показателей с юридическим, временным и единичным периметром](../data/public/V37_MAGADAN_MARKET_EVIDENCE_20261117.json), [контроллер](../scripts/v37_magadan_market_gate.py), [27 локальных тестов](../tests/test_v37_magadan_market_gate.py), [QA receipt](../quality/V37_LOCAL_QA_RECEIPT_20261117.json).
+- Статус: `RESEARCH_CONTEXT_ONLY`; ранняя мощность 2009 не означает загрузку 2026, тоннаж не переводится в TEU, новые оплаченные Bering P1–P3 не доказаны; CI и инвестиции HOLD.
+
 ## V36 — 16.11.2026 · Журнал происхождения доказательств и проверка релизной цепочки (Draft)
 
 - [V36 методика и границы выводов](V36_EVIDENCE_INTAKE_AND_RELEASE_READINESS.md), [программный контроль](../scripts/v36_evidence_intake_chain.py), [47 тестов](../tests/test_v36_evidence_intake_chain.py), [пустой событийный журнал](../data/evidence/V36_EMPTY_PRIVATE_EVENT_LEDGER_TEMPLATE.json).
