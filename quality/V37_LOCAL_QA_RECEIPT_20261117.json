@@ -1,0 +1,43 @@
+{
+  "schema": "BERING_V37_RESEARCH_QA_RECEIPT_V1",
+  "as_of": "2026-11-17",
+  "environment": "ISOLATED_CONTAINER_PYTHON_3.13.5",
+  "tested_scope": "V37_ONLY_NOT_FULL_BERING_REPOSITORY",
+  "test_run": {
+    "command": "/opt/pyvenv/bin/python3 -m unittest discover -s /mnt/data/bering_v37/tests -p test_v37_*.py -q",
+    "tested_methods": 27,
+    "passed_methods": 27,
+    "exit_code": 0,
+    "elapsed_seconds_rounded": 3.59
+  },
+  "source_gate": {
+    "status": "RESEARCH_CONTEXT_ONLY",
+    "source_records_reviewed": 16,
+    "port_teu_2025_minus_2024": 3400,
+    "port_teu_yoy_percent_rounded_two_dp": "4.20",
+    "port_utilization_percent": null,
+    "current_port_capacity_2026_teu": null,
+    "arithmetic_budget_difference_million_rub_not_a_funding_gap": "17360.467",
+    "bering_npv_rub": null,
+    "investment_approved": false
+  },
+  "original_mlc_oct2026_design_documents_authenticated": false,
+  "2026_current_port_registry_authenticated": false,
+  "2026_actual_port_shipments_authenticated": false,
+  "three_paid_bering_pilots_authenticated": false,
+  "github_hosted_ci_green": false,
+  "git_main_modified": false,
+  "file_bytes_sha256": {
+    "scripts/v37_magadan_market_gate.py": "c58da4c633160fedfedc5c25b7dada83b311c7554581902079f4703e8c2bc107",
+    "tests/test_v37_magadan_market_gate.py": "fcb0290808a30af13ccd9aa7ee623f1e6cf30ada514f039436ef9932dbdc6945",
+    "data/public/V37_MAGADAN_MARKET_EVIDENCE_20261117.json": "10041e476090e4b13249f20eecaff3d30b0e2a92b9ec2b1cbfc387ef7a3f7535",
+    "docs/V37_MAGADAN_MARKET_CAPEX_AND_CORRIDOR_DILIGENCE.md": "80405554b9618d50fc5767f035a58b0b68a168a68377d8aed3138c9b221f588e",
+    ".github/workflows/v37-market-boundary-hold.yml": "f171be892bdff6fa54f6b8229e04c5c38197892e12e9652fad5cc8b3907a9cd6"
+  },
+  "limitations": [
+    "Only V37 module and its frozen source register were exercised in this container",
+    "Source pages support publicly stated facts, not signed design changes, current 2026 rated capacity or original port monthly data",
+    "GitHub Actions must execute independently on final SHA and the full Bering suite must pass before release",
+    "No actual Bering client OD, B/L, payments, group CM or NPV were provided or verified"
+  ]
+}
