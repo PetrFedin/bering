@@ -1,3 +1,9 @@
+## V37 — 17.11.2026 · Периметр рынка Магадана и реестр доказательств (на базе R19, Draft)
+
+- [Аналитический отчёт](V37_MAGADAN_MARKET_CAPEX_AND_CORRIDOR_DILIGENCE.md), [реестр 16 публикационных показателей](../data/public/V37_MAGADAN_MARKET_EVIDENCE_20261117.json), [проверка stage/unit/scope](../scripts/v37_magadan_market_gate.py), [27 локальных тестов](../tests/test_v37_magadan_market_gate.py), [QA](../quality/V37_LOCAL_QA_RECEIPT_20261117.json).
+- Добавлено к R19 без изменений исходных исследований: 2009 архивная мощность ≠ текущая загрузка; 2025 84,3k TEU — не P1–P3 paid freight; 30k/150k МЛЦ и 37,655/20,295 млрд требуют сопоставления юридических и стоимостных периметров; возможный коридор Магадан–Найба не даёт доказанный 2026 груз.
+- 27/27 V37 unit tests в изолированной среде PASS; полный repository CI на новом SHA и финансовая инвестиционная готовность не подтверждены. HOLD.
+
 ## V36 — 16.11.2026 · Журнал происхождения доказательств и проверка релизной цепочки (Draft)
 
 - [V36 методика и границы выводов](V36_EVIDENCE_INTAKE_AND_RELEASE_READINESS.md), [программный контроль](../scripts/v36_evidence_intake_chain.py), [47 тестов](../tests/test_v36_evidence_intake_chain.py), [пустой событийный журнал](../data/evidence/V36_EMPTY_PRIVATE_EVENT_LEDGER_TEMPLATE.json).
