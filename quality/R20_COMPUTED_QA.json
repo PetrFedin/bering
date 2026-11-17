@@ -1,0 +1,84 @@
+{
+  "status": "RESEARCH_CONTEXT_ONLY",
+  "basis": "REPO_MP1_MONTHLY_CSV_EXTRACTION_NOT_RECOMPUTED_FROM_ORIGINAL_XLS",
+  "calendar_months": 33,
+  "months_2025_9m": 9,
+  "months_2026_9m": 9,
+  "ytd_operator": {
+    "total_cargo_kt": {
+      "2025_9m": "948.856",
+      "2026_9m": "1051.014",
+      "delta": "102.158",
+      "yoy_pct": "10.77"
+    },
+    "container_cargo_kt": {
+      "2025_9m": "640.508",
+      "2026_9m": "677.817",
+      "delta": "37.309",
+      "yoy_pct": "5.82"
+    },
+    "loaded_teu": {
+      "2025_9m": "38651.000",
+      "2026_9m": "42245.000",
+      "delta": "3594.000",
+      "yoy_pct": "9.30"
+    },
+    "empty_teu": {
+      "2025_9m": "23939.000",
+      "2026_9m": "27447.000",
+      "delta": "3508.000",
+      "yoy_pct": "14.65"
+    },
+    "loaded_plus_empty_teu": {
+      "2025_9m": "62590.000",
+      "2026_9m": "69692.000",
+      "delta": "7102.000",
+      "yoy_pct": "11.35"
+    },
+    "reefer_teu": {
+      "2025_9m": "3535.000",
+      "2026_9m": "3979.000",
+      "delta": "444.000",
+      "yoy_pct": "12.56"
+    }
+  },
+  "empty_share_2025_9m_pct": "38.25",
+  "empty_share_2026_9m_pct": "39.38",
+  "empty_share_change_pp": "1.14",
+  "container_tonnes_per_total_teu_2025_9m": "10.23",
+  "container_tonnes_per_total_teu_2026_9m": "9.73",
+  "fy2024_operator_loaded_plus_empty_teu": 83236,
+  "fy2025_operator_loaded_plus_empty_teu": 84294,
+  "fy2024_portwide_secondary_teu": 80900,
+  "fy2025_portwide_secondary_teu": 84300,
+  "fy2024_portwide_minus_operator_teu": -2336,
+  "fy2025_portwide_minus_operator_teu": 6,
+  "fy2024_operator_container_kt": "819.986",
+  "fy2024_secondary_report_container_kt": "890.100",
+  "fy2024_secondary_minus_operator_container_kt": "70.114",
+  "fy2025_operator_total_cargo_kt": "1334.406",
+  "fy2025_asop_claim_operator_kt": "1834.700",
+  "fy2025_asop_minus_operator_total_kt": "500.294",
+  "reefer_zero_months_requiring_source_check": [
+    "2025-06"
+  ],
+  "teu_not_additive_to_reefer_teu": true,
+  "port_2026_actual_capacity_teu": null,
+  "actual_2026_all_port_throughput_teu": null,
+  "current_2026_port_utilization_pct": null,
+  "new_paid_incremental_40ft": null,
+  "bering_group_incremental_cm_rub": null,
+  "bering_npv_rub": null,
+  "signed_docs_received_in_this_run": 0,
+  "bankable_revenue_approved": false,
+  "investment_approved": false,
+  "notes": [
+    "MP1 group/period source scope is not the independent Morcenter port-wide file.",
+    "Original MP1 XLS downloads were unavailable in this execution; CSV values are checked, not source-authenticated anew.",
+    "Reefer column overlap with loaded is unresolved. Never add reefer to loaded+empty.",
+    "Empty and loaded TEU are events; not new revenue, 40ft container count, or independent OD shipments.",
+    "Identical 2025 whole-port vs operator totals within rounding do not resolve 2024 differences or legal scope.",
+    "FESCO rate dated 2026-11-17 is listed but original tariff attachment not read, price unknown.",
+    "20/40ft laden/empty, operator/day/berth split and shipper bank evidences still needed."
+  ]
+}
