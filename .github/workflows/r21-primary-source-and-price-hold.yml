@@ -1,0 +1,68 @@
+name: Bering R21 source-byte intake and tariff scope HOLD
+
+on:
+  pull_request:
+    paths:
+      - 'data/public/R21_*'
+      - 'data/public/SOURCE_REGISTRY_R21_*'
+      - 'scripts/r21_*'
+      - 'tests/test_r21_*'
+      - 'docs/research/OPEN_SOURCES_RESEARCH_R21_*'
+      - 'quality/R21_*'
+      - '.github/workflows/r21-primary-source-and-price-hold.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-manifest-research-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exact commit under review
+        run: git rev-parse HEAD
+      - name: Full research unit regression
+        run: python -m unittest discover -s tests -q
+      - name: Recheck historical R20 derived CSV
+        run: |
+          python scripts/r20_magadan_source_reconciliation.py --out /tmp/r20.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/r20.json'))
+          assert x['status']=='RESEARCH_CONTEXT_ONLY'
+          assert x['basis']=='REPO_MP1_MONTHLY_CSV_EXTRACTION_NOT_RECOMPUTED_FROM_ORIGINAL_XLS'
+          assert x['fy2024_portwide_minus_operator_teu']==-2336
+          assert x['fy2025_asop_minus_operator_total_kt']=='500.294'
+          assert x['investment_approved'] is False
+          PY
+      - name: R21 source receipts and tax sensitivity are NOT verified source cells or carrier quotes
+        run: |
+          python scripts/r21_source_integrity_and_freight_scope.py --out /tmp/r21.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/r21.json'))
+          assert x['status']=='RESEARCH_CONTEXT_ONLY', x['errors']
+          assert x['original_cells_authenticated'] is False
+          assert x['originals_rehashed_at_this_runtime'] is False
+          assert x['operator_all_port_scope_reconciled'] is False
+          assert x['available_port_capacity_2026'] is None
+          assert x['tax_stress_not_an_actual_quote']['comparison_admissible'] is False
+          assert x['fesco_fml_rate_rub'] is None
+          assert x['paid_incremental_40ft'] is None
+          assert x['bering_npv_rub'] is None
+          assert x['investment_approved'] is False
+          assert set(x['pilot_gates'].values()) == {'HOLD'}
+          PY
+      - name: Existing group investment HOLD continues
+        run: |
+          python scripts/v28_group_decision.py --repo . --out /tmp/group.json
+          python - <<'PY'
+          import json
+          a=json.load(open('/tmp/group.json'))
+          assert a['status']=='HOLD' and not a['investment_approved']
+          PY

@@ -1,3 +1,8 @@
+## R21 — 18.11.2026 · Проверка байтов исходников, тарифов и границ доказательности (Draft)
+
+- [Аналитическая записка R21](OPEN_SOURCES_RESEARCH_R21_20261118.md), [S227–S234](../../data/public/SOURCE_REGISTRY_R21_20261118.csv), [метаданные четырёх файлов](../../data/public/R21_OFFICIAL_SOURCE_INTAKE_20261118.json), [контрольный код](../../scripts/r21_source_integrity_and_freight_scope.py), [39 unit tests](../../tests/test_r21_source_integrity_and_freight_scope.py), [QA](../../quality/R21_SOURCE_AND_FREIGHT_SCOPE_QA.json).
+- Оригинальные `.xls` скачаны, SHA-256 2024/2025 совпали с реестром; защищённый FY2024 `xlrd` не смог открыть, остальные таблицы не перечитаны; 2026-H1 не заменяет 2026-9M. FML/FIT тарифы без подтверждённых ставок; никаких новых грузов и NPV. R21 `RESEARCH_CONTEXT_ONLY`, P1–P3/Investment HOLD.
+
 ## Новый исследовательский рубеж R20 (17.11.2026)
 
 - [R20 — контейнерные операции ММТП, несверенные периметры грузооборота и тарифная экономика](OPEN_SOURCES_RESEARCH_R20_20261117.md); [источники S216–S226](../../data/public/SOURCE_REGISTRY_R20_20261117.csv), [воспроизводимый контроль](../../scripts/r20_magadan_source_reconciliation.py), [результаты пересчёта](../../quality/R20_COMPUTED_QA.json). В R20 проверены данные **уже извлечённого** МП-1 CSV 2024–9М2026, но не оригинальные XLS. Статус: `RESEARCH_CONTEXT_ONLY`; P1–P3/investment HOLD.
