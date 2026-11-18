@@ -1,0 +1,32 @@
+{
+  "status": "RESEARCH_CONTEXT_ONLY",
+  "source_access": "FOUR_FILES_RECEIVED_HASHED_ON_MAC_NOT_CELLS_AUTHENTICATED",
+  "original_cells_authenticated": false,
+  "operator_all_port_scope_reconciled": false,
+  "originals_rehashed_at_this_runtime": false,
+  "local_byte_results": {},
+  "tax_stress_not_an_actual_quote": {
+    "assumed_standard_vat_rate_pct": "22",
+    "sasco_40dc_nominal_ex_vat_rub": "210670",
+    "kmp_40dc_recorded_tax_inclusive_rub": "239767",
+    "naive_kmp_minus_sasco_rub": "29097",
+    "hypothetical_sasco_40dc_gross_rub_if_22pct_applies": "257017.40",
+    "hypothetical_sasco_gross_minus_kmp_rub": "17250.40",
+    "hypothetical_sasco_40rf_gross_rub_if_22pct_applies": "283247.40",
+    "kmp_40rf_recorded_tax_inclusive_rub": "315000",
+    "comparison_admissible": false,
+    "reason": "Unresolved COC/SOC, tax rates, included handling, validity and FESCO FIT terminal scope"
+  },
+  "fesco_fml_rate_rub": null,
+  "available_port_capacity_2026": null,
+  "paid_incremental_40ft": null,
+  "incremental_group_cm_rub": null,
+  "bering_npv_rub": null,
+  "pilot_gates": {
+    "P1": "HOLD",
+    "P2": "HOLD",
+    "P3": "HOLD"
+  },
+  "investment_approved": false,
+  "errors": []
+}

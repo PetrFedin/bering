@@ -1,0 +1,16 @@
+{
+  "schema": "BERING_R21_LOCAL_QA_V1",
+  "as_of": "2026-11-18",
+  "environment": "container Python 3.11+ isolated R21 module",
+  "tests_run": 39,
+  "tests_passed": 39,
+  "tests_failed": 0,
+  "github_full_repository_regression_completed": false,
+  "mac_downloaded_source_file_count": 4,
+  "source_bytes_rehashed_in_this_container": false,
+  "recorded_mac_sha256_verified_for_download": true,
+  "xls_original_cell_values_verified": false,
+  "git_main_modified": false,
+  "investment_approved": false,
+  "limitation": "Source hashes came from Mac shell output; original binary files have not been copied into this container or verified in GitHub CI. R21 tests only check pinned metadata and calculation invariants."
+}
